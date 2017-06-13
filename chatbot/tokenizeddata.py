@@ -1,26 +1,39 @@
 import nltk
 import numpy as np
+import pickle
 import string
 
 from chatbot.rawtext import RawText
 
 
 class TokenizedData:
-    def __init__(self, seq_length, data_file):
+    def __init__(self, seq_length, dict_file=None, train_file=None, save_dict=False):
         """
+        One of the parameters dict_file and train_file has to be specified so that the dicts can have values.
         Args:
-            seq_length: The maximum length the sequence allowed. The lengths in the encoder and decoder
-                will both be derived.
-            data_file: The name of the text file storing the conversations.
+            seq_length: The maximum length the sequence allowed. The lengths in the encoder and decoder will both
+                be derived.
+            dict_file: The name of the pickle file saves the object of (word_id_dict, id_word_dict, id_cnt_dict).
+            train_file: The name of the text file storing the conversations.
+            save_dict: Whether to save the dicts to the file specified by the dict_file parameter.
         """
+        assert dict_file is not None or train_file is not None
+
         self.seq_length = seq_length
         self.enc_seq_len = seq_length
         self.dec_seq_len = seq_length + 2
 
         # Python dicts that hold basic information
-        self.word_id_dict = {}
-        self.id_word_dict = {}
-        self.id_cnt_dict = {}
+        if not save_dict and dict_file is not None:
+            with open(dict_file, 'rb') as fr:
+                d1, d2, d3 = pickle.load(fr)
+                self.word_id_dict = d1
+                self.id_word_dict = d2
+                self.id_cnt_dict = d3
+        else:
+            self.word_id_dict = {}
+            self.id_word_dict = {}
+            self.id_cnt_dict = {}
 
         # A list in which each item contains a pair of question and its answer [[input, target]]
         self.training_samples = []
@@ -38,7 +51,13 @@ class TokenizedData:
         self.exc_punct = self.get_word_id('!')
         self.que_punct = self.get_word_id('?')
 
-        self._load_corpus(data_file)
+        if train_file is not None:
+            self._load_corpus(train_file)
+
+        if save_dict:
+            dicts = (self.word_id_dict, self.id_word_dict, self.id_cnt_dict)
+            with open(dict_file, 'wb') as fw:
+                pickle.dump(dicts, fw, protocol=pickle.HIGHEST_PROTOCOL)
 
     def extract_words(self, text_line):
         """
@@ -52,9 +71,7 @@ class TokenizedData:
         sentences = []  # List[str]
 
         # Extract sentences
-        # print("line = {}".format(text_line))
         token_sentences = nltk.sent_tokenize(text_line)
-        # print("token_sentences = {}".format(token_sentences))
 
         # Add sentence by sentence until it reaches the maximum length
         for i in range(len(token_sentences)):
@@ -66,7 +83,6 @@ class TokenizedData:
 
             sentences.extend(word_ids)
 
-        # print("sentences = {}".format(sentences))
         return sentences
 
     def get_word_id(self, word, add=True):
@@ -152,7 +168,7 @@ class TokenizedData:
         Args:
             word_id_list (list<int>): A list of word_ids.
         Return:
-            str: The sentence
+            str: The sentence represented by the given word_id_list.
         """
         if not word_id_list:
             return ''
@@ -211,21 +227,12 @@ class TokenizedData:
             # Weight the real targets with 1.0, while 0.0 for pads
             batch.weights.append([1.0] * tmp_tar_len + [0.0] * tar_pad_len)
 
-        # print("Before reorganize")
-        # print(batch.encoder_seqs)
-        # print(batch.decoder_seqs)
-        # print(batch.targets)
-        # print(batch.weights)
-
         # Reorganize the data in the batch so that correspoding data items in different samples
         # of this batch are stacked together
         batch.encoder_seqs = [[*x] for x in zip(*batch.encoder_seqs)]
         batch.decoder_seqs = [[*x] for x in zip(*batch.decoder_seqs)]
         batch.targets = [[*x] for x in zip(*batch.targets)]
         batch.weights = [[*x] for x in zip(*batch.weights)]
-
-        # print("targets = {}".format(batch.targets))
-        # print("weights = {}".format(batch.weights))
 
         return batch
 
@@ -240,7 +247,6 @@ class TokenizedData:
 
         conversations = raw_text.get_conversations()
         for conversation in conversations:
-            print("conv = {}".format(conversation))
             step = 2
             # Iterate over all the samples of the conversation
             for i in range(0, len(conversation) - 1, step):
@@ -249,8 +255,6 @@ class TokenizedData:
 
                 input_words = self.extract_words(input_line['text'])
                 target_words = self.extract_words(target_line['text'])
-
-                # print("input_words = {}, target_words = {}".format(input_words, target_words))
 
                 if input_words and target_words:  # Filter wrong samples (if one of the list is empty)
                     self.training_samples.append([input_words, target_words])
@@ -271,11 +275,12 @@ class Batch:
 
 if __name__ == "__main__":
     import os
-
     from settings import PROJECT_ROOT
 
-    data_file = os.path.join(PROJECT_ROOT, 'Data', 'Corpus', 'basic_conv.txt')
-    td = TokenizedData(10, data_file)
+    dict_file = os.path.join(PROJECT_ROOT, 'Data', 'Result', 'dicts.pickle')
+    train_file = os.path.join(PROJECT_ROOT, 'Data', 'Corpus', 'basic_conv.txt')
+
+    td = TokenizedData(10, dict_file=dict_file, save_dict=False)
 
     print('Loaded raw data: {} words, {} samples'.format(td.vocabulary_size, td.sample_size))
 

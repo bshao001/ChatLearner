@@ -50,23 +50,3 @@ class BotPredictor:
         dec_outputs = self.session.run(self.decoder_outputs, feed_dict=f_dict)
 
         return dec_outputs
-
-if __name__ == "__main__":
-    from settings import PROJECT_ROOT
-    from chatbot.tokenizeddata import TokenizedData
-
-    data_file = os.path.join(PROJECT_ROOT, 'Data', 'Corpus', 'basic_conv.txt')
-    td = TokenizedData(seq_length=10, data_file=data_file)
-
-    sentence = "Do you have time to talk?"
-    res_dir = os.path.join(PROJECT_ROOT, 'Data', 'Result')
-
-    with tf.Session() as sess:
-        predictor = BotPredictor(sess, td, res_dir, 'basic')
-        dec_outputs = predictor.predict(sentence)
-
-        word_ids = []
-        for out in dec_outputs:
-            word_ids.append(np.argmax(out))
-
-        print(td.word_ids_to_str(word_ids))

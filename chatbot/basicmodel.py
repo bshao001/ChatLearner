@@ -150,21 +150,23 @@ class BasicModel:
         return train_op, loss
 
     def _get_learning_rate(self, perplexity):
-        if perplexity <= 1.6:
+        if perplexity <= 1.2:
+            return 8.8e-5
+        elif perplexity <= 1.6:
             return 9.2e-5
         elif perplexity <= 2.0:
             return 9.6e-5
         elif perplexity <= 2.4:
             return 1e-4
-        elif perplexity <= 4.0:
+        elif perplexity <= 3.6:
             return 1.2e-4
-        elif perplexity <= 8.0:
+        elif perplexity <= 6.0:
             return 1.6e-4
-        elif perplexity <= 16.0:
+        elif perplexity <= 12.0:
             return 2e-4
-        elif perplexity <= 24.0:
+        elif perplexity <= 20.0:
             return 2.4e-4
-        elif perplexity <= 32.0:
+        elif perplexity <= 30.0:
             return 3.2e-4
         elif perplexity <= 40.0:
             return 4e-4
@@ -175,11 +177,13 @@ if __name__ == "__main__":
     from settings import PROJECT_ROOT
     from chatbot.tokenizeddata import TokenizedData
 
-    data_file = os.path.join(PROJECT_ROOT, 'Data', 'Corpus', 'basic_conv.txt')
-    td = TokenizedData(seq_length=10, data_file=data_file)
+    dict_file = os.path.join(PROJECT_ROOT, 'Data', 'Result', 'dicts.pickle')
+    train_file = os.path.join(PROJECT_ROOT, 'Data', 'Corpus', 'basic_conv.txt')
 
-    model = BasicModel(tokenized_data=td, num_layers=2, num_units=128, embedding_size=32,
+    td = TokenizedData(seq_length=10, dict_file=dict_file, train_file=train_file, save_dict=False)
+
+    model = BasicModel(tokenized_data=td, num_layers=2, num_units=256, embedding_size=32,
                        batch_size=8)
 
     res_dir = os.path.join(PROJECT_ROOT, 'Data', 'Result')
-    model.train(num_epochs=500, train_dir=res_dir, result_file='basic')
+    model.train(num_epochs=400, train_dir=res_dir, result_file='basic')
