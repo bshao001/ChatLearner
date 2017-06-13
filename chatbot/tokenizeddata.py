@@ -11,8 +11,8 @@ class TokenizedData:
         """
         One of the parameters dict_file and train_file has to be specified so that the dicts can have values.
         Args:
-            seq_length: The maximum length the sequence allowed. The lengths in the encoder and decoder will both
-                be derived.
+            seq_length: The maximum length the sequence allowed. The lengths in the encoder and decoder will
+                both be derived.
             dict_file: The name of the pickle file saves the object of (word_id_dict, id_word_dict, id_cnt_dict).
             train_file: The name of the text file storing the conversations.
             save_dict: Whether to save the dicts to the file specified by the dict_file parameter.

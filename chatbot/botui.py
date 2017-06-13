@@ -25,7 +25,7 @@ def bot_ui():
         sentence = sys.stdin.readline()
         while sentence:
             if sentence.strip() == 'exit':
-                print("Thank you for using ChatLearner. Bye.")
+                print("Thank you for using ChatLearner. Goodbye.")
                 break
 
             dec_outputs = predictor.predict(sentence)

@@ -33,6 +33,12 @@ class BotPredictor:
         self.session = session
 
     def predict(self, sentence):
+        """
+        Args:
+            sentence: The input sentence string from the end user.
+        Returns:
+            dec_outputs: A tensor with the size of dec_seq_len * vocabulary_size.
+        """
         batch = self.tokenized_data.get_predict_batch(sentence)
 
         f_dict = {}

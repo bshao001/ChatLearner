@@ -5,7 +5,7 @@ import tensorflow as tf
 
 
 class BasicModel:
-    def __init__(self, tokenized_data, num_layers, num_units, embedding_size=32, batch_size=8):
+    def __init__(self, tokenized_data, num_layers, num_units, embedding_size=32, batch_size=16):
         """
         A basic Neural Conversational Model to predict the next sentence given an input sentence. It is
         a simplified implementation of the seq2seq model as described: https://arxiv.org/abs/1506.05869
