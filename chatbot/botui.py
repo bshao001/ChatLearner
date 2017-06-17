@@ -9,10 +9,13 @@ from chatbot.botpredictor import BotPredictor
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
-def bot_ui():
-    dict_file = os.path.join(PROJECT_ROOT, 'Data', 'Result', 'dicts.pickle')
-    td = TokenizedData(seq_length=10, dict_file=dict_file)
 
+def bot_ui():
+    print("Loading saved dictionaries for words and IDs ... ")
+    dict_file = os.path.join(PROJECT_ROOT, 'Data', 'Result', 'dicts.pickle')
+    td = TokenizedData(dict_file=dict_file)
+
+    print("Creating TF session ...")
     res_dir = os.path.join(PROJECT_ROOT, 'Data', 'Result')
     with tf.Session() as sess:
         predictor = BotPredictor(sess, td, res_dir, 'basic')

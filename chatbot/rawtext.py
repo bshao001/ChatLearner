@@ -16,6 +16,8 @@ from D to C
 
 `===` lines just separate linear conversations between 2 people.
 """
+import os
+
 CONVERSATION_SEP = "==="
 
 
@@ -23,23 +25,26 @@ class RawText:
     def __init__(self):
         self.conversations = []
 
-    def load_corpus(self, data_file):
+    def load_corpus(self, corpus_dir):
         """
         Args:
-             data_file: Name of the file containing the text format of conversations.
+             corpus_dir: Name of the folder storing corpus files for training.
         """
-        with open(data_file, 'r') as f:
-            samples = []
-            for line in f:
-                l = line.strip()
-                if l == CONVERSATION_SEP:
-                    self.conversations.append(samples)
+        for data_file in os.listdir(corpus_dir):
+            full_path_name = os.path.join(corpus_dir, data_file)
+            if os.path.isfile(full_path_name) and data_file.lower().endswith('.txt'):
+                with open(full_path_name, 'r') as f:
                     samples = []
-                else:
-                    samples.append({"text": l})
+                    for line in f:
+                        l = line.strip()
+                        if l == CONVERSATION_SEP:
+                            self.conversations.append(samples)
+                            samples = []
+                        else:
+                            samples.append({"text": l})
 
-            if len(samples):  # Add the last one
-                self.conversations.append(samples)
+                    if len(samples):  # Add the last one
+                        self.conversations.append(samples)
 
     def get_conversations(self):
         return self.conversations

@@ -1,30 +1,31 @@
 import nltk
 import numpy as np
 import pickle
+import random
 import string
 
 from chatbot.rawtext import RawText
 
 
 class TokenizedData:
-    def __init__(self, seq_length, dict_file=None, train_file=None, save_dict=False):
+    def __init__(self, dict_file, corpus_dir=None):
         """
-        One of the parameters dict_file and train_file has to be specified so that the dicts can have values.
         Args:
-            seq_length: The maximum length the sequence allowed. The lengths in the encoder and decoder will
-                both be derived.
-            dict_file: The name of the pickle file saves the object of (word_id_dict, id_word_dict, id_cnt_dict).
-            train_file: The name of the text file storing the conversations.
-            save_dict: Whether to save the dicts to the file specified by the dict_file parameter.
+            dict_file: The name of the pickle file saves the object of (word_id_dict, id_word_dict, 
+                id_cnt_dict).
+            corpus_dir: Name of the folder storing corpus files for training.. When this is given, 
+                it is for training, and the dict_file will be generated (again). Otherwise, dict_file 
+                will be read only for the basic information.
         """
-        assert dict_file is not None or train_file is not None
+        assert dict_file is not None
 
-        self.seq_length = seq_length
-        self.enc_seq_len = seq_length
-        self.dec_seq_len = seq_length + 2
+        # Use a number of buckets and pad the data samples to the smallest one that can accommodate.
+        # For decoders, 2 slots are resevered for bos_token and eos_token. Therefore the really slots
+        # available for words/puntuations are 2 less, i.e., 10, 14, 20, 38 based on the following numbers
+        self.buckets = [(8, 12), (12, 16), (18, 22), (32, 40)]
 
         # Python dicts that hold basic information
-        if not save_dict and dict_file is not None:
+        if corpus_dir is None:
             with open(dict_file, 'rb') as fr:
                 d1, d2, d3 = pickle.load(fr)
                 self.word_id_dict = d1
@@ -34,12 +35,6 @@ class TokenizedData:
             self.word_id_dict = {}
             self.id_word_dict = {}
             self.id_cnt_dict = {}
-
-        # A list in which each item contains a pair of question and its answer [[input, target]]
-        self.training_samples = []
-
-        self.vocabulary_size = 0
-        self.sample_size = 0
 
         # Special tokens
         self.pad_token = self.get_word_id('_pad_')  # Padding
@@ -51,10 +46,17 @@ class TokenizedData:
         self.exc_punct = self.get_word_id('!')
         self.que_punct = self.get_word_id('?')
 
-        if train_file is not None:
-            self._load_corpus(train_file)
+        # Each item in the inner list contains a pair of question and its answer [[input, target]]
+        self.training_samples = [[] for _ in self.buckets]
+        self.sample_size = []
+        for _ in self.buckets:
+            self.sample_size.append(0)
 
-        if save_dict:
+        self.vocabulary_size = 0
+
+        if corpus_dir is not None:
+            self._load_corpus(corpus_dir)
+
             dicts = (self.word_id_dict, self.id_word_dict, self.id_cnt_dict)
             with open(dict_file, 'wb') as fw:
                 pickle.dump(dicts, fw, protocol=pickle.HIGHEST_PROTOCOL)
@@ -121,19 +123,26 @@ class TokenizedData:
         Return:
             batches: A list of the batches for the coming epoch of training.
         """
-        training_set = np.random.permutation(self.training_samples)
-
         def yield_batch_samples():
             """
             Generator a batch of training samples
             """
-            for i in range(0, self.sample_size, batch_size):
-                yield training_set[i:min(i+batch_size, self.sample_size)]
+            rand_list = np.random.permutation([x for x in range(len(self.buckets))])
+
+            for bucket_id in rand_list:
+                # print("bucket_id = {}".format(bucket_id))
+
+                samp_size = self.sample_size[bucket_id]
+                if samp_size == 0: continue
+                training_set = np.random.permutation(self.training_samples[bucket_id])
+
+                for i in range(0, samp_size, batch_size):
+                    yield bucket_id, training_set[i:min(i+batch_size, samp_size)]
 
         batches = []
         # This for loop will loop through all the sample over the whole epoch
-        for samples in yield_batch_samples():
-            batch = self._create_batch(samples)
+        for bucket_id, samples in yield_batch_samples():
+            batch = self._create_batch(samples, bucket_id)
             batches.append(batch)
 
         return batches
@@ -146,19 +155,31 @@ class TokenizedData:
         Return:
             batch: A batch object based on the giving sentence, or None if something goes wrong
         """
-        if sentence == '':
-            return None
-
-        tokens = nltk.word_tokenize(sentence)
-
         word_id_list = []
-        for token in tokens:
-            word_id_list.append(self.get_word_id(token, add=False))
 
-        if len(word_id_list) > self.enc_seq_len:
-            return None
+        if sentence == '':
+            unk_cnt = random.randint(1, 4)
+            for i in range(unk_cnt):  # Should respond based on the corresponding training sample
+                word_id_list.append(self.unk_token)
+        else:
+            tokens = nltk.word_tokenize(sentence)
 
-        batch = self._create_batch([[word_id_list, []]])  # No target output
+            for token in tokens:
+                word_id_list.append(self.get_word_id(token, add=False))
+
+            if len(word_id_list) > self.buckets[-1][0]:
+                word_id_list = []
+                unk_cnt = random.randint(1, 6)
+                for i in range(unk_cnt):  # Should respond based on the corresponding training sample
+                    word_id_list.append(self.unk_token)
+
+        bucket_id = -1
+        for bkt_id, (src_size, _) in enumerate(self.buckets):
+            if len(word_id_list) <= src_size:
+                bucket_id = bkt_id
+                break
+
+        batch = self._create_batch([[word_id_list, []]], bucket_id)  # No target output
         return batch
 
     def word_ids_to_str(self, word_id_list):
@@ -191,15 +212,19 @@ class TokenizedData:
 
         return ''.join(sentence).strip()
 
-    def _create_batch(self, samples):
+    def _create_batch(self, samples, bucket_id):
         """
         Create a single batch from the list of given samples.
         Args:
             samples: A list of samples, each sample being in the form [input, target]
+            bucket_id: The bucket ID of the given buckets defined in the object initialization.
         Return:
             batch: A batch object
         """
+        enc_seq_len, dec_seq_len = self.buckets[bucket_id]
+
         batch = Batch()
+        batch.bucket_id = bucket_id
 
         pad = self.pad_token
         bos = self.bos_token
@@ -208,20 +233,19 @@ class TokenizedData:
         smp_cnt = len(samples)
         for i in range(smp_cnt):
             sample = samples[i]
-            assert len(sample[0]) <= self.enc_seq_len and len(sample[1]) + 2 <= self.dec_seq_len
 
             # Reverse input, and then left pad
             tmp_enc = list(reversed(sample[0]))
-            batch.encoder_seqs.append([pad] * (self.enc_seq_len - len(tmp_enc)) + tmp_enc)
+            batch.encoder_seqs.append([pad] * (enc_seq_len - len(tmp_enc)) + tmp_enc)
 
             # Add the <bos> and <eos> tokens to the output sample
             tmp_dec = [bos] + sample[1] + [eos]
-            batch.decoder_seqs.append(tmp_dec + [pad] * (self.dec_seq_len - len(tmp_dec)))
+            batch.decoder_seqs.append(tmp_dec + [pad] * (dec_seq_len - len(tmp_dec)))
 
             # Same as decoder, but excluding the <bos>
             tmp_tar = sample[1] + [eos]
             tmp_tar_len = len(tmp_tar)
-            tar_pad_len = self.dec_seq_len - tmp_tar_len
+            tar_pad_len = dec_seq_len - tmp_tar_len
             batch.targets.append(tmp_tar + [pad] * tar_pad_len)
 
             # Weight the real targets with 1.0, while 0.0 for pads
@@ -236,14 +260,14 @@ class TokenizedData:
 
         return batch
 
-    def _load_corpus(self, data_file):
+    def _load_corpus(self, corpus_dir):
         """
         Args:
-            data_file: The name of the text file storing the conversations.
+            corpus_dir: Name of the folder storing corpus files for training.
         """
         # Load raw text data from the corpus, identified by the given data_file
         raw_text = RawText()
-        raw_text.load_corpus(data_file)
+        raw_text.load_corpus(corpus_dir)
 
         conversations = raw_text.get_conversations()
         for conversation in conversations:
@@ -253,21 +277,30 @@ class TokenizedData:
                 input_line = conversation[i]
                 target_line = conversation[i + 1]
 
-                input_words = self.extract_words(input_line['text'])
-                target_words = self.extract_words(target_line['text'])
+                src_word_ids = self.extract_words(input_line['text'])
+                tgt_word_ids = self.extract_words(target_line['text'])
 
-                if input_words and target_words:  # Filter wrong samples (if one of the list is empty)
-                    self.training_samples.append([input_words, target_words])
+                bucket_found = False
+                for bucket_id, (src_size, tgt_size) in enumerate(self.buckets):
+                    if len(src_word_ids) <= src_size and len(tgt_word_ids) <= tgt_size:
+                        self.training_samples[bucket_id].append([src_word_ids, tgt_word_ids])
+                        bucket_found = True
+                        break
+                if not bucket_found:
+                    print("Input ({}) or target ({}) line is too long to fit into any bucket"
+                          .format(input_line, target_line))
+
+        for bucket_id, _ in enumerate(self.buckets):
+            self.sample_size[bucket_id] = len(self.training_samples[bucket_id])
 
         self.vocabulary_size = len(self.word_id_dict)
-        self.sample_size = len(self.training_samples)
-
 
 class Batch:
     """
     An object holds data for a training batch
     """
     def __init__(self):
+        self.bucket_id = -1
         self.encoder_seqs = []
         self.decoder_seqs = []
         self.targets = []
@@ -278,14 +311,21 @@ if __name__ == "__main__":
     from settings import PROJECT_ROOT
 
     dict_file = os.path.join(PROJECT_ROOT, 'Data', 'Result', 'dicts.pickle')
-    train_file = os.path.join(PROJECT_ROOT, 'Data', 'Corpus', 'basic_conv.txt')
+    corp_dir = os.path.join(PROJECT_ROOT, 'Data', 'Corpus')
 
-    td = TokenizedData(10, dict_file=dict_file, save_dict=False)
+    td = TokenizedData(dict_file=dict_file, corpus_dir=corp_dir)
 
     print('Loaded raw data: {} words, {} samples'.format(td.vocabulary_size, td.sample_size))
 
     for key, value in td.id_word_dict.items():
         print("key = {}, value = {}".format(key, value))
 
-    for sample in td.training_samples:
-        print(sample)
+    for bucket_id, _ in enumerate(td.buckets):
+        print("Bucket {}".format(bucket_id))
+        for sample in td.training_samples[bucket_id]:
+            print(sample)
+
+    all_batches = td.get_training_batches(4)
+    for b in all_batches:
+        print("ENC = {}".format(b.encoder_seqs))
+        print("DEC = {}".format(b.decoder_seqs))
