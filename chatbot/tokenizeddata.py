@@ -21,8 +21,8 @@ class TokenizedData:
 
         # Use a number of buckets and pad the data samples to the smallest one that can accommodate.
         # For decoders, 2 slots are resevered for bos_token and eos_token. Therefore the really slots
-        # available for words/puntuations are 2 less, i.e., 10, 14, 20, 38 based on the following numbers
-        self.buckets = [(8, 12), (12, 16), (18, 22), (32, 40)]
+        # available for words/puntuations are 2 less, i.e., 10, 14, 20, 40 based on the following numbers
+        self.buckets = [(8, 12), (12, 16), (18, 22), (36, 42)]
 
         # Python dicts that hold basic information
         if corpus_dir is None:
@@ -272,7 +272,7 @@ class TokenizedData:
         conversations = raw_text.get_conversations()
         for conversation in conversations:
             step = 2
-            # Iterate over all the samples of the conversation
+            # Iterate over all the samples of the conversation to get chat pairs
             for i in range(0, len(conversation) - 1, step):
                 input_line = conversation[i]
                 target_line = conversation[i + 1]
@@ -282,7 +282,7 @@ class TokenizedData:
 
                 bucket_found = False
                 for bucket_id, (src_size, tgt_size) in enumerate(self.buckets):
-                    if len(src_word_ids) <= src_size and len(tgt_word_ids) <= tgt_size:
+                    if len(src_word_ids) <= src_size and len(tgt_word_ids) <= tgt_size - 2:
                         self.training_samples[bucket_id].append([src_word_ids, tgt_word_ids])
                         bucket_found = True
                         break
@@ -314,7 +314,6 @@ if __name__ == "__main__":
     corp_dir = os.path.join(PROJECT_ROOT, 'Data', 'Corpus')
 
     td = TokenizedData(dict_file=dict_file, corpus_dir=corp_dir)
-
     print('Loaded raw data: {} words, {} samples'.format(td.vocabulary_size, td.sample_size))
 
     for key, value in td.id_word_dict.items():

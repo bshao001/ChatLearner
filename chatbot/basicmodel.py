@@ -63,7 +63,7 @@ class BasicModel:
 
             # We save only the inference graph for prediction purpose. In case you need to save
             # the training graph, move this line underneath the line creating the training graph.
-            saver = tf.train.Saver()
+            # saver = tf.train.Saver()
 
             targets = [tf.placeholder(tf.int32, [None], name='targets{0}'.format(i))
                        for i in range(self.max_dec_len)]
@@ -76,6 +76,7 @@ class BasicModel:
                                                            learning_rate)
             print("Training graph created")
             # Place the saver creation here instead if you want to save the training graph as well.
+            saver = tf.train.Saver()
 
         with tf.Session(graph=def_graph) as sess:
             print("Initializing variables ...")
@@ -170,13 +171,14 @@ class BasicModel:
         losses = []
         train_ops = []
         for j, bucket in enumerate(self.buckets):
-            loss = tf.contrib.legacy_seq2seq.sequence_loss(
-                logits=outputs[j], targets=targets[:bucket[1]], weights=weights[:bucket[1]],
-                average_across_batch=True, softmax_loss_function=None)
-            losses.append(loss)
+            with tf.variable_scope(tf.get_variable_scope(), reuse=True if j > 0 else None):
+                loss = tf.contrib.legacy_seq2seq.sequence_loss(
+                    logits=outputs[j], targets=targets[:bucket[1]], weights=weights[:bucket[1]],
+                    average_across_batch=True, softmax_loss_function=None)
+                losses.append(loss)
 
-            train_op = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(loss)
-            train_ops.append(train_op)
+                train_op = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(loss)
+                train_ops.append(train_op)
 
         return train_ops, losses
 
@@ -214,6 +216,7 @@ if __name__ == "__main__":
 
     print("Loading training data ...")
     td = TokenizedData(dict_file=dict_file, corpus_dir=corpus_dir)
+    print('Loaded raw data: {} words, {} samples'.format(td.vocabulary_size, td.sample_size))
 
     model = BasicModel(tokenized_data=td, num_layers=2, num_units=256, embedding_size=32,
                        batch_size=8)
