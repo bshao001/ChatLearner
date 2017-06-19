@@ -322,9 +322,9 @@ if __name__ == "__main__":
     for bucket_id, _ in enumerate(td.buckets):
         print("Bucket {}".format(bucket_id))
         for sample in td.training_samples[bucket_id]:
-            print(sample)
+            print("[{}], [{}]".format(td.word_ids_to_str(sample[0]), td.word_ids_to_str(sample[1])))
 
-    all_batches = td.get_training_batches(4)
-    for b in all_batches:
-        print("ENC = {}".format(b.encoder_seqs))
-        print("DEC = {}".format(b.decoder_seqs))
+    # all_batches = td.get_training_batches(4)
+    # for b in all_batches:
+    #     print("ENC = {}".format(b.encoder_seqs))
+    #     print("DEC = {}".format(b.decoder_seqs))

@@ -3,21 +3,28 @@ import numpy as np
 import os
 import tensorflow as tf
 
+from time import time
 from chatbot.tfcopy.seq2seq import embedding_rnn_seq2seq
 
 
 class BasicModel:
-    def __init__(self, tokenized_data, num_layers, num_units, embedding_size=32, batch_size=16):
+    def __init__(self, tokenized_data, num_layers, num_units, input_keep_prob=0.8,
+                 output_keep_prob=0.8, embedding_size=32, batch_size=32):
         """
-        A basic Neural Conversational Model to predict the next sentence given an input sentence. It is
-        a simplified implementation of the seq2seq model as described: https://arxiv.org/abs/1506.05869
+        A basic Neural Conversational Model to predict the next sentence given an input 
+        sentence. It is a simplified implementation of the seq2seq model as described: 
+        https://arxiv.org/abs/1506.05869.
         Args:
-            tokenized_data: An object of TokenizedData that holds the data prepared for training. Corpus
-                data should have been loaded before pass here as a parameter.
+            tokenized_data: An object of TokenizedData that holds the data prepared for 
+                training. Corpus data should have been loaded (as implemented) before 
+                pass here as a parameter.
             num_layers: The number of layers of RNN model used in both encoder and decoder.
             num_units: The number of units in each of the RNN layer.
+            input_keep_prob: The input_keep_prob float number.
+            output_keep_prob: The output_keep_prob float number.
             embedding_size: Integer, the length of the embedding vector for each word.
-            batch_size: The number of samples to be used in one step of the optimization process.
+            batch_size: The number of samples to be used in one step of the optimization 
+                process.
         """
         self.tokenized_data = tokenized_data
         self.buckets = tokenized_data.buckets
@@ -27,6 +34,8 @@ class BasicModel:
 
         self.num_layers = num_layers
         self.num_units = num_units
+        self.input_keep_prob = input_keep_prob
+        self.output_keep_prob = output_keep_prob
 
         self.embedding_size = embedding_size
         self.batch_size = batch_size
@@ -45,11 +54,17 @@ class BasicModel:
                               for i in range(self.max_enc_len)]
             decoder_inputs = [tf.placeholder(tf.int32, shape=[None], name='decoder{0}'.format(i))
                               for i in range(self.max_dec_len)]
-            feed_previous = tf.placeholder(tf.bool, shape=[], name='feed_previous')
+
+            in_keep_prob = tf.placeholder(tf.float32, name='input_keep_prob')
+            out_keep_prob = tf.placeholder(tf.float32, name='output_keep_prob')
+            feed_prev = tf.placeholder(tf.bool, shape=[], name='feed_previous')
 
             print("Building inference graph ...")
-            outputs = self._build_inference_graph(encoder_inputs, decoder_inputs, feed_previous)
-            print("Inference graph created")
+            t0 = time()
+            outputs = self._build_inference_graph(encoder_inputs, decoder_inputs, in_keep_prob,
+                                                  out_keep_prob, feed_prev)
+            t1 = time()
+            print("Inference graph created. Time spent: {:6.2f} seconds".format(t1 - t0))
 
             for i in range(self.max_enc_len):
                 tf.add_to_collection("encoder_input{0}".format(i), encoder_inputs[i])
@@ -59,11 +74,13 @@ class BasicModel:
                 for i in range(dec_len):
                     tf.add_to_collection("decoder_output{}_{}".format(j, i), outputs[j][i])
 
-            tf.add_to_collection("feed_previous", feed_previous)
+            tf.add_to_collection("input_keep_prob", in_keep_prob)
+            tf.add_to_collection("output_keep_prob", out_keep_prob)
+            tf.add_to_collection("feed_previous", feed_prev)
 
             # We save only the inference graph for prediction purpose. In case you need to save
             # the training graph, move this line underneath the line creating the training graph.
-            # saver = tf.train.Saver()
+            saver = tf.train.Saver()
 
             targets = [tf.placeholder(tf.int32, [None], name='targets{0}'.format(i))
                        for i in range(self.max_dec_len)]
@@ -72,11 +89,14 @@ class BasicModel:
             learning_rate = tf.placeholder(tf.float32, shape=[], name='learning_rate')
 
             print("Building training graph ...")
+            t2 = time()
             train_ops, losses = self._build_training_graph(outputs, targets, weights,
                                                            learning_rate)
-            print("Training graph created")
+            t3 = time()
+            print("Training graph created. Time spent: {:6.2f} seconds".format(t3 - t2))
+
             # Place the saver creation here instead if you want to save the training graph as well.
-            saver = tf.train.Saver()
+            # saver = tf.train.Saver()
 
         with tf.Session(graph=def_graph) as sess:
             print("Initializing variables ...")
@@ -104,7 +124,9 @@ class BasicModel:
                         f_dict[targets[i].name] = b.targets[i]
                         f_dict[weights[i].name] = b.weights[i]
 
-                    f_dict[feed_previous] = False
+                    f_dict[in_keep_prob] = self.input_keep_prob
+                    f_dict[out_keep_prob] = self.output_keep_prob
+                    f_dict[feed_prev] = False
                     f_dict[learning_rate] = lr_feed
 
                     _, loss_val = sess.run([train_ops[b.bucket_id], losses[b.bucket_id]],
@@ -117,24 +139,30 @@ class BasicModel:
                     perplexity = np.exp(float(mean_loss)) if mean_loss < 300 else math.inf
                     print("At epoch {}: learning_rate = {}, mean loss = {:.2f}, perplexity = {:.2f}".
                           format(epoch, lr_feed, mean_loss, perplexity))
-
                     loss_list = []
                     last_perp = perplexity
 
             saver.save(sess, save_file)
 
-    def _build_inference_graph(self, encoder_inputs, decoder_inputs, feed_previous):
+    def _build_inference_graph(self, encoder_inputs, decoder_inputs, input_keep_prob,
+                               output_keep_prob, feed_previous):
         """
         Create the inference graph for training or prediction.
         Args:
             encoder_inputs: The placeholder for encoder_inputs.
             decoder_inputs: The placeholder for decoder_inputs.
+            input_keep_prob: The placeholder for input_keep_prob.
+            output_keep_prob: The placeholder for output_keep_prob.
             feed_previous: The placeholder for feed_previous.
         Returns:
             outputs: A list of decoder_outputs from embedding_rnn_seq2seq function.
         """
         def create_rnn_layer(num_units):
-            return tf.contrib.rnn.LSTMCell(num_units, use_peepholes=True)
+            layer = tf.contrib.rnn.GRUCell(num_units)
+            return tf.contrib.rnn.DropoutWrapper(layer,
+                                                 input_keep_prob=input_keep_prob,
+                                                 output_keep_prob=output_keep_prob,
+                                                 state_keep_prob=1.0)
 
         enc_net = tf.contrib.rnn.MultiRNNCell([create_rnn_layer(self.num_units)
                                                for _ in range(self.num_layers)])
@@ -184,25 +212,23 @@ class BasicModel:
 
     @staticmethod
     def _get_learning_rate(perplexity):
-        if perplexity <= 1.2:
-            return 8.8e-5
-        elif perplexity <= 1.4:
+        if perplexity <= 1.16:
             return 9.2e-5
-        elif perplexity <= 1.6:
+        elif perplexity <= 1.28:
             return 9.6e-5
-        elif perplexity <= 2.0:
+        elif perplexity <= 1.48:
             return 1e-4
-        elif perplexity <= 3.2:
+        elif perplexity <= 2.0:
             return 1.2e-4
-        elif perplexity <= 5.0:
+        elif perplexity <= 3.0:
             return 1.6e-4
-        elif perplexity <= 10.0:
+        elif perplexity <= 4.0:
             return 2e-4
-        elif perplexity <= 16.0:
+        elif perplexity <= 8.0:
             return 2.4e-4
-        elif perplexity <= 24.0:
+        elif perplexity <= 16.0:
             return 3.2e-4
-        elif perplexity <= 40.0:
+        elif perplexity <= 32.0:
             return 4e-4
         else:
             return 8e-4
@@ -218,8 +244,8 @@ if __name__ == "__main__":
     td = TokenizedData(dict_file=dict_file, corpus_dir=corpus_dir)
     print('Loaded raw data: {} words, {} samples'.format(td.vocabulary_size, td.sample_size))
 
-    model = BasicModel(tokenized_data=td, num_layers=2, num_units=256, embedding_size=32,
-                       batch_size=8)
+    model = BasicModel(tokenized_data=td, num_layers=2, num_units=512, input_keep_prob=0.8,
+                       output_keep_prob=0.8, embedding_size=32, batch_size=8)
 
     res_dir = os.path.join(PROJECT_ROOT, 'Data', 'Result')
-    model.train(num_epochs=400, train_dir=res_dir, result_file='basic')
+    model.train(num_epochs=360, train_dir=res_dir, result_file='basic')

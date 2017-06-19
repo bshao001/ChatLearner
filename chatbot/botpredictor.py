@@ -19,11 +19,11 @@ class BotPredictor:
 
         print("Restoring meta graph/model architecture, please wait ...")
         saver = tf.train.import_meta_graph(os.path.join(result_dir, result_file + ".meta"))
-        print("Restoring weights for the model ...")
+        print("Restoring weights and other data for the model ...")
         saver.restore(session, os.path.join(result_dir, result_file))
 
         # Retrieve the Ops we 'remembered'.
-        print("Restoring saved variables from the collections ...")
+        # print("Restoring saved variables from the collections ...")
         self.encoder_inputs = []
         self.decoder_inputs = []
         self.decoder_outputs = [[] for _ in self.buckets]
@@ -37,11 +37,11 @@ class BotPredictor:
                 self.decoder_outputs[j].append(
                     tf.get_collection("decoder_output{}_{}".format(j, i))[0])
 
+        self.input_keep_prob = tf.get_collection("input_keep_prob")[0]
+        self.output_keep_prob = tf.get_collection("output_keep_prob")[0]
         self.feed_previous = tf.get_collection("feed_previous")[0]
 
         self.session = session
-
-        print("All preparation has been finished.")
 
     def predict(self, sentence):
         """
@@ -63,8 +63,25 @@ class BotPredictor:
             else:
                 f_dict[self.decoder_inputs[i].name] = [self.tokenized_data.pad_token]
 
+        f_dict[self.input_keep_prob] = 1.0
+        f_dict[self.output_keep_prob] = 1.0
         f_dict[self.feed_previous] = True
 
         dec_outputs = self.session.run(self.decoder_outputs[batch.bucket_id], feed_dict=f_dict)
 
+        # print("Shape of dec_outputs: {}".format(np.asarray(dec_outputs).shape))
         return dec_outputs
+
+    def get_sentence(self, dec_outputs):
+        """
+        Args:
+            dec_outputs: A tensor with the size of dec_seq_len * vocabulary_size, which is 
+                the output from the predict function.
+        Returns:
+            sentence: A human readable sentence.                 
+        """
+        word_ids = []
+        for out in dec_outputs:
+            word_ids.append(np.argmax(out))
+
+        return self.tokenized_data.word_ids_to_str(word_ids)

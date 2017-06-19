@@ -1,4 +1,3 @@
-import numpy as np
 import os
 import sys
 import tensorflow as tf
@@ -32,12 +31,7 @@ def bot_ui():
                 break
 
             dec_outputs = predictor.predict(sentence)
-
-            word_ids = []
-            for out in dec_outputs:
-                word_ids.append(np.argmax(out))
-
-            print(td.word_ids_to_str(word_ids))
+            print(predictor.get_sentence(dec_outputs))
             print("> ", end="")
             sys.stdout.flush()
             sentence = sys.stdin.readline()
