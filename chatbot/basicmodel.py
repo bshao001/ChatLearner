@@ -30,6 +30,8 @@ class BasicModel:
         self.buckets = tokenized_data.buckets
         self.max_enc_len = self.buckets[-1][0]  # Last bucket has the biggest size
         self.max_dec_len = self.buckets[-1][1]
+
+        self.num_samples = tokenized_data.num_samples
         self.vocabulary_size = tokenized_data.vocabulary_size
 
         self.num_layers = num_layers
@@ -50,6 +52,8 @@ class BasicModel:
         """
         def_graph = tf.Graph()
         with def_graph.as_default():
+            output_projection, softmax_loss_func = self._define_out_projection()
+
             encoder_inputs = [tf.placeholder(tf.int32, shape=[None], name='encoder{0}'.format(i))
                               for i in range(self.max_enc_len)]
             decoder_inputs = [tf.placeholder(tf.int32, shape=[None], name='decoder{0}'.format(i))
@@ -62,7 +66,7 @@ class BasicModel:
             print("Building inference graph ...")
             t0 = time()
             outputs = self._build_inference_graph(encoder_inputs, decoder_inputs, in_keep_prob,
-                                                  out_keep_prob, feed_prev)
+                                                  out_keep_prob, output_projection, feed_prev)
             t1 = time()
             print("Inference graph created. Time spent: {:6.2f} seconds".format(t1 - t0))
 
@@ -91,7 +95,7 @@ class BasicModel:
             print("Building training graph ...")
             t2 = time()
             train_ops, losses = self._build_training_graph(outputs, targets, weights,
-                                                           learning_rate)
+                                                           softmax_loss_func, learning_rate)
             t3 = time()
             print("Training graph created. Time spent: {:6.2f} seconds".format(t3 - t2))
 
@@ -144,8 +148,37 @@ class BasicModel:
 
             saver.save(sess, save_file)
 
+    def _define_out_projection(self):
+        # If we use sampled softmax, we need an output projection.
+        output_projection = None
+        softmax_loss_func = None
+        # Sampled softmax only makes sense if we sample less than vocabulary size.
+        if 0 < self.num_samples < self.vocabulary_size:
+            w_t = tf.get_variable("proj_w", [self.vocabulary_size, self.num_units],
+                                  dtype=tf.float32)
+            w = tf.transpose(w_t)
+            b = tf.get_variable("proj_b", [self.vocabulary_size], dtype=tf.float32)
+            output_projection = (w, b)
+
+            def sampled_loss(labels, logits):
+                labels = tf.reshape(labels, [-1, 1])
+                local_w_t = tf.cast(w_t, tf.float32)
+                local_b = tf.cast(b, tf.float32)
+                local_inputs = tf.cast(logits, tf.float32)
+                return tf.cast(tf.nn.sampled_softmax_loss(
+                    weights=local_w_t,
+                    biases=local_b,
+                    labels=labels,
+                    inputs=local_inputs,
+                    num_sampled=self.num_samples,
+                    num_classes=self.vocabulary_size), tf.float32)
+
+            softmax_loss_func = sampled_loss
+
+        return output_projection, softmax_loss_func
+
     def _build_inference_graph(self, encoder_inputs, decoder_inputs, input_keep_prob,
-                               output_keep_prob, feed_previous):
+                               output_keep_prob, output_projection, feed_previous):
         """
         Create the inference graph for training or prediction.
         Args:
@@ -153,6 +186,7 @@ class BasicModel:
             decoder_inputs: The placeholder for decoder_inputs.
             input_keep_prob: The placeholder for input_keep_prob.
             output_keep_prob: The placeholder for output_keep_prob.
+            output_projection: The weights and biases for output_projection.
             feed_previous: The placeholder for feed_previous.
         Returns:
             outputs: A list of decoder_outputs from embedding_rnn_seq2seq function.
@@ -172,7 +206,8 @@ class BasicModel:
         def embed_seq2seq(enc_inputs, dec_inputs):
             return embedding_rnn_seq2seq(
                 enc_inputs, dec_inputs, enc_net, dec_net, self.vocabulary_size,
-                self.vocabulary_size, self.embedding_size, output_projection=None,
+                self.vocabulary_size, self.embedding_size,
+                output_projection=output_projection,
                 feed_previous=feed_previous, dtype=tf.float32)
 
         outputs = []
@@ -184,13 +219,15 @@ class BasicModel:
 
         return outputs
 
-    def _build_training_graph(self, outputs, targets, weights, learning_rate):
+    def _build_training_graph(self, outputs, targets, weights, softmax_loss_function,
+                              learning_rate):
         """
         Create the training graph for the training.
         Args:
             outputs: A list of the decoder_outputs from the model.
             targets: The placeholder for targets.
             weights: The placeholder for weights.
+            softmax_loss_function: The softmax_loss_function.
             learning_rate: The placeholder for learning_rate.
         Returns:
             train_op: The Op for training.
@@ -202,7 +239,7 @@ class BasicModel:
             with tf.variable_scope(tf.get_variable_scope(), reuse=True if j > 0 else None):
                 loss = tf.contrib.legacy_seq2seq.sequence_loss(
                     logits=outputs[j], targets=targets[:bucket[1]], weights=weights[:bucket[1]],
-                    average_across_batch=True, softmax_loss_function=None)
+                    average_across_batch=True, softmax_loss_function=softmax_loss_function)
                 losses.append(loss)
 
                 train_op = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(loss)
@@ -245,7 +282,7 @@ if __name__ == "__main__":
     print('Loaded raw data: {} words, {} samples'.format(td.vocabulary_size, td.sample_size))
 
     model = BasicModel(tokenized_data=td, num_layers=2, num_units=512, input_keep_prob=0.8,
-                       output_keep_prob=0.8, embedding_size=32, batch_size=8)
+                       output_keep_prob=0.8, embedding_size=64, batch_size=8)
 
     res_dir = os.path.join(PROJECT_ROOT, 'Data', 'Result')
-    model.train(num_epochs=360, train_dir=res_dir, result_file='basic')
+    model.train(num_epochs=300, train_dir=res_dir, result_file='basic')

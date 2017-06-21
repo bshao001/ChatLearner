@@ -20,9 +20,13 @@ class TokenizedData:
         assert dict_file is not None
 
         # Use a number of buckets and pad the data samples to the smallest one that can accommodate.
-        # For decoders, 2 slots are resevered for bos_token and eos_token. Therefore the really slots
-        # available for words/puntuations are 2 less, i.e., 10, 14, 20, 40 based on the following numbers
-        self.buckets = [(8, 12), (12, 16), (18, 22), (36, 42)]
+        # For decoders, 2 slots are reserved for bos_token and eos_token. Therefore the really slots
+        # available for words/punctuations are 2 less, i.e., 12, 20, 40 based on the following numbers
+        self.buckets = [(10, 14), (18, 22), (36, 42)]
+
+        # Number of samples for sampled softmax. Define it here so that both the trainer and predictor
+        # can easily access it.
+        self.num_samples = 500
 
         # Python dicts that hold basic information
         if corpus_dir is None:
@@ -52,14 +56,14 @@ class TokenizedData:
         for _ in self.buckets:
             self.sample_size.append(0)
 
-        self.vocabulary_size = 0
-
         if corpus_dir is not None:
             self._load_corpus(corpus_dir)
 
             dicts = (self.word_id_dict, self.id_word_dict, self.id_cnt_dict)
             with open(dict_file, 'wb') as fw:
                 pickle.dump(dicts, fw, protocol=pickle.HIGHEST_PROTOCOL)
+
+        self.vocabulary_size = len(self.word_id_dict)
 
     def extract_words(self, text_line):
         """
@@ -293,7 +297,6 @@ class TokenizedData:
         for bucket_id, _ in enumerate(self.buckets):
             self.sample_size[bucket_id] = len(self.training_samples[bucket_id])
 
-        self.vocabulary_size = len(self.word_id_dict)
 
 class Batch:
     """

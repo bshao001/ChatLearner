@@ -17,13 +17,15 @@ class BotPredictor:
         self.max_enc_len = self.buckets[-1][0]  # Last bucket has the biggest size
         self.max_dec_len = self.buckets[-1][1]
 
+        self.num_samples = tokenized_data.num_samples
+        self.vocabulary_size = tokenized_data.vocabulary_size
+
         print("Restoring meta graph/model architecture, please wait ...")
         saver = tf.train.import_meta_graph(os.path.join(result_dir, result_file + ".meta"))
         print("Restoring weights and other data for the model ...")
         saver.restore(session, os.path.join(result_dir, result_file))
 
         # Retrieve the Ops we 'remembered'.
-        # print("Restoring saved variables from the collections ...")
         self.encoder_inputs = []
         self.decoder_inputs = []
         self.decoder_outputs = [[] for _ in self.buckets]
@@ -36,6 +38,16 @@ class BotPredictor:
             for i in range(dec_len):
                 self.decoder_outputs[j].append(
                     tf.get_collection("decoder_output{}_{}".format(j, i))[0])
+
+        if 0 < self.num_samples < self.vocabulary_size:
+            graph = tf.get_default_graph()
+            proj_w = graph.get_tensor_by_name('proj_w:0')
+            w = tf.transpose(proj_w)
+            b = graph.get_tensor_by_name('proj_b:0')
+
+            for j in range(len(self.buckets)):
+                self.decoder_outputs[j] = \
+                    [tf.matmul(output, w) + b for output in self.decoder_outputs[j]]
 
         self.input_keep_prob = tf.get_collection("input_keep_prob")[0]
         self.output_keep_prob = tf.get_collection("output_keep_prob")[0]
