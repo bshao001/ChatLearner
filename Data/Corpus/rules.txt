@@ -18,3 +18,8 @@ No, I don't. I have never heard about that.
 ===
 Do you speak _unk_?
 No. I only speak English now.
+===
+Have you ever been to _unk_?
+No. I would like to have a visit in the future.
+Have you ever visited _unk_ _unk_?
+Not yet, but I hope I can have a visit one day.

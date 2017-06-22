@@ -4,7 +4,7 @@ import os
 import tensorflow as tf
 
 from time import time
-from chatbot.tfcopy.seq2seq import embedding_rnn_seq2seq
+from chatbot.tfcopy.seq2seq import embedding_attention_seq2seq
 
 
 class BasicModel:
@@ -141,12 +141,18 @@ class BasicModel:
                 if epoch % 10 == 0 or epoch == num_epochs - 1:
                     mean_loss = sum(loss_list) / len(loss_list)
                     perplexity = np.exp(float(mean_loss)) if mean_loss < 300 else math.inf
-                    print("At epoch {}: learning_rate = {}, mean loss = {:.2f}, perplexity = {:.2f}".
+                    print("At epoch {}: learning_rate = {:.6f}, mean loss = {:.2f}, perplexity = {:.2f}".
                           format(epoch, lr_feed, mean_loss, perplexity))
+                    if perplexity < 1.10:
+                        saver.save(sess, save_file, global_step=epoch)
+                    elif epoch == num_epochs - 1:
+                        saver.save(sess, save_file)
+
+                    if perplexity <= 1.02:
+                        break
+
                     loss_list = []
                     last_perp = perplexity
-
-            saver.save(sess, save_file)
 
     def _define_out_projection(self):
         # If we use sampled softmax, we need an output projection.
@@ -204,9 +210,9 @@ class BasicModel:
                                                for _ in range(self.num_layers)])
 
         def embed_seq2seq(enc_inputs, dec_inputs):
-            return embedding_rnn_seq2seq(
+            return embedding_attention_seq2seq(
                 enc_inputs, dec_inputs, enc_net, dec_net, self.vocabulary_size,
-                self.vocabulary_size, self.embedding_size,
+                self.vocabulary_size, self.embedding_size, num_heads=1,
                 output_projection=output_projection,
                 feed_previous=feed_previous, dtype=tf.float32)
 
@@ -249,9 +255,9 @@ class BasicModel:
 
     @staticmethod
     def _get_learning_rate(perplexity):
-        if perplexity <= 1.16:
+        if perplexity <= 1.12:
             return 9.2e-5
-        elif perplexity <= 1.28:
+        elif perplexity <= 1.24:
             return 9.6e-5
         elif perplexity <= 1.48:
             return 1e-4
@@ -261,11 +267,11 @@ class BasicModel:
             return 1.6e-4
         elif perplexity <= 4.0:
             return 2e-4
-        elif perplexity <= 8.0:
+        elif perplexity <= 6.0:
             return 2.4e-4
-        elif perplexity <= 16.0:
+        elif perplexity <= 12.0:
             return 3.2e-4
-        elif perplexity <= 32.0:
+        elif perplexity <= 30.0:
             return 4e-4
         else:
             return 8e-4
@@ -281,8 +287,8 @@ if __name__ == "__main__":
     td = TokenizedData(dict_file=dict_file, corpus_dir=corpus_dir)
     print('Loaded raw data: {} words, {} samples'.format(td.vocabulary_size, td.sample_size))
 
-    model = BasicModel(tokenized_data=td, num_layers=2, num_units=512, input_keep_prob=0.8,
-                       output_keep_prob=0.8, embedding_size=64, batch_size=8)
+    model = BasicModel(tokenized_data=td, num_layers=2, num_units=512, input_keep_prob=0.9,
+                       output_keep_prob=0.9, embedding_size=64, batch_size=8)
 
     res_dir = os.path.join(PROJECT_ROOT, 'Data', 'Result')
-    model.train(num_epochs=300, train_dir=res_dir, result_file='basic')
+    model.train(num_epochs=160, train_dir=res_dir, result_file='basic')

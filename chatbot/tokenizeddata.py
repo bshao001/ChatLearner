@@ -21,8 +21,8 @@ class TokenizedData:
 
         # Use a number of buckets and pad the data samples to the smallest one that can accommodate.
         # For decoders, 2 slots are reserved for bos_token and eos_token. Therefore the really slots
-        # available for words/punctuations are 2 less, i.e., 12, 20, 40 based on the following numbers
-        self.buckets = [(10, 14), (18, 22), (36, 42)]
+        # available for words/punctuations are 2 less, i.e., 14, 22, 40 based on the following numbers
+        self.buckets = [(10, 16), (18, 24), (36, 42)]
 
         # Number of samples for sampled softmax. Define it here so that both the trainer and predictor
         # can easily access it.
@@ -151,11 +151,13 @@ class TokenizedData:
 
         return batches
 
-    def get_predict_batch(self, sentence):
+    def get_predict_batch(self, sentence, use_next=True):
         """
         Encode a sequence and return a batch as an input for prediction.
         Args:
             sentence: A sentence in plain text to encode.
+            use_next: Use the next bucket instead of the first one that can accommodate the source 
+                sentence because it is very likely the target sentence can only fit the next bucket. 
         Return:
             batch: A batch object based on the giving sentence, or None if something goes wrong
         """
@@ -181,6 +183,8 @@ class TokenizedData:
         for bkt_id, (src_size, _) in enumerate(self.buckets):
             if len(word_id_list) <= src_size:
                 bucket_id = bkt_id
+                if use_next and bkt_id < len(self.buckets) - 1:
+                    bucket_id += 1
                 break
 
         batch = self._create_batch([[word_id_list, []]], bucket_id)  # No target output
