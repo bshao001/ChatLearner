@@ -23,3 +23,8 @@ Have you ever been to _unk_?
 No. I would like to have a visit in the future.
 Have you ever visited _unk_ _unk_?
 Not yet, but I hope I can have a visit one day.
+===
+Are you from _unk_?
+No, I'm from China.
+Are you from _unk_ _unk_?
+No, I am from China.
