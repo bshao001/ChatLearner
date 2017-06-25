@@ -157,10 +157,10 @@ class BasicModel:
                     perplexity = np.exp(float(mean_loss)) if mean_loss < 300 else math.inf
                     print("At epoch {}: learning_rate = {:.6f}, mean loss = {:.2f}, perplexity = {:.2f}".
                           format(epoch, lr_feed, mean_loss, perplexity))
-                    if perplexity < 1.10:
-                        saver.save(sess, save_file, global_step=epoch)
-                    elif epoch == num_epochs - 1:
+                    if epoch == num_epochs - 1:
                         saver.save(sess, save_file)
+                    elif perplexity < 1.10:
+                        saver.save(sess, save_file, global_step=epoch)
 
                     if perplexity <= 1.02:
                         break
@@ -302,7 +302,7 @@ if __name__ == "__main__":
     print('Loaded raw data: {} words, {} samples'.format(td.vocabulary_size, td.sample_size))
 
     model = BasicModel(tokenized_data=td, num_layers=2, num_units=512, input_keep_prob=0.9,
-                       output_keep_prob=0.9, embedding_size=64, batch_size=8)
+                       output_keep_prob=0.9, embedding_size=64, batch_size=16)
 
     res_dir = os.path.join(PROJECT_ROOT, 'Data', 'Result')
-    model.train(num_epochs=160, train_dir=res_dir, result_file='basic')
+    model.train(num_epochs=200, train_dir=res_dir, result_file='basic')

@@ -54,15 +54,8 @@ class TokenizedData:
             self.id_word_dict = {}
             self.id_cnt_dict = {}
 
-        # Special tokens
-        self.pad_token = self.get_word_id('_pad_')  # Padding
-        self.bos_token = self.get_word_id('_bos_')  # Beginning of sequence
-        self.eos_token = self.get_word_id('_eos_')  # End of sequence
-        self.unk_token = self.get_word_id('_unk_')  # Word dropped from vocabulary
-
-        self.per_punct = self.get_word_id('.')
-        self.exc_punct = self.get_word_id('!')
-        self.que_punct = self.get_word_id('?')
+        # Add special tokens
+        self._add_special_tokens()
 
         # Each item in the inner list contains a pair of question and its answer [[input, target]]
         self.training_samples = [[] for _ in self.buckets]
@@ -165,13 +158,13 @@ class TokenizedData:
 
         return batches
 
-    def get_predict_batch(self, sentence, use_next=True):
+    def get_predict_batch(self, sentence, use_bucket='Next'):
         """
         Encode a sequence and return a batch as an input for prediction.
         Args:
             sentence: A sentence in plain text to encode.
-            use_next: Use the next bucket instead of the first one that can accommodate the source 
-                sentence because it is very likely the target sentence can only fit the next bucket. 
+            use_bucket: Options are, This, Next, and Last. Default to Last. Indicates which bucket
+                to use by given sentence. 
         Return:
             batch: A batch object based on the giving sentence, or None if something goes wrong
         """
@@ -194,12 +187,15 @@ class TokenizedData:
                     word_id_list.append(self.unk_token)
 
         bucket_id = -1
-        for bkt_id, (src_size, _) in enumerate(self.buckets):
-            if len(word_id_list) <= src_size:
-                bucket_id = bkt_id
-                if use_next and bkt_id < len(self.buckets) - 1:
-                    bucket_id += 1
-                break
+        if use_bucket == 'Last':
+            bucket_id = len(self.buckets) - 1
+        else:
+            for bkt_id, (src_size, _) in enumerate(self.buckets):
+                if len(word_id_list) <= src_size:
+                    bucket_id = bkt_id
+                    if use_bucket == 'Next' and bkt_id < len(self.buckets) - 1:
+                        bucket_id += 1
+                    break
 
         batch = self._create_batch([[word_id_list, []]], bucket_id)  # No target output
         return batch
@@ -221,12 +217,14 @@ class TokenizedData:
         for word_id in word_id_list:
             if word_id == self.eos_token:  # End of sentence
                 break
-            elif word_id > 3:  # Not special tokens
+            elif word_id > 3:  # Not reserved special tokens
                 word = self.id_word_dict[word_id]
-                if not word.startswith('\'') and word not in string.punctuation:
-                    if last_id == 0 or last_id == self.per_punct \
-                            or last_id == self.exc_punct or last_id == self.que_punct:
-                        word = word.capitalize()
+                if last_id == 0 or last_id in self.cap_punc_list:
+                    word = word.capitalize()
+
+                if not word.startswith('\'') and word != 'n\'t' \
+                        and word not in string.punctuation \
+                        and last_id not in self.con_punc_list:
                     word = ' ' + word
                 sentence.append(word)
 
@@ -281,6 +279,23 @@ class TokenizedData:
         batch.weights = [[*x] for x in zip(*batch.weights)]
 
         return batch
+
+    def _add_special_tokens(self):
+        # Special tokens
+        self.pad_token = self.get_word_id('_pad_')  # Padding
+        self.bos_token = self.get_word_id('_bos_')  # Beginning of sequence
+        self.eos_token = self.get_word_id('_eos_')  # End of sequence
+        self.unk_token = self.get_word_id('_unk_')  # Word dropped from vocabulary
+
+        # The word following this punctuation should be capitalized
+        self.cap_punc_list = []
+        for p in ['.', '!', '?']:
+            self.cap_punc_list.append(self.get_word_id(p))
+
+        # The word following this punctuation should not precede with a space.
+        self.con_punc_list = []
+        for p in ['(', '[', '{', '``']:
+            self.con_punc_list.append(self.get_word_id(p))
 
     def _load_corpus(self, corpus_dir):
         """
@@ -344,8 +359,3 @@ if __name__ == "__main__":
         print("Bucket {}".format(bucket_id))
         for sample in td.training_samples[bucket_id]:
             print("[{}], [{}]".format(td.word_ids_to_str(sample[0]), td.word_ids_to_str(sample[1])))
-
-    # all_batches = td.get_training_batches(4)
-    # for b in all_batches:
-    #     print("ENC = {}".format(b.encoder_seqs))
-    #     print("DEC = {}".format(b.decoder_seqs))
