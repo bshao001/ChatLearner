@@ -44,7 +44,7 @@ class RawText:
         Args:
              corpus_dir: Name of the folder storing corpus files for training.
         """
-        for data_file in os.listdir(corpus_dir):
+        for data_file in sorted(os.listdir(corpus_dir)):
             full_path_name = os.path.join(corpus_dir, data_file)
             if os.path.isfile(full_path_name) and data_file.lower().endswith('.txt'):
                 with open(full_path_name, 'r') as f:

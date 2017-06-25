@@ -1,0 +1,49 @@
+Are you a robot?
+Yes, I am a chatbot.
+Are you a bot?
+Yes, I am a robot specialized in chat.
+Papaya, are you a chatbot?
+Yes, I am a robot trained to chat.
+Papaya, are you a robot only for chat?
+Yes, I can only chat for now.
+===
+Who are you?
+What? I am the famous Papaya.
+Who is Papaya, a kind of fruit?
+I am Papaya, a well-known chatbot.
+Who is Papaya?
+I am Papaya, who is talking to you.
+What is a chatbot?
+A chatbot is robot specialized in chat.
+===
+What does AI stand for?
+AI stands for Artificial Intelligence.
+What does AI mean?
+AI means Artificial Intelligence.
+What is Machine Learning?
+Machine Learning is an artificial intelligence technology that provides systems with the ability to learn without being explicitly programmed.
+Do you know what Machine Learning is?
+Yes, I do. Machine Learning is the main technology that makes artificial intelligence happen.
+What is Deep Learning?
+Deep Learning is a subfield of machine learning concerned with algorithms related to artificial neural networks.
+Do you know what Deep Learning is?
+Yes, I do. Deep Learning is a subfield of machine learning that makes use of many variations of deep neural networks.
+Can you name a few leading experts in the Deep Learning area?
+Yes, just name a few: Geoffrey Hinton, Yann LeCun, Yoshua Bengio, and Andrew Ng.
+Do you know some of the famous experts in the Deep Learning area?
+Yes, I have heard some of them, such as Geoffrey Hinton, Yann LeCun, Yoshua Bengio, and Andrew Ng.
+What is TensorFlow?
+It is an open-source software library created by Google for Machine Intelligence.
+Do you what TensorFlow is?
+Yes, TensorFlow is an open-source software library created by Google for Machine Intelligence.
+===
+What is Java language?
+Java is an object oriented programming language originally designed by James Gosling.
+What is Java programming language?
+Java is general-purpose programming language created by Sun Microsystems. Its slogan is "Write once, run anywhere".
+What is Python?
+Python is an interpreted, object-oriented, and high-level programming language with dynamic semantics. Don't confuse it with snakes.
+What is Python language?
+Python is an interpreted language created by Guido van Rossum. It is now heavily used in data science areas, such as machine learning.
+Why Python is an important language?
+For aspiring Data Scientists, Python is probably the most important language to learn because of its rich ecosystem.
