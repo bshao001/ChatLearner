@@ -158,7 +158,7 @@ class TokenizedData:
 
         return batches
 
-    def get_predict_batch(self, sentence, use_bucket='Next'):
+    def get_predict_batch(self, sentence, use_bucket='Last'):
         """
         Encode a sequence and return a batch as an input for prediction.
         Args:
@@ -200,35 +200,41 @@ class TokenizedData:
         batch = self._create_batch([[word_id_list, []]], bucket_id)  # No target output
         return batch
 
-    def word_ids_to_str(self, word_id_list):
+    def word_ids_to_str(self, word_id_list, debug=False):
         """
         Convert a list of integers (word_ids) into a human readable string/text.
-        Used for prediction only.
+        Used for prediction only, when debug is False.
         Args:
             word_id_list (list<int>): A list of word_ids.
+            debug: Output the text including special tokens.
         Return:
             str: The sentence represented by the given word_id_list.
         """
         if not word_id_list:
             return ''
 
-        last_id = 0
         sentence = []
-        for word_id in word_id_list:
-            if word_id == self.eos_token:  # End of sentence
-                break
-            elif word_id > 3:  # Not reserved special tokens
-                word = self.id_word_dict[word_id]
-                if last_id == 0 or last_id in self.cap_punc_list:
-                    word = word.capitalize()
-
-                if not word.startswith('\'') and word != 'n\'t' \
-                        and word not in string.punctuation \
-                        and last_id not in self.con_punc_list:
-                    word = ' ' + word
+        if debug:
+            for word_id in word_id_list:
+                word = ' ' + self.id_word_dict[word_id]
                 sentence.append(word)
+        else:
+            last_id = 0
+            for word_id in word_id_list:
+                if word_id == self.eos_token:  # End of sentence
+                    break
+                elif word_id > 3:  # Not reserved special tokens
+                    word = self.id_word_dict[word_id]
+                    if last_id == 0 or last_id in self.cap_punc_list:
+                        word = word.capitalize()
 
-                last_id = word_id
+                    if not word.startswith('\'') and word != 'n\'t' \
+                            and word not in string.punctuation \
+                            and last_id not in self.con_punc_list:
+                        word = ' ' + word
+                    sentence.append(word)
+
+                    last_id = word_id
 
         return ''.join(sentence).strip()
 
@@ -297,10 +303,11 @@ class TokenizedData:
         for p in ['(', '[', '{', '``']:
             self.con_punc_list.append(self.get_word_id(p))
 
-    def _load_corpus(self, corpus_dir):
+    def _load_corpus(self, corpus_dir, augment=True):
         """
         Args:
             corpus_dir: Name of the folder storing corpus files for training.
+            augment: Whether to apply data augmentation approach.
         """
         # Load raw text data from the corpus, identified by the given data_file
         raw_text = RawText()
@@ -317,15 +324,32 @@ class TokenizedData:
                 src_word_ids = self.extract_words(input_line['text'])
                 tgt_word_ids = self.extract_words(target_line['text'])
 
-                bucket_found = False
                 for bucket_id, (src_size, tgt_size) in enumerate(self.buckets):
-                    if len(src_word_ids) <= src_size and len(tgt_word_ids) <= tgt_size - 2:
+                    if len(src_word_ids) < src_size and len(tgt_word_ids) <= tgt_size - 2:
                         self.training_samples[bucket_id].append([src_word_ids, tgt_word_ids])
-                        bucket_found = True
+                        if augment:
+                            aug_len = src_size - len(src_word_ids)
+                            aug_src_ids = [self.pad_token] * aug_len + src_word_ids[:]
+                            self.training_samples[bucket_id].append([aug_src_ids, tgt_word_ids])
+                            if bucket_id < len(self.buckets) - 1:  # Push to the next bucket
+                                aug_len2 = aug_len + 2
+                                aug_src_ids2 = [self.pad_token] * aug_len2 + src_word_ids[:]
+                                self.training_samples[bucket_id+1].append([aug_src_ids2, tgt_word_ids])
                         break
-                if not bucket_found:
+                else:
                     print("Input ({}) or target ({}) line is too long to fit into any bucket"
                           .format(input_line, target_line))
+
+                # if augment:
+                #     for j in [1, 2]:
+                #         aug_src_ids = [self.pad_token] * 2 * j + src_word_ids[:]
+                #         for bucket_id, (src_size, tgt_size) in enumerate(self.buckets):
+                #             if len(aug_src_ids) <= src_size and len(tgt_word_ids) <= tgt_size - 2:
+                #                 self.training_samples[bucket_id].append([aug_src_ids, tgt_word_ids])
+                #                 break
+                #         else:
+                #             print("Augmented Input ({}) line @ {} (pad omitted) is too long to fit "
+                #                   "into any bucket".format(input_line, j))
 
         for bucket_id, _ in enumerate(self.buckets):
             self.sample_size[bucket_id] = len(self.training_samples[bucket_id])
@@ -358,4 +382,5 @@ if __name__ == "__main__":
     for bucket_id, _ in enumerate(td.buckets):
         print("Bucket {}".format(bucket_id))
         for sample in td.training_samples[bucket_id]:
-            print("[{}], [{}]".format(td.word_ids_to_str(sample[0]), td.word_ids_to_str(sample[1])))
+            print("[{}], [{}]".format(td.word_ids_to_str(sample[0], debug=True),
+                                      td.word_ids_to_str(sample[1])))

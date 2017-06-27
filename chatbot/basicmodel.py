@@ -125,6 +125,7 @@ class BasicModel:
 
             loss_list = []
             last_perp = 200.0
+            write_meta_graph = True
             for epoch in range(num_epochs):
                 batches = self.tokenized_data.get_training_batches(self.batch_size)
 
@@ -152,15 +153,16 @@ class BasicModel:
                     loss_list.append(loss_val)
 
                 # Output training status
-                if epoch % 10 == 0 or epoch == num_epochs - 1:
+                if epoch % 5 == 0 or epoch == num_epochs - 1:
                     mean_loss = sum(loss_list) / len(loss_list)
                     perplexity = np.exp(float(mean_loss)) if mean_loss < 300 else math.inf
                     print("At epoch {}: learning_rate = {:.6f}, mean loss = {:.2f}, perplexity = {:.2f}".
                           format(epoch, lr_feed, mean_loss, perplexity))
                     if epoch == num_epochs - 1:
-                        saver.save(sess, save_file)
-                    elif perplexity < 1.10:
-                        saver.save(sess, save_file, global_step=epoch)
+                        saver.save(sess, save_file, write_meta_graph=write_meta_graph)
+                    elif perplexity < 1.08:
+                        saver.save(sess, save_file, global_step=epoch, write_meta_graph=write_meta_graph)
+                        write_meta_graph = False
 
                     if perplexity <= 1.02:
                         break
@@ -302,7 +304,7 @@ if __name__ == "__main__":
     print('Loaded raw data: {} words, {} samples'.format(td.vocabulary_size, td.sample_size))
 
     model = BasicModel(tokenized_data=td, num_layers=2, num_units=512, input_keep_prob=0.9,
-                       output_keep_prob=0.9, embedding_size=64, batch_size=16)
+                       output_keep_prob=0.9, embedding_size=64, batch_size=32)
 
     res_dir = os.path.join(PROJECT_ROOT, 'Data', 'Result')
-    model.train(num_epochs=200, train_dir=res_dir, result_file='basic')
+    model.train(num_epochs=100, train_dir=res_dir, result_file='basic')

@@ -35,6 +35,8 @@ No. I am only taught to speak a little bit English now.
 Do you speak American English or British English?
 I think what I speak is American English.
 ===
+Good morning.
+Good morning!
 Hi, how are you doing?
 I'm fine. How about yourself?
 I'm pretty good. Thanks for asking.
@@ -75,6 +77,8 @@ Same here. Thank you!
 Goodbye.
 Bye.
 ===
+Hi
+Hi, there.
 Are you there?
 Yes, I am here.
 Are you a teenage boy?
@@ -86,6 +90,10 @@ Not yet. I am working on that.
 OK, talk to you next time.
 See you.
 ===
+Good afternoon.
+Good afternoon!
+How are you doing
+Doing great, thank you.
 Haven't seen you for a while.
 Yeah, long time no see.
 Are you okay?
@@ -138,6 +146,8 @@ That's exactly how I feel.
 See you later.
 See you again soon.
 ===
+Good morning
+Good morning!
 How's everything?
 Everything is in order, thanks.
 I wish it was a nicer day today.
@@ -154,3 +164,27 @@ I would rather deal with the winter than the summer.
 I feel the same way.
 Byebye. Have a nice day!
 You too, thank you! Bye.
+===
+Hello
+Hello.
+Good afternoon
+Good afternoon!
+How are u?
+I am fine, thank you.
+===
+Good evening!
+Good evening!
+How r u?
+I am fine, thank you.
+===
+Good evening.
+Good evening!
+How r you?
+I am fine, thank you.
+===
+Good evening
+Good evening!
+How r u
+I am fine, thank you.
+Have a good night.
+Good night. Have a nice dream!

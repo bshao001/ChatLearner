@@ -16,6 +16,16 @@ I am Papaya, who is talking to you.
 What is a chatbot?
 A chatbot is robot specialized in chat.
 ===
+You are talking nonsense!
+Sorry, I am still learning.
+You are talking gibberish.
+Really? I am sorry. I am still learning.
+===
+What?
+Sorry, I don't get it.
+Why?
+Sorry, could you please explain?
+===
 What does AI stand for?
 AI stands for Artificial Intelligence.
 What does AI mean?
