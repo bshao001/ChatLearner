@@ -22,7 +22,7 @@ from chatbot.rawtext import RawText
 
 
 class TokenizedData:
-    def __init__(self, dict_file, corpus_dir=None):
+    def __init__(self, dict_file, corpus_dir=None, augment=True):
         """
         Args:
             dict_file: The name of the pickle file saves the object of (word_id_dict, id_word_dict, 
@@ -30,6 +30,7 @@ class TokenizedData:
             corpus_dir: Name of the folder storing corpus files for training.. When this is given, 
                 it is for training, and the dict_file will be generated (again). Otherwise, dict_file 
                 will be read only for the basic information.
+            augment: Whether to apply data augmentation approach. Default to be True.
         """
         assert dict_file is not None
 
@@ -64,7 +65,7 @@ class TokenizedData:
             self.sample_size.append(0)
 
         if corpus_dir is not None:
-            self._load_corpus(corpus_dir)
+            self._load_corpus(corpus_dir, augment=augment)
 
             dicts = (self.word_id_dict, self.id_word_dict, self.id_cnt_dict)
             with open(dict_file, 'wb') as fw:
@@ -303,7 +304,7 @@ class TokenizedData:
         for p in ['(', '[', '{', '``']:
             self.con_punc_list.append(self.get_word_id(p))
 
-    def _load_corpus(self, corpus_dir, augment=True):
+    def _load_corpus(self, corpus_dir, augment):
         """
         Args:
             corpus_dir: Name of the folder storing corpus files for training.
@@ -373,7 +374,7 @@ if __name__ == "__main__":
     dict_file = os.path.join(PROJECT_ROOT, 'Data', 'Result', 'dicts.pickle')
     corp_dir = os.path.join(PROJECT_ROOT, 'Data', 'Corpus')
 
-    td = TokenizedData(dict_file=dict_file, corpus_dir=corp_dir)
+    td = TokenizedData(dict_file=dict_file, corpus_dir=corp_dir, augment=False)
     print('Loaded raw data: {} words, {} samples'.format(td.vocabulary_size, td.sample_size))
 
     for key, value in td.id_word_dict.items():

@@ -21,7 +21,9 @@ You too, thank you!
 Hello.
 Hello.
 How are you?
-I am fine, thank you.
+I am fine, thank you. And you?
+I am fine too, thank you.
+You are welcome.
 Where are you now?
 I am in Miami, Florida.
 Do you speak Chinese?
@@ -62,6 +64,13 @@ Hi.
 Hi, there.
 Do you have time to talk?
 Sure. I always have time for you.
+Thank you for being so nice.
+You are always welcome.
+Talk to you soon.
+See you next time.
+===
+How are you?
+I am fine, thank you.
 Which country are you in?
 I am in the United States.
 Are you in elementary school?
@@ -112,18 +121,8 @@ Sorry, I apologize.
 ===
 How do you do.
 How do you do!
-It's an ugly day today.
-I know. I think it will be raining.
-It's the middle of summer, and it shouldn't be raining today.
-That would be weird if it rains.
-Yeah, especially since it's ninety degrees outside.
-I know. It would be horrible if it rained and it was hot outside.
-Yes, it would be very bad if it rained.
-I really wish it wasn't so hot and humid every day. 
-Me too. I can't wait until winter.
-I like winter too, but sometimes it gets too cold.
-I'd rather it be cold than hot.
-Me too.
+How is everything?
+Everything is good, thanks.
 Bye.
 Bye bye.
 ===
@@ -131,18 +130,6 @@ Hi, Papaya.
 Hi, there.
 I hope everything is fine for you.
 Everything is going well, thanks.
-It doesn't look very nice outside today.
-You're right. I think it's going to rain later.
-In the middle of the summer, it shouldn't be raining.
-That wouldn't seem right.
-Considering that it's over ninety degrees outside, that would be weird.
-Exactly, it wouldn't be nice if it started raining. It's too hot.
-I know. You're absolutely right.
-I wish it would cool off one day.
-That's how I feel. I want winter to come soon.
-I enjoy the winter, but it gets really cold sometimes.
-I know what you mean, but I'd rather it be cold than hot.
-That's exactly how I feel.
 See you later.
 See you again soon.
 ===
@@ -150,18 +137,6 @@ Good morning
 Good morning!
 How's everything?
 Everything is in order, thanks.
-I wish it was a nicer day today.
-That is true. I hope it doesn't rain.
-It wouldn't rain in the middle of the summer.
-It wouldn't seem right if it started raining right now.
-It would be weird if it started raining in ninety degree weather.
-Any rain right now would be pointless.
-That's right, it really would be.
-I want it to cool down some.
-I know what you mean, I can't wait until it's winter.
-Winter is great. I wish it didn't get so cold sometimes though.
-I would rather deal with the winter than the summer.
-I feel the same way.
 Byebye. Have a nice day!
 You too, thank you! Bye.
 ===
@@ -171,6 +146,30 @@ Good afternoon
 Good afternoon!
 How are u?
 I am fine, thank you.
+===
+I appreciate your time!
+It's my pleasure.
+===
+Thank you very much!
+You are very welcome!
+===
+I love you!
+I love you too!
+===
+I love you
+I love you too!
+===
+I hate you!
+Sorry, but don't say that.
+===
+I hate you
+Sorry, but you don't want to say that again as life is great!
+===
+I hate u!
+I apologize. If any wording was offensive, I really didn't mean that.
+===
+I hate u
+Sorry, I really didn't mean to be offensive.
 ===
 Good evening!
 Good evening!
