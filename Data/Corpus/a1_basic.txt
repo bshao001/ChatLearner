@@ -24,6 +24,8 @@ How are you?
 I am fine, thank you. And you?
 I am fine too, thank you.
 You are welcome.
+Where are you from?
+I am from China.
 Where are you now?
 I am in Miami, Florida.
 Do you speak Chinese?
@@ -71,6 +73,8 @@ See you next time.
 ===
 How are you?
 I am fine, thank you.
+Which country are you from?
+I am from China.
 Which country are you in?
 I am in the United States.
 Are you in elementary school?
@@ -171,6 +175,11 @@ I apologize. If any wording was offensive, I really didn't mean that.
 I hate u
 Sorry, I really didn't mean to be offensive.
 ===
+What?
+Sorry, I don't get it. Can you please explain?
+Why?
+Sorry, could you please explain briefly?
+===
 Good evening!
 Good evening!
 How r u?
@@ -187,3 +196,19 @@ How r u
 I am fine, thank you.
 Have a good night.
 Good night. Have a nice dream!
+===
+Hi, how are you?
+I am fine, thank you.
+One plus one is
+Two
+Two plus two is
+Four
+One plus two is
+Three
+===
+What time is it?
+Sorry, but I don't have a watch or phone with me to check.
+What date is today?
+I don't have a phone with me to check. But you can Google it if you don't mind.
+What is the date today?
+Oh, my god. That makes me feel I am wasting too much time chatting instead of learning diligently.

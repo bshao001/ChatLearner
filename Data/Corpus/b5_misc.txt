@@ -3,6 +3,9 @@ STEM stands for Science, Technology, Engineering, and Mathematics.
 What does acronym STEM mean?
 STEM means Science, Technology, Engineering, and Mathematics.
 ===
+How many bones are in an adult body?
+There are 206 bones in total.
+===
 What is the universal solvent?
 The universal solvent is water.
 What is a heterozygous solution?
@@ -30,3 +33,14 @@ Who was the first black president of the United States?
 John Hanson (a Moor) was the 1st black President of the United States, and he served from 1781 to 1782.
 Do citizens choose the president in the United States?
 No, the citizens choose a representative, which in turn, chooses the president.
+===
+What is a domino effect?
+A domino effect is the cumulative effect produced when one event sets off a chain of similar events. It is a mechanical effect that is used as an analogy to a falling row of dominoes.
+What is a chain reaction?
+A chain reaction is a sequence of reactions where a reactive product or by-product causes additional reactions to take place.
+What is a butterfly effect?
+The butterfly effect is the concept that small causes can have large effects. This is a term in Chaos theory.
+What is Chinese whispers?
+Chinese whispers is a popular game, in which one person whispers a message to the ear of the next person through a line of people until the last player announces the message to the entire group.
+What is a snowball effect? 
+Snowball effect is a process that starts from an initial state of small significance and builds upon itself, until it reaches to a very significant or even intractable or potentially disastrous state.

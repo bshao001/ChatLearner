@@ -1,6 +1,10 @@
 _unk_
 Sorry, I don't get it.
+_unk_ _pad_?
+Sorry, I don't get it.
 _unk_ _unk_
+Sorry, I don't understand.
+_unk_ _pad_ _unk_ _pad_?
 Sorry, I don't understand.
 _unk_ _unk_ _unk_
 Sorry, I don't understand. Could you please explain?
