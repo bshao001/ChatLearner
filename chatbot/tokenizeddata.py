@@ -18,15 +18,18 @@ import pickle
 import random
 import string
 
+from chatbot.knowledgebase import KnowledgeBase
 from chatbot.rawtext import RawText
 
 
 class TokenizedData:
-    def __init__(self, dict_file, corpus_dir=None, augment=True):
+    def __init__(self, dict_file, knbase_dir=None, corpus_dir=None, augment=True):
         """
+        For training, both knbase_dir and corpus_dir need to be specified. For prediction, none of
+        them should be given. In case only one is specified, it is ignored.
         Args:
-            dict_file: The name of the pickle file saves the object of (word_id_dict, id_word_dict, 
-                id_cnt_dict).
+            dict_file: The name of the pickle file saves the object used for prediction.
+            knbase_dir: Name of the folder storing data files for the knowledge base.
             corpus_dir: Name of the folder storing corpus files for training.. When this is given, 
                 it is for training, and the dict_file will be generated (again). Otherwise, dict_file 
                 will be read only for the basic information.
@@ -44,13 +47,24 @@ class TokenizedData:
         self.num_samples = 500
 
         # Python dicts that hold basic information
-        if corpus_dir is None:
+        if knbase_dir is None or corpus_dir is None: # If only one is given, it is ignored
             with open(dict_file, 'rb') as fr:
-                d1, d2, d3 = pickle.load(fr)
-                self.word_id_dict = d1
-                self.id_word_dict = d2
-                self.id_cnt_dict = d3
+                dicts1, dicts2 = pickle.load(fr)
+                d11, d12, d13 = dicts1
+                d21, d22, d23 = dicts2
+
+                self.capit_words = d11
+                self.multi_words = d12
+                self.multi_max_cnt = d13  # Just a number
+
+                self.word_id_dict = d21
+                self.id_word_dict = d22
+                self.id_cnt_dict = d23
         else:
+            self.capit_words = {}
+            self.multi_words = {}
+            self.multi_max_cnt = 0
+
             self.word_id_dict = {}
             self.id_word_dict = {}
             self.id_cnt_dict = {}
@@ -64,52 +78,31 @@ class TokenizedData:
         for _ in self.buckets:
             self.sample_size.append(0)
 
-        if corpus_dir is not None:
-            self._load_corpus(corpus_dir, augment=augment)
+        if knbase_dir is not None and corpus_dir is not None:
+            self._load_knbase_and_corpus(knbase_dir, corpus_dir, augment=augment)
 
-            dicts = (self.word_id_dict, self.id_word_dict, self.id_cnt_dict)
+            dicts1 = (self.capit_words, self.multi_words, self.multi_max_cnt)
+            dicts2 = (self.word_id_dict, self.id_word_dict, self.id_cnt_dict)
+            dicts = (dicts1, dicts2)
             with open(dict_file, 'wb') as fw:
                 pickle.dump(dicts, fw, protocol=pickle.HIGHEST_PROTOCOL)
 
         self.vocabulary_size = len(self.word_id_dict)
 
-    def extract_words(self, text_line):
-        """
-        Extract the words from a sample line and represent them with corresponding word IDs
-        Args:
-            text_line: A line of the text to extract.
-        Return:
-            sentences: The list of sentences, each of which are words (represented in corresponding IDs)
-                in the sentence.
-        """
-        sentences = []  # List[str]
-
-        # Extract sentences
-        token_sentences = nltk.sent_tokenize(text_line)
-
-        # Add sentence by sentence until it reaches the maximum length
-        for i in range(len(token_sentences)):
-            tokens = nltk.word_tokenize(token_sentences[i])
-
-            word_ids = []
-            for token in tokens:
-                word_ids.append(self.get_word_id(token))
-
-            sentences.extend(word_ids)
-
-        return sentences
-
-    def get_word_id(self, word, add=True):
+    def get_word_id(self, word, keep_case=False, add=True):
         """
         Get the id of the word (and add it to the dictionary if not existing). If the word does not
         exist and add is False, the function will return the unk_token value.
         Args:
             word: Word to add.
+            keep_case: Whether to keep the original case. If False, will use its lower case 
+                counterpart.
             add: If True and the word does not exist already, the world will be added.
         Return:
             word_id: The ID of the word created.
         """
-        word = word.lower()  # Ignore case
+        if not keep_case:
+            word = word.lower()  # Ignore case
 
         # At inference, we simply look up for the word
         if not add:
@@ -178,8 +171,24 @@ class TokenizedData:
         else:
             tokens = nltk.word_tokenize(sentence)
 
+            for m in range(self.multi_max_cnt, 1, -1):
+                # Slide the sentence with stride 1, window size m, and look for match
+                for n in range(0, len(tokens) - m + 1, 1):
+                    tmp = ' '.join(tokens[n:n+m]).strip().lower()
+                    if tmp in self.multi_words:
+                        # Capitalized format is stored
+                        tmp_id = self.get_word_id(self.multi_words[tmp], keep_case=True,
+                                                  add=False)
+                        tmp_token = "_tk_" + str(tmp_id) + "_kt_"
+                        # Replace with the temp token
+                        del tokens[n:n + m]
+                        tokens.insert(n, tmp_token)
+
             for token in tokens:
-                word_id_list.append(self.get_word_id(token, add=False))
+                if token.startswith('_tk_') and token.endswith('_kt_'):
+                    word_id_list.append(int(token.replace('_tk_', '').replace('_kt_', '')))
+                else:
+                    word_id_list.append(self.get_word_id(token, add=False))
 
             if len(word_id_list) > self.buckets[-1][0]:
                 word_id_list = []
@@ -226,11 +235,15 @@ class TokenizedData:
                     break
                 elif word_id > 3:  # Not reserved special tokens
                     word = self.id_word_dict[word_id]
-                    if last_id == 0 or last_id in self.cap_punc_list:
+                    if word in self.capit_words:
+                        word = self.capit_words[word]
+
+                    if (last_id == 0 or last_id in self.cap_punc_list) \
+                            and not word[0].isupper():
                         word = word.capitalize()
 
                     if not word.startswith('\'') and word != 'n\'t' \
-                            and word not in string.punctuation \
+                            and (word not in string.punctuation or word_id in self.con_punc_list) \
                             and last_id not in self.con_punc_list:
                         word = ' ' + word
                     sentence.append(word)
@@ -304,13 +317,63 @@ class TokenizedData:
         for p in ['(', '[', '{', '``']:
             self.con_punc_list.append(self.get_word_id(p))
 
-    def _load_corpus(self, corpus_dir, augment):
+    def _extract_words(self, text_line):
+        """
+        Extract the words/terms from a sample line and represent them with corresponding word/term IDs
+        Args:
+            text_line: A line of the text to extract.
+        Return:
+            sentences: The list of sentences, each of which are words/terms (represented in corresponding 
+                IDs) in the sentence.
+        """
+        sentences = []  # List[str]
+
+        # Extract sentences
+        token_sentences = nltk.sent_tokenize(text_line)
+
+        # Add sentence by sentence until it reaches the maximum length
+        for i in range(len(token_sentences)):
+            tokens = nltk.word_tokenize(token_sentences[i])
+
+            for m in range(self.multi_max_cnt, 1, -1):
+                # Slide the sentence with stride 1, window size m, and look for match
+                for n in range(0, len(tokens) - m + 1, 1):
+                    tmp = ' '.join(tokens[n:n+m]).strip().lower()
+                    if tmp in self.multi_words:
+                        # Capitalized format is stored
+                        tmp_id = self.get_word_id(self.multi_words[tmp], keep_case=True)
+                        tmp_token = "_tk_" + str(tmp_id) + "_kt_"
+                        # Replace with the temp token
+                        del tokens[n:n + m]
+                        tokens.insert(n, tmp_token)
+
+            word_ids = []
+            for token in tokens:
+                if token.startswith('_tk_') and token.endswith('_kt_'):
+                    word_ids.append(int(token.replace('_tk_', '').replace('_kt_', '')))
+                else:
+                    word_ids.append(self.get_word_id(token))
+
+            sentences.extend(word_ids)
+
+        return sentences
+
+    def _load_knbase_and_corpus(self, knbase_dir, corpus_dir, augment):
         """
         Args:
+            knbase_dir: Name of the folder storing data files for the knowledge base.
             corpus_dir: Name of the folder storing corpus files for training.
             augment: Whether to apply data augmentation approach.
         """
-        # Load raw text data from the corpus, identified by the given data_file
+        # Load knowledge base
+        knbs = KnowledgeBase()
+        knbs.load_knbase(knbase_dir)
+
+        self.capit_words = knbs.capit_words
+        self.multi_words = knbs.multi_words
+        self.multi_max_cnt = knbs.multi_max_cnt
+
+        # Load raw text data from the corpus
         raw_text = RawText()
         raw_text.load_corpus(corpus_dir)
 
@@ -322,8 +385,8 @@ class TokenizedData:
                 input_line = conversation[i]
                 target_line = conversation[i + 1]
 
-                src_word_ids = self.extract_words(input_line['text'])
-                tgt_word_ids = self.extract_words(target_line['text'])
+                src_word_ids = self._extract_words(input_line['text'])
+                tgt_word_ids = self._extract_words(target_line['text'])
 
                 for bucket_id, (src_size, tgt_size) in enumerate(self.buckets):
                     if len(src_word_ids) < src_size and len(tgt_word_ids) <= tgt_size - 2:
@@ -372,9 +435,11 @@ if __name__ == "__main__":
     from settings import PROJECT_ROOT
 
     dict_file = os.path.join(PROJECT_ROOT, 'Data', 'Result', 'dicts.pickle')
+    knbs_dir = os.path.join(PROJECT_ROOT, 'Data', 'KnowledgeBase')
     corp_dir = os.path.join(PROJECT_ROOT, 'Data', 'Corpus')
 
-    td = TokenizedData(dict_file=dict_file, corpus_dir=corp_dir, augment=False)
+    td = TokenizedData(dict_file=dict_file, knbase_dir=knbs_dir, corpus_dir=corp_dir,
+                       augment=False)
     print('Loaded raw data: {} words, {} samples'.format(td.vocabulary_size, td.sample_size))
 
     for key, value in td.id_word_dict.items():

@@ -159,8 +159,10 @@ class BasicModel:
                     print("At epoch {}: learning_rate = {:.6f}, mean loss = {:.2f}, perplexity = {:.2f}".
                           format(epoch, lr_feed, mean_loss, perplexity))
                     if epoch == num_epochs - 1:
-                        saver.save(sess, save_file, write_meta_graph=write_meta_graph)
+                        saver.save(sess, save_file)  # Write meta graph at the last save
                     elif perplexity < 1.08:
+                        if perplexity <= 1.02:  # Write meta graph before break
+                            write_meta_graph = True
                         saver.save(sess, save_file, global_step=epoch, write_meta_graph=write_meta_graph)
                         write_meta_graph = False
 
@@ -297,14 +299,15 @@ if __name__ == "__main__":
     from chatbot.tokenizeddata import TokenizedData
 
     dict_file = os.path.join(PROJECT_ROOT, 'Data', 'Result', 'dicts.pickle')
+    knbs_dir = os.path.join(PROJECT_ROOT, 'Data', 'KnowledgeBase')
     corpus_dir = os.path.join(PROJECT_ROOT, 'Data', 'Corpus')
 
     print("Loading training data ...")
-    td = TokenizedData(dict_file=dict_file, corpus_dir=corpus_dir)
+    td = TokenizedData(dict_file=dict_file, knbase_dir=knbs_dir, corpus_dir=corpus_dir)
     print('Loaded raw data: {} words, {} samples'.format(td.vocabulary_size, td.sample_size))
 
     model = BasicModel(tokenized_data=td, num_layers=2, num_units=512, input_keep_prob=0.9,
                        output_keep_prob=0.9, embedding_size=64, batch_size=32)
 
     res_dir = os.path.join(PROJECT_ROOT, 'Data', 'Result')
-    model.train(num_epochs=100, train_dir=res_dir, result_file='basic')
+    model.train(num_epochs=120, train_dir=res_dir, result_file='basic')

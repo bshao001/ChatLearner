@@ -1,0 +1,42 @@
+# Multiple-word names of continents, countries/nations, states/provinces, cities, famous people, or any entities.
+# Will be treated as a single token in the training and prediction
+# A
+Andrew Ng, Angry Birds
+# B
+# C
+Coral Reef Senior High
+# D
+Donald Trump
+# E
+# F
+# G
+Geoffrey Hinton, George Washington, Guido van Rossum
+# H
+# I
+# J
+Jack Ma, Jackie Chan, James Gosling, James Naismith, Jerry Rice, John Hanson
+# K
+Kevin Durant
+# L
+Lebron James
+# M
+Marshawn Lynch, Michael Jordan
+# N
+National Basketball Association, National Football League, New York
+# O
+# P
+Periodic Table of Elements
+# Q
+# R
+Rocket Raccoon
+# S
+Santa Barbara, Stephen Curry, Sun Microsystems
+# T
+# U
+United States, United States of America, Usain Bolt
+# V
+# W
+# X
+# Y
+Yann LeCun, Yoshua Bengio
+# Z

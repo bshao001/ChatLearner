@@ -1,0 +1,44 @@
+# The words in this file are always capitalized.
+# Only used in prediction
+# A
+Aeolus, American, Aphrodite, Apollo, Ares, Artemis, Athena
+# B
+Baidu, British
+# C
+Chinese, Cronos, Cupid
+# D
+Demeter, Dionysus
+# E
+English, Eros
+# F
+French, France
+# G
+Google, Greek
+# H
+Hades, Hecate, Hephaestus, Hera, Hermes, Hypnos
+# I
+I, Iris
+# J
+Janus
+# K
+# L
+# M
+# N
+Naismith, Nemesis, Nike
+# O
+# P
+Papaya, Poseidon
+# Q
+# R
+# S
+Spanish, Stanford
+# T
+Tyche
+# U
+# V
+# W
+# X
+# Y
+Youtube
+# Z
+Zeus
