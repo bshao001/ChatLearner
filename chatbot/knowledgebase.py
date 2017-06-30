@@ -15,13 +15,13 @@
 import re
 import os
 
-CAPIT_FILE = "capit_words.txt"
+UPPER_FILE = "upper_words.txt"
 MULTI_FILE = "multi_words.txt"
 
 
 class KnowledgeBase:
     def __init__(self):
-        self.capit_words = {}
+        self.upper_words = {}
         self.multi_words = {}
         self.multi_max_cnt = 0
 
@@ -30,21 +30,21 @@ class KnowledgeBase:
         Args:
              knbase_dir: Name of the KnowledgeBase folder. The file names inside are fixed.
         """
-        capit_file_name = os.path.join(knbase_dir, CAPIT_FILE)
+        upper_file_name = os.path.join(knbase_dir, UPPER_FILE)
         multi_file_name = os.path.join(knbase_dir, MULTI_FILE)
 
-        with open(capit_file_name, 'r') as capit:
-            for line in capit:
+        with open(upper_file_name, 'r') as upper_f:
+            for line in upper_f:
                 ln = line.strip()
                 if not ln or ln.startswith('#'):
                     continue
                 cap_words = ln.split(',')
                 for cpw in cap_words:
                     tmp = cpw.strip()
-                    self.capit_words[tmp.lower()] = tmp
+                    self.upper_words[tmp.lower()] = tmp
 
-        with open(multi_file_name, 'r') as multi:
-            for line in multi:
+        with open(multi_file_name, 'r') as multi_f:
+            for line in multi_f:
                 ln = line.strip()
                 if not ln or ln.startswith('#'):
                     continue

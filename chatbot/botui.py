@@ -32,6 +32,8 @@ def bot_ui():
     res_dir = os.path.join(PROJECT_ROOT, 'Data', 'Result')
     with tf.Session() as sess:
         predictor = BotPredictor(sess, td, res_dir, 'basic')
+        # Predict one and discard the output, as the very first one is slower.
+        predictor.predict("Hello")
 
         print("Welcome to Chat with ChatLearner!")
         print("Type exit and press enter to end the conversation.")

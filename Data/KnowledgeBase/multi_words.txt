@@ -36,6 +36,7 @@ Santa Barbara, Stephen Curry, Sun Microsystems
 United States, United States of America, Usain Bolt
 # V
 # W
+Warren Buffett, Warren Edward Buffett
 # X
 # Y
 Yann LeCun, Yoshua Bengio

@@ -53,7 +53,7 @@ class TokenizedData:
                 d11, d12, d13 = dicts1
                 d21, d22, d23 = dicts2
 
-                self.capit_words = d11
+                self.upper_words = d11
                 self.multi_words = d12
                 self.multi_max_cnt = d13  # Just a number
 
@@ -61,7 +61,7 @@ class TokenizedData:
                 self.id_word_dict = d22
                 self.id_cnt_dict = d23
         else:
-            self.capit_words = {}
+            self.upper_words = {}
             self.multi_words = {}
             self.multi_max_cnt = 0
 
@@ -81,7 +81,7 @@ class TokenizedData:
         if knbase_dir is not None and corpus_dir is not None:
             self._load_knbase_and_corpus(knbase_dir, corpus_dir, augment=augment)
 
-            dicts1 = (self.capit_words, self.multi_words, self.multi_max_cnt)
+            dicts1 = (self.upper_words, self.multi_words, self.multi_max_cnt)
             dicts2 = (self.word_id_dict, self.id_word_dict, self.id_cnt_dict)
             dicts = (dicts1, dicts2)
             with open(dict_file, 'wb') as fw:
@@ -235,8 +235,8 @@ class TokenizedData:
                     break
                 elif word_id > 3:  # Not reserved special tokens
                     word = self.id_word_dict[word_id]
-                    if word in self.capit_words:
-                        word = self.capit_words[word]
+                    if word in self.upper_words:
+                        word = self.upper_words[word]
 
                     if (last_id == 0 or last_id in self.cap_punc_list) \
                             and not word[0].isupper():
@@ -369,7 +369,7 @@ class TokenizedData:
         knbs = KnowledgeBase()
         knbs.load_knbase(knbase_dir)
 
-        self.capit_words = knbs.capit_words
+        self.upper_words = knbs.upper_words
         self.multi_words = knbs.multi_words
         self.multi_max_cnt = knbs.multi_max_cnt
 

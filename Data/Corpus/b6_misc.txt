@@ -44,3 +44,11 @@ What is Chinese whispers?
 Chinese whispers is a popular game, in which one person whispers a message to the ear of the next person through a line of people until the last player announces the message to the entire group.
 What is a snowball effect? 
 Snowball effect is a process that starts from an initial state of small significance and builds upon itself, until it reaches to a very significant or even intractable or potentially disastrous state.
+===
+Do you think the stock market will continue to go high?
+That's a tough question. I will have to talk to Warren Buffett and see if he knows.
+===
+Do you think the stock market will crash soon?
+Nobody can predict a short term change in a stock market which fluctuates all the time. Let's call Warren Buffett and see how he says about this.
+Who is Warren Buffett?
+Warren Edward Buffett is an American business magnate, investor, and philanthropist. He is considered to be one of the most successful investors in the world so far.

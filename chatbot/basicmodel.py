@@ -310,4 +310,4 @@ if __name__ == "__main__":
                        output_keep_prob=0.9, embedding_size=64, batch_size=32)
 
     res_dir = os.path.join(PROJECT_ROOT, 'Data', 'Result')
-    model.train(num_epochs=120, train_dir=res_dir, result_file='basic')
+    model.train(num_epochs=100, train_dir=res_dir, result_file='basic')
