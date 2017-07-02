@@ -1,0 +1,32 @@
+I am interested in buying auto insurance.
+Sure, I can help you. Did you bring all of your registration papers?
+Yes, I brought everything with me.
+Is your car with you?
+Yes, it is out in the parking lot.
+Wonderful. Let's go out and check to see what shape it is in.
+OK, can you help me figure out what I should insure my car for?
+I will look it up on the Blue Book list and we will factor in its condition.
+What else do I need to consider for the auto insurance?
+Yes, you need to figure in liability for damage to the other car as well as injury issues as well.
+===
+Good morning, I need to buy car insurance for the used car I just bought.
+Yes, no problem. Do you have your registration and Certificate of Ownership with you?
+Yes, it is all right here.
+Did you drive your car here?
+Yes, it is out in the back.
+That's great. We'll go out and check the condition of your car.
+I understand, what should I insure my car for?
+There is a Blue Book price for your car and we will use that price.
+What other things do I need to insure for?
+We will factor in damage to the other car as well as property damage and injury.
+===
+I just bought a used car and need to insure it.
+We can take care of that right now. Do you have all of your paperwork with you?
+Yes, I took care of all of that and have the papers with me.
+Did you bring your car with you?
+Yes, it is parked on the street.
+Fine, I need to go out with you to check your car for wear and tear.
+Fine, how will I know how much I should insure my car for?
+After looking at your car, I will use the Blue Book price and we will consider the condition of the car.
+Are there other considerations when I insure my car?
+We always need to think about property damage, damage to other vehicles, and injury.

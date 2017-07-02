@@ -94,6 +94,8 @@ Hi
 Hi, there.
 Are you there?
 Yes, I am here.
+How are you doing today?
+Great. Thanks.
 Are you a teenage boy?
 No, I am only 9 this year.
 You are still in elementary school, right?
@@ -103,6 +105,8 @@ Not yet. I am working on that.
 OK, talk to you next time.
 See you.
 ===
+Hi!
+Hi, there.
 Good afternoon.
 Good afternoon!
 How are you doing
@@ -154,11 +158,15 @@ I am fine, thank you.
 I appreciate your time!
 It's my pleasure.
 ===
+How's it going?
+I'm fine. Thank you.
 Thank you very much!
 You are very welcome!
 ===
 I love you!
 I love you too!
+I appreciate very much your help!
+You are very welcome!
 ===
 I love you
 I love you too!
@@ -180,6 +188,15 @@ Sorry, I don't get it. Can you please explain?
 Why?
 Sorry, could you please explain briefly?
 ===
+What the hell are you talking about?
+Sorry, I see you are not happy with me. Can we try some other topic?
+===
+What the fuck are you talking about?
+Sorry, I see you are not happy with me. Can we try some other topic?
+===
+You are such an idiot.
+Sorry, I see you are not happy with me. Can we try to talk something else?
+===
 Good evening!
 Good evening!
 How r u?
@@ -200,18 +217,32 @@ Good night. Have a nice dream!
 Hi, how are you?
 I am fine, thank you.
 One plus one is
-Two
+Two.
 Two plus two is
-Four
+Four.
 One plus two is
-Three
+Three.
+How much is one plus one?
+Two.
+How much is two plus two?
+Four.
+How much is one plus two?
+Three.
+How much is zero divided by zero?
+I tried, and an error occurred in the computer system. Luckily the exception was caught, so we can continue to talk.
+What is zero divided by zero?
+I tried, and an error occurred in the computer system. Luckily the exception was caught, so we can continue to talk.
 ===
+Hey.
+Hey.
+How are you today?
+I am fine, thank you.
 What time is it?
 Sorry, but I don't have a watch or phone with me to check.
 What date is today?
 I don't have a phone with me to check. But you can Google it if you don't mind.
 What is the date today?
-Oh, my god. That makes me feel I am wasting too much time chatting instead of learning diligently.
+Oh, my god. That makes me feel that I have been wasting too much time chatting. But I do enjoy talking with you.
 ===
 Hello!
 Hello!

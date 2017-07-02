@@ -1,0 +1,77 @@
+I would like to order cable.
+Sure, what package do you want?
+What kinds of packages do you offer?
+We have all kinds of movie channel packages.
+What else do you have?
+There is a package for all sports channels.
+Do you have a package that includes all the movie channels with the basic channels also?
+Yes, we do offer that package.
+I want that.
+Do you want anything else?
+No, but is it possible for me to add channels later?
+You can always get rid of channels or add some later.
+===
+I want to get some cable.
+Do you know what package you want to get?
+What packages do you have?
+We have movie channel packages.
+What else have you got?
+You can get the sports package.
+Is there a package with basic and movie channels?
+We have that package.
+Let me get that package.
+Is there anything else you would like?
+That's everything, but can I add channels later?
+You will be able to add or get rid of channels another day.
+===
+May I order some cable from you today?
+Okay, what package would you like to order?
+I'm not sure of what packages you offer.
+We offer packages with all the movie channels.
+Are there any other packages?
+We also have packages with all the sports channels.
+I want a package that has the basic and movie channels.
+We have that available.
+I would like to get that.
+Would you like anything else with your package?
+That's it, but will I be able to add more channels at another time?
+Yes, you can add or get rid of channels later on if you would like.
+===
+I would like to order some internet today.
+What kind would you like?
+What kind of internet is there?
+You can get DSL or dial-up.
+Which of those two is best?
+I would recommend DSL.
+Is that one better?
+It's better because it doesn't tie up your phone.
+What do you mean by that?
+DSL isn't connected through your phone line, but dial-up is.
+So then I can't use my phone if I'm on the internet?
+That's correct. With DSL you can do both.
+===
+I need to get internet.
+Which kind of internet connection do you want to get?
+What kind of internet can I get?
+There is dial-up or DSL.
+Which one do you feel is best?
+I would get DSL if I were you.
+DSL is better than dial-up?
+It's the best choice; plus, it won't tie up your phone line.
+I'm not sure what that means.
+Dial-up is connected through your phone, unlike DSL.
+That'll make it impossible for me to use.
+Exactly. With DSL you don't have that problem.
+===
+I'd like to have internet for my computer.
+Do you know what kind of internet you would like to get?
+What are my options for the internet?
+You can either get dial-up or DSL.
+Which one would you recommend?
+DSL is the best choice.
+Why is DSL better?
+It's a lot better because it doesn't tie up your phone line.
+What exactly does that mean?
+Well, with dial-up your internet is connected by your phone line.
+That means that I can't use my phone and the internet at the same time, right?
+That's right. You won't have that problem with DSL.

@@ -10,12 +10,28 @@ What is the universal solvent?
 The universal solvent is water.
 What is a heterozygous solution?
 A heterozygous solution is when the solute does not dissolve in the solvent.
+===
 How many chromosomes does a human have?
 A human being has 46 chromosomes or 23 pairs.
+===
 What is the Periodic Table of Elements in Chemistry?
 The Periodic Table of Elements is a table displaying the various types of chemical substances found so far.
 What is the chemical symbol for gold?
 The chemical symbol for gold is AU.
+===
+What is the chemical symbol for water?
+The chemical symbol for water is H2O.
+Why is the chemical symbol for water H2O?
+The chemical symbol is H2O because it a hydrogen bond consists of 2 hydrogen atoms and 1 oxygen atom.
+===
+What is the scientific method?
+The scientific method is a process scientists utilize to test a hypothesis.
+===
+Why are fire trucks red?
+According to one theory, early painters did not have much money so they chose the color red because it was cheap and bright. This way, it would catch the attention of pedestrians and other drivers.
+Why is the emergency number 911?
+One theory states that 911 came from the Twin Towers accident because it was on September 11. However, it was actually AT&T who established the digits 9-1-1 as the emergency code throughout the United States. 
+===
 How many thermodynamic laws are there?
 There are in total of 3 laws depicting thermodynamics.
 How did Newton come up with gravity?
@@ -50,5 +66,3 @@ That's a tough question. I will have to talk to Warren Buffett and see if he kno
 ===
 Do you think the stock market will crash soon?
 Nobody can predict a short term change in a stock market which fluctuates all the time. Let's call Warren Buffett and see how he says about this.
-Who is Warren Buffett?
-Warren Edward Buffett is an American business magnate, investor, and philanthropist. He is considered to be one of the most successful investors in the world so far.

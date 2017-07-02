@@ -44,7 +44,7 @@ class TokenizedData:
 
         # Number of samples for sampled softmax. Define it here so that both the trainer and predictor
         # can easily access it.
-        self.num_samples = 500
+        self.num_samples = 512
 
         # Python dicts that hold basic information
         if knbase_dir is None or corpus_dir is None: # If only one is given, it is ignored
@@ -314,7 +314,7 @@ class TokenizedData:
 
         # The word following this punctuation should not precede with a space.
         self.con_punc_list = []
-        for p in ['(', '[', '{', '``']:
+        for p in ['(', '[', '{', '``', '$']:
             self.con_punc_list.append(self.get_word_id(p))
 
     def _extract_words(self, text_line):
@@ -395,10 +395,10 @@ class TokenizedData:
                             aug_len = src_size - len(src_word_ids)
                             aug_src_ids = [self.pad_token] * aug_len + src_word_ids[:]
                             self.training_samples[bucket_id].append([aug_src_ids, tgt_word_ids])
-                            if bucket_id < len(self.buckets) - 1:  # Push to the next bucket
-                                aug_len2 = aug_len + 2
-                                aug_src_ids2 = [self.pad_token] * aug_len2 + src_word_ids[:]
-                                self.training_samples[bucket_id+1].append([aug_src_ids2, tgt_word_ids])
+                            # if bucket_id < len(self.buckets) - 1:  # Push to the next bucket
+                            #     aug_len2 = aug_len + 2
+                            #     aug_src_ids2 = [self.pad_token] * aug_len2 + src_word_ids[:]
+                            #     self.training_samples[bucket_id+1].append([aug_src_ids2, tgt_word_ids])
                         break
                 else:
                     print("Input ({}) or target ({}) line is too long to fit into any bucket"

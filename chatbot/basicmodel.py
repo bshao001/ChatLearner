@@ -153,7 +153,7 @@ class BasicModel:
                     loss_list.append(loss_val)
 
                 # Output training status
-                if epoch % 5 == 0 or epoch == num_epochs - 1:
+                if epoch % 8 == 0 or epoch == num_epochs - 1:
                     mean_loss = sum(loss_list) / len(loss_list)
                     perplexity = np.exp(float(mean_loss)) if mean_loss < 300 else math.inf
                     print("At epoch {}: learning_rate = {:.6f}, mean loss = {:.2f}, perplexity = {:.2f}".
@@ -161,12 +161,12 @@ class BasicModel:
                     if epoch == num_epochs - 1:
                         saver.save(sess, save_file)  # Write meta graph at the last save
                     elif perplexity < 1.08:
-                        if perplexity <= 1.02:  # Write meta graph before break
+                        if perplexity < 1.02:  # Write meta graph before break
                             write_meta_graph = True
                         saver.save(sess, save_file, global_step=epoch, write_meta_graph=write_meta_graph)
                         write_meta_graph = False
 
-                    if perplexity <= 1.02:
+                    if perplexity < 1.02:
                         break
 
                     loss_list = []
@@ -273,11 +273,11 @@ class BasicModel:
 
     @staticmethod
     def _get_learning_rate(perplexity):
-        if perplexity <= 1.12:
+        if perplexity <= 1.1:
             return 9.2e-5
-        elif perplexity <= 1.24:
+        elif perplexity <= 1.2:
             return 9.6e-5
-        elif perplexity <= 1.48:
+        elif perplexity <= 1.4:
             return 1e-4
         elif perplexity <= 2.0:
             return 1.2e-4
@@ -310,4 +310,4 @@ if __name__ == "__main__":
                        output_keep_prob=0.9, embedding_size=64, batch_size=32)
 
     res_dir = os.path.join(PROJECT_ROOT, 'Data', 'Result')
-    model.train(num_epochs=100, train_dir=res_dir, result_file='basic')
+    model.train(num_epochs=120, train_dir=res_dir, result_file='basic')

@@ -1,8 +1,9 @@
 # Multiple-word names of continents, countries/nations, states/provinces, cities, famous people, or any entities.
 # Will be treated as a single token in the training and prediction
 # A
-Andrew Ng, Angry Birds
+Albert Einstein, Andrew Ng, Angry Birds
 # B
+Bill Gates, Barack Obama
 # C
 Coral Reef Senior High
 # D
@@ -10,9 +11,10 @@ Donald Trump
 # E
 # F
 # G
-Geoffrey Hinton, George Washington, Guido van Rossum
+Geoffrey Hinton, George Washington, Gordon Moore, Guido van Rossum
 # H
 # I
+Isaac Newton
 # J
 Jack Ma, Jackie Chan, James Gosling, James Naismith, Jerry Rice, John Hanson
 # K
