@@ -1,0 +1,20 @@
+# Stories have names and contents.
+_NAME: Papaya
+_CONTENT: Once upon a time, there was a virtual galaxy. It was far away from our earth. In the galaxy, there was an intelligent young agent called Papaya. One day, Papaya told a story: Once upon a time...
+# ===
+_NAME: Two_Monks
+_CONTENT: Once upon a time, there was a mountain. On the mountain, there was a temple, in which an old monk and a little monk lived. One day, the old monk told a story: Once upon a time, there was a mountain. On the mountain...
+# ===
+_NAME: Fox_in_Cart
+_CONTENT: A fox, observing a fish cart coming, lay down and pretended to be dead. 
+The cart man, tempted by the idea of making some money by selling the fox's fur, picked up the animal and flung it into the back of the cart. During the journey, the fox ate all the fish and jumped out of the cart. 
+A wolf saw him jumping out and asked him what he had been doing in it. The fox told him all what had happend. Then, the wolf ran ahead of the cart and lay down in its path, pretending to be dead. 
+The cart man was delighted to find another animal to sell, but he found the animal too heavy to lift. So he pushed it into a sack, tied the sack to his cart and dragged it away.
+# ===
+_NAME: Snow_White
+_CONTENT: Once upon a time there lived a lovely princess with fair skin and blue eyes. She was so fair that she was named Snow White. 
+Her mother died when Snow White was a baby and her father married again. This queen was very pretty but she was also very cruel. 
+Jealous of Snow White's beauty, the wicked queen orders the murder of her innocent stepdaughter, but later discovers that Snow White is still alive and hiding in a cottage with seven friendly little miners. 
+Disguising herself as a hag, the queen brings a poisoned apple to Snow White, who falls into a death-like sleep that can be broken only by a kiss from the prince.
+One day, Prince Charming was going past the cottage and he saw Snow White lying in the coffin. He said to the dwarfs, "My! My! She is so beautiful! I would like to kiss her!" And he did. 
+Immediately, Snow White opened her eyes. She was alive again! The Prince and the seven dwarfs were very happy. Prince Charming married Snow White and took her to his palace and lived happily ever after.

@@ -17,6 +17,8 @@ import os
 
 UPPER_FILE = "upper_words.txt"
 MULTI_FILE = "multi_words.txt"
+STORIES_FILE = "stories.txt"
+JOKES_FILE = "jokes.txt"
 
 
 class KnowledgeBase:
@@ -24,6 +26,8 @@ class KnowledgeBase:
         self.upper_words = {}
         self.multi_words = {}
         self.multi_max_cnt = 0
+        self.stories = {}
+        self.jokes = []
 
     def load_knbase(self, knbase_dir):
         """
@@ -32,6 +36,8 @@ class KnowledgeBase:
         """
         upper_file_name = os.path.join(knbase_dir, UPPER_FILE)
         multi_file_name = os.path.join(knbase_dir, MULTI_FILE)
+        stories_file_name = os.path.join(knbase_dir, STORIES_FILE)
+        jokes_file_name = os.path.join(knbase_dir, JOKES_FILE)
 
         with open(upper_file_name, 'r') as upper_f:
             for line in upper_f:
@@ -56,3 +62,29 @@ class KnowledgeBase:
                     word_cnt = len(mlw.split())
                     if word_cnt > self.multi_max_cnt:
                         self.multi_max_cnt = word_cnt
+
+        with open(stories_file_name, 'r') as stories_f:
+            s_name, s_content = '', ''
+            for line in stories_f:
+                ln = line.strip()
+                if not ln or ln.startswith('#'):
+                    continue
+                if ln.startswith('_NAME:'):
+                    if s_name != '' and s_content != '':
+                        self.stories[s_name] = s_content
+                        s_name, s_content = '', ''
+                    s_name = ln[6:].strip()
+                elif ln.startswith('_CONTENT:'):
+                    s_content = ln[9:].strip()
+                else:
+                    s_content += ' ' + ln.strip()
+
+            if s_name != '' and s_content != '':  # The last one
+                self.stories[s_name] = s_content
+
+        with open(jokes_file_name, 'r') as jokes_f:
+            for line in jokes_f:
+                ln = line.strip()
+                if not ln or ln.startswith('#'):
+                    continue
+                self.jokes.append(ln)

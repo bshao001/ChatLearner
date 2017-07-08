@@ -1,22 +1,23 @@
 # Multiple-word names of continents, countries/nations, states/provinces, cities, famous people, or any entities.
 # Will be treated as a single token in the training and prediction
 # A
-Albert Einstein, Andrew Ng, Angry Birds
+Albert Einstein, Andrew Ng, Angry Birds, AT & T
 # B
 Bill Gates, Barack Obama
 # C
-Coral Reef Senior High
 # D
 Donald Trump
 # E
+Elon Musk
 # F
 # G
 Geoffrey Hinton, George Washington, Gordon Moore, Guido van Rossum
 # H
+Harry Potter
 # I
 Isaac Newton
 # J
-Jack Ma, Jackie Chan, James Gosling, James Naismith, Jerry Rice, John Hanson
+Jack Ma, Jackie Chan, James Gosling, James Naismith, Jerry Rice, J.K. Rowling, John Hanson
 # K
 Kevin Durant
 # L
@@ -32,8 +33,9 @@ Periodic Table of Elements
 # R
 Rocket Raccoon
 # S
-Santa Barbara, Stephen Curry, Sun Microsystems
+Santa Barbara, Sherlock Holmes, Stephen Curry, Stephen Hawking, Sun Microsystems, Sunset Elementary School
 # T
+Terence Tao
 # U
 United States, United States of America, Usain Bolt
 # V

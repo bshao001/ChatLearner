@@ -1,13 +1,13 @@
 # The words in this file are always capitalized.
 # Only used in prediction
 # A
-Aeolus, AI, American, Aphrodite, Apollo, Ares, Aristotle, Artemis, AT&T, Athena, Athens
+Aeolus, AI, American, Aphrodite, Apollo, Ares, Aristotle, Artemis, Athena, Athens
 # B
 Baidu, British
 # C
 Chinese, Cronos, Cupid
 # D
-David, Demeter, Dionysus, DSL
+David, Demeter, Dionysus, Dr., DSL
 # E
 English, Einstein, Eros
 # F
@@ -15,7 +15,7 @@ Facebook, French, France
 # G
 Google, Greek
 # H
-Hades, Hawaii, Hecate, Hephaestus, Hera, Hermes, HMO, Hypnos
+Hades, Hawaii, Hecate, Hephaestus, Hera, Hermes, HMO, Holmes, Hypnos
 # I
 I, IBM, Iris
 # J
@@ -28,15 +28,15 @@ Microsoft
 # N
 Naismith, NBA, Nemesis, Newton, NFL, Nike
 # O
-Obama
+Obama, OpenAI
 # P
 Papaya, Plato, Poseidon, PPO
 # Q
 # R
 # S
-September, Sophia, Spanish, Stanford, S.T.E.M.
+September, Sophia, Spanish, SpaceX, Stanford, S.T.E.M.
 # T
-Tom, Trump, Tyche
+Tesla, Tom, Trump, Tyche
 # U
 # V
 # W

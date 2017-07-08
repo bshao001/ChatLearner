@@ -156,7 +156,7 @@ class BasicModel:
                 if epoch % 8 == 0 or epoch == num_epochs - 1:
                     mean_loss = sum(loss_list) / len(loss_list)
                     perplexity = np.exp(float(mean_loss)) if mean_loss < 300 else math.inf
-                    print("At epoch {}: learning_rate = {:.6f}, mean loss = {:.2f}, perplexity = {:.2f}".
+                    print("At epoch {}: learning_rate = {:.6f}, mean loss = {:.4f}, perplexity = {:.4f}".
                           format(epoch, lr_feed, mean_loss, perplexity))
                     if epoch == num_epochs - 1:
                         saver.save(sess, save_file)  # Write meta graph at the last save
@@ -263,7 +263,7 @@ class BasicModel:
             with tf.variable_scope(tf.get_variable_scope(), reuse=True if j > 0 else None):
                 loss = tf.contrib.legacy_seq2seq.sequence_loss(
                     logits=outputs[j], targets=targets[:bucket[1]], weights=weights[:bucket[1]],
-                    average_across_batch=True, softmax_loss_function=softmax_loss_function)
+                    average_across_batch=False, softmax_loss_function=softmax_loss_function)
                 losses.append(loss)
 
                 train_op = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(loss)
@@ -306,7 +306,7 @@ if __name__ == "__main__":
     td = TokenizedData(dict_file=dict_file, knbase_dir=knbs_dir, corpus_dir=corpus_dir)
     print('Loaded raw data: {} words, {} samples'.format(td.vocabulary_size, td.sample_size))
 
-    model = BasicModel(tokenized_data=td, num_layers=2, num_units=512, input_keep_prob=0.9,
+    model = BasicModel(tokenized_data=td, num_layers=2, num_units=800, input_keep_prob=0.9,
                        output_keep_prob=0.9, embedding_size=64, batch_size=32)
 
     res_dir = os.path.join(PROJECT_ROOT, 'Data', 'Result')

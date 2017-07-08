@@ -20,6 +20,7 @@ import string
 
 from chatbot.knowledgebase import KnowledgeBase
 from chatbot.rawtext import RawText
+from chatbot.functiondata import call_function
 
 
 class TokenizedData:
@@ -50,12 +51,14 @@ class TokenizedData:
         if knbase_dir is None or corpus_dir is None: # If only one is given, it is ignored
             with open(dict_file, 'rb') as fr:
                 dicts1, dicts2 = pickle.load(fr)
-                d11, d12, d13 = dicts1
+                d11, d12, d13, d14, d15 = dicts1
                 d21, d22, d23 = dicts2
 
                 self.upper_words = d11
                 self.multi_words = d12
                 self.multi_max_cnt = d13  # Just a number
+                self.stories = d14
+                self.jokes = d15  # A python list
 
                 self.word_id_dict = d21
                 self.id_word_dict = d22
@@ -64,6 +67,8 @@ class TokenizedData:
             self.upper_words = {}
             self.multi_words = {}
             self.multi_max_cnt = 0
+            self.stories = {}
+            self.jokes = []
 
             self.word_id_dict = {}
             self.id_word_dict = {}
@@ -81,7 +86,7 @@ class TokenizedData:
         if knbase_dir is not None and corpus_dir is not None:
             self._load_knbase_and_corpus(knbase_dir, corpus_dir, augment=augment)
 
-            dicts1 = (self.upper_words, self.multi_words, self.multi_max_cnt)
+            dicts1 = (self.upper_words, self.multi_words, self.multi_max_cnt, self.stories, self.jokes)
             dicts2 = (self.word_id_dict, self.id_word_dict, self.id_cnt_dict)
             dicts = (dicts1, dicts2)
             with open(dict_file, 'wb') as fw:
@@ -235,12 +240,15 @@ class TokenizedData:
                     break
                 elif word_id > 3:  # Not reserved special tokens
                     word = self.id_word_dict[word_id]
-                    if word in self.upper_words:
-                        word = self.upper_words[word]
+                    if word.startswith('_func_val_'):
+                        word = call_function(word[10:], tokenized_data=self)
+                    else:
+                        if word in self.upper_words:
+                            word = self.upper_words[word]
 
-                    if (last_id == 0 or last_id in self.cap_punc_list) \
-                            and not word[0].isupper():
-                        word = word.capitalize()
+                        if (last_id == 0 or last_id in self.cap_punc_list) \
+                                and not word[0].isupper():
+                            word = word.capitalize()
 
                     if not word.startswith('\'') and word != 'n\'t' \
                             and (word not in string.punctuation or word_id in self.con_punc_list) \
@@ -372,6 +380,8 @@ class TokenizedData:
         self.upper_words = knbs.upper_words
         self.multi_words = knbs.multi_words
         self.multi_max_cnt = knbs.multi_max_cnt
+        self.stories = knbs.stories
+        self.jokes = knbs.jokes
 
         # Load raw text data from the corpus
         raw_text = RawText()
@@ -441,6 +451,9 @@ if __name__ == "__main__":
     td = TokenizedData(dict_file=dict_file, knbase_dir=knbs_dir, corpus_dir=corp_dir,
                        augment=False)
     print('Loaded raw data: {} words, {} samples'.format(td.vocabulary_size, td.sample_size))
+
+    for key, value in td.stories.items():
+        print("story name = {}, story content = {}".format(key, value))
 
     for key, value in td.id_word_dict.items():
         print("key = {}, value = {}".format(key, value))
