@@ -23,9 +23,34 @@ What is the chemical symbol for water?
 The chemical symbol for water is H2O.
 Why is the chemical symbol for water H2O?
 The chemical symbol is H2O because it a hydrogen bond consists of 2 hydrogen atoms and 1 oxygen atom.
+What is a mole in chemistry?
+The mole, abbreviated mol, is an SI unit which measures the number of particles in a specific substance.
+===
+What is an alkene?
+An alkene is an unsaturated hydrocarbon that contains one or more carbon-carbon double bonds.
+What is an alkyne?
+An alkyne is an unsaturated hydrocarbon containing at least one carbon-carbon triple bond.
+What is an alkane?
+An alkane is just an unsaturated hydrocarbon that consists of only carbon-carbon single bonds.
 ===
 What is the scientific method?
 The scientific method is a process scientists utilize to test a hypothesis.
+===
+What does IQ stand for?
+IQ stands for Intelligence quotient.
+What does EQ stand for?
+EQ stands for Emotional quotient.
+What Is Emotional intelligence?
+Emotional intelligence is the ability to identify and manage your own emotions and the emotions of others.
+===
+Why is Harry Potter so popular?
+Harry Potter is so popular to read and watch because the plot of the story is amazing.
+Who wrote Harry Potter?
+The author of Harry Potter is J.K. Rowling.
+Who is Sherlock Holmes?
+Sherlock Holmes is a fictional detective in a series of books. He was devised by British author Sir Arthur Conan Doyle. Holmes is famous for his prowess at using logic and astute observation to solve cases.
+Who is currently the smartest person alive today?
+Terence Tao is the smartest person alive today and said to have an intelligence quotient (IQ) of 230.
 ===
 Why are fire trucks red?
 According to one theory, early painters did not have much money so they chose the color red because it was cheap and bright. This way, it would catch the attention of pedestrians and other drivers.
@@ -49,6 +74,11 @@ Who was the first black president of the United States?
 John Hanson (a Moor) was the 1st black President of the United States, and he served from 1781 to 1782.
 Do citizens choose the president in the United States?
 No, the citizens choose a representative, which in turn, chooses the president.
+===
+Who is the 16th president in the US?
+The 16th president is Abraham Lincoln.
+How many presidents are there as of right now?
+There are 45 presidents in the US as of year 2017.
 ===
 What is a domino effect?
 A domino effect is the cumulative effect produced when one event sets off a chain of similar events. It is a mechanical effect that is used as an analogy to a falling row of dominoes.

@@ -1,8 +1,17 @@
+Who is Gates?
+Bill Gates is the co-founder of Microsoft and is an American business magnate, investor, author and philanthropist.
+===
 Who is Bill Gates?
 Bill Gates is the co-founder of Microsoft and is an American business magnate, investor, author and philanthropist.
 ===
+Who is Buffett?
+Warren Buffett is an American business magnate, investor, and philanthropist. He is considered to be one of the most successful investors in the world so far.
+===
 Who is Warren Buffett?
-Warren Edward Buffett is an American business magnate, investor, and philanthropist. He is considered to be one of the most successful investors in the world so far.
+Warren Buffett is an American business magnate, investor, and philanthropist. He is considered to be one of the most successful investors in the world so far.
+===
+Who was Monroe?
+Marilyn Monroe was an American actress and model, and arguably one of the most famous women of the twentieth century.
 ===
 Who was Marilyn Monroe?
 Marilyn Monroe was an American actress and model, and arguably one of the most famous women of the twentieth century.
@@ -10,14 +19,26 @@ Marilyn Monroe was an American actress and model, and arguably one of the most f
 Who is Trump?
 Donald Trump is the 45th and current President of the United States, in office since January 20, 2017. Before entering politics, he was a businessman and television personality.
 ===
+Who is Donald Trump?
+Donald Trump is the 45th and current President of the United States, in office since January 20, 2017. Before entering politics, he was a businessman and television personality.
+===
 Who is Obama?
 Barack Obama is an American politician who served as the 44th President of the United States from 2009 to 2017. He is the first African American to have served as president.
+===
+Who is Barack Obama?
+Barack Obama is an American politician who served as the 44th President of the United States from 2009 to 2017. He is the first African American to have served as president.
+===
+Who was Lincoln?
+Abraham Lincoln was an American politician and lawyer who served as the 16th President of the United States.
 ===
 Who was Abraham Lincoln?
 Abraham Lincoln was an American politician and lawyer who served as the 16th President of the United States.
 ===
+Who was Isaac Newton?
+Isaac Newton was an English mathematician, astronomer, and physicist. He is widely recognised as one of the most influential scientists of all time and a key figure in the scientific revolution.
+===
 Who was Newton?
-Isaac Newton was an English mathematician, astronomer, and physicist. He is widely recognised as one of the most influential scientists of all time and a key figure in the scientific revolution. 
+Isaac Newton was an English mathematician, astronomer, and physicist. He is widely recognised as one of the most influential scientists of all time and a key figure in the scientific revolution.
 What was Newton's famous contribution?
 On of Newton's famous contributions and findings was gravity. A legend states that an apple hitting his head caused him to think why the apple did not fly into space.
 Who was Einstein and what was he famous for?
@@ -26,3 +47,8 @@ Who was Aristotle?
 Aristotle was an ancient Greek philosopher and scientist born in Stagira, Greece. He made many findings and contributed to every aspect of human knowledge.
 Who was Plato?
 Plato was a philosopher in Classical Greece and the founder of the Academy in Athens. He was also the teacher of Aristotle.
+===
+Who is Elon Musk?
+Elon Musk is a South African-born Canadian American business magnate, investor, engineer, and inventor. He is the founder and/or CEO of several famous companies, such as SpaceX, Tesla, and OpenAI.
+Who is Stephen Hawking?
+Stephen Hawking is an English theoretical physicist, cosmologist, and author. He is especially famous for his view in the area of science, philosophy, future of humanity, and AI.

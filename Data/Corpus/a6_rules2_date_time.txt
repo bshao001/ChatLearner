@@ -1,0 +1,29 @@
+What time is it?
+It is _func_val_get_time.
+What time is it now?
+It is _func_val_get_time.
+What date is today?
+Today is _func_val_get_today.
+What's today's date?
+Today is _func_val_get_today_weekday.
+What is the date today?
+Today is _func_val_get_today_weekday.
+What year is it?
+It is _func_val_get_today_weekday.
+What year is it today?
+It is _func_val_get_today_weekday.
+===
+What time is it, Papaya?
+It is _func_val_get_time.
+What time is it now, Papaya?
+It is _func_val_get_time.
+What date is today, Papaya?
+Today is _func_val_get_today.
+What's today's date, Papaya?
+Today is _func_val_get_today_weekday.
+What is the date today, Papaya?
+Today is _func_val_get_today_weekday.
+What year is it, Papaya?
+It is _func_val_get_today_weekday.
+What year is it today, Papaya?
+It is _func_val_get_today_weekday.
