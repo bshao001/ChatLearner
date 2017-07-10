@@ -153,14 +153,14 @@ class BasicModel:
                     loss_list.append(loss_val)
 
                 # Output training status
-                if epoch % 8 == 0 or epoch == num_epochs - 1:
+                if epoch % 6 == 0 or epoch == num_epochs - 1:
                     mean_loss = sum(loss_list) / len(loss_list)
                     perplexity = np.exp(float(mean_loss)) if mean_loss < 300 else math.inf
                     print("At epoch {}: learning_rate = {:.6f}, mean loss = {:.4f}, perplexity = {:.4f}".
                           format(epoch, lr_feed, mean_loss, perplexity))
                     if epoch == num_epochs - 1:
                         saver.save(sess, save_file)  # Write meta graph at the last save
-                    elif perplexity < 1.08:
+                    elif perplexity < 1.10:
                         if perplexity < 1.02:  # Write meta graph before break
                             write_meta_graph = True
                         saver.save(sess, save_file, global_step=epoch, write_meta_graph=write_meta_graph)
@@ -273,26 +273,28 @@ class BasicModel:
 
     @staticmethod
     def _get_learning_rate(perplexity):
-        if perplexity <= 1.1:
+        if perplexity <= 1.10:
+            return 8.8e-5
+        elif perplexity <= 1.16:
             return 9.2e-5
-        elif perplexity <= 1.2:
+        elif perplexity <= 1.24:
             return 9.6e-5
-        elif perplexity <= 1.4:
+        elif perplexity <= 1.32:
             return 1e-4
-        elif perplexity <= 2.0:
+        elif perplexity <= 1.6:
             return 1.2e-4
-        elif perplexity <= 3.0:
+        elif perplexity <= 2.4:
             return 1.6e-4
-        elif perplexity <= 4.0:
+        elif perplexity <= 3.2:
             return 2e-4
-        elif perplexity <= 6.0:
+        elif perplexity <= 6.4:
             return 2.4e-4
-        elif perplexity <= 12.0:
-            return 3.2e-4
-        elif perplexity <= 30.0:
+        elif perplexity <= 20.0:
             return 4e-4
-        else:
+        elif perplexity <= 200.0:
             return 8e-4
+        else:
+            return 2e-3
 
 if __name__ == "__main__":
     from settings import PROJECT_ROOT
@@ -306,7 +308,7 @@ if __name__ == "__main__":
     td = TokenizedData(dict_file=dict_file, knbase_dir=knbs_dir, corpus_dir=corpus_dir)
     print('Loaded raw data: {} words, {} samples'.format(td.vocabulary_size, td.sample_size))
 
-    model = BasicModel(tokenized_data=td, num_layers=2, num_units=800, input_keep_prob=0.9,
+    model = BasicModel(tokenized_data=td, num_layers=2, num_units=880, input_keep_prob=0.9,
                        output_keep_prob=0.9, embedding_size=64, batch_size=32)
 
     res_dir = os.path.join(PROJECT_ROOT, 'Data', 'Result')

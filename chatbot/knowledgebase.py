@@ -73,7 +73,7 @@ class KnowledgeBase:
                     if s_name != '' and s_content != '':
                         self.stories[s_name] = s_content
                         s_name, s_content = '', ''
-                    s_name = ln[6:].strip()
+                    s_name = ln[6:].strip().lower()
                 elif ln.startswith('_CONTENT:'):
                     s_content = ln[9:].strip()
                 else:

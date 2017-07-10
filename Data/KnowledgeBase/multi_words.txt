@@ -3,7 +3,7 @@
 # A
 Albert Einstein, Andrew Ng, Angry Birds, AT & T
 # B
-Bill Gates, Barack Obama
+Babe Ruth, Bill Gates, Barack Obama
 # C
 # D
 Donald Trump
@@ -17,11 +17,11 @@ Harry Potter
 # I
 Isaac Newton
 # J
-Jack Ma, Jackie Chan, James Gosling, James Naismith, Jerry Rice, J.K. Rowling, John Hanson
+Jack Ma, Jackie Chan, Jackie Robinson, James Gosling, James Naismith, Jerry Rice, J.K. Rowling, John Hanson
 # K
 Kevin Durant
 # L
-Lebron James
+Lebron James, Lou Gehrig
 # M
 Marshawn Lynch, Michael Jordan
 # N

@@ -101,3 +101,10 @@ Who is James Harden?
 James Harden is a point guard for the Houston Rockets.
 Who is Kevin Durant?
 Kevin Durant is a small forward for the Golden State Warriors.
+===
+Who was Babe Ruth?
+Babe Ruth was a professional baseball player but unfortunately used steroids and died of Esophageal Cancer.
+Who was Jackie Robinson?
+Jackie Robinson was a professional baseball player and broke the color barrier for blacks in baseball.
+Who was Lou Gehrig?
+Lou Gehrig was a professional baseball player and played 17 seasons with the New York Yankees.

@@ -31,11 +31,13 @@ class FunctionData:
         _, content = random.choice(list(stories.items()))
         return content
 
+    def get_story_name(self, story_name):
+        stories = self.tokenized_data.stories
+        return stories[story_name]
+
     def get_joke_any(self):
         jokes = self.tokenized_data.jokes
-        max_joke_id = len(jokes) - 1
-        joke_id = random.randint(0, max_joke_id)
-        return jokes[joke_id]
+        return random.choice(jokes)
 
     @staticmethod
     def get_date_time():
@@ -56,11 +58,12 @@ class FunctionData:
         return "{}, {:%B %d, %Y}".format(weekday, today)
 
 
-def call_function(func_name, tokenized_data=None):
+def call_function(func_info, tokenized_data=None):
     func_data = FunctionData(tokenized_data)
 
     func_dict = {
         'get_story_any': func_data.get_story_any,
+        'get_story_name': func_data.get_story_name,
         'get_joke_any': func_data.get_joke_any,
         'get_date_time': FunctionData.get_date_time,
         'get_time': FunctionData.get_time,
@@ -68,10 +71,21 @@ def call_function(func_name, tokenized_data=None):
         'get_today_weekday': FunctionData.get_today_weekday
     }
 
-    if func_name in func_dict:
-        return func_dict[func_name]()
+    para_index = func_info.find('_para1_')
+    if para_index == -1:
+        func_name = func_info
+        func_para = None
     else:
-        return func_name
+        func_name = func_info[:para_index]
+        func_para = func_info[para_index+7:]
+
+    if func_name in func_dict:
+        if func_para is None:
+            return func_dict[func_name]()
+        else:
+            return func_dict[func_name](func_para)
+    else:
+        return func_info
 
 if __name__ == "__main__":
     import os
@@ -85,6 +99,7 @@ if __name__ == "__main__":
     td = TokenizedData(dict_file=dict_file, knbase_dir=knbs_dir, corpus_dir=corp_dir,
                        augment=False)
 
+    print(call_function("get_story_name_para1_The_Three_Little_Pigs", td))
     print(call_function("get_story_any", td))
     print(call_function("get_joke_any", td))
     print(call_function("get_date_time"))

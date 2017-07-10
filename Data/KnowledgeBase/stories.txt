@@ -18,3 +18,7 @@ Jealous of Snow White's beauty, the wicked queen orders the murder of her innoce
 Disguising herself as a hag, the queen brings a poisoned apple to Snow White, who falls into a death-like sleep that can be broken only by a kiss from the prince.
 One day, Prince Charming was going past the cottage and he saw Snow White lying in the coffin. He said to the dwarfs, "My! My! She is so beautiful! I would like to kiss her!" And he did. 
 Immediately, Snow White opened her eyes. She was alive again! The Prince and the seven dwarfs were very happy. Prince Charming married Snow White and took her to his palace and lived happily ever after.
+# ===
+_NAME: The_Three_Little_Pigs
+_CONTENT: Once upon a time, there were three little pigs and they each built a house to protect themselves from the big, bad wolf. 
+The wolf blew away the first two houses but couldn't budge the last one because it was made out of bricks. The third pig cooked the wolf and shared it among the pigs as a celebration for their victory.

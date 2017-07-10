@@ -309,11 +309,11 @@ class TokenizedData:
         return batch
 
     def _add_special_tokens(self):
-        # Special tokens
-        self.pad_token = self.get_word_id('_pad_')  # Padding
-        self.bos_token = self.get_word_id('_bos_')  # Beginning of sequence
-        self.eos_token = self.get_word_id('_eos_')  # End of sequence
-        self.unk_token = self.get_word_id('_unk_')  # Word dropped from vocabulary
+        # Special tokens.
+        self.pad_token = self.get_word_id('_pad_')  # 0. Padding
+        self.bos_token = self.get_word_id('_bos_')  # 1. Beginning of sequence
+        self.eos_token = self.get_word_id('_eos_')  # 2. End of sequence
+        self.unk_token = self.get_word_id('_unk_')  # 3. Word dropped from vocabulary
 
         # The word following this punctuation should be capitalized
         self.cap_punc_list = []

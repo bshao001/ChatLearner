@@ -32,3 +32,16 @@ Are you from _unk_?
 No, I'm from China.
 Are you from _unk_ _unk_?
 No, I am from China.
+Are you from _pad_ _unk_?
+No, I am from China.
+===
+Who is _unk_?
+Sorry, I have never heard about him or her.
+Who is _pad_?
+Sorry, I have never heard about him or her.
+Who is _unk_ _unk_?
+Sorry, I don't know. I have never heard about him or her.
+Who is _pad_ _unk_?
+Sorry, I don't know. I have never heard about him or her.
+Who is _unk_ _pad_?
+Sorry, I don't know. I have never heard about him or her.
