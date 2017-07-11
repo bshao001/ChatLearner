@@ -161,12 +161,12 @@ class BasicModel:
                     if epoch == num_epochs - 1:
                         saver.save(sess, save_file)  # Write meta graph at the last save
                     elif perplexity < 1.10:
-                        if perplexity < 1.02:  # Write meta graph before break
+                        if perplexity < 1.015:  # Write meta graph before break
                             write_meta_graph = True
                         saver.save(sess, save_file, global_step=epoch, write_meta_graph=write_meta_graph)
                         write_meta_graph = False
 
-                    if perplexity < 1.02:
+                    if perplexity < 1.015:
                         break
 
                     loss_list = []
@@ -263,7 +263,7 @@ class BasicModel:
             with tf.variable_scope(tf.get_variable_scope(), reuse=True if j > 0 else None):
                 loss = tf.contrib.legacy_seq2seq.sequence_loss(
                     logits=outputs[j], targets=targets[:bucket[1]], weights=weights[:bucket[1]],
-                    average_across_batch=False, softmax_loss_function=softmax_loss_function)
+                    average_across_batch=True, softmax_loss_function=softmax_loss_function)
                 losses.append(loss)
 
                 train_op = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(loss)
@@ -273,11 +273,9 @@ class BasicModel:
 
     @staticmethod
     def _get_learning_rate(perplexity):
-        if perplexity <= 1.10:
-            return 8.8e-5
-        elif perplexity <= 1.16:
+        if perplexity <= 1.12:
             return 9.2e-5
-        elif perplexity <= 1.24:
+        elif perplexity <= 1.20:
             return 9.6e-5
         elif perplexity <= 1.32:
             return 1e-4
@@ -306,8 +304,8 @@ if __name__ == "__main__":
     td = TokenizedData(dict_file=dict_file, knbase_dir=knbs_dir, corpus_dir=corpus_dir)
     print('Loaded raw data: {} words, {} samples'.format(td.vocabulary_size, td.sample_size))
 
-    model = BasicModel(tokenized_data=td, num_layers=2, num_units=880, input_keep_prob=0.9,
+    model = BasicModel(tokenized_data=td, num_layers=2, num_units=800, input_keep_prob=0.9,
                        output_keep_prob=0.9, embedding_size=64, batch_size=16)
 
     res_dir = os.path.join(PROJECT_ROOT, 'Data', 'Result')
-    model.train(num_epochs=120, train_dir=res_dir, result_file='basic')
+    model.train(num_epochs=60, train_dir=res_dir, result_file='basic')

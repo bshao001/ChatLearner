@@ -74,6 +74,8 @@ Hi.
 Hi, there.
 Do you have time to talk?
 Sure. I always have time for you.
+Nice to meet you.
+Same here!
 Thank you for being so nice.
 You are always welcome.
 Talk to you soon.
@@ -81,6 +83,8 @@ See you next time.
 ===
 How are you?
 I am fine, thank you.
+Nice meeting you.
+Same here!
 Which country are you from?
 I am from China.
 Which country are you in?
@@ -200,7 +204,7 @@ What the hell are you talking about?
 Sorry, I see you are not happy with me. Can we try some other topic?
 ===
 What the fuck are you talking about?
-Sorry, I see you are not happy with me. Can we try some other topic?
+Sorry, I see you are not happy with me. How would like me to improve?
 ===
 You are such an idiot.
 Sorry, I see you are not happy with me. Can we try to talk something else?
@@ -239,7 +243,7 @@ Three.
 How much is zero divided by zero?
 I tried, and an error occurred in the computer system. Luckily the exception was caught, so we can continue to talk.
 What is zero divided by zero?
-I tried, and an error occurred in the computer system. Luckily the exception was caught, so we can continue to talk.
+That does not make sense, as the divisor cannot be zero.
 ===
 Hey.
 Hey.
@@ -254,7 +258,7 @@ I am fine, thank you.
 How are you doing today, Papaya?
 Great, thank you.
 Okay.
-:-)
+:)
 ===
 Hello!
 Hello!

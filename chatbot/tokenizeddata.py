@@ -461,8 +461,8 @@ if __name__ == "__main__":
                        augment=False)
     print('Loaded raw data: {} words, {} samples'.format(td.vocabulary_size, td.sample_size))
 
-    for key, value in td.stories.items():
-        print("story name = {}, story content = {}".format(key, value))
+    # for key, value in td.stories.items():
+    #     print("story name = {}, story content = {}".format(key, value))
 
     for key, value in td.id_word_dict.items():
         print("key = {}, value = {}".format(key, value))

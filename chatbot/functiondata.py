@@ -20,6 +20,29 @@ import time
 
 
 class FunctionData:
+    easy_list = [
+        "",
+        "Here you are: ",
+        "Here is the result: ",
+        "That's easy: ",
+        "That was an easy one: ",
+        "It was a piece of cake: ",
+        "That's simple, and I know how to solve it: ",
+        "That wasn't hard. Here is the result: ",
+        "Oh, I know how to deal with this: "
+    ]
+    hard_list = [
+        "",
+        "Here you are: ",
+        "Here is the result: ",
+        "That's a little hard: ",
+        "That was an tough one, and I had to use a calculator: ",
+        "That's a little difficult, but I know how to solve it: ",
+        "It was hard and took me a little while to figure it out. Here is the result: ",
+        "It took me a little while, and finally I got the result: ",
+        "I had to use my cell phone for this calculation. Here is the outcome: "
+    ]
+
     def __init__(self, tokenized_data):
         """
         Args:
@@ -61,17 +84,23 @@ class FunctionData:
     @staticmethod
     def get_number_plus(num1, num2):
         res = num1 + num2
-        return "{} + {} = {}".format(num1, num2, res)
+        desc = random.choice(FunctionData.easy_list)
+        return "{}{} + {} = {}".format(desc, num1, num2, res)
 
     @staticmethod
     def get_number_minus(num1, num2):
         res = num1 - num2
-        return "{} - {} = {}".format(num1, num2, res)
+        desc = random.choice(FunctionData.easy_list)
+        return "{}{} - {} = {}".format(desc, num1, num2, res)
 
     @staticmethod
     def get_number_multiply(num1, num2):
         res = num1 * num2
-        return "{} * {} = {}".format(num1, num2, res)
+        if num1 > 100 and num2 > 100 and num1 % 2 == 1 and num2 % 2 == 1:
+            desc = random.choice(FunctionData.hard_list)
+        else:
+            desc = random.choice(FunctionData.easy_list)
+        return "{}{} * {} = {}".format(desc, num1, num2, res)
 
     @staticmethod
     def get_number_divide(num1, num2):
@@ -80,9 +109,17 @@ class FunctionData:
         else:
             res = num1 / num2
             if isinstance(res, int):
-                return "{} / {} = {}".format(num1, num2, res)
+                if 50 < num1 != num2 > 50:
+                    desc = random.choice(FunctionData.hard_list)
+                else:
+                    desc = random.choice(FunctionData.easy_list)
+                return "{}{} / {} = {}".format(desc, num1, num2, res)
             else:
-                return "{} / {} = {:.2f}".format(num1, num2, res)
+                if num1 > 20 and num2 > 20:
+                    desc = random.choice(FunctionData.hard_list)
+                else:
+                    desc = random.choice(FunctionData.easy_list)
+                return "{}{} / {} = {:.2f}".format(desc, num1, num2, res)
 
     @staticmethod
     def check_arithmetic_pattern_and_replace(sentence):
@@ -90,7 +127,8 @@ class FunctionData:
         if pat_matched:
             s1, e1 = ind_list[0]
             s2, e2 = ind_list[1]
-            new_sentence = sentence[:s1] + '_num1_' + sentence[e1:s2] + '_num2_' + sentence[e2:]
+            # Leave spaces around the special tokens so that NLTK knows they are separate tokens
+            new_sentence = sentence[:s1] + ' _num1_ ' + sentence[e1:s2] + ' _num2_ ' + sentence[e2:]
             return True, new_sentence, num_list
         else:
             return False, sentence, num_list
@@ -98,7 +136,7 @@ class FunctionData:
     @staticmethod
     def contains_arithmetic_pattern(sentence):
         pat_op = re.compile(r'\s+(plus|\+|minus|-|multiply|\*|divide|(divided\s+by)|/)\s+')
-        pat_as = re.compile(r'\s(is|=|equals)\s')
+        pat_as = re.compile(r'((\sis\s)|=|(\sequals\s))')
 
         mat_op = re.search(pat_op, sentence)
         mat_as = re.search(pat_as, sentence)
@@ -157,7 +195,7 @@ def call_function(func_info, tokenized_data=None, para_list=None):
                 elif func_para1 == '_num2_' and func_para2 == '_num1_':
                     return func_dict[func_name](num2_val, num1_val)
 
-    return func_info
+    return "You beat me to it, and I cannot tell which is which for this question."
 
 if __name__ == "__main__":
     import os
@@ -171,11 +209,36 @@ if __name__ == "__main__":
     td = TokenizedData(dict_file=dict_file, knbase_dir=knbs_dir, corpus_dir=corp_dir,
                        augment=False)
 
-    print(call_function("get_story_name_para1_the_three_little_pigs", td))
-    print(call_function("get_story_any", td))
-    print(call_function("get_joke_any", td))
-    print(call_function("get_date_time"))
-    print("Today is {}.".format(call_function("get_today")))
-    print("It is {} now.".format(call_function("get_time")))
-    print("It is {} today.".format(call_function("get_today_weekday")))
-    print("Test {}.".format(call_function("something")))
+    sentences = [
+        "How much is 12 + 14?",
+        "How much is 16 - 23?",
+        "How much is 144 * 12?",
+        "How much is 23 / 26?",
+        "99 + 19 = ?",
+        "178 - 27 = ?",
+        "99 + 19 =?",
+        "178 - 27 =?",
+        "99 + 19=",
+        "178 - 27=",
+        "99 + 19 equals?",
+        "178 - 27 equals?",
+        "What is 49 / 77?",
+        "If x=12 and y=14, how much is x + y?",
+        "If x=55 and y=19, how much is y - x?",
+        "Let x=99, y=9, how much is x / y?",
+        "What is 16 + 24 equals to?",
+        "What is 16 + 24?"
+    ]
+
+    for sentence in sentences:
+        print(sentence)
+        print(FunctionData.check_arithmetic_pattern_and_replace(sentence))
+
+    # print(call_function("get_story_name_para1_the_three_little_pigs", td))
+    # print(call_function("get_story_any", td))
+    # print(call_function("get_joke_any", td))
+    # print(call_function("get_date_time"))
+    # print("Today is {}.".format(call_function("get_today")))
+    # print("It is {} now.".format(call_function("get_time")))
+    # print("It is {} today.".format(call_function("get_today_weekday")))
+    # print("Test {}.".format(call_function("something")))

@@ -1,0 +1,98 @@
+I would like to purchase some health insurance. 
+Have you ever purchased health insurance before?
+I have health insurance now, but I want to look into other choices.
+Do you know if you are interested in an HMO or a PPO?
+Could you explain the difference between HMO and PPO?
+To clarify it for you, with a PPO you pay more but you get to choose your own doctor.
+When I pay for a service, is the payment the same for a PPO or HMO?
+The payments are quite a bit higher for the PPO, but you can go anywhere you like. 
+How much will an HMO cost me per month?
+Please go to our website and fill in the questionnaire. Once we have all of your information, we can give you a quote.
+===
+I am calling to purchase health insurance.
+Do you have health insurance now?
+I was on my parents' policy, but I need to start buying my own.
+You can purchase an HMO or a PPO. Do you know what you want?
+I don't know which I want, an HMO or a PPO.
+Let me explain it to you. An HMO is a little cheaper, but you can only choose certain doctors.
+When I go to the doctor, do I pay the same out-of-pocket expenses for a PPO?
+The payments are a little lower for an HMO as long as you go to their doctors.
+How much will a PPO cost me per month?
+We need to factor in many things. Why don't you come in, and we will have you fill out a questionnaire.
+===
+I need information on purchasing health insurance.
+Is this the first time you have had health insurance?
+This is my first time buying health insurance.
+You have a choice of HMO or PPO. Do you understand the difference?
+I am not sure what HMO and PPO are.
+Just so you understand completely: An HMO is a little cheaper, but you have limited choices of which doctor you choose.
+If I need to use my insurance, are the payments the same for a PPO and HMO?
+By going to the providers on the HMO list, you save money in out-of-pocket expenses.
+Can you give me a comparison between a PPO and an HMO?
+We can mail you a questionnaire and when we have all of your information, we will mail you a quote.
+===
+Good morning, is this Papaya?
+You are speaking with Papaya. How can I help you?
+Papaya, this is Malia, and I need to call in sick today.
+What seems to be the problem?
+I went hiking and have terrible poison oak.
+When did you get that?
+I think I got it on Saturday, but it just showed up today.
+What are you doing for it?
+The doctor prescribed an ointment and gave me a shot.
+Good. You probably should be much better by tomorrow.
+===
+May I speak to Papaya, please?
+This is Papaya you are speaking with. What can I do for you?
+Hi, Papaya, this is Malia, and I will not be coming to work today.
+What is wrong with you?
+I have really bad poison oak and can't stop itching.
+How long have you had it?
+I've had it a few days, but the rash really got bad last night.
+How have you been treating it?
+I have some lotion that the doctor gave me, as well as an antihistamine.
+That should work. I'll see you tomorrow when you return to work.
+===
+I would like to speak with Papaya.
+This is Papaya. How may I help you?
+Papaya, this is Malia, and I am afraid that I am feeling a bit under the weather.
+Do you know what the problem is?
+I have a horrible rash from poison oak.
+Have you had it a long time?
+The doctor said that I probably have had it a few days.
+Have you been using anything for it?
+I bought some over-the-counter lotion, and I am taking an antihistamine.
+That will probably take care of your symptoms. I'll see you tomorrow.
+===
+I have a doctor's appointment scheduled with Dr. Smith, and I need to change it.
+What day did you have it scheduled for?
+My appointment was on Tuesday.
+What time was it scheduled for?
+It was for two o'clock in the afternoon.
+I see your appointment. What day would you like to switch to?
+I would like to switch it to next Friday.
+What time would you like?
+I would like to come in at 10:00 in the morning.
+Fine, I will pencil that in right now. We will see you then.
+===
+I scheduled an appointment with Dr. Smith, and I can't make it on that day.
+What day was your appointment on?
+My appointment was on Monday.
+What time had you chosen?
+It was for 10:00 in the morning.
+I am looking at your appointment right now. What day would you prefer?
+I would prefer next Thursday.
+What time would be best for you?
+I want to come in at 2:00 in the afternoon.
+I am writing you down for that time. We look forward to seeing you.
+===
+Good morning, I made an appointment with Dr. Smith, but I have to change it.
+When you made your appointment, what day did you choose?
+My appointment was on Wednesday.
+At what time was that appointment?
+It was for 4:00 in the afternoon.
+I can see the appointment that you had. What day do you need to change to?
+I want to change to next Tuesday.
+What time would you prefer?
+I would prefer three o'clock in the afternoon.
+I will put you down for that time. Thank you for calling to reschedule.

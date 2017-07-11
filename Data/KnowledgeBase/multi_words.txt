@@ -33,7 +33,7 @@ Periodic Table of Elements
 # R
 Rocket Raccoon
 # S
-Santa Barbara, Sherlock Holmes, Stephen Curry, Stephen Hawking, Sun Microsystems, Sunset Elementary School
+Santa Barbara, Sherlock Holmes, State Farm, Stephen Curry, Stephen Hawking, Sun Microsystems, Sunset Elementary School
 # T
 Terence Tao
 # U

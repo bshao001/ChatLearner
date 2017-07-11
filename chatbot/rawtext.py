@@ -32,6 +32,7 @@ from D to C
 """
 import os
 
+COMMENT_LINE_STT = "#=="
 CONVERSATION_SEP = "==="
 
 
@@ -51,6 +52,8 @@ class RawText:
                     samples = []
                     for line in f:
                         l = line.strip()
+                        if not l or l.startswith(COMMENT_LINE_STT):
+                            continue
                         if l == CONVERSATION_SEP:
                             self.conversations.append(samples)
                             samples = []
