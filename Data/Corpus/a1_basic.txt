@@ -245,12 +245,16 @@ Hey.
 Hey.
 How are you today?
 I am fine, thank you.
+Good night.
+Good night. Have a nice dream!
 ===
 How are you today, Papaya?
 I am fine, thank you.
 ===
 How are you doing today, Papaya?
 Great, thank you.
+Okay.
+:-)
 ===
 Hello!
 Hello!

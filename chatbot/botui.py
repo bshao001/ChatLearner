@@ -46,8 +46,7 @@ def bot_ui():
                 print("Thank you for using ChatLearner. Goodbye.")
                 break
 
-            dec_outputs = predictor.predict(sentence)
-            print(predictor.get_sentence(dec_outputs))
+            print(predictor.predict(sentence))
             print("> ", end="")
             sys.stdout.flush()
             sentence = sys.stdin.readline()

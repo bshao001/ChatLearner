@@ -215,13 +215,17 @@ class TokenizedData:
         batch = self._create_batch([[word_id_list, []]], bucket_id)  # No target output
         return batch
 
-    def word_ids_to_str(self, word_id_list, debug=False):
+    def word_ids_to_str(self, word_id_list, debug=False, return_if_func_val=False,
+                        para_list=None):
         """
         Convert a list of integers (word_ids) into a human readable string/text.
         Used for prediction only, when debug is False.
         Args:
             word_id_list (list<int>): A list of word_ids.
             debug: Output the text including special tokens.
+            return_if_func_val: Whether to include a boolean value, in the returning set, which 
+                indicates if the output sentence containing a _func_val_** string.
+            para_list: The python list containing the parameter real values.
         Return:
             str: The sentence represented by the given word_id_list.
         """
@@ -229,6 +233,7 @@ class TokenizedData:
             return ''
 
         sentence = []
+        if_func_val = False
         if debug:
             for word_id in word_id_list:
                 word = ' ' + self.id_word_dict[word_id]
@@ -241,7 +246,8 @@ class TokenizedData:
                 elif word_id > 3:  # Not reserved special tokens
                     word = self.id_word_dict[word_id]
                     if word.startswith('_func_val_'):
-                        word = call_function(word[10:], tokenized_data=self)
+                        if_func_val = True
+                        word = call_function(word[10:], tokenized_data=self, para_list=para_list)
                     else:
                         if word in self.upper_words:
                             word = self.upper_words[word]
@@ -258,7 +264,10 @@ class TokenizedData:
 
                     last_id = word_id
 
-        return ''.join(sentence).strip()
+        if return_if_func_val:
+            return ''.join(sentence).strip(), if_func_val
+        else:
+            return ''.join(sentence).strip()
 
     def _create_batch(self, samples, bucket_id):
         """

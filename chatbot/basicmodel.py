@@ -124,7 +124,7 @@ class BasicModel:
             save_file = os.path.join(train_dir, result_file)
 
             loss_list = []
-            last_perp = 200.0
+            last_perp = 1000.0
             write_meta_graph = True
             for epoch in range(num_epochs):
                 batches = self.tokenized_data.get_training_batches(self.batch_size)
@@ -291,10 +291,8 @@ class BasicModel:
             return 2.4e-4
         elif perplexity <= 20.0:
             return 4e-4
-        elif perplexity <= 200.0:
-            return 8e-4
         else:
-            return 2e-3
+            return 8e-4
 
 if __name__ == "__main__":
     from settings import PROJECT_ROOT
@@ -309,7 +307,7 @@ if __name__ == "__main__":
     print('Loaded raw data: {} words, {} samples'.format(td.vocabulary_size, td.sample_size))
 
     model = BasicModel(tokenized_data=td, num_layers=2, num_units=880, input_keep_prob=0.9,
-                       output_keep_prob=0.9, embedding_size=64, batch_size=32)
+                       output_keep_prob=0.9, embedding_size=64, batch_size=16)
 
     res_dir = os.path.join(PROJECT_ROOT, 'Data', 'Result')
     model.train(num_epochs=120, train_dir=res_dir, result_file='basic')

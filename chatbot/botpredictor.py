@@ -16,6 +16,7 @@ import numpy as np
 import os
 import tensorflow as tf
 
+from chatbot.functiondata import FunctionData
 
 class BotPredictor:
     def __init__(self, session, tokenized_data, result_dir, result_file):
@@ -74,35 +75,48 @@ class BotPredictor:
         Args:
             sentence: The input sentence string from the end user.
         Returns:
-            dec_outputs: A tensor with the size of dec_seq_len * vocabulary_size.
+            out_sentence: A human readable sentence as the final output.
         """
-        batch = self.tokenized_data.get_predict_batch(sentence)
-        bucket_enc_len, bucket_dec_len = self.buckets[batch.bucket_id]
+        pat_matched, new_sentence, num_list = \
+            FunctionData.check_arithmetic_pattern_and_replace(sentence)
 
-        f_dict = {}
-        for i in range(bucket_enc_len):
-            f_dict[self.encoder_inputs[i].name] = batch.encoder_seqs[i]
+        for pre_time in range(2):
+            batch = self.tokenized_data.get_predict_batch(new_sentence)
+            bucket_enc_len, bucket_dec_len = self.buckets[batch.bucket_id]
 
-        for i in range(bucket_dec_len):
-            if i == 0:
-                f_dict[self.decoder_inputs[0].name] = [self.tokenized_data.bos_token]
+            f_dict = {}
+            for i in range(bucket_enc_len):
+                f_dict[self.encoder_inputs[i].name] = batch.encoder_seqs[i]
+
+            for i in range(bucket_dec_len):
+                if i == 0:
+                    f_dict[self.decoder_inputs[0].name] = [self.tokenized_data.bos_token]
+                else:
+                    f_dict[self.decoder_inputs[i].name] = [self.tokenized_data.pad_token]
+
+            f_dict[self.input_keep_prob] = 1.0
+            f_dict[self.output_keep_prob] = 1.0
+            f_dict[self.feed_previous] = True
+
+            dec_outputs = self.session.run(self.decoder_outputs[batch.bucket_id], feed_dict=f_dict)
+            # print("Shape of dec_outputs: {}".format(np.asarray(dec_outputs).shape))
+
+            if pat_matched and pre_time == 0:
+                out_sentence, if_func_val = self._get_sentence(dec_outputs, para_list=num_list)
+                if if_func_val:
+                    return out_sentence
+                else:
+                    new_sentence = sentence
             else:
-                f_dict[self.decoder_inputs[i].name] = [self.tokenized_data.pad_token]
+                out_sentence, _ = self._get_sentence(dec_outputs)
+                return out_sentence
 
-        f_dict[self.input_keep_prob] = 1.0
-        f_dict[self.output_keep_prob] = 1.0
-        f_dict[self.feed_previous] = True
-
-        dec_outputs = self.session.run(self.decoder_outputs[batch.bucket_id], feed_dict=f_dict)
-
-        # print("Shape of dec_outputs: {}".format(np.asarray(dec_outputs).shape))
-        return dec_outputs
-
-    def get_sentence(self, dec_outputs):
+    def _get_sentence(self, dec_outputs, para_list=None):
         """
         Args:
             dec_outputs: A tensor with the size of dec_seq_len * vocabulary_size, which is 
                 the output from the predict function.
+            para_list: The python list containing the parameter real values.
         Returns:
             sentence: A human readable sentence.                 
         """
@@ -110,4 +124,5 @@ class BotPredictor:
         for out in dec_outputs:
             word_ids.append(np.argmax(out))
 
-        return self.tokenized_data.word_ids_to_str(word_ids)
+        return self.tokenized_data.word_ids_to_str(word_ids, return_if_func_val=True,
+                                                   para_list=para_list)
