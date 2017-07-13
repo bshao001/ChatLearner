@@ -21,7 +21,7 @@ import time
 
 class FunctionData:
     easy_list = [
-        "",
+        "", "",
         "Here you are: ",
         "Here is the result: ",
         "That's easy: ",
@@ -32,7 +32,7 @@ class FunctionData:
         "Oh, I know how to deal with this: "
     ]
     hard_list = [
-        "",
+        "", "",
         "Here you are: ",
         "Here is the result: ",
         "That's a little hard: ",
@@ -136,7 +136,7 @@ class FunctionData:
     @staticmethod
     def contains_arithmetic_pattern(sentence):
         numbers = [
-            "and", "zero", "one", "two", "three", "four", "five", "six", "seven",
+            "zero", "one", "two", "three", "four", "five", "six", "seven",
             "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen",
             "fifteen", "sixteen", "seventeen", "eighteen", "nineteen",
             "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety",
@@ -144,14 +144,20 @@ class FunctionData:
 
         pat_op = re.compile(r'\s(plus|\+|minus|-|multiply|\*|divide|(divided\s+by)|/)\s',
                             re.IGNORECASE)
-        pat_as = re.compile(r'((\sis\s)|=|(\sequals\s))', re.IGNORECASE)
+        pat_as = re.compile(r'((\bis\b)|=|(\bequals\b))', re.IGNORECASE)
 
         mat_op = re.search(pat_op, sentence)
         mat_as = re.search(pat_as, sentence)
         if mat_op and mat_as:  # contains an arithmetic operator and an assign operator
+            # Replace all occurrences of word "and" with 3 whitespaces before feeding to
+            # the pattern matcher.
+            pat_and = re.compile(r'\band\b', re.IGNORECASE)
+            tmp_sentence = pat_and.sub('   ', sentence)
+
             number_rx = r'(?:{})'.format('|'.join(numbers))
-            pat_num = re.compile(r'\b{0}(?:[\s-]{0})*\b|\d+'.format(number_rx), re.IGNORECASE)
-            ind_list = [(m.start(0), m.end(0)) for m in re.finditer(pat_num, sentence)]
+            pat_num = re.compile(r'\b{0}(?:(?:\s+(?:and\s+)?|-){0})*\b|\d+'.format(number_rx),
+                                 re.IGNORECASE)
+            ind_list = [(m.start(0), m.end(0)) for m in re.finditer(pat_num, tmp_sentence)]
             num_list = []
             if len(ind_list) == 2:  # contains exactly two numbers
                 for start, end in ind_list:
@@ -188,7 +194,7 @@ class FunctionData:
             num_words[word] = (10 ** (idx * 3 or 2), 0)
 
         current = result = 0
-        for word in text.split():
+        for word in text.replace("-", " ").lower().split():
             if word not in num_words:
                 return -1
 
@@ -259,13 +265,19 @@ if __name__ == "__main__":
 
     sentences = [
         "How much is 12 + 14?",
-        "How much is twelve thousand three hundred four plus two hundred fifty six?",
+        "How much is twelvethousand three hundred four plus two hundred fifty six?",
         "What is five hundred eighty nine multiply six?",
         "What is five hundred eighty nine divided by 89?",
-        "What is five hundred and seventy nine divided by 89?",
-        "How much is twelve thousand three hundred and four divided by two hundred fifty six?",
+        "What is five hundred and seventy nine Divided By 89?",
+        "How much is twelve thousand     three-hundred and four divided by two-hundred-fifty-six?",
+        "How much is twelve thousand     three hundred and four divided by two hundred fifty six?",
         "What is seven billion five million and four thousand three hundred and four plus "
         "five million and four thousand three hundred and four?",
+        "What is two and two plus and?",
+        "What is two hundred and four plus one and something?",
+        "What is two hundred and four plus one and and something?",
+        "What is two hundred and four plus and and and something?",
+        "My phone number is 305-456-7890.",
         "How much is 16 - 23?",
         "How much is 144 * 12?",
         "How much is 23 / 26?",
@@ -282,7 +294,12 @@ if __name__ == "__main__":
         "If x=55 and y=19, how much is y - x?",
         "Let x=99, y=9, how much is x / y?",
         "What is 16 + 24 equals to?",
-        "What is 16 + 24?"
+        "What is 16 + 24?",
+        "One plus one is?",
+        "two plus two is",
+        "One plus two is?",
+        "How much is one plus one?",
+        "How much is zero divided by zero?"
     ]
 
     for sentence in sentences:

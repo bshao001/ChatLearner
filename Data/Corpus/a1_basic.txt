@@ -180,7 +180,7 @@ I love you too!
 I appreciate very much your help!
 You are very welcome!
 ===
-I love you
+I love you, baby!
 I love you too!
 ===
 I hate you!
@@ -228,22 +228,6 @@ Good night. Have a nice dream!
 ===
 Hi, how are you?
 I am fine, thank you.
-One plus one is
-Two.
-Two plus two is
-Four.
-One plus two is
-Three.
-How much is one plus one?
-Two.
-How much is two plus two?
-Four.
-How much is one plus two?
-Three.
-How much is zero divided by zero?
-I tried, and an error occurred in the computer system. Luckily the exception was caught, so we can continue to talk.
-What is zero divided by zero?
-That does not make sense, as the divisor cannot be zero.
 ===
 Hey.
 Hey.
@@ -254,11 +238,17 @@ Good night. Have a nice dream!
 ===
 How are you today, Papaya?
 I am fine, thank you.
+Great!
+:)
 ===
 How are you doing today, Papaya?
 Great, thank you.
 Okay.
 :)
+Great job!
+Thank you, I'm happy to hear that!
+Bye
+Bye bye.
 ===
 Hello!
 Hello!
@@ -272,5 +262,7 @@ Are you a man or a woman?
 I am still a boy.
 Why are we here?
 We are here to communicate with each other.
+Excellent!
+:)
 Okay, bye!
 Bye.
