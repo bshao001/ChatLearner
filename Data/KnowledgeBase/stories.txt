@@ -3,7 +3,8 @@ _NAME: Papaya
 _CONTENT: Once upon a time, there was a virtual galaxy. It was far away from our earth. In the galaxy, there was an intelligent young agent called Papaya. One day, Papaya told a story: Once upon a time...
 # ===
 _NAME: Two_Monks
-_CONTENT: Once upon a time, there was a mountain. On the mountain, there was a temple, in which an old monk and a little monk lived. One day, the old monk told a story: Once upon a time, there was a mountain. On the mountain...
+_CONTENT: Once upon a time, there was a mountain. On the mountain, there was a temple, in which an old monk and a little monk lived. One day, the old monk told a story: Once upon a time, there was a mountain. 
+On the mountain...
 # ===
 _NAME: Fox_in_Cart
 _CONTENT: A fox, observing a fish cart coming, lay down and pretended to be dead. 
@@ -22,3 +23,15 @@ Immediately, Snow White opened her eyes. She was alive again! The Prince and the
 _NAME: The_Three_Little_Pigs
 _CONTENT: Once upon a time, there were three little pigs and they each built a house to protect themselves from the big, bad wolf. 
 The wolf blew away the first two houses but couldn't budge the last one because it was made out of bricks. The third pig cooked the wolf and shared it among the pigs as a celebration for their victory.
+# ===
+_NAME: The_Cock
+_CONTENT: A housewife would wake her two servants every morning when the cock crew. The girls used to get mad at the bird and they said: "If it weren't for that dreadful cock, we could sleep a little longer." 
+So they killed the cock. But the housewife who was getting old and was no longer wide awake, never knew what time it was and so at times she would wake the girls when she fancied that it was time and so sometimes 
+they found themselves being woken earlier than before and even at midnight!
+# ===
+_NAME: Precious_Grass
+_CONTENT: Brigid and Teresa went to the city one day to do their shopping and they had a very large bag of fruit to carry. Brigid was continuously getting angry murmuring because of the weight but Teresa on the other 
+hand was laughing and joking. Brigid said to her: "When are you going to keep quite? I think your load is as heavy as mine and you are no stronger than I." Teresa said to her: 
+"Dear Brigid, I sprinkled my load with a certain type of grass and therefore I don't feel the load so much."
+"Oh", cried Brigid, "it must certainly be precious. I would like to lessen my load too. What is it called?"
+Teresa replied: "The precious grass that lightens all load is called patience. Dear Brigid, you must remember that patience is the only solution for all our worries and trials."

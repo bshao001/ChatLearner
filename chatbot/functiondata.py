@@ -135,22 +135,70 @@ class FunctionData:
 
     @staticmethod
     def contains_arithmetic_pattern(sentence):
-        pat_op = re.compile(r'\s+(plus|\+|minus|-|multiply|\*|divide|(divided\s+by)|/)\s+')
-        pat_as = re.compile(r'((\sis\s)|=|(\sequals\s))')
+        numbers = [
+            "and", "zero", "one", "two", "three", "four", "five", "six", "seven",
+            "eight", "nine", "ten", "eleven", "twelve", "thirteen", "fourteen",
+            "fifteen", "sixteen", "seventeen", "eighteen", "nineteen",
+            "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety",
+            "hundred", "thousand", "million", "billion", "trillion"]
+
+        pat_op = re.compile(r'\s(plus|\+|minus|-|multiply|\*|divide|(divided\s+by)|/)\s',
+                            re.IGNORECASE)
+        pat_as = re.compile(r'((\sis\s)|=|(\sequals\s))', re.IGNORECASE)
 
         mat_op = re.search(pat_op, sentence)
         mat_as = re.search(pat_as, sentence)
         if mat_op and mat_as:  # contains an arithmetic operator and an assign operator
-            ind_list = [(m.start(0), m.end(0)) for m in re.finditer(r'\d+', sentence)]
+            number_rx = r'(?:{})'.format('|'.join(numbers))
+            pat_num = re.compile(r'\b{0}(?:[\s-]{0})*\b|\d+'.format(number_rx), re.IGNORECASE)
+            ind_list = [(m.start(0), m.end(0)) for m in re.finditer(pat_num, sentence)]
             num_list = []
             if len(ind_list) == 2:  # contains exactly two numbers
                 for start, end in ind_list:
-                    str = sentence[start:end]
-                    num_list.append(int(str))
+                    text = sentence[start:end]
+                    text_int = FunctionData.text2int(text)
+                    if text_int == -1:
+                        return False, [], []
+                    num_list.append(text_int)
 
                 return True, ind_list, num_list
 
         return False, [], []
+
+    @staticmethod
+    def text2int(text):
+        if text.isdigit():
+            return int(text)
+
+        num_words = {}
+        units = [
+            "zero", "one", "two", "three", "four", "five", "six", "seven", "eight",
+            "nine", "ten", "eleven", "twelve", "thirteen", "fourteen", "fifteen",
+            "sixteen", "seventeen", "eighteen", "nineteen",
+        ]
+        tens = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"]
+        scales = ["hundred", "thousand", "million", "billion", "trillion"]
+
+        num_words["and"] = (1, 0)
+        for idx, word in enumerate(units):
+            num_words[word] = (1, idx)
+        for idx, word in enumerate(tens):
+            num_words[word] = (1, idx * 10)
+        for idx, word in enumerate(scales):
+            num_words[word] = (10 ** (idx * 3 or 2), 0)
+
+        current = result = 0
+        for word in text.split():
+            if word not in num_words:
+                return -1
+
+            scale, increment = num_words[word]
+            current = current * scale + increment
+            if scale > 100:
+                result += current
+                current = 0
+
+        return result + current
 
 
 def call_function(func_info, tokenized_data=None, para_list=None):
@@ -211,6 +259,13 @@ if __name__ == "__main__":
 
     sentences = [
         "How much is 12 + 14?",
+        "How much is twelve thousand three hundred four plus two hundred fifty six?",
+        "What is five hundred eighty nine multiply six?",
+        "What is five hundred eighty nine divided by 89?",
+        "What is five hundred and seventy nine divided by 89?",
+        "How much is twelve thousand three hundred and four divided by two hundred fifty six?",
+        "What is seven billion five million and four thousand three hundred and four plus "
+        "five million and four thousand three hundred and four?",
         "How much is 16 - 23?",
         "How much is 144 * 12?",
         "How much is 23 / 26?",
@@ -233,6 +288,7 @@ if __name__ == "__main__":
     for sentence in sentences:
         print(sentence)
         print(FunctionData.check_arithmetic_pattern_and_replace(sentence))
+        print()
 
     # print(call_function("get_story_name_para1_the_three_little_pigs", td))
     # print(call_function("get_story_any", td))

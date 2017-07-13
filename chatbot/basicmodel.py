@@ -153,7 +153,7 @@ class BasicModel:
                     loss_list.append(loss_val)
 
                 # Output training status
-                if epoch % 6 == 0 or epoch == num_epochs - 1:
+                if epoch % 5 == 0 or epoch == num_epochs - 1:
                     mean_loss = sum(loss_list) / len(loss_list)
                     perplexity = np.exp(float(mean_loss)) if mean_loss < 300 else math.inf
                     print("At epoch {}: learning_rate = {:.6f}, mean loss = {:.4f}, perplexity = {:.4f}".
@@ -161,12 +161,12 @@ class BasicModel:
                     if epoch == num_epochs - 1:
                         saver.save(sess, save_file)  # Write meta graph at the last save
                     elif perplexity < 1.10:
-                        if perplexity < 1.015:  # Write meta graph before break
+                        if perplexity < 1.04:  # Write meta graph before break
                             write_meta_graph = True
                         saver.save(sess, save_file, global_step=epoch, write_meta_graph=write_meta_graph)
                         write_meta_graph = False
 
-                    if perplexity < 1.015:
+                    if perplexity < 1.04:
                         break
 
                     loss_list = []
@@ -263,7 +263,7 @@ class BasicModel:
             with tf.variable_scope(tf.get_variable_scope(), reuse=True if j > 0 else None):
                 loss = tf.contrib.legacy_seq2seq.sequence_loss(
                     logits=outputs[j], targets=targets[:bucket[1]], weights=weights[:bucket[1]],
-                    average_across_batch=True, softmax_loss_function=softmax_loss_function)
+                    average_across_batch=False, softmax_loss_function=softmax_loss_function)
                 losses.append(loss)
 
                 train_op = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(loss)
@@ -305,7 +305,7 @@ if __name__ == "__main__":
     print('Loaded raw data: {} words, {} samples'.format(td.vocabulary_size, td.sample_size))
 
     model = BasicModel(tokenized_data=td, num_layers=2, num_units=800, input_keep_prob=0.9,
-                       output_keep_prob=0.9, embedding_size=64, batch_size=16)
+                       output_keep_prob=0.9, embedding_size=128, batch_size=16)
 
     res_dir = os.path.join(PROJECT_ROOT, 'Data', 'Result')
-    model.train(num_epochs=60, train_dir=res_dir, result_file='basic')
+    model.train(num_epochs=100, train_dir=res_dir, result_file='basic')
