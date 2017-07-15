@@ -22,9 +22,13 @@ If x = _num1_, how much is x + _num2_?
 _func_val_get_number_plus_para1__num1__para2__num2_
 If x = _num1_ and y = x + _num2_, how much is y?
 _func_val_get_number_plus_para1__num1__para2__num2_
-If x = _num1_ and y = _num2_, how much is x + y?
+If x = _num1_, y = _num2_, how much is x + y?
 _func_val_get_number_plus_para1__num1__para2__num2_
 Let x = _num1_, y = _num2_, how much is x + y?
+_func_val_get_number_plus_para1__num1__para2__num2_
+If x = _num1_ and y = _num2_, how much is x plus y?
+_func_val_get_number_plus_para1__num1__para2__num2_
+Let x = _num1_ and y = _num2_, how much is x plus y?
 _func_val_get_number_plus_para1__num1__para2__num2_
 ===
 #== Minus operation
@@ -62,6 +66,14 @@ Let x = _num1_, y = _num2_, how much is x - y?
 _func_val_get_number_minus_para1__num1__para2__num2_
 Let x = _num1_, y = _num2_, how much is y - x?
 _func_val_get_number_minus_para1__num2__para2__num1_
+If x = _num1_, y = _num2_, how much is x minus y?
+_func_val_get_number_minus_para1__num1__para2__num2_
+If x = _num1_, y = _num2_, how much is y minus x?
+_func_val_get_number_minus_para1__num2__para2__num1_
+Let x = _num1_ and y = _num2_, how much is x minus y?
+_func_val_get_number_minus_para1__num1__para2__num2_
+Let x = _num1_ and y = _num2_, how much is y minus x?
+_func_val_get_number_minus_para1__num2__para2__num1_
 ===
 #== Multiply operation
 How much is _num1_ multiply _num2_?
@@ -89,6 +101,10 @@ _func_val_get_number_multiply_para1__num1__para2__num2_
 If x = _num1_ and y = _num2_, how much is x * y?
 _func_val_get_number_multiply_para1__num1__para2__num2_
 Let x = _num1_, y = _num2_, how much is x * y?
+_func_val_get_number_multiply_para1__num1__para2__num2_
+If x = _num1_, y = _num2_, how much is x multiply y?
+_func_val_get_number_multiply_para1__num1__para2__num2_
+Let x = _num1_ and y = _num2_, how much is x multiply y?
 _func_val_get_number_multiply_para1__num1__para2__num2_
 ===
 #== Divide operation
@@ -135,4 +151,18 @@ _func_val_get_number_divide_para1__num2__para2__num1_
 Let x = _num1_, y = _num2_, how much is x / y?
 _func_val_get_number_divide_para1__num1__para2__num2_
 Let x = _num1_, y = _num2_, how much is y / x?
+_func_val_get_number_divide_para1__num2__para2__num1_
+===
+#== Divide operation
+If x = _num1_, how much is x divided by _num2_?
+_func_val_get_number_divide_para1__num1__para2__num2_
+If x = _num1_, how much is _num2_ divided by x?
+_func_val_get_number_divide_para1__num2__para2__num1_
+If x = _num1_ and y = _num2_, how much is x divided by y?
+_func_val_get_number_divide_para1__num1__para2__num2_
+If x = _num1_ and y = _num2_, how much is y divided by x?
+_func_val_get_number_divide_para1__num2__para2__num1_
+Let x = _num1_, y = _num2_, how much is x divided by y?
+_func_val_get_number_divide_para1__num1__para2__num2_
+Let x = _num1_, y = _num2_, how much is y divided by x?
 _func_val_get_number_divide_para1__num2__para2__num1_

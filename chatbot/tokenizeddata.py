@@ -41,7 +41,8 @@ class TokenizedData:
         # Use a number of buckets and pad the data samples to the smallest one that can accommodate.
         # For decoders, 2 slots are reserved for bos_token and eos_token. Therefore the really slots
         # available for words/punctuations are 2 less, i.e., 12, 20, 40 based on the following numbers
-        self.buckets = [(10, 14), (18, 22), (36, 42)]
+        # self.buckets = [(10, 14), (18, 22), (36, 42)]
+        self.buckets = [(12, 18), (36, 42)]
 
         # Number of samples for sampled softmax. Define it here so that both the trainer and predictor
         # can easily access it.

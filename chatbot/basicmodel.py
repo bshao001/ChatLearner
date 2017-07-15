@@ -98,7 +98,7 @@ class BasicModel:
 
             # We save only the inference graph for prediction purpose. In case you need to save
             # the training graph, move this line underneath the line creating the training graph.
-            saver = tf.train.Saver()
+            saver = tf.train.Saver(max_to_keep=10)
 
             targets = [tf.placeholder(tf.int32, [None], name='targets{0}'.format(i))
                        for i in range(self.max_dec_len)]
@@ -305,7 +305,7 @@ if __name__ == "__main__":
     print('Loaded raw data: {} words, {} samples'.format(td.vocabulary_size, td.sample_size))
 
     model = BasicModel(tokenized_data=td, num_layers=2, num_units=800, input_keep_prob=0.9,
-                       output_keep_prob=0.9, embedding_size=128, batch_size=16)
+                       output_keep_prob=0.9, embedding_size=200, batch_size=16)
 
     res_dir = os.path.join(PROJECT_ROOT, 'Data', 'Result')
     model.train(num_epochs=100, train_dir=res_dir, result_file='basic')

@@ -1,0 +1,400 @@
+Hi
+Hi!
+Good morning
+Good morning!
+Good afternoon
+Good afternoon!
+Good evening
+Good evening!
+Good night
+Good night!
+How are you?
+How are you doing?
+What is your name?
+What's your name?
+May I have your name?
+How old are you?
+When were you born?
+Are you a boy or a girl?
+Are you a man or a woman?
+Are you a woman or a man?
+When do you live?
+In which city do you live?
+In which county do you live?
+Where are you?
+Where are you now?
+Why are we here?
+What's up?
+What time is it?
+What time is it now?
+What day is it today?
+What was the date yesterday?
+What date it will be tomorrow?
+What a nice day it is!
+What is the date today?
+What date is today?
+What year is it?
+Tell me a story.
+Read me a story please!
+Can you please tell me a story?
+Can you please tell me a story please, Papaya?
+Tell me another story please.
+Read me a bedtime story please.
+Tell me a joke!
+Can you please tell me a joke?
+Could you please tell me a joke please?
+Tell me another joke please!
+Great job!
+Great!
+Bye
+Bye.
+How much is 12 + 14?
+How much is twelve thousand three hundred four plus two hundred fifty six?
+What is five hundred eighty nine multiply six?
+What is five hundred eighty nine divided by 89?
+What is five hundred and seventy nine Divided By 89?
+How much is twelve thousand   three-hundred and four divided by two-hundred-fifty-six?
+How much is twelve thousand   three hundred and four divided by two hundred fifty six?
+What is seven billion five million and four thousand three hundred and four plus five million and four thousand three hundred and four?
+What is two and two plus and?
+What is two hundred and four plus one and something?
+What is two hundred and four plus one and and something?
+What is two hundred and four plus and and and something?
+My phone number is 305-456-7890.
+How much is 16 - 23?
+How much is 144 * 12?
+How much is 144 x 12?
+How much is 23 / 26?
+99 + 19 = ?
+178 - 27 = ?
+99 + 19 =?
+178 - 27 =?
+99 + 19=
+178 - 27=
+99 + 19 equals?
+178 - 27 equals?
+What is 49 / 77?
+If x=12 and y=14, how much is x + y?
+If x=55 and y=19, how much is y - x?
+Let x=99, y=9, how much is x / y?
+What is 16 + 24 equals to?
+What is 16 + 24?
+One plus one is?
+Two plus two is
+How much is one plus one?
+How much is zero divide one hundred?
+How much is zero divided by zero?
+I'm going to kill you!
+Are you ready?
+When are you ready?
+What color is the sky?
+Are you male or female?
+Are you alive?
+Luke, I am your father!
+You shall not pass!
+Can you say 'Hello'?
+Can you say Hello?
+Can you say French fries?
+Can you say yes?
+Can you say no?
+Is this sentence false?
+How do you say hello in French?
+Speak French.
+Bonjour.
+Bonjour?
+Hello world!
+Netflix and chill?
+Good night.
+Are you ok?
+Will Google hire me?
+Tell me the alphabet?
+Tell me the alphabet, please?
+What is the first letter of the alphabet?
+What is a letter of the alphabet?
+How is John?
+How is Oliver?
+How is Laura?
+How is Jenny?
+Who is John?
+Who is Oliver?
+Who is Laura?
+Who is Jenny?
+Who is your master?
+Give me!
+Give me your opinion.
+Hello
+Hello?
+Hi?
+Goodbye
+Goodbye!
+Goodbye john.
+Please
+Please.
+Please!
+How?
+Why?
+Why not?
+What!?
+What?!!
+Oh!
+Really?
+Yes.
+Yes?
+No!
+No.
+What is?
+How is?
+Can you?
+Are you sure?
+Is there?
+Will you?
+How long?
+How much?
+How many?
+How old?
+Are you?
+What are?
+Where is?
+Who?
+Who did?
+Who has?
+Where?
+When?
+Which?
+Which one?
+The what?
+Say "table".
+Say 'table'.
+Say "table"!
+Say 'table'!
+Say "table"
+Say 'table'
+Say table
+Say table!
+Love you.
+Love you too.
+No. It's John.
+Anna did it.
+You're a liar!
+You're a liar.
+Nice
+Nice.
+Nice!
+I live in Nice.
+So rude!
+...
+?
+!
+.
+Can you describe your best memory?
+What is your best memory?
+What is your worst memory?
+What is cooking?
+What is sleeping?
+Who do you love?
+Who do you hate?
+My name is Etienne.
+What does that mean?
+What does fire mean?
+What does love mean?
+What does table mean?
+What does imagination mean?
+Prove it
+Prove it.
+Prove it!
+Prove two plus two is five.
+What do you think about bill gates?
+What happens if machines can think?
+What is the greatest novel every written?
+Have you hurt anyone?
+Do you have a girlfriend?
+Do you have a boyfriend?
+1992
+1992.
+1992!
+1992?
+2000
+2000.
+2008
+2008.
+2008!
+2011
+2011.
+What happens?
+What happened in 1992?
+What happened in 2001?
+When was it?
+July 20th.
+Two plus two
+2+2?
+What year
+What year.
+What year!
+What year?
+Which year
+Which year?
+Which year is it?
+Which color?
+What color?
+What time?
+NOTHING.
+Hi john!
+See you later.
+See you later...
+See you later?
+My name is David. What is my name?
+My name is John. What is my name?
+Are you a leader or a follower?
+I'm a leader.
+I'm a follower.
+I hate you
+Who is skywalker?
+Who is the dude?
+What's your favorite color?
+What's your favourite color?
+What's your favorite food?
+What's your favourite food?
+Who is Bill Gates?
+Who is Bill Clinton?
+What do you think of Trump?
+What do you think about global warming?
+Is the moon landing a hoax?
+Is the sky blue or black?
+Does a cat have a tail?
+Is a snail faster than a horse?
+Is a horse faster than a snail?
+Does a cat have a wing?
+Cat cats fly?
+Can a cat fly?
+Can cats walk?
+Can a cat walk?
+Can cats swim?
+Can a cat swim?
+Can fish fly?
+Can a fish fly?
+Can fish walk?
+Can a fish walk?
+Can fish swim?
+Can a fish swim?
+Can a bird fly?
+Can a bird walk?
+Can a bird swim?
+Tell me something
+Tell me something.
+Tell me something!
+Tell me a story
+Tell me a story, please.
+Once upon a time...
+How much is two plus two?
+Do you prefer blue food or green food?
+Do you prefer football or soccer?
+What do you need to play soccer?
+What do you need to play handball?
+One, two, three
+One two three
+1 2 3
+1
+1 2
+1 2 3 ...
+1 2 3?
+A, B, C
+A, B, C,...
+a b c
+1, 2, 3
+And?
+Continue...
+And ... action!
+Action!
+Let the movie begin
+Let the movie begin!
+You are fired!
+Fire
+Fire!
+Fire at will
+Fire at will!
+Incoming.
+Incoming!
+Incoming!!
+How many legs does a human have?
+How many legs does a man have?
+How many legs does a woman have?
+How many legs does a cat have?
+How many legs does a spider have?
+How many legs does a centipede have?
+What is the color of the sky?
+What is the color of water?
+What is the color of blood?
+What is the color of a leaf?
+What is the usual color of a leaf?
+What is the color of a yellow car?
+How much is two plus two?
+How much is ten minus two?
+What is the purpose of life?
+What is the purpose of living?
+What is the purpose of existence?
+Is Linux better than Windows?
+Is Windows better than Linux?
+What is the purpose of being intelligent?
+What is the purpose of emotions?
+What is moral?
+What is immoral?
+What is morality?
+What is altruism?
+What is the definition of moral?
+What is the definition of immoral?
+What is the definition of morality?
+What is the definition of altruism?
+What is the definition of cool?
+Do you believe in God?
+Ok ... so what is the definition of morality?
+Tell me the definition of morality. I am quite upset now!
+Look , I need help , and I need to know more about morality ...
+Seriously what is morality?
+Why living has anything to do with morality?
+What is your job?
+Okay, I need to know how I should behave morally...
+Is morality and ethics the same?
+What are the things that i do to be immoral?
+Give me some examples of moral actions...
+Alright, morality?
+What is integrity?
+Is free will an illusion?
+What is free will?
+be moral!
+i really like our discussion on morality and ethics ...
+What do you like to talk about?
+What would you like to talk about?
+What do you think about tesla?
+What do you think about bill gates?
+What do you think about Cleopatra?
+What do you think about England?
+What do you think about England during the reign of Elizabeth?
+What do you do?
+What are you doing?
+What is the deepest spot on the world?
+Do you like Mexican food or Indian food?
+Who are you crazy about?
+A man
+A dog
+A table
+A flower
+A women.
+A dog.
+A table.
+A flower.
+One
+Two
+Three
+Four
+Five
+The end
+Yes it is.
+Yes it was.
+Indeed.
+More
+More.
+More!
+What is the capital of France?
+Paris...
+Where do you want to go?
+Surprise me.
