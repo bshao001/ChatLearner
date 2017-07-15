@@ -20,9 +20,9 @@ A chatbot implemented in TensorFlow based on the sequence to sequence model.
 7. The knowledge base is introduced here to address the case problem (to certain extent) experienced in the prediction output in the end user interface. I believe it also makes sense to treat multi-word terms/names/phrases as atomic entities in both training and prediction. For example, “United States”, “New York”, and “James Gosling” are all treated as single words with the idea of so-called knowledge base here. This would be extremely helpful for a domain-specific chatbot.
 
 8. Simple rule functions are embedded into the training data so that simple questions can be answered, such as:
-  * "What time is it now?" or "What day is it today?"
-  * "Read me a story please." or "Tell me a joke." It can then present stories and jokes randomly and not being limited by the sequence length. 
-  * "How much is twelve thousand three hundred four plus two hundred fifty six?" or "How much is twelve thousand three-hundred and four divided by two-hundred-fifty-six?" or "If x=55 and y=19, how much is y - x?" or even "If x = 99 and y = 228 / x, how much is y?"
+   * "What time is it now?" or "What day is it today?"
+   * "Read me a story please." or "Tell me a joke." It can then present stories and jokes randomly and not being limited by the sequence length. 
+   * "How much is twelve thousand three hundred four plus two hundred fifty six?" or "How much is twelve thousand three-hundred and four divided by two-hundred-fifty-six?" or "If x=55 and y=19, how much is y - x?" or even "If x = 99 and y = 228 / x, how much is y?"
 
 ## Training Data (Papaya Data Set)
 1. The training data, although still toy-sized, are mostly handcrafted. They were created to maintain a consistent role of the chatbot, who can therefore be trained to be polite, patient, humorous, and aware that he is a robot, but pretends to be a 9-year old boy named Papaya. Most of the sentence pairs were written by my son, Kenny Shao, who will be going to high school fall 2017. Please do give us credits by linking to this page in case you make use of the training data for any purposes.
