@@ -19,7 +19,7 @@ A chatbot implemented in TensorFlow based on the sequence to sequence model.
 
 7. The knowledge base is introduced here to address the case problem (to certain extent) experienced in the prediction output in the end user interface. I believe it also makes sense to treat multi-word terms/names/phrases as atomic entities in both training and prediction. For example, “United States”, “New York”, and “James Gosling” are all treated as single words with the idea of so-called knowledge base here. This would be extremely helpful for a domain-specific chatbot.
 
-8. Simple rule functions are embedded into the training data so that simple questions can be answered, such as:
+8. Simple rule functions are embedded into the training data so that certain categories of questions can be answered, such as:
    * "What time is it now?" or "What day is it today?"
    * "Read me a story please." or "Tell me a joke." It can then present stories and jokes randomly and not being limited by the sequence length. 
    * "How much is twelve thousand three hundred four plus two hundred fifty six?" or "How much is twelve thousand three-hundred and four divided by two-hundred-fifty-six?" or "If x=55 and y=19, how much is y - x?" or even "If x = 99 and y = 228 / x, how much is y?"
@@ -37,7 +37,7 @@ cd chatbot
 python basicmodel.py
 ```
 
-With the existing parameters in the file and the current Papaya training data set, it will be very easy to get to a perplexity of 1.06 at around epoch 30. It would be better if you let it run until it terminates by itself, i.e., reaching the point with the perplexity less than 1.04 or until the maximum epoch. You will be able to see the training results under Data/Result/ folder. Make sure they are 4 files exist: 
+With the existing parameters in the file and the current Papaya training data set, it will be very easy to get to a perplexity of 1.06 at around epoch 30. It would be better if you let it run until it terminates by itself, i.e., reaching the perplexity less than 1.04 or until the maximum epoch. You will be able to see the training results under Data/Result/ folder. Make sure they are 4 files exist: 
 1. basic.data-00000-of-00001
 2. basic.index
 3. basic.meta
