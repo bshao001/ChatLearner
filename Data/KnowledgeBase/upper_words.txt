@@ -13,7 +13,7 @@ English, Einstein, Eros
 # F
 Facebook, French, France
 # G
-GEICO, Google, Greek
+GEICO, God, Google, Greek
 # H
 Hades, Hawaii, Hecate, Hephaestus, Hera, Hermes, HMO, Holmes, Hypnos
 # I

@@ -96,3 +96,36 @@ I want to change to next Tuesday.
 What time would you prefer?
 I would prefer three o'clock in the afternoon.
 I will put you down for that time. Thank you for calling to reschedule.
+===
+Sorry to bother you, but I was wondering if you could drive me to the emergency room.
+Of course. What is the problem?
+I am running a really high fever of 105 degrees, and I have a rash on my stomach.
+If you can, go and unlock the back door, so I can get in when I get there if you fall asleep.
+I can do that when I get off of the phone.
+Do you know where your driver's license and insurance card are?
+I already had them out before I called you.
+Where is your nearest emergency room?
+It's just a few blocks away.
+Fine, I am on my way. I'll be there in about five minutes.
+===
+I hate to call you this late at night, but could you possibly help me get to the emergency room?
+We will come right over. What happened?
+My temperature went up to 105, and I have a rash!
+Make sure that someone unlocks the back door, so I can get in if you fall asleep before I get there.
+I will do that in a minute, and make sure you can get in.
+Also make sure that you have your insurance card and driver's license where we can grab them.
+I know right where they both are.
+Is there an emergency room near you?
+It is on the other side of town, next to city hall.
+I am on my way. Give me ten minutes and I'll get to you.
+===
+I really need your help and want to know if you could drive me to the emergency room.
+I will take you there right away. What is wrong?
+I woke up with a rash and a temperature of 105!
+I want to be able to get to you when I get there. If you can unlock the back door right now, that would be great.
+I will make sure that I do that before you get here.
+Also, make sure that we have your driver's license and insurance card before we leave for the emergency room.
+I am getting them out while I am speaking to you.
+Do you know where your nearest emergency room is?
+It is near the bridge that crosses over the river.
+I am driving to you even as we speak. Hang in there!

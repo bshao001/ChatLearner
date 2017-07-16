@@ -35,3 +35,13 @@ hand was laughing and joking. Brigid said to her: "When are you going to keep qu
 "Dear Brigid, I sprinkled my load with a certain type of grass and therefore I don't feel the load so much."
 "Oh", cried Brigid, "it must certainly be precious. I would like to lessen my load too. What is it called?"
 Teresa replied: "The precious grass that lightens all load is called patience. Dear Brigid, you must remember that patience is the only solution for all our worries and trials."
+# ===
+_NAME: The_Ugly_Duckling
+_CONTENT: It is a beautiful summer day. The sun shines warmly on an old house near a river. Behind the house a mother duck is sitting on ten eggs. All the eggs break open except one, which is the biggest egg of all.
+Mother duck sits and sits on the big egg. At last it breaks open, out jumps the last baby duck. It looks big and strong, but gray and ugly.
+The next day mother duck takes all her little ducks to the river. All her baby ducks jump in. They all swim and play together. The ugly duckling swims better than all the other ducklings.
+The farm yard is very noisy. The poor duckling is so unhappy there. The hens peck him, the rooster flies at him, the ducks bite him, and the farmer kicks him.
+At last one day he runs away. In a river, he sees many beautiful big birds swimming there. He wants to be with them. He knows they are swans. Oh, how he wants to be beautiful like them.
+Now it is winter. Everything is white with snow. The river is covered with ice. The ugly duckling is very cold and unhappy.
+Spring comes once again. The sun shines warmly. One morning the ugly duckling sees the beautiful swans again. He wants so much to swim with them, but he is afraid of them. He wants to die and he runs into the river. 
+There in the water he sees a beautiful swan. It is he! He is no more an ugly duckling. He is a beautiful white swan.
