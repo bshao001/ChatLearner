@@ -2,7 +2,7 @@
 
 ![](https://img.shields.io/badge/python-3.5.2-brightgreen.svg) ![](https://img.shields.io/badge/tensorflow-1.2.0-yellowgreen.svg)
 
-A chatbot implemented in TensorFlow based on the sequence to sequence model.
+A chatbot implemented in TensorFlow based on the sequence to sequence model, with certain rules integrated.
 
 ## Notes and Highlights:
 1. This implementation was created and tested under TensorFlow 1.2 GPU version. As there were significant changes among different versions of TensorFlow, especially in RNN-related areas, you may find it not work in earlier versions.
@@ -39,13 +39,11 @@ cd chatbot
 python basicmodel.py
 ```
 
-With the existing parameters in the file and the current Papaya training data set, it will be very easy to get to a perplexity of 1.06 at around epoch 30. It would be better if you let it run until it terminates by itself, i.e., reaching the perplexity less than 1.04 or until the maximum epoch. You will be able to see the training results under Data/Result/ folder. Make sure the following 4 files exist: 
+With the existing parameters in the file and the current Papaya training data set, it will be very easy to get to a perplexity of 1.06 at around epoch 30. It would be better if you let it run until it terminates by itself, i.e., reaching the perplexity less than 1.04 or until the maximum epoch. You will be able to see the training results under Data/Result/ folder. Make sure the following 4 files exist as all these will be required for testing and prediction: 
 1. basic.data-00000-of-00001
 2. basic.index
 3. basic.meta
 4. dicts.pickle
-
-All these will be required for testing and prediction.
 
 For testing and prediction, we don't have a web interface available yet. Try to use the following command interface for now:
 
