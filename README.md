@@ -29,7 +29,9 @@ A chatbot implemented in TensorFlow based on the sequence to sequence model.
 
 2. Some of the scenario conversations were extracted and reorganized from http://www.eslfast.com/robot/. If your model can support context, it would work much better by utilizing these conversations.
 
-## Training
+## Training and Testing
+Other than Python 3.5.2, Numpy, and TensorFlow 1.2. You also need NLTK (Natural Language Toolkit) version 3.2.4, including its data.
+
 Training is simple. Remember to create a folder named Result under the Data folder first. Then just run the following commands:
 
 ```bash
@@ -45,7 +47,6 @@ With the existing parameters in the file and the current Papaya training data se
 
 All these will be required for testing and prediction.
 
-# Test and Prediction
 For testing and prediction, we don't have a web interface available yet. Try to use the following command interface for now:
 
 ```bash
