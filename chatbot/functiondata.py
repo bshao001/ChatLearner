@@ -76,10 +76,21 @@ class FunctionData:
         return "{:%B %d, %Y}".format(dt.date.today())
 
     @staticmethod
-    def get_today_weekday():
-        today = dt.date.today()
-        weekday = cal.day_name[today.weekday()]
-        return "{}, {:%B %d, %Y}".format(weekday, today)
+    def get_weekday(day_delta):
+        now = dt.datetime.now()
+        if day_delta == 'd_2':
+            day_time = now - dt.timedelta(days=2)
+        elif day_delta == 'd_1':
+            day_time = now - dt.timedelta(days=1)
+        elif day_delta == 'd1':
+            day_time = now + dt.timedelta(days=1)
+        elif day_delta == 'd2':
+            day_time = now + dt.timedelta(days=2)
+        else:
+            day_time = now
+
+        weekday = cal.day_name[day_time.weekday()]
+        return "{}, {:%B %d, %Y}".format(weekday, day_time)
 
     @staticmethod
     def get_number_plus(num1, num2):
@@ -218,7 +229,7 @@ def call_function(func_info, tokenized_data=None, para_list=None):
         'get_date_time': FunctionData.get_date_time,
         'get_time': FunctionData.get_time,
         'get_today': FunctionData.get_today,
-        'get_today_weekday': FunctionData.get_today_weekday,
+        'get_weekday': FunctionData.get_weekday,
 
         'get_number_plus': FunctionData.get_number_plus,
         'get_number_minus': FunctionData.get_number_minus,
@@ -250,3 +261,10 @@ def call_function(func_info, tokenized_data=None, para_list=None):
                     return func_dict[func_name](num2_val, num1_val)
 
     return "You beat me to it, and I cannot tell which is which for this question."
+
+if __name__ == "__main__":
+    print(call_function('get_weekday_para1_d_2'))
+    print(call_function('get_weekday_para1_d_1'))
+    print(call_function('get_weekday_para1_d0'))
+    print(call_function('get_weekday_para1_d1'))
+    print(call_function('get_weekday_para1_d2'))

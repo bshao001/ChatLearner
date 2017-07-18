@@ -11,7 +11,7 @@ Donald Trump
 Elon Musk
 # F
 # G
-Geoffrey Hinton, George Washington, Gordon Moore, Guido van Rossum
+Geoffrey Hinton, George Washington, Gordon Moore, Great Britain, Guido van Rossum
 # H
 Harry Potter
 # I
@@ -25,7 +25,7 @@ Lebron James, Lou Gehrig
 # M
 Marshawn Lynch, Michael Jordan
 # N
-National Basketball Association, National Football League, New York
+National Basketball Association, National Football League, New Delhi, New York
 # O
 # P
 Periodic Table of Elements
@@ -37,7 +37,7 @@ Santa Barbara, Sherlock Holmes, State Farm, Stephen Curry, Stephen Hawking, Sun 
 # T
 Terence Tao
 # U
-United States, United States of America, Usain Bolt
+United Kingdom, United States, United States of America, Usain Bolt
 # V
 # W
 Warren Buffett, Warren Edward Buffett
