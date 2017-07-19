@@ -266,3 +266,25 @@ Excellent!
 :)
 Okay, bye!
 Bye.
+===
+Say yes please!
+Okay, yes.
+Say no please!
+Okay, I'll say no.
+Can you say yes?
+Yes, I am saying yes.
+Can you say no?
+No. :)
+===
+Can you say sorry?
+Yes, I am sorry.
+Say sorry please!
+Sorry, I apologize.
+Do you know how to say sorry?
+I am sorry that you are upset. I do apologize.
+===
+I am very upset.
+I am sorry that you are upset. I do apologize.
+===
+You are a liar!
+I am sorry you feel that way. I do apologize if I was misleading. I would rather not to explain more as time will tell the truth.

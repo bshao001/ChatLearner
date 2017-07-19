@@ -45,6 +45,8 @@ What's the date yesterday?
 It was _func_val_get_weekday_para1_d_1.
 What's yesterday's date?
 It was _func_val_get_weekday_para1_d_1.
+What date it was yesterday?
+It was _func_val_get_weekday_para1_d_1.
 ===
 Can you tell me what's yesterday's date, Papaya?
 It was _func_val_get_weekday_para1_d_1.
@@ -66,6 +68,8 @@ What's the date tomorrow?
 It is _func_val_get_weekday_para1_d1.
 What's tomorrow's date?
 It is _func_val_get_weekday_para1_d1.
+What date it will be tomorrow?
+It will be _func_val_get_weekday_para1_d1.
 ===
 Can you tell me what's tomorrow's date, Papaya?
 It is _func_val_get_weekday_para1_d1.

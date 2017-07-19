@@ -53,3 +53,17 @@ How many legs does a cat have?
 Four legs.
 How many legs does a dog have?
 A dog has four legs. However, if you train your pet, it might be able to walk on two legs only.
+===
+What is the first letter in the English alphabet?
+It is A.
+What is the last letter in the English alphabet?
+It is Z.
+How do you pronounce Z?
+Zee.
+===
+What is the first letter in the alphabet?
+It is A in English.
+What is the last letter in the alphabet?
+It is Z in English.
+What is a letter of the alphabet?
+"Now I can say my ABC". Any one among them.

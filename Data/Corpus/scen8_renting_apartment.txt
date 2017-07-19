@@ -107,3 +107,75 @@ Do you know which buses stop there?
 I'm sure there's an 800 number or a website that could help you.
 I don't have a computer. I'll just look in my phone book.
 Bus line information should be pretty easy to find.
+===
+How did you find your apartment?
+You can check on the bulletin boards at school for local housing.
+What if I need a roommate?
+There are websites that can hook you up with a roommate.
+How much do apartments cost around here?
+It depends on what you want. Do you want a one or two-bedroom apartment?
+I just need a one-bedroom apartment.
+That will probably cost you around twelve hundred dollars a month.
+Would you come with me to look at apartments?
+I would be happy to look at apartments with you.
+===
+When you need an apartment, where do you look for one?
+Our school has a link on its website for apartments.
+Can I share an apartment with someone?
+Some of the ads in the paper are from people looking for roommates.
+Are apartments expensive in this city?
+Do you need a single apartment, or is this for two people?
+I want a two-bedroom apartment.
+You can get that type of apartment for around fifteen hundred dollars a month.
+Would you have time to go look at apartments with me?
+I love apartment hunting. I'll be happy to go with you.
+===
+Can you tell me the best way to look for an apartment?
+The local newspaper has ads for housing.
+Is there any way to find a roommate to share an apartment with?
+Sometimes you can post an advertisement saying that you need a roommate.
+What do landlords charge for rent?
+Would you like an apartment for just yourself, or do you need it for two people?
+There are two of us, but we only need a one-bedroom apartment.
+You should be able to easily find that for twelve hundred dollars a month.
+I really would appreciate it if you could come look at apartments with me.
+Sure, I'll go look at apartments with you anytime you want.
+===
+How are you doing today?
+Great. Thanks for asking.
+Would you like our assistance with a move?
+Yes, actually I would.
+What would you like us to move for you?
+I need you to move my furniture.
+Could you tell me what kind of residence that we will be picking the furniture up from?
+The furniture is in my apartment.
+Where will we be moving it to?
+You'll be taking it to the house I just bought.
+All right. I just need both addresses, and we will take care of the moving for you.
+Excellent. Thank you very much.
+===
+How are you today?
+I am doing well.
+Did you need us to move something for you?
+That's exactly what I'm calling about.
+What exactly do you need moved?
+All my furniture needs to be moved.
+Where will we be moving your furniture from? 
+I need it moved from my apartment.
+Where would you like us to move the furniture to?
+I need the furniture moved to my new house.
+All I need is a little more information, and we'll take care of the rest.
+Sounds great. I'm glad you could help me.
+===
+How are you doing, Papaya?
+I'm fine, thank you.
+Did you need our help with a move?
+Yes, I do need your help with a move.
+What can we move for you?
+I need all my furniture moved.
+Will we be picking the furniture up from an apartment or a house?
+You'll be taking it from my old apartment.
+Are we moving the furniture to a house or an apartment?
+To my new house.
+We can do the move for you, but first I'm going to need some more information.
+Thanks a lot. I'll give you all the information you need.

@@ -415,10 +415,6 @@ class TokenizedData:
                             aug_len = src_size - len(src_word_ids)
                             aug_src_ids = [self.pad_token] * aug_len + src_word_ids[:]
                             self.training_samples[bucket_id].append([aug_src_ids, tgt_word_ids])
-                            # if bucket_id < len(self.buckets) - 1:  # Push to the next bucket
-                            #     aug_len2 = aug_len + 2
-                            #     aug_src_ids2 = [self.pad_token] * aug_len2 + src_word_ids[:]
-                            #     self.training_samples[bucket_id+1].append([aug_src_ids2, tgt_word_ids])
                         break
                 else:
                     print("Input ({}) or target ({}) line is too long to fit into any bucket"

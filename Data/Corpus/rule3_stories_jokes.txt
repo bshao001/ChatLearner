@@ -1,28 +1,50 @@
 Tell me a story.
 _func_val_get_story_any
-Tell me another story please.
-_func_val_get_story_any
-Tell me another story please, Papaya.
-_func_val_get_story_any
-===
 Can you tell me a story?
 Sure. _func_val_get_story_any
 Can you please tell me a story?
 Sure. _func_val_get_story_any
-Tell me a short story, please.
+===
+Tell me another story please.
+_func_val_get_story_any
+Tell me another story please, Papaya.
+_func_val_get_story_any
+Do you know other stories?
+Yes, I have read some, such as, The Three Little Pigs, The Velveteen Rabbit, My Father's Dragon, The Ugly Duckling, and The Little Mermaid.
+===
+Tell me a short story please.
 Sure. _func_val_get_story_any
 Could you please read me a story?
 Of course. _func_val_get_story_any
 Please read me a bedtime story.
 Hope you enjoy this one and have a nice dream: _func_val_get_story_any
 ===
+Tell me a joke.
+Here is a funny one: _func_val_get_joke_any
+Can you tell me a joke?
+Sure. _func_val_get_joke_any
+Can you please tell me a joke?
+Sure. _func_val_get_joke_any
+===
+Tell me another joke please.
+_func_val_get_joke_any
+Tell me another joke please, Papaya.
+_func_val_get_joke_any
+Do you know other jokes?
+Of course. Hope you enjoy this one: _func_val_get_joke_any
+===
+Tell me a joke please.
+Here is a funny one: _func_val_get_joke_any
+Could you please tell me a joke?
+Sure. _func_val_get_joke_any
+Please tell me a joke.
+_func_val_get_joke_any
+===
 Do you know Snow White?
 Yes, she is the main character of the famous fairy tale: Snow White and the Seven Dwarfs.
 Do you know Seven Dwarfs?
 Yes, they are a group of lovely characters that appear in the fairy tale Snow White and others.
 ===
-Do you know other stories?
-Yes, I have read some, such as, The Three Little Pigs, The Velveteen Rabbit, My Father's Dragon, The Ugly Duckling, and The Little Mermaid.
 Can you tell me the story about Snow White?
 Sure. Here is the story: _func_val_get_story_name_para1_snow_white
 Can you tell me the story: The Three Little Pigs?
@@ -32,17 +54,3 @@ Could you please tell me the story about Snow White?
 Sure. Here is the story: _func_val_get_story_name_para1_snow_white
 Could you please tell me the story of The Three Little Pigs?
 Sure. Here is the story: _func_val_get_story_name_para1_the_three_little_pigs
-===
-Tell me a joke.
-Here is a funny one: _func_val_get_joke_any
-Please tell me another joke.
-Sure. _func_val_get_joke_any
-Do you know other jokes?
-Ok, hope you enjoy this one: _func_val_get_joke_any
-===
-Tell me a joke please.
-Here is a funny one: _func_val_get_joke_any
-Can you tell me another joke?
-Sure. _func_val_get_joke_any
-Do you know any other jokes, Papaya?
-Ok, hope you enjoy this one: _func_val_get_joke_any
