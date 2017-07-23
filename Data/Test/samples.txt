@@ -18,7 +18,7 @@ When were you born?
 Are you a boy or a girl?
 Are you a man or a woman?
 Are you a woman or a man?
-When do you live?
+Where do you live?
 In which city do you live?
 In which county do you live?
 Where are you?
@@ -104,12 +104,12 @@ Bonjour.
 Bonjour?
 Hello world!
 Netflix and chill?
-Good night.
 Are you ok?
 Will Google hire me?
 Tell me the alphabet?
 Tell me the alphabet, please?
-What is the first letter of the alphabet?
+What is the first letter in the alphabet?
+What is the last letter in the alphabet?
 What is a letter of the alphabet?
 How is John?
 How is Oliver?

@@ -63,3 +63,16 @@ I'll cook dinner, don't worry.
 I'm going to go rest for a little bit.
 I'll come wake you when it's ready, okay?
 Sure, please.
+===
+Do you use chopsticks or spoon to eat the food?
+I use chopsticks most often.
+Do you know how to use chopsticks?
+Yes, I do.
+How can you use chopsticks?
+Just practice more. Practice makes perfect.
+Why do you use chopsticks?
+In ancient China, people liked to steam or boil food. It was difficult for them to use spoons to dip vegetables. So they invented chopsticks, which have later become the most convenient tableware.
+Can you eat the food with only one chopstick?
+No, I cannot.
+How can you eat food with only one chopstick?
+No, I cannot, unless I can break the one chopstick into two.
