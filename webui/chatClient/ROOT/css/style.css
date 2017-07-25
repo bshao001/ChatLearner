@@ -1,5 +1,5 @@
 body  {
-  background:linear-gradient(135deg, #044f48, #2a7561);
+  background:url("/images/bjb.jpg");
   font-family:"Times New Roman", Georgia, Serif;
   font-size:12px;
   text-align:left;
@@ -67,28 +67,49 @@ body  {
   margin:0;
 }
 #boxCenter div div.content {
-  padding:3px 2px 3px 2px;
+  padding:4px 3px 4px 3px;
   margin:1px 2px 1px 2px;
   border-radius:5px;
-  max-width:340px;
+  max-width:384px;
   text-align:justify;
-  line-height:150%;
+  line-height:160%;
 }
-#boxCenter div div.user {
-  padding:3px 2px 3px 2px;
+#boxCenter div.question div.user {
+  padding:4px 2px 4px 2px;
   margin:1px 2px 1px 2px;
   border-radius:5px;
-  width:50px;
+  width:28px;
   text-align:center;
-  line-height:150%;
+  line-height:160%;
 }
 #boxCenter div.question div {
   float:right;
   background:#90EE90;
 }
+#boxCenter div.answer div.user {
+  padding:0;
+  margin:1px 2px 1px 2px;
+  border-radius:5px;
+  width:28px;
+  text-align:center;
+  overflow:auto;
+}
 #boxCenter div.answer div {
   float:left;
   background:#87CEEB;
+}
+#boxCenter  .avatar {
+  border-radius:24px;
+  width:24px;
+  height:24px;
+  overflow:hidden;
+  margin:0;
+  padding:0;
+  border:2px solid rgba(255, 255, 255, 0.24);
+}
+#boxCenter .avatar img {
+  width: 100%;
+  height: auto;
 }
 #boxFooter {
   width:464px;

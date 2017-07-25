@@ -34,7 +34,8 @@ function submitQuestion() {
 		alert("Please type something before clicking the Send button.");
 		return false;
 	}
-	$("#boxCenter").append("<div class='question'><div class='user'>ME</div><div class='content'>"+question+"</div></div>");
+	var bc=$("#boxCenter");
+	bc.append("<div class='question'><div class='user'>ME</div><div class='content'>"+question+"</div></div>");
 	$("#inputArea").val("");
 	
 	var dataUrl="question="+encodeURIComponent(question);
@@ -48,7 +49,8 @@ function submitQuestion() {
 		success:function(data){
 			if (findNoError(data, 1)) {
 				var reply=getTagContent(data, "reply");
-				$("#boxCenter").append("<div class='answer'><div class='user'>PAPAYA</div><div class='content'>"+reply+"</div></div>");
+				bc.append("<div class='answer'><div class='user'><figure class='avatar'><img src='/images/papaya.jpg'/></figure></div><div class='content'>"+reply+"</div></div>");
+				bc.scrollTop(bc[0].scrollHeight);
 			}
 		}
 	});
