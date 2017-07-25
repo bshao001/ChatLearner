@@ -59,3 +59,4 @@ A demo test result is provided as well. Please check it to see how this chatbot 
 ## References and Credits:
 1. Deep QA: https://github.com/Conchylicultor/DeepQA
 2. Easy seq2seq: http://suriyadeepan.github.io/2016-06-28-easy-seq2seq/
+3. Tornado Web Service: https://github.com/rancavil/tornado-webservices
