@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+	<system systemId="http://localhost/wsdl/ChatService.xml" uri="wsdl/ChatService.xml"/>
+</catalog>

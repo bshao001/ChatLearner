@@ -1,0 +1,124 @@
+<project name="chatClient" default="build-jar" basedir=".">
+    <!-- Update the tomcat.home property if necessary -->
+	<property name="tomcat.home" location="C:/Apache/Tomcat"/>
+    <!-- You shouldn't have to update anything below this line -->
+    <property name="release" value="1.0"/>
+    <property name="compile.debug" value="true"/>
+    <property name="src" location="Source"/>
+    <property name="build" location="Build"/>
+    <property name="deploy" location="Deploy"/>
+    <property name="package" location="Deploy/package/ChatClient"/>
+    <property name="zipfile" location="Deploy/ChatClient-${release}.zip"/>
+	<property name="chatClient.home" location="ROOT"/>
+    <property name="warfile" value="ChatClient.war"/>
+	
+	<path id="build.classpath">  
+		<pathelement path="${chatClient.home}/WEB-INF/lib"/>
+		<fileset dir="${chatClient.home}/WEB-INF/lib">
+			<include name="*.jar"/>
+			<exclude name="chatClient-*.jar" />
+		</fileset>
+		
+		<pathelement path="${tomcat.home}/lib"/>
+		<fileset dir="${tomcat.home}/lib">
+			<include name="servlet-api.jar"/>
+		</fileset>
+	</path>  
+
+	<path id="scripts.classpath">  
+		<pathelement path="${chatClient.home}/WEB-INF/lib"/>
+		<fileset dir="${chatClient.home}/WEB-INF/lib">
+			<include name="*.jar"/>
+		</fileset>
+		<pathelement path="${deploy}"/>
+		<fileset dir="${deploy}">
+			<include name="*.jar"/>
+		</fileset>
+	</path>  
+
+    <target name="deploy" depends="build-jar">
+        <delete>
+            <fileset dir="${chatClient.home}/WEB-INF/lib" includes="chatClient-*.jar"/>
+        </delete>
+        <copy file="${deploy}/${jarfile}" todir="${chatClient.home}/WEB-INF/lib"/>
+    </target>
+
+    <target name="init">
+        <mkdir dir="${build}"/>
+        <tstamp>
+            <format property="current.time" pattern="yyyyMMdd_hhmmss"/>
+        </tstamp>
+        <property name="jarfile" value="chatClient-${current.time}.jar"/>
+    </target>
+
+    <target name="compile" depends="init">
+        <javac includeantruntime="False" srcdir="${src}" destdir="${build}" debug="${compile.debug}">
+			<classpath refid="build.classpath"/>
+			<compilerarg value="-Xlint:-path"/>
+			<compilerarg value="-Xlint:unchecked"/>
+		</javac>
+    </target>
+
+    <target name="build-jar" depends="compile">
+        <jar jarfile="${deploy}/${jarfile}" basedir="${build}">
+            <manifest>
+                <attribute name="Specification-Title" value="ChatClient"/>
+                <attribute name="Specification-Version" value="1.0"/>
+                <attribute name="Specification-Vendor" value="papayachat.net"/>
+                <attribute name="Implementation-Title" value="net.papayachat.client"/>
+                <attribute name="Implementation-Version" value="${revision}"/>
+                <attribute name="Implementation-Vendor" value="papayachat.net"/>
+                <attribute name="Built-By" value="Bo Shao"/>
+                <attribute name="Built-Date" value="${current.time}"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="build-war" depends="build-jar">
+        <war destfile="${deploy}/${warfile}" webxml="ROOT/WEB-INF/web.xml">
+            <fileset dir="ROOT"/>
+            <manifest>
+                <attribute name="Specification-Title" value="ChatClient"/>
+                <attribute name="Specification-Version" value="1.0"/>
+                <attribute name="Specification-Vendor" value="papayachat.net"/>
+                <attribute name="Implementation-Title" value="net.papayachat.client"/>
+                <attribute name="Implementation-Version" value="${revision}"/>
+                <attribute name="Implementation-Vendor" value="papayachat.net"/>
+                <attribute name="Built-By" value="Bo Shao"/>
+                <attribute name="Built-Date" value="${current.time}"/>
+            </manifest>
+        </war>
+    </target>
+
+    <target name="package" depends="clean,build-jar">
+        <!-- Setup Configuration folder -->
+        <echo message="=== Configuration ==="/>
+        <mkdir dir="${package}/Configuration"/>
+        <copy file="catalina.properties" todir="${package}/Configuration"/>
+        <copy file="server.xml" todir="${package}/Configuration"/>
+
+        <!-- Setup ROOT folder -->
+        <echo message="=== ROOT ==="/>
+        <mkdir dir="${package}/ROOT"/>
+        <copy todir="${package}/ROOT">
+            <fileset dir="ROOT"/>
+        </copy>
+        <copy file="${deploy}/${jarfile}" todir="${package}/ROOT/WEB-INF/lib"/>
+
+        <!-- Zip it -->
+        <echo message="=== Zip it ==="/>
+        <zip destfile="${zipfile}" basedir="${deploy}/package" />
+    </target>
+
+    <target name="clean">
+        <delete dir="${build}"/>
+        <delete dir="${deploy}"/>
+    </target>
+
+    <target name="clean-all" depends="clean">
+        <delete>
+            <fileset dir="${chatClient.home}/WEB-INF/lib" includes="chatClient-*.jar"/>
+        </delete>
+    </target>
+</project>
+

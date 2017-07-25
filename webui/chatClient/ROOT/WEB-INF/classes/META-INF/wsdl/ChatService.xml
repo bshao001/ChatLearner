@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<wsdl:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://papayachat.net/ChatService" 
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://papayachat.net/ChatService" 
+	name="ChatService">
+<wsdl:types>
+<xsd:schema targetNamespace="http://papayachat.net/ChatService">
+	<xsd:complexType name="paramsTypes">
+		<xsd:sequence>
+			<xsd:element name="sessionId" type="xsd:integer"/>
+			<xsd:element name="question" type="xsd:string"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="params" type="tns:paramsTypes"/>
+	<xsd:complexType xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="SessionSentence">
+		<xsd:sequence>
+			<xsd:element name="sentence" type="xsd:string"/>
+			<xsd:element name="sessionId" type="xsd:integer"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="SessionSentence" type="tns:SessionSentence"/>
+</xsd:schema>
+</wsdl:types>
+<wsdl:message name="ChatServiceRequest">
+	<wsdl:part name="parameters" element="tns:params"/>
+</wsdl:message>
+<wsdl:message name="ChatServiceResponse">
+	<wsdl:part name="returns" element="tns:SessionSentence"/>
+</wsdl:message>
+<wsdl:portType name="ChatServicePortType">
+	<wsdl:operation name="reply">
+		<wsdl:input message="tns:ChatServiceRequest"/>
+		<wsdl:output message="tns:ChatServiceResponse"/>
+	</wsdl:operation>
+</wsdl:portType>
+<wsdl:binding name="ChatServiceBinding" type="tns:ChatServicePortType">
+	<soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+	<wsdl:operation name="reply">
+		<soap:operation style="document" soapAction="http://papayachat.net/ChatService/reply"/>
+		<wsdl:input>
+			<soap:body use="literal"/>
+		</wsdl:input>
+		<wsdl:output>
+			<soap:body use="literal"/>
+		</wsdl:output>
+	</wsdl:operation>
+</wsdl:binding>
+<wsdl:service name="ChatService">
+	<wsdl:port name="ChatServicePort" binding="tns:ChatServiceBinding">
+		<soap:address location="http://papayachat.net/ChatService"/>
+	</wsdl:port>
+</wsdl:service>
+</wsdl:definitions>

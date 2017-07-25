@@ -21,6 +21,7 @@ import tornado.ioloop
 from webui.server.tornadows import soaphandler
 from webui.server.tornadows import webservices
 from webui.server.tornadows import complextypes
+from webui.server.tornadows import xmltypes
 from webui.server.tornadows.soaphandler import webservice
 
 from settings import PROJECT_ROOT
@@ -39,18 +40,16 @@ class ChatService(soaphandler.SoapHandler):
     def initialize(self, **kwargs):
         self.predictor = kwargs.pop('predictor')
 
-    @webservice(_params=SessionSentence, _returns=SessionSentence)
-    def reply(self, inputSentence):
+    @webservice(_params=[xmltypes.Integer, xmltypes.String], _returns=SessionSentence)
+    def reply(self, sessionId, question):
         """
         Args:
-            inputSentence: A SessionSentence object. The sessionId is reserved for future use. 
-            Question is the sentence given by the end user who chats with the ChatLearner. 
+            sessionId: Reserved for future use. 
+            question: The sentence given by the end user who chats with the ChatLearner. 
         Returns:
             outputSentence: The sessionId is the same as in the input for validation purpose. 
             The answer is the response from the ChatLearner.
         """
-        sessionId = inputSentence.sessionId
-        question = inputSentence.sentence
         answer = self.predictor.predict(question)
 
         outputSentence = SessionSentence()
