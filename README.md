@@ -39,7 +39,7 @@ cd chatbot
 python basicmodel.py
 ```
 
-With the existing parameters in the file and the current Papaya training data set, it will be very easy to get to a perplexity of 1.06 at around epoch 30. It would be better if you let it run until it terminates by itself, i.e., reaching the perplexity less than 1.04 or until the maximum epoch. You will be able to see the training results under Data/Result/ folder. Make sure the following 4 files exist as all these will be required for testing and prediction: 
+With the existing parameters in the file and the current Papaya training data set, it will be very easy to get to a perplexity of 1.08 at around epoch 30. It would be better if you let it run until it terminates by itself, i.e., reaching the perplexity less than 1.04 or until the maximum epoch. You will be able to see the training results under Data/Result/ folder. Make sure the following 4 files exist as all these will be required for testing and prediction: 
 
 1. basic.data-00000-of-00001
 2. basic.index
@@ -47,7 +47,7 @@ With the existing parameters in the file and the current Papaya training data se
 4. dicts.pickle
 
 ## Testing
-For testing and prediction, we provide a simple command interface and a web-based interface. In order to quickly try how the trained model behaves, use the following command interface:
+For testing and prediction, we provide a simple command interface and a web-based interface. In order to quickly check how the trained model performs, use the following command interface:
 
 ```bash
 cd chatbot
@@ -59,7 +59,7 @@ Wait until you get the command prompt "> ".
 A demo test result is provided as well. Please check it to see how this chatbot behaves now: https://github.com/bshao001/ChatLearner/blob/master/Data/Test/responses.txt
 
 ## Web Interface
-A SOAP-based web service architecture is implemented, with a Python server and a Java client. A nice GUI is also available for your reference. For details, please check: https://github.com/bshao001/ChatLearner/tree/master/webui
+A SOAP-based web service architecture is implemented, with a Python server and a Java client. A nice GUI is also included for your reference. For details, please check: https://github.com/bshao001/ChatLearner/tree/master/webui
 
 ## References and Credits:
 1. Deep QA: https://github.com/Conchylicultor/DeepQA
