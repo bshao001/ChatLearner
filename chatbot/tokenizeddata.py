@@ -397,39 +397,44 @@ class TokenizedData:
         raw_text = RawText()
         raw_text.load_corpus(corpus_dir)
 
-        conversations = raw_text.get_conversations()
-        for conversation in conversations:
-            step = 2
-            # Iterate over all the samples of the conversation to get chat pairs
-            for i in range(0, len(conversation) - 1, step):
-                input_line = conversation[i]
-                target_line = conversation[i + 1]
+        for cid in range(2):
+            if cid == 0:
+                conversations = raw_text.conversations_aug
+            else:
+                conversations = raw_text.conversations_non
 
-                src_word_ids = self._extract_words(input_line['text'])
-                tgt_word_ids = self._extract_words(target_line['text'])
+            for conversation in conversations:
+                step = 2
+                # Iterate over all the samples of the conversation to get chat pairs
+                for i in range(0, len(conversation) - 1, step):
+                    input_line = conversation[i]
+                    target_line = conversation[i + 1]
 
-                for bucket_id, (src_size, tgt_size) in enumerate(self.buckets):
-                    if len(src_word_ids) < src_size and len(tgt_word_ids) <= tgt_size - 2:
-                        self.training_samples[bucket_id].append([src_word_ids, tgt_word_ids])
-                        if augment:
-                            aug_len = src_size - len(src_word_ids)
-                            aug_src_ids = [self.pad_token] * aug_len + src_word_ids[:]
-                            self.training_samples[bucket_id].append([aug_src_ids, tgt_word_ids])
-                        break
-                else:
-                    print("Input ({}) or target ({}) line is too long to fit into any bucket"
-                          .format(input_line, target_line))
+                    src_word_ids = self._extract_words(input_line['text'])
+                    tgt_word_ids = self._extract_words(target_line['text'])
 
-                # if augment:
-                #     for j in [1, 2]:
-                #         aug_src_ids = [self.pad_token] * 2 * j + src_word_ids[:]
-                #         for bucket_id, (src_size, tgt_size) in enumerate(self.buckets):
-                #             if len(aug_src_ids) <= src_size and len(tgt_word_ids) <= tgt_size - 2:
-                #                 self.training_samples[bucket_id].append([aug_src_ids, tgt_word_ids])
-                #                 break
-                #         else:
-                #             print("Augmented Input ({}) line @ {} (pad omitted) is too long to fit "
-                #                   "into any bucket".format(input_line, j))
+                    for bucket_id, (src_size, tgt_size) in enumerate(self.buckets):
+                        if len(src_word_ids) < src_size and len(tgt_word_ids) <= tgt_size - 2:
+                            self.training_samples[bucket_id].append([src_word_ids, tgt_word_ids])
+                            if cid == 0 and augment:
+                                aug_len = src_size - len(src_word_ids)
+                                aug_src_ids = [self.pad_token] * aug_len + src_word_ids[:]
+                                self.training_samples[bucket_id].append([aug_src_ids, tgt_word_ids])
+                            break
+                    else:
+                        print("Input ({}) or target ({}) line is too long to fit into any bucket"
+                              .format(input_line, target_line))
+
+                    # if cid == 0 and augment:
+                    #     for j in [1, 2]:
+                    #         aug_src_ids = [self.pad_token] * 2 * j + src_word_ids[:]
+                    #         for bucket_id, (src_size, tgt_size) in enumerate(self.buckets):
+                    #             if len(aug_src_ids) <= src_size and len(tgt_word_ids) <= tgt_size - 2:
+                    #                 self.training_samples[bucket_id].append([aug_src_ids, tgt_word_ids])
+                    #                 break
+                    #         else:
+                    #             print("Augmented Input ({}) line @ {} (pad omitted) is too long to fit "
+                    #                   "into any bucket".format(input_line, j))
 
         for bucket_id, _ in enumerate(self.buckets):
             self.sample_size[bucket_id] = len(self.training_samples[bucket_id])

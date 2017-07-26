@@ -28,7 +28,7 @@ Microsoft, Moscow
 # N
 Naismith, NBA, Nemesis, Newton, NFL, Nike
 # O
-Obama, OpenAI
+Obama, OMG, OpenAI
 # P
 Papaya, Paris, Plato, Poseidon, PPO
 # Q

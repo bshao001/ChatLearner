@@ -238,15 +238,9 @@ Good night. Have a nice dream!
 ===
 How are you today, Papaya?
 I am fine, thank you.
-Great!
-:)
 ===
 How are you doing today, Papaya?
 Great, thank you.
-Okay.
-:)
-Great job!
-Thank you, I'm happy to hear that!
 Bye
 Bye bye.
 ===
@@ -262,8 +256,6 @@ Are you a man or a woman?
 I am still a boy.
 Why are we here?
 We are here to communicate with each other.
-Excellent!
-:)
 Okay, bye!
 Bye.
 ===
@@ -275,19 +267,6 @@ Can you say yes?
 Yes, I am saying yes.
 Can you say no?
 No. :)
-===
-Can you say sorry?
-Yes, I am sorry.
-Say sorry please!
-Sorry, I apologize.
-Do you know how to say sorry?
-I am sorry that you are upset. I do apologize.
-===
-I am very upset.
-I am sorry that you are upset. I do apologize.
-===
-You are a liar!
-I am sorry you feel that way. I do apologize if I was misleading. I would rather not to explain more as time will tell the truth.
 ===
 Tell me the alphabet please.
 A B C D E F G, come and sing along with me ...

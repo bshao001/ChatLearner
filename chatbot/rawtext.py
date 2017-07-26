@@ -35,33 +35,47 @@ import os
 COMMENT_LINE_STT = "#=="
 CONVERSATION_SEP = "==="
 
+AUG_FOLDER = "Augment"
+NON_FOLDER = "NonAugm"
+
 
 class RawText:
     def __init__(self):
-        self.conversations = []
+        self.conversations_aug = []
+        self.conversations_non = []
 
     def load_corpus(self, corpus_dir):
         """
         Args:
              corpus_dir: Name of the folder storing corpus files for training.
         """
-        for data_file in sorted(os.listdir(corpus_dir)):
-            full_path_name = os.path.join(corpus_dir, data_file)
-            if os.path.isfile(full_path_name) and data_file.lower().endswith('.txt'):
-                with open(full_path_name, 'r') as f:
-                    samples = []
-                    for line in f:
-                        l = line.strip()
-                        if not l or l.startswith(COMMENT_LINE_STT):
-                            continue
-                        if l == CONVERSATION_SEP:
-                            self.conversations.append(samples)
-                            samples = []
-                        else:
-                            samples.append({"text": l})
+        for fd in range(2):
+            conversations = []
+            if fd == 0:
+                file_dir = os.path.join(corpus_dir, AUG_FOLDER)
+            else:
+                file_dir = os.path.join(corpus_dir, NON_FOLDER)
 
-                    if len(samples):  # Add the last one
-                        self.conversations.append(samples)
+            for data_file in sorted(os.listdir(file_dir)):
+                full_path_name = os.path.join(file_dir, data_file)
+                if os.path.isfile(full_path_name) and data_file.lower().endswith('.txt'):
+                    with open(full_path_name, 'r') as f:
+                        samples = []
+                        for line in f:
+                            l = line.strip()
+                            if not l or l.startswith(COMMENT_LINE_STT):
+                                continue
+                            if l == CONVERSATION_SEP:
+                                if len(samples):
+                                    conversations.append(samples)
+                                samples = []
+                            else:
+                                samples.append({"text": l})
 
-    def get_conversations(self):
-        return self.conversations
+                        if len(samples):  # Add the last one
+                            conversations.append(samples)
+
+            if fd == 0:
+                self.conversations_aug = conversations
+            else:
+                self.conversations_non = conversations
