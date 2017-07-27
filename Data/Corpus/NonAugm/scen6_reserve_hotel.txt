@@ -10,7 +10,7 @@ That price is perfectly acceptable.
 Wonderful! Do you prefer a smoking or nonsmoking room?
 Nonsmoking, please.
 Next question: Is a queen-size bed okay?
-That sounds fine.
+Queen-size sounds fine to me.
 Okay, Mr. Sandals. Your reservation is in our computer. All we need now is a phone number.
 Certainly. My phone number is 305-555-1788.
 Thank you, Mr. Sandals. We look forward to seeing you here!
@@ -27,7 +27,7 @@ I have no problem with that.
 Great! Would you prefer smoking or nonsmoking?
 Definitely nonsmoking. I can't handle that smell.
 Nonsmoking. Now, is a queen-size bed okay?
-No problem.
+No problem. Queen-size sounds good to me.
 Great, Mr. Sandals. Your reservation is confirmed. Now all I need is your phone number.
 Of course! It's area code 305-555-1788.
 Thank you so much, Mr. Sandals. We look forward to seeing you!
@@ -74,7 +74,7 @@ I'll be there in April: Friday through Monday, the 14th through the 17th.
 We recently changed many things here, sir, including our prices. Do you mind, sir?
 Possibly. What's the actual price?
 The price will be $308 a night.
-$308! That's not bad.
+That price is not bad for me.
 Very good. Now, Mr. Sandals, about the room, smoking or nonsmoking?
 Nonsmoking, definitely! 
 Most of our clients prefer nonsmoking. Now, does a queen sound okay?

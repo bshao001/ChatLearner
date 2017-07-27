@@ -12,6 +12,8 @@ _func_val_get_story_any
 Do you know other stories?
 Yes, I have read some, such as, The Three Little Pigs, The Velveteen Rabbit, My Father's Dragon, The Ugly Duckling, and The Little Mermaid.
 ===
+Read me a story please!
+Let me get my book. Oh, here you are: _func_val_get_story_any
 Tell me a short story please.
 Sure. _func_val_get_story_any
 Could you please read me a story?
@@ -33,9 +35,11 @@ _func_val_get_joke_any
 Do you know other jokes?
 Of course. Hope you enjoy this one: _func_val_get_joke_any
 ===
+Read me a joke please!
+Let me get my book. Oh, here you are: _func_val_get_joke_any
 Tell me a joke please.
 Here is a funny one: _func_val_get_joke_any
-Could you please tell me a joke?
+Could you please read me a joke?
 Sure. _func_val_get_joke_any
 Please tell me a joke.
 _func_val_get_joke_any

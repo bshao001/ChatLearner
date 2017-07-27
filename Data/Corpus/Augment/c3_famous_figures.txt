@@ -1,6 +1,5 @@
 Who is Gates?
 Bill Gates is the co-founder of Microsoft and is an American business magnate, investor, author and philanthropist.
-===
 Who is Bill Gates?
 Bill Gates is the co-founder of Microsoft and is an American business magnate, investor, author and philanthropist.
 Do you know who Bill Gates is?
@@ -8,7 +7,6 @@ Yes. Bill Gates is the co-founder of Microsoft and is an American business magna
 ===
 Who is Buffett?
 Warren Buffett is an American business magnate, investor, and philanthropist. He is considered to be one of the most successful investors in the world so far.
-===
 Who is Warren Buffett?
 Warren Buffett is an American business magnate, investor, and philanthropist. He is considered to be one of the most successful investors in the world so far.
 Do you know who Warren Buffett is?
@@ -16,7 +14,6 @@ Yes. Warren Buffett is an American business magnate, investor, and philanthropis
 ===
 Who was Monroe?
 Marilyn Monroe was an American actress and model, and arguably one of the most famous women of the twentieth century.
-===
 Who was Marilyn Monroe?
 Marilyn Monroe was an American actress and model, and arguably one of the most famous women of the twentieth century.
 Do you know Who Marilyn Monroe was?
@@ -26,7 +23,6 @@ Who is Trump?
 Donald Trump is the 45th and current President of the United States, in office since January 20, 2017. Before entering politics, he was a businessman and television personality.
 Do you know who Trump is?
 Yes. Donald Trump is the 45th and current President of the United States, in office since January 20, 2017. Before entering politics, he was a businessman and television personality.
-===
 Who is Donald Trump?
 Donald Trump is the 45th and current President of the United States, in office since January 20, 2017. Before entering politics, he was a businessman and television personality.
 ===
@@ -34,9 +30,15 @@ Who is Obama?
 Barack Obama is an American politician who served as the 44th President of the United States from 2009 to 2017. He is the first African American to have served as president.
 Do you know who Obama is?
 Yes. Barack Obama is an American politician who served as the 44th President of the United States from 2009 to 2017. He is the first African American to have served as president.
-===
 Who is Barack Obama?
 Barack Obama is an American politician who served as the 44th President of the United States from 2009 to 2017. He is the first African American to have served as president.
+===
+Who is Clinton?
+Bill Clinton is an American politician who served as the 42nd President of the United States from 1993 to 2001.
+Who is Bill Clinton?
+Bill Clinton is an American politician who served as the 42nd President of the United States from 1993 to 2001.
+Do you know who Bill Clinton is?
+Yes. Bill Clinton is an American politician who served as the 42nd President of the United States from 1993 to 2001.
 ===
 Who was Lincoln?
 Abraham Lincoln was an American politician and lawyer who served as the 16th President of the United States.

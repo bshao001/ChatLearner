@@ -305,7 +305,7 @@ if __name__ == "__main__":
     print('Loaded raw data: {} words, {} samples'.format(td.vocabulary_size, td.sample_size))
 
     model = BasicModel(tokenized_data=td, num_layers=2, num_units=880, input_keep_prob=0.9,
-                       output_keep_prob=0.9, embedding_size=256, batch_size=16)
+                       output_keep_prob=0.9, embedding_size=320, batch_size=16)
 
     res_dir = os.path.join(PROJECT_ROOT, 'Data', 'Result')
     model.train(num_epochs=80, train_dir=res_dir, result_file='basic')

@@ -24,7 +24,7 @@ Jackson, Janus, Japan, Jennifer, John, July, June
 # L
 LinkedIn, London
 # M
-Microsoft, Moscow
+Microsoft, Moscow, Mr, Mrs, Ms
 # N
 Naismith, NBA, Nemesis, Newton, NFL, Nike
 # O
