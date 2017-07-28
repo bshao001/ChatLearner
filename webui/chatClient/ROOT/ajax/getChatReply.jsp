@@ -8,7 +8,7 @@
 		String question = request.getParameter("question");
 		
 		ChatClient cc = new ChatClient("http://papayachat.net:8080/ChatService", 5);
-		String reply = cc.getReply(question);
+		String reply = cc.getReply(question).replaceAll("_np_", "<br/><br/>");
 		
 		response.getWriter().write("<rs><reply>" + reply + "</reply></rs>");
 	} catch (Exception e) {

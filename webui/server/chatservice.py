@@ -50,7 +50,7 @@ class ChatService(soaphandler.SoapHandler):
             outputSentence: The sessionId is the same as in the input for validation purpose. 
             The answer is the response from the ChatLearner.
         """
-        answer = self.predictor.predict(question)
+        answer = self.predictor.predict(question, html_format=True)
 
         outputSentence = SessionSentence()
         outputSentence.sessionId = sessionId

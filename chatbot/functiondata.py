@@ -43,21 +43,28 @@ class FunctionData:
         "I had to use my cell phone for this calculation. Here is the outcome: "
     ]
 
-    def __init__(self, tokenized_data):
+    def __init__(self, tokenized_data, html_format):
         """
         Args:
             tokenized_data: The parameter data needed for prediction.
+            html_format: Whether out_sentence is in HTML format.
         """
         self.tokenized_data = tokenized_data
+        self.html_format = html_format
 
     def get_story_any(self):
         stories = self.tokenized_data.stories
         _, content = random.choice(list(stories.items()))
+        if not self.html_format:
+            content = re.sub(r'_np_', '', content)
         return content
 
     def get_story_name(self, story_name):
         stories = self.tokenized_data.stories
-        return stories[story_name]
+        content = stories[story_name]
+        if not self.html_format:
+            content = re.sub(r'_np_', '', content)
+        return content
 
     def get_joke_any(self):
         jokes = self.tokenized_data.jokes
@@ -218,8 +225,8 @@ class FunctionData:
         return result + current
 
 
-def call_function(func_info, tokenized_data=None, para_list=None):
-    func_data = FunctionData(tokenized_data)
+def call_function(func_info, tokenized_data=None, para_list=None, html_format=False):
+    func_data = FunctionData(tokenized_data, html_format=html_format)
 
     func_dict = {
         'get_story_any': func_data.get_story_any,
@@ -263,6 +270,15 @@ def call_function(func_info, tokenized_data=None, para_list=None):
     return "You beat me to it, and I cannot tell which is which for this question."
 
 if __name__ == "__main__":
+    import os
+    from settings import PROJECT_ROOT
+    from chatbot.tokenizeddata import TokenizedData
+
+    dict_file = os.path.join(PROJECT_ROOT, 'Data', 'Result', 'dicts.pickle')
+    td = TokenizedData(dict_file=dict_file)
+
+    print(call_function('get_story_any', td, html_format=True))
+    print(call_function('get_story_any', td, html_format=False))
     print(call_function('get_weekday_para1_d_2'))
     print(call_function('get_weekday_para1_d_1'))
     print(call_function('get_weekday_para1_d0'))

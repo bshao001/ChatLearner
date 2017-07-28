@@ -217,7 +217,7 @@ class TokenizedData:
         return batch
 
     def word_ids_to_str(self, word_id_list, debug=False, return_if_func_val=False,
-                        para_list=None):
+                        para_list=None, html_format=False):
         """
         Convert a list of integers (word_ids) into a human readable string/text.
         Used for prediction only, when debug is False.
@@ -227,6 +227,7 @@ class TokenizedData:
             return_if_func_val: Whether to include a boolean value, in the returning set, which 
                 indicates if the output sentence containing a _func_val_** string.
             para_list: The python list containing the parameter real values.
+            html_format: Whether out_sentence is in HTML format.
         Return:
             str: The sentence represented by the given word_id_list.
         """
@@ -248,7 +249,8 @@ class TokenizedData:
                     word = self.id_word_dict[word_id]
                     if word.startswith('_func_val_'):
                         if_func_val = True
-                        word = call_function(word[10:], tokenized_data=self, para_list=para_list)
+                        word = call_function(word[10:], tokenized_data=self, para_list=para_list,
+                                             html_format=html_format)
                     else:
                         if word in self.upper_words:
                             word = self.upper_words[word]

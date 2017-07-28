@@ -18,6 +18,7 @@ import tensorflow as tf
 
 from chatbot.functiondata import FunctionData
 
+
 class BotPredictor:
     def __init__(self, session, tokenized_data, result_dir, result_file):
         """
@@ -70,10 +71,11 @@ class BotPredictor:
 
         self.session = session
 
-    def predict(self, sentence):
+    def predict(self, sentence, html_format=False):
         """
         Args:
             sentence: The input sentence string from the end user.
+            html_format: Whether out_sentence is in HTML format.
         Returns:
             out_sentence: A human readable sentence as the final output.
         """
@@ -102,21 +104,23 @@ class BotPredictor:
             # print("Shape of dec_outputs: {}".format(np.asarray(dec_outputs).shape))
 
             if pat_matched and pre_time == 0:
-                out_sentence, if_func_val = self._get_sentence(dec_outputs, para_list=num_list)
+                out_sentence, if_func_val = self._get_sentence(dec_outputs, para_list=num_list,
+                                                               html_format=html_format)
                 if if_func_val:
                     return out_sentence
                 else:
                     new_sentence = sentence
             else:
-                out_sentence, _ = self._get_sentence(dec_outputs)
+                out_sentence, _ = self._get_sentence(dec_outputs, html_format=html_format)
                 return out_sentence
 
-    def _get_sentence(self, dec_outputs, para_list=None):
+    def _get_sentence(self, dec_outputs, para_list=None, html_format=False):
         """
         Args:
             dec_outputs: A tensor with the size of dec_seq_len * vocabulary_size, which is 
                 the output from the predict function.
             para_list: The python list containing the parameter real values.
+            html_format: Whether out_sentence is in HTML format.
         Returns:
             sentence: A human readable sentence.                 
         """
@@ -125,4 +129,5 @@ class BotPredictor:
             word_ids.append(np.argmax(out))
 
         return self.tokenized_data.word_ids_to_str(word_ids, return_if_func_val=True,
-                                                   para_list=para_list)
+                                                   para_list=para_list,
+                                                   html_format=html_format)

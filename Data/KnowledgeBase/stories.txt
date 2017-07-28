@@ -7,41 +7,42 @@ _CONTENT: Once upon a time, there was a mountain. On the mountain, there was a t
 On the mountain...
 # ===
 _NAME: Fox_in_Cart
-_CONTENT: A fox, observing a fish cart coming, lay down and pretended to be dead. 
-The cart man, tempted by the idea of making some money by selling the fox's fur, picked up the animal and flung it into the back of the cart. During the journey, the fox ate all the fish and jumped out of the cart. 
-A wolf saw him jumping out and asked him what he had been doing in it. The fox told him all what had happend. Then, the wolf ran ahead of the cart and lay down in its path, pretending to be dead. 
+_CONTENT: A fox, observing a fish cart coming, lay down and pretended to be dead._np_
+The cart man, tempted by the idea of making some money by selling the fox's fur, picked up the animal and flung it into the back of the cart._np_
+During the journey, the fox ate all the fish and jumped out of the cart._np_
+A wolf saw him jumping out and asked him what he had been doing in it. The fox told him all what had happend. Then, the wolf ran ahead of the cart and lay down in its path, pretending to be dead._np_
 The cart man was delighted to find another animal to sell, but he found the animal too heavy to lift. So he pushed it into a sack, tied the sack to his cart and dragged it away.
 # ===
 _NAME: Snow_White
-_CONTENT: Once upon a time there lived a lovely princess with fair skin and blue eyes. She was so fair that she was named Snow White. 
-Her mother died when Snow White was a baby and her father married again. This queen was very pretty but she was also very cruel. 
-Jealous of Snow White's beauty, the wicked queen orders the murder of her innocent stepdaughter, but later discovers that Snow White is still alive and hiding in a cottage with seven friendly little miners. 
-Disguising herself as a hag, the queen brings a poisoned apple to Snow White, who falls into a death-like sleep that can be broken only by a kiss from the prince.
-One day, Prince Charming was going past the cottage and he saw Snow White lying in the coffin. He said to the dwarfs, "My! My! She is so beautiful! I would like to kiss her!" And he did. 
+_CONTENT: Once upon a time there lived a lovely princess with fair skin and blue eyes. She was so fair that she was named Snow White._np_
+Her mother died when Snow White was a baby and her father married again. This queen was very pretty but she was also very cruel._np_
+Jealous of Snow White's beauty, the wicked queen orders the murder of her innocent stepdaughter, but later discovers that Snow White is still alive and hiding in a cottage with seven friendly little miners._np_
+Disguising herself as a hag, the queen brings a poisoned apple to Snow White, who falls into a death-like sleep that can be broken only by a kiss from the prince._np_
+One day, Prince Charming was going past the cottage and he saw Snow White lying in the coffin. He said to the dwarfs, "My! My! She is so beautiful! I would like to kiss her!" And he did._np_
 Immediately, Snow White opened her eyes. She was alive again! The Prince and the seven dwarfs were very happy. Prince Charming married Snow White and took her to his palace and lived happily ever after.
 # ===
 _NAME: The_Three_Little_Pigs
-_CONTENT: Once upon a time, there were three little pigs and they each built a house to protect themselves from the big, bad wolf. 
+_CONTENT: Once upon a time, there were three little pigs and they each built a house to protect themselves from the big, bad wolf._np_
 The wolf blew away the first two houses but couldn't budge the last one because it was made out of bricks. The third pig cooked the wolf and shared it among the pigs as a celebration for their victory.
 # ===
 _NAME: The_Cock
-_CONTENT: A housewife would wake her two servants every morning when the cock crew. The girls used to get mad at the bird and they said: "If it weren't for that dreadful cock, we could sleep a little longer." 
-So they killed the cock. But the housewife who was getting old and was no longer wide awake, never knew what time it was and so at times she would wake the girls when she fancied that it was time and so sometimes 
-they found themselves being woken earlier than before and even at midnight!
+_CONTENT: A housewife would wake her two servants every morning when the cock crew. The girls used to get mad at the bird and they said: "If it weren't for that dreadful cock, we could sleep a little longer."
+So they killed the cock. _np_But the housewife who was getting old and was no longer wide awake, never knew what time it was and so at times she would wake the girls when she fancied that it was time and 
+so sometimes they found themselves being woken earlier than before and even at midnight!
 # ===
 _NAME: Precious_Grass
-_CONTENT: Brigid and Teresa went to the city one day to do their shopping and they had a very large bag of fruit to carry. Brigid was continuously getting angry murmuring because of the weight but Teresa on the other 
-hand was laughing and joking. Brigid said to her: "When are you going to keep quite? I think your load is as heavy as mine and you are no stronger than I." Teresa said to her: 
-"Dear Brigid, I sprinkled my load with a certain type of grass and therefore I don't feel the load so much."
-"Oh", cried Brigid, "it must certainly be precious. I would like to lessen my load too. What is it called?"
+_CONTENT: Brigid and Teresa went to the city one day to do their shopping and they had a very large bag of fruit to carry. Brigid was continuously getting angry murmuring because of the weight but Teresa on 
+the other hand was laughing and joking. _np_Brigid said to her: "When are you going to keep quite? I think your load is as heavy as mine and you are no stronger than I." _np_Teresa said to her: 
+"Dear Brigid, I sprinkled my load with a certain type of grass and therefore I don't feel the load so much."_np_
+"Oh", cried Brigid, "it must certainly be precious. I would like to lessen my load too. What is it called?"_np_
 Teresa replied: "The precious grass that lightens all load is called patience. Dear Brigid, you must remember that patience is the only solution for all our worries and trials."
 # ===
 _NAME: The_Ugly_Duckling
-_CONTENT: It is a beautiful summer day. The sun shines warmly on an old house near a river. Behind the house a mother duck is sitting on ten eggs. All the eggs break open except one, which is the biggest egg of all.
-Mother duck sits and sits on the big egg. At last it breaks open, out jumps the last baby duck. It looks big and strong, but gray and ugly.
-The next day mother duck takes all her little ducks to the river. All her baby ducks jump in. They all swim and play together. The ugly duckling swims better than all the other ducklings.
-The farm yard is very noisy. The poor duckling is so unhappy there. The hens peck him, the rooster flies at him, the ducks bite him, and the farmer kicks him.
-At last one day he runs away. In a river, he sees many beautiful big birds swimming there. He wants to be with them. He knows they are swans. Oh, how he wants to be beautiful like them.
-Now it is winter. Everything is white with snow. The river is covered with ice. The ugly duckling is very cold and unhappy.
-Spring comes once again. The sun shines warmly. One morning the ugly duckling sees the beautiful swans again. He wants so much to swim with them, but he is afraid of them. He wants to die and he runs into the river. 
+_CONTENT: It is a beautiful summer day. The sun shines warmly on an old house near a river. Behind the house a mother duck is sitting on ten eggs. All the eggs break open except one, which is the biggest egg of all._np_
+Mother duck sits and sits on the big egg. At last it breaks open, out jumps the last baby duck. It looks big and strong, but gray and ugly._np_
+The next day mother duck takes all her little ducks to the river. All her baby ducks jump in. They all swim and play together. The ugly duckling swims better than all the other ducklings._np_
+The farm yard is very noisy. The poor duckling is so unhappy there. The hens peck him, the rooster flies at him, the ducks bite him, and the farmer kicks him._np_
+At last one day he runs away. In a river, he sees many beautiful big birds swimming there. He wants to be with them. He knows they are swans. Oh, how he wants to be beautiful like them._np_
+Now it is winter. Everything is white with snow. The river is covered with ice. The ugly duckling is very cold and unhappy._np_
+Spring comes once again. The sun shines warmly. One morning the ugly duckling sees the beautiful swans again. He wants so much to swim with them, but he is afraid of them. He wants to die and he runs into the river._np_
 There in the water he sees a beautiful swan. It is he! He is no more an ugly duckling. He is a beautiful white swan.
