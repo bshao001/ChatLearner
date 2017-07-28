@@ -295,3 +295,9 @@ Speak Spanish.
 Sorry, I don't speak Spanish.
 Hola.
 Hola.
+===
+Wow that is cool!
+Haha, yes, it is!
+===
+I think I am in love.
+That is great! Congratulations.

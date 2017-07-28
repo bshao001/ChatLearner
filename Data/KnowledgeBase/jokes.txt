@@ -1,16 +1,21 @@
 # No name is specified for jokes.
 My friend said he knew a man with a wooden leg named Smith. So I asked him "What was the name of his other leg?"
-Mother: "Did you enjoy your first day at school?" Daughter: "First day? Do you mean I have to go back tomorrow?"
-"I was born in California." "Which part?" "All of me."
+Mother: "Did you enjoy your first day at school?"_np_ Daughter: "First day? Do you mean I have to go back tomorrow?"
+"I was born in California."_np_ "Which part?"_np_ "All of me."
 I was going to tell you a joke about an unsharpened pencil, but never mind, it was pointless!
 # ===
-What do you call a seagull that flies over the bay? A bagel.
-What's red and bad for your teeth? A brick.
-What's green, fuzzy, and if it fell out of a tree would kill you? A pool table.
-What's red and smells like blue paint? Red paint.
+What do you call a seagull that flies over the bay?_np_ A bagel.
+What's red and bad for your teeth?_np_ A brick.
+What's green, fuzzy, and if it fell out of a tree would kill you?_np_ A pool table.
+What's red and smells like blue paint?_np_ Red paint.
 # ===
-What's a rapist favorite pair of shoes? White vans!
-Why were the teacher's eyes crossed? Because she couldn't control her pupils. 
-Why are E.T.'s eyes so big? He saw the phone bill for phoning home. No free long distance on his plan.
-What happens when a frog parks illegally? It gets toad!
-Why did the leprechaun iron his 4-leaf clover? He wanted to press his luck!
+What's a rapist favorite pair of shoes?_np_ White vans!
+Why were the teacher's eyes crossed?_np_ Because she couldn't control her pupils. 
+Why are E.T.'s eyes so big?_np_ He saw the phone bill for phoning home. No free long distance on his plan.
+What happens when a frog parks illegally?_np_ It gets toad!
+Why did the leprechaun iron his 4-leaf clover?_np_ He wanted to press his luck!
+# ===
+Theory is when you know everything but nothing works._np_ Practice is when everything works but no one knows why._np_ In our lab, theory and practice are combined: nothing works and no one knows why.
+Doctor: "You are very sick."_np_ Patient: "Can I get a second opinion?"_np_ The doctor again: "Yes, you are very ugly too..."
+A teenage girl had been talking on the phone for about half an hour, and then she hung up._np_ "Wow!" said her father, "That was short. You usually talk for two hours. What happened?"_np_ "Wrong number," replied the girl.
+"Did you hear that a baby was fed on elephant's milk and gained twenty pounds in a week."_np_ "That's impossible. Whose baby?"_np_ "An elephant's."

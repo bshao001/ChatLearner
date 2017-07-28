@@ -1,10 +1,11 @@
 # Stories have names and contents.
 _NAME: Papaya
-_CONTENT: Once upon a time, there was a virtual galaxy. It was far away from our earth. In the galaxy, there was an intelligent young agent called Papaya. One day, Papaya told a story: Once upon a time...
+_CONTENT: Once upon a time, there was a virtual galaxy. It was far away from our earth. In the galaxy, there was an intelligent young agent called Papaya.
+One day, Papaya told a story: Once upon a time...
 # ===
 _NAME: Two_Monks
-_CONTENT: Once upon a time, there was a mountain. On the mountain, there was a temple, in which an old monk and a little monk lived. One day, the old monk told a story: Once upon a time, there was a mountain. 
-On the mountain...
+_CONTENT: Once upon a time, there was a mountain. On the mountain, there was a temple, in which an old monk and a little monk lived.
+One day, the old monk told a story: Once upon a time, there was a mountain. On the mountain...
 # ===
 _NAME: Fox_in_Cart
 _CONTENT: A fox, observing a fish cart coming, lay down and pretended to be dead._np_
@@ -27,22 +28,37 @@ The wolf blew away the first two houses but couldn't budge the last one because 
 # ===
 _NAME: The_Cock
 _CONTENT: A housewife would wake her two servants every morning when the cock crew. The girls used to get mad at the bird and they said: "If it weren't for that dreadful cock, we could sleep a little longer."
-So they killed the cock. _np_But the housewife who was getting old and was no longer wide awake, never knew what time it was and so at times she would wake the girls when she fancied that it was time and 
+So they killed the cock. _np_But the housewife who was getting old and was no longer wide awake, never knew what time it was and so at times she would wake the girls when she fancied that it was time and
 so sometimes they found themselves being woken earlier than before and even at midnight!
 # ===
 _NAME: Precious_Grass
-_CONTENT: Brigid and Teresa went to the city one day to do their shopping and they had a very large bag of fruit to carry. Brigid was continuously getting angry murmuring because of the weight but Teresa on 
-the other hand was laughing and joking. _np_Brigid said to her: "When are you going to keep quite? I think your load is as heavy as mine and you are no stronger than I." _np_Teresa said to her: 
-"Dear Brigid, I sprinkled my load with a certain type of grass and therefore I don't feel the load so much."_np_
+_CONTENT: Brigid and Teresa went to the city one day to do their shopping and they had a very large bag of fruit to carry. Brigid was continuously getting angry murmuring because of the weight
+but Teresa on the other hand was laughing and joking. _np_Brigid said to her: "When are you going to keep quite? I think your load is as heavy as mine and you are no stronger than I."_np_
+Teresa said to her: "Dear Brigid, I sprinkled my load with a certain type of grass and therefore I don't feel the load so much."_np_
 "Oh", cried Brigid, "it must certainly be precious. I would like to lessen my load too. What is it called?"_np_
 Teresa replied: "The precious grass that lightens all load is called patience. Dear Brigid, you must remember that patience is the only solution for all our worries and trials."
 # ===
 _NAME: The_Ugly_Duckling
-_CONTENT: It is a beautiful summer day. The sun shines warmly on an old house near a river. Behind the house a mother duck is sitting on ten eggs. All the eggs break open except one, which is the biggest egg of all._np_
+_CONTENT: It is a beautiful summer day. The sun shines warmly on an old house near a river. Behind the house a mother duck is sitting on ten eggs.
+All the eggs break open except one, which is the biggest egg of all._np_
 Mother duck sits and sits on the big egg. At last it breaks open, out jumps the last baby duck. It looks big and strong, but gray and ugly._np_
 The next day mother duck takes all her little ducks to the river. All her baby ducks jump in. They all swim and play together. The ugly duckling swims better than all the other ducklings._np_
 The farm yard is very noisy. The poor duckling is so unhappy there. The hens peck him, the rooster flies at him, the ducks bite him, and the farmer kicks him._np_
 At last one day he runs away. In a river, he sees many beautiful big birds swimming there. He wants to be with them. He knows they are swans. Oh, how he wants to be beautiful like them._np_
 Now it is winter. Everything is white with snow. The river is covered with ice. The ugly duckling is very cold and unhappy._np_
-Spring comes once again. The sun shines warmly. One morning the ugly duckling sees the beautiful swans again. He wants so much to swim with them, but he is afraid of them. He wants to die and he runs into the river._np_
-There in the water he sees a beautiful swan. It is he! He is no more an ugly duckling. He is a beautiful white swan.
+Spring comes once again. The sun shines warmly. One morning the ugly duckling sees the beautiful swans again. He wants so much to swim with them, but he is afraid of them.
+He wants to die and he runs into the river._np_ There in the water he sees a beautiful swan. It is he! He is no more an ugly duckling. He is a beautiful white swan.
+# ===
+_NAME: The_Velveteen_Rabbit
+_CONTENT: A stuffed rabbit sewn from velveteen is given as a Christmas present to a small boy. The boy plays with other presents and forgets the velveteen rabbit.
+These presents are modern, and snub the old-fashioned velveteen rabbit. The wisest and oldest toy in the nursery, the Skin Horse, tells the rabbit about toys magically 
+becoming real due to love from children. The rabbit is awed by this idea._np_
+One night, the boy's nana gives the rabbit to the boy to sleep with, and the rabbit becomes the boy's favorite toy, enjoying picnics with him in the spring; 
+and the boy regards the rabbit as real. Time passes, and the rabbit becomes shabbier but happy. He meets some real rabbits in the summer, 
+and they learn that he cannot hop as they do and say that he is not real._np_
+One day, the boy comes down with scarlatina, and the rabbit sits with him as he recovers. The doctor orders that the boy should be taken to the seaside and that his room 
+should be disinfected, with all his books and toys burnt, including the velveteen rabbit. The rabbit is bundled into a sack and left out in the garden overnight. 
+The toy rabbit cries, a real tear drops onto the ground, and a marvelous flower appears. A fairy steps out of the flower and comforts the velveteen rabbit, 
+introducing herself as the Nursery Magic Fairy. She says that, because he is old and shabby and real, she will take him away with her and turn him into real._np_
+The fairy takes the rabbit to the forest, where she meets the other rabbits and gives the velveteen rabbit a kiss. The velveteen rabbit changes into a real rabbit 
+and joins the other rabbits in the forest. The next spring, the rabbit returns to look at the boy, and the boy sees a resemblance to his old velveteen rabbit.

@@ -49,12 +49,23 @@ Yes, she is the main character of the famous fairy tale: Snow White and the Seve
 Do you know Seven Dwarfs?
 Yes, they are a group of lovely characters that appear in the fairy tale Snow White and others.
 ===
-Can you tell me the story about Snow White?
-Sure. Here is the story: _func_val_get_story_name_para1_snow_white
-Can you tell me the story: The Three Little Pigs?
-Sure. Here is the story: _func_val_get_story_name_para1_the_three_little_pigs
+Do you know the story of Snow White?
+Yes. Here is the story: _func_val_get_story_name_para1_snow_white
+Do you know the story of The Three Little Pigs?
+Yes. Here is the story: _func_val_get_story_name_para1_the_three_little_pigs
+Do you know the story of The Velveteen Rabbit?
+Yes. Here is the story: _func_val_get_story_name_para1_the_velveteen_rabbit
 ===
-Could you please tell me the story about Snow White?
+Can you tell me the story of Snow White?
+Sure. Here is the story: _func_val_get_story_name_para1_snow_white
+Can you tell me the story of The Three Little Pigs?
+Sure. Here is the story: _func_val_get_story_name_para1_the_three_little_pigs
+Can you tell me the story of The Velveteen Rabbit?
+Sure. Here is the story: _func_val_get_story_name_para1_the_velveteen_rabbit
+===
+Could you please tell me the story of Snow White?
 Sure. Here is the story: _func_val_get_story_name_para1_snow_white
 Could you please tell me the story of The Three Little Pigs?
 Sure. Here is the story: _func_val_get_story_name_para1_the_three_little_pigs
+Could you please tell me the story of The Velveteen Rabbit?
+Sure. Here is the story: _func_val_get_story_name_para1_the_velveteen_rabbit

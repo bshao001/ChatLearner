@@ -68,7 +68,10 @@ class FunctionData:
 
     def get_joke_any(self):
         jokes = self.tokenized_data.jokes
-        return random.choice(jokes)
+        content = random.choice(jokes)
+        if not self.html_format:
+            content = re.sub(r'_np_', '', content)
+        return content
 
     @staticmethod
     def get_date_time():
@@ -160,9 +163,10 @@ class FunctionData:
             "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety",
             "hundred", "thousand", "million", "billion", "trillion"]
 
-        pat_op = re.compile(r'\s(plus|\+|minus|-|multiply|\*|divide|(divided\s+by)|/)\s',
-                            re.IGNORECASE)
-        pat_as = re.compile(r'((\bis\b)|=|(\bequals\b))', re.IGNORECASE)
+        pat_op = re.compile(
+            r'\s(plus|add|added|sum|\+|minus|subtract|subtracted|-|times|multiply|multiplied|product|\*|divide|(divided\s+by)|/)\s',
+            re.IGNORECASE)
+        pat_as = re.compile(r'((\bis\b)|=|(\bequals\b)|(\bget\b))', re.IGNORECASE)
 
         mat_op = re.search(pat_op, sentence)
         mat_as = re.search(pat_as, sentence)
@@ -279,6 +283,8 @@ if __name__ == "__main__":
 
     print(call_function('get_story_any', td, html_format=True))
     print(call_function('get_story_any', td, html_format=False))
+    print(call_function('get_joke_any', td, html_format=True))
+    print(call_function('get_joke_any', td, html_format=False))
     print(call_function('get_weekday_para1_d_2'))
     print(call_function('get_weekday_para1_d_1'))
     print(call_function('get_weekday_para1_d0'))
