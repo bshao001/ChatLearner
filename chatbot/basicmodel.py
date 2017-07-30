@@ -22,8 +22,8 @@ from chatbot.tfcopy.seq2seq import embedding_attention_seq2seq
 
 
 class BasicModel:
-    def __init__(self, tokenized_data, num_layers, num_units, input_keep_prob=0.8,
-                 output_keep_prob=0.8, embedding_size=32, batch_size=32):
+    def __init__(self, tokenized_data, num_layers, num_units, input_keep_prob=0.9,
+                 output_keep_prob=0.9, embedding_size=256, batch_size=16):
         """
         A basic Neural Conversational Model to predict the next sentence given an input 
         sentence. It is a simplified implementation of the seq2seq model as described: 
@@ -126,6 +126,7 @@ class BasicModel:
             loss_list = []
             last_perp = 1000.0
             write_meta_graph = True
+            last_record_perp = 2
             for epoch in range(num_epochs):
                 batches = self.tokenized_data.get_training_batches(self.batch_size)
 
@@ -153,20 +154,21 @@ class BasicModel:
                     loss_list.append(loss_val)
 
                 # Output training status
-                if epoch % 4 == 0 or epoch == num_epochs - 1:
+                if epoch % 3 == 0 or epoch == num_epochs - 1:
                     mean_loss = sum(loss_list) / len(loss_list)
                     perplexity = np.exp(float(mean_loss)) if mean_loss < 300 else math.inf
                     print("At epoch {}: learning_rate = {:.6f}, mean loss = {:.4f}, perplexity = {:.4f}".
                           format(epoch, lr_feed, mean_loss, perplexity))
                     if epoch == num_epochs - 1:
                         saver.save(sess, save_file)  # Write meta graph at the last save
-                    elif perplexity < 1.10:
-                        if perplexity < 1.04:  # Write meta graph before break
+                    elif perplexity < 1.12 and perplexity < last_record_perp:
+                        if perplexity < 1.08:  # Write meta graph before break
                             write_meta_graph = True
                         saver.save(sess, save_file, global_step=epoch, write_meta_graph=write_meta_graph)
+                        last_record_perp = perplexity
                         write_meta_graph = False
 
-                    if perplexity < 1.04:
+                    if perplexity < 1.08:
                         break
 
                     loss_list = []
@@ -305,7 +307,7 @@ if __name__ == "__main__":
     print('Loaded raw data: {} words, {} samples'.format(td.vocabulary_size, td.sample_size))
 
     model = BasicModel(tokenized_data=td, num_layers=2, num_units=880, input_keep_prob=0.9,
-                       output_keep_prob=0.9, embedding_size=320, batch_size=16)
+                       output_keep_prob=0.9, embedding_size=400, batch_size=16)
 
     res_dir = os.path.join(PROJECT_ROOT, 'Data', 'Result')
-    model.train(num_epochs=80, train_dir=res_dir, result_file='basic')
+    model.train(num_epochs=60, train_dir=res_dir, result_file='basic')

@@ -20,7 +20,7 @@ Are you a man or a woman?
 Are you a woman or a man?
 Where do you live?
 In which city do you live?
-In which county do you live?
+In which country do you live?
 Where are you?
 Where are you now?
 Why are we here?
@@ -50,16 +50,16 @@ Bye
 Bye.
 How much is 12 + 14?
 How much is twelve thousand three hundred four plus two hundred fifty six?
-What is five hundred eighty nine multiply six?
+What is five hundred eighty nine times six?
 What is five hundred eighty nine divided by 89?
-What is five hundred and seventy nine Divided By 89?
-How much is twelve thousand   three-hundred and four divided by two-hundred-fifty-six?
-How much is twelve thousand   three hundred and four divided by two hundred fifty six?
+How much is twelve thousand three-hundred and four divided by two-hundred-fifty-six?
+How much do you get if you add three hundred and four to two hundred fifty six?
+How much do you get if you subtract three hundred and four from two hundred fifty six?
+How much do you get if you multiply three hundred and four by two hundred fifty six?
+How much do you get if you divide twelve hundred and four by two hundred fifty six?
 What is seven billion five million and four thousand three hundred and four plus five million and four thousand three hundred and four?
-What is two and two plus and?
-What is two hundred and four plus one and something?
-What is two hundred and four plus one and and something?
-What is two hundred and four plus and and and something?
+What is the sum of two thousand and five thousand four hundred?
+What is the product of 100 and 200?
 My phone number is 305-456-7890.
 How much is 16 - 23?
 How much is 144 * 12?
@@ -82,7 +82,7 @@ What is 16 + 24?
 One plus one is?
 Two plus two is
 How much is one plus one?
-How much is zero divide one hundred?
+How much do you get if you divide one hundred by zero?
 How much is zero divided by zero?
 I'm going to kill you!
 Are you ready?
@@ -127,7 +127,7 @@ Hello?
 Hi?
 Goodbye
 Goodbye!
-Goodbye john.
+Goodbye John.
 Please
 Please.
 Please!
@@ -213,8 +213,6 @@ Do you have a boyfriend?
 1992.
 1992!
 1992?
-2000
-2000.
 2008
 2008.
 2008!
@@ -251,11 +249,12 @@ I hate you
 Who is skywalker?
 Who is the dude?
 What's your favorite color?
-What's your favourite color?
 What's your favorite food?
-What's your favourite food?
+What's your favorite sports?
+What's your favorite movie?
 Who is Bill Gates?
 Who is Bill Clinton?
+Who was Albert Einstein?
 What do you think of Trump?
 What do you think about global warming?
 Is the moon landing a hoax?
@@ -303,6 +302,7 @@ a b c
 1, 2, 3
 And?
 Continue...
+Stop!
 And ... action!
 Action!
 Let the movie begin
@@ -397,4 +397,4 @@ More!
 What is the capital of France?
 Paris...
 Where do you want to go?
-Surprise me.
+You surprised me.

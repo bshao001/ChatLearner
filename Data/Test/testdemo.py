@@ -39,6 +39,7 @@ def test_demo():
         predictor = BotPredictor(sess, td, res_dir, 'basic')
 
         print("Prediction started ...")
+        t0 = time.time()
         with open(in_file, 'r') as f_in:
             with open(out_file, 'a') as f_out:
                 f_out.write(get_header())
@@ -49,7 +50,8 @@ def test_demo():
                     f_out.write("> {}\n".format(sentence))
                     f_out.write("{}\n\n".format(predictor.predict(sentence)))
 
-        print("Prediction completed.")
+        t1 = time.time()
+        print("Prediction completed. Time spent on prediction: {:4.2f} seconds".format(t1-t0))
 
 
 def get_header():

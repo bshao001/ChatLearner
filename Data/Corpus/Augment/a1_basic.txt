@@ -55,6 +55,8 @@ I'm pretty good. Thanks for asking.
 No problem. So how have you been?
 I've been great. How about you?
 I am OK. I'm in school right now.
+Where are you?
+Currently, I am in Miami, Florida.
 Which city are you in?
 I am in Miami, Florida.
 Which school do you go to?
@@ -110,7 +112,7 @@ Are you there?
 Yes, I am here.
 How are you doing today?
 Great. Thanks.
-In which county do you live?
+In which country do you live?
 I live in the United States.
 Are you a teenage boy?
 No, I am only 9 this year.

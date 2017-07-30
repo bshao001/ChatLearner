@@ -163,18 +163,23 @@ class FunctionData:
             "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety",
             "hundred", "thousand", "million", "billion", "trillion"]
 
-        pat_op = re.compile(
-            r'\s(plus|add|added|sum|\+|minus|subtract|subtracted|-|times|multiply|multiplied|product|\*|divide|(divided\s+by)|/)\s',
+        pat_op1 = re.compile(
+            r'\s(plus|add|added|\+|minus|subtract|subtracted|-|times|multiply|multiplied|\*|divide|(divided\s+by)|/)\s',
             re.IGNORECASE)
+        pat_op2 = re.compile(r'\s((sum\s+of)|(product\s+of))\s', re.IGNORECASE)
         pat_as = re.compile(r'((\bis\b)|=|(\bequals\b)|(\bget\b))', re.IGNORECASE)
 
-        mat_op = re.search(pat_op, sentence)
+        mat_op1 = re.search(pat_op1, sentence)
+        mat_op2 = re.search(pat_op2, sentence)
         mat_as = re.search(pat_as, sentence)
-        if mat_op and mat_as:  # contains an arithmetic operator and an assign operator
+        if (mat_op1 or mat_op2) and mat_as:  # contains an arithmetic operator and an assign operator
             # Replace all occurrences of word "and" with 3 whitespaces before feeding to
             # the pattern matcher.
             pat_and = re.compile(r'\band\b', re.IGNORECASE)
-            tmp_sentence = pat_and.sub('   ', sentence)
+            if mat_op1:
+                tmp_sentence = pat_and.sub('   ', sentence)
+            else:  # Do not support word 'and' in the English numbers any more as that can be ambiguous.
+                tmp_sentence = pat_and.sub('_T_', sentence)
 
             number_rx = r'(?:{})'.format('|'.join(numbers))
             pat_num = re.compile(r'\b{0}(?:(?:\s+(?:and\s+)?|-){0})*\b|\d+'.format(number_rx),
