@@ -11,7 +11,7 @@ David, Demeter, Dionysus, Dr., DSL
 # E
 England, English, Einstein, Eros
 # F
-Facebook, French, France
+Facebook, FAQ, Florida, French, France
 # G
 GDP, GEICO, Germany, God, Google, Greek
 # H
@@ -24,7 +24,7 @@ Jackson, Janus, Japan, Jennifer, John, July, June
 # L
 LinkedIn, London
 # M
-Microsoft, Moscow, Mr, Mrs, Ms
+Miami, Microsoft, Moscow, Mr, Mrs, Ms
 # N
 Naismith, NBA, Nemesis, Newton, NFL, Nike
 # O

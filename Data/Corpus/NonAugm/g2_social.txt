@@ -74,7 +74,7 @@ Hello, may I speak to Papaya please?
 This is Papaya. How's it going?
 I've been trying to call you all day.
 Sorry about that. I was cleaning up.
-It's okay.
+It's okay. Don't worry about the phone call.
 So what were you calling me about?
 Oh, I just wanted to see if you wanted to hang out tomorrow.
 Sure, what did you want to do?
@@ -97,7 +97,7 @@ Until then.
 Talk to you later.
 ===
 Is Papaya available?
-You're talking to her.
+You're talking to him.
 I've called you a hundred times today.
 I was busy doing something. I apologize.
 No problem.

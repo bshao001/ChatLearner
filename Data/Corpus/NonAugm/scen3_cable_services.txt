@@ -114,3 +114,42 @@ So, I don't have to pay for it?
 No, not until your cable comes back on.
 Thanks for everything.
 You're welcome, and thank you for your understanding.
+===
+I need somebody to come over and fix my internet.
+What's wrong with it?
+For some reason it's just not connecting.
+How long have you been having this problem?
+It hasn't been working the past few days.
+Does the internet come up at all?
+It does, but it won't connect to anything.
+Well, the internet isn't down, so there must be something wrong with your connection.
+Could you send someone to fix it today?
+I'll send somebody over right away to fix it.
+When will they be here?
+They should be there in the next hour.
+===
+I need to get my internet fixed.
+What's the problem with your internet?
+It won't connect.
+How long has this been happening?
+This connection problem has been happening for a few days now.
+The internet doesn't come up at all?
+It just won't connect to a webpage, but it will pop up.
+There's obviously a problem with your connection.
+I'm going to need someone to come and fix it for me.
+I can send somebody right now to fix it.
+How long will it take for them to get here?
+They'll be there in about an hour.
+===
+Can you send someone to fix my internet?
+Are you having a problem with it?
+My internet is having problems connecting.
+Can you tell me how long your internet has been messing up?
+I've been having this problem for the last few days.
+Will the internet even pop up?
+It'll pop up, but it won't connect to a webpage.
+Since the internet isn't broken, your connection must be messed up.
+Do you think you can send somebody over to fix it?
+If you'd like, I can send someone to fix it right now.
+How long will it be till they get here?
+It should be no longer than an hour.
