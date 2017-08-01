@@ -24,7 +24,7 @@ Jackson, Janus, Japan, Jennifer, John, July, June
 # L
 LinkedIn, London
 # M
-Miami, Microsoft, Moscow, Mr, Mrs, Ms
+Miami, Microsoft, Moscow, Mr, Mrs, Ms, Mr., Mrs., Ms.
 # N
 Naismith, NBA, Nemesis, Newton, NFL, Nike
 # O
@@ -39,6 +39,7 @@ Scotland, September, Sophia, Spanish, SpaceX, Stanford, S.T.E.M.
 # T
 Tesla, Tokyo, Tom, Trump, Tyche
 # U
+USA
 # V
 Vienna
 # W
