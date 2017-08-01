@@ -35,26 +35,30 @@ import os
 COMMENT_LINE_STT = "#=="
 CONVERSATION_SEP = "==="
 
-AUG_FOLDER = "Augment"
-NON_FOLDER = "NonAugm"
+AUG0_FOLDER = "Augment0"
+AUG1_FOLDER = "Augment1"
+AUG2_FOLDER = "Augment2"
 
 
 class RawText:
     def __init__(self):
-        self.conversations_aug = []
-        self.conversations_non = []
+        self.conversations_aug0 = []
+        self.conversations_aug1 = []
+        self.conversations_aug2 = []
 
     def load_corpus(self, corpus_dir):
         """
         Args:
              corpus_dir: Name of the folder storing corpus files for training.
         """
-        for fd in range(2):
+        for fd in range(3):
             conversations = []
             if fd == 0:
-                file_dir = os.path.join(corpus_dir, AUG_FOLDER)
+                file_dir = os.path.join(corpus_dir, AUG0_FOLDER)
+            elif fd == 1:
+                file_dir = os.path.join(corpus_dir, AUG1_FOLDER)
             else:
-                file_dir = os.path.join(corpus_dir, NON_FOLDER)
+                file_dir = os.path.join(corpus_dir, AUG2_FOLDER)
 
             for data_file in sorted(os.listdir(file_dir)):
                 full_path_name = os.path.join(file_dir, data_file)
@@ -76,6 +80,8 @@ class RawText:
                             conversations.append(samples)
 
             if fd == 0:
-                self.conversations_aug = conversations
+                self.conversations_aug0 = conversations
+            elif fd == 1:
+                self.conversations_aug1 = conversations
             else:
-                self.conversations_non = conversations
+                self.conversations_aug2 = conversations

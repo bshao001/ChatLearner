@@ -399,11 +399,13 @@ class TokenizedData:
         raw_text = RawText()
         raw_text.load_corpus(corpus_dir)
 
-        for cid in range(2):
+        for cid in range(3):
             if cid == 0:
-                conversations = raw_text.conversations_aug
+                conversations = raw_text.conversations_aug0
+            elif cid == 1:
+                conversations = raw_text.conversations_aug1
             else:
-                conversations = raw_text.conversations_non
+                conversations = raw_text.conversations_aug2
 
             for conversation in conversations:
                 step = 2
@@ -418,25 +420,24 @@ class TokenizedData:
                     for bucket_id, (src_size, tgt_size) in enumerate(self.buckets):
                         if len(src_word_ids) < src_size and len(tgt_word_ids) <= tgt_size - 2:
                             self.training_samples[bucket_id].append([src_word_ids, tgt_word_ids])
-                            if cid == 0 and augment:
+                            if cid >= 1 and augment:
                                 aug_len = src_size - len(src_word_ids)
                                 aug_src_ids = [self.pad_token] * aug_len + src_word_ids[:]
                                 self.training_samples[bucket_id].append([aug_src_ids, tgt_word_ids])
                             break
                     else:
-                        print("Input ({}) or target ({}) line is too long to fit into any bucket"
+                        print("Input ({}) or target ({}) line is too long to fit into any bucket."
                               .format(input_line, target_line))
 
-                    # if cid == 0 and augment:
-                    #     for j in [1, 2]:
-                    #         aug_src_ids = [self.pad_token] * 2 * j + src_word_ids[:]
-                    #         for bucket_id, (src_size, tgt_size) in enumerate(self.buckets):
-                    #             if len(aug_src_ids) <= src_size and len(tgt_word_ids) <= tgt_size - 2:
-                    #                 self.training_samples[bucket_id].append([aug_src_ids, tgt_word_ids])
-                    #                 break
-                    #         else:
-                    #             print("Augmented Input ({}) line @ {} (pad omitted) is too long to fit "
-                    #                   "into any bucket".format(input_line, j))
+                    if cid == 2 and augment:
+                        aug_src_ids = [self.pad_token] * 2 + src_word_ids[:]
+                        for bucket_id, (src_size, tgt_size) in enumerate(self.buckets):
+                            if len(aug_src_ids) <= src_size and len(tgt_word_ids) <= tgt_size - 2:
+                                self.training_samples[bucket_id].append([aug_src_ids, tgt_word_ids])
+                                break
+                        else:
+                            print("Augmented Input ({}) is too long to fit into any bucket."
+                                  .format(input_line))
 
         for bucket_id, _ in enumerate(self.buckets):
             self.sample_size[bucket_id] = len(self.training_samples[bucket_id])
@@ -464,9 +465,6 @@ if __name__ == "__main__":
     td = TokenizedData(dict_file=dict_file, knbase_dir=knbs_dir, corpus_dir=corp_dir,
                        augment=False)
     print('Loaded raw data: {} words, {} samples'.format(td.vocabulary_size, td.sample_size))
-
-    # for key, value in td.stories.items():
-    #     print("story name = {}, story content = {}".format(key, value))
 
     for key, value in td.id_word_dict.items():
         print("key = {}, value = {}".format(key, value))

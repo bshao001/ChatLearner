@@ -41,10 +41,10 @@ Who is _pad_?
 Sorry, I have never heard about him or her.
 Who is _unk_ _unk_?
 Sorry, I don't know. I have never heard about him or her.
-Who is _pad_ _unk_?
-Sorry, I don't know. I have never heard about him or her.
-Who is _unk_ _pad_?
-Sorry, I don't know. I have never heard about him or her.
+Who's _pad_ _unk_?
+Sorry, I don't know. I've never heard about him or her.
+Who's _unk_ _pad_?
+Sorry, I don't know. I've never heard about him or her.
 ===
 Say _unk_ please!
 I would like to, but sometimes I have problem pronouncing certain words.
