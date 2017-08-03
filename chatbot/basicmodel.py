@@ -285,11 +285,11 @@ class BasicModel:
             return 1.2e-4
         elif perplexity <= 2.4:
             return 1.6e-4
-        elif perplexity <= 3.2:
+        elif perplexity <= 4.0:
             return 2e-4
-        elif perplexity <= 6.4:
+        elif perplexity <= 8.0:
             return 2.4e-4
-        elif perplexity <= 20.0:
+        elif perplexity <= 24.0:
             return 4e-4
         else:
             return 8e-4
@@ -310,4 +310,4 @@ if __name__ == "__main__":
                        output_keep_prob=0.9, embedding_size=400, batch_size=16)
 
     res_dir = os.path.join(PROJECT_ROOT, 'Data', 'Result')
-    model.train(num_epochs=60, train_dir=res_dir, result_file='basic')
+    model.train(num_epochs=45, train_dir=res_dir, result_file='basic')

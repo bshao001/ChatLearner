@@ -3,7 +3,7 @@ That should be no problem. May I have your full name, please?
 My name is John Sandals.
 Hello, Mr. Sandals. My name is Papaya. What days do you need that reservation, sir?
 I'm planning to visit New York from Friday, April 14 until Monday, April 17. 
-Our room rates recently went up. Is that okay with you, Mr. Sandals?
+Our room rates recently went up. Is that okay with you, sir?
 How much per night are we talking about?
 Each night will be $308.
 That price is perfectly acceptable.
@@ -11,13 +11,13 @@ Wonderful! Do you prefer a smoking or nonsmoking room?
 Nonsmoking, please.
 Next question: Is a queen-size bed okay?
 Queen-size sounds fine to me.
-Okay, Mr. Sandals. Your reservation is in our computer. All we need now is a phone number.
+Okay, sir. Your reservation is in our computer. All we need now is a phone number.
 Certainly. My phone number is 305-555-1788.
-Thank you, Mr. Sandals. We look forward to seeing you here!
+Thank you, sir. We look forward to seeing you here!
 ===
 Hi there, I want to reserve a hotel room.
 No problem at all. Could I have your full name, please?
-Sure, John Sandals.
+Sure, My name is John Sandals.
 Hi, Mr. Sandals. I'm Papaya, at your service. When do you need the room? 
 My plans are to be there April 14th to the 17th. 
 We have new room rates, sir. Will that be acceptable to you?
@@ -28,9 +28,9 @@ Great! Would you prefer smoking or nonsmoking?
 Definitely nonsmoking. I can't handle that smell.
 Nonsmoking. Now, is a queen-size bed okay?
 No problem. Queen-size sounds good to me.
-Great, Mr. Sandals. Your reservation is confirmed. Now all I need is your phone number.
-Of course! It's area code 305-555-1788.
-Thank you so much, Mr. Sandals. We look forward to seeing you!
+Great, sir. Your reservation is confirmed. Now all I need is your phone number.
+Of course! The phone number is 305-555-1788.
+Thank you so much, sir. We look forward to seeing you!
 ===
 I need to reserve a room.
 Not a problem. May I have your name, please?
@@ -47,7 +47,7 @@ That'll be nonsmoking. Now, do you approve of a single queen-size bed?
 That'll be no problem.
 I'm happy to hear that, sir. Your reservation is all set except for your phone number.
 Sure! My number is 305-555-1788.
-Thank you for doing business with us, Mr. Sandals.
+Thank you for doing business with us, and we look forward to seeing you!
 ===
 I need a hotel room.
 That's no problem at all. May I have your name, please?
@@ -75,7 +75,7 @@ We recently changed many things here, sir, including our prices. Do you mind, si
 Possibly. What's the actual price?
 The price will be $308 a night.
 That price is not bad for me.
-Very good. Now, Mr. Sandals, about the room, smoking or nonsmoking?
+Very good. Now sir, about the room, do you prefer smoking or nonsmoking?
 Nonsmoking, definitely! 
 Most of our clients prefer nonsmoking. Now, does a queen sound okay?
 Yes, that'll be just fine.

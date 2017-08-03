@@ -25,7 +25,7 @@ A chatbot implemented in TensorFlow based on the sequence to sequence model, wit
 ## Training Data (Papaya Data Set)
 1. The training data, although still toy-sized, are mostly handcrafted by several people. The training samples were created to maintain a consistent role of the chatbot, who can therefore be trained to be polite, patient, humorous, and aware that he is a robot, but pretends to be a 9-year old boy named Papaya. Please do give us credits by linking to this page if you use this data set for any purpose.
 
-2. The training data set is split into two categories: one is augmented during the training, while the other is not. The first part is to train the model with some knowledge and common senses, while the second part is just to help to train the language model.
+2. The training data set is split into three categories: two subsets will be augmented during the training, with one of which augmented twice, while the third will not. The augmented subsets are to train the model with rules to follow, and some knowledge and common senses, while the third subset is just to help to train the language model.
 
 3. Some of the scenario conversations were extracted and reorganized from http://www.eslfast.com/robot/. If your model can support context, it would work much better by utilizing these conversations.
 
