@@ -34,14 +34,14 @@ A chatbot implemented in TensorFlow based on the sequence to sequence model, wit
 ## Training
 Other than Python 3.5.2, Numpy, and TensorFlow 1.2. You also need NLTK (Natural Language Toolkit) version 3.2.4, including its data.
 
-Training is simple. Remember to create a folder named Result under the Data folder first. Then just run the following commands:
+Training is straightforward. Remember to create a folder named Result under the Data folder first. Then just run the following commands:
 
 ```bash
 cd chatbot
 python basicmodel.py
 ```
 
-With the existing parameters in the file and the current Papaya training data set, it will be very easy to get to a perplexity around 1.12 at about epoch 20. It would be better if you let it run until it terminates by itself, i.e., reaching the perplexity less than 1.08 or until the maximum epoch. You will be able to see the training results under Data/Result/ folder. Make sure the following 4 files exist as all these will be required for testing and prediction: 
+A good GPU is highly recommended for the training as it can be very time-consuming. To train the model using the existing parameters and the Papaya data set with a single GPU (NVIDIA GeForce GTX 1080 Ti), it will take about 9 hours to get the desired perplexity. You can modify the model parameters based on your available computing resources. You will be able to see the training results under Data/Result/ folder. Make sure the following 4 files exist as all these will be required for testing and prediction: 
 
 1. basic.data-00000-of-00001
 2. basic.index
