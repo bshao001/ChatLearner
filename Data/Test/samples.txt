@@ -46,6 +46,8 @@ Could you please tell me a joke please?
 Tell me another joke please!
 Great job!
 Great!
+Take care.
+Take care!
 Bye
 Bye.
 How much is 12 + 14?
@@ -213,7 +215,6 @@ Do you have a boyfriend?
 1992.
 1992!
 1992?
-2008
 2008.
 2008!
 Listen to music.
@@ -222,10 +223,10 @@ What happens?
 What happened in 1992?
 What happened in 2001?
 When was it?
-July 20th.
+Where are you going?
+Do you have any plan for tomorrow?
 Two plus two
 2+2?
-What year
 What year.
 What year!
 What year?
@@ -291,9 +292,8 @@ What do you need to play soccer?
 What do you need to play handball?
 One, two, three
 One two three
-1 2 3
-1
 1 2
+1 2 3
 1 2 3 ...
 1 2 3?
 A, B, C
@@ -329,6 +329,8 @@ What is the usual color of a leaf?
 What is the color of a yellow car?
 How much is two plus two?
 How much is ten minus two?
+How much is that?
+How much does that cost?
 What is the purpose of life?
 What is the purpose of living?
 What is the purpose of existence?
@@ -385,8 +387,6 @@ A flower.
 One
 Two
 Three
-Four
-Five
 The end
 Yes it is.
 Yes it was.

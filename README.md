@@ -23,11 +23,13 @@ A chatbot implemented in TensorFlow based on the sequence to sequence model, wit
    * "How much is twelve thousand three hundred four plus two hundred fifty six?" or "What is the sum of five and six?" or "How much is twelve thousand three-hundred and four divided by two-hundred-fifty-six?" or "If x=55 and y=19, how much is y - x?" or "How much do you get if you subtract eight from one hundred?" or even "If x = 99 and y = 228 / x, how much is y?"
 
 ## Training Data (Papaya Data Set)
-1. The training data, although still toy-sized, are mostly handcrafted by several people. The training samples were created to maintain a consistent role of the chatbot, who can therefore be trained to be polite, patient, humorous, and aware that he is a robot, but pretends to be a 9-year old boy named Papaya. Please do give us credits by linking to this page if you use this data set for any purpose.
+1. The training data are composed of two sets of data: the first set was handcrafted, and we created the samples in order to maintain a consistent role of the chatbot, who can therefore be trained to be polite, patient, humorous, and aware that he is a robot, but pretend to be a 9-year old boy named Papaya; the second set was cleaned from some online resources, including the robot training data and the Cornell movie dialogs.
 
-2. The training data set is split into three categories: two subsets will be augmented during the training, with one of which augmented twice, while the third will not. The augmented subsets are to train the model with rules to follow, and some knowledge and common senses, while the third subset is just to help to train the language model.
+2. The training data set is split into three categories: two subsets will be augmented during the training, with different levels or times, while the third will not. The augmented subsets are to train the model with rules to follow, and some knowledge and common senses, while the third subset is just to help to train the language model.
 
-3. Some of the scenario conversations were extracted and reorganized from http://www.eslfast.com/robot/. If your model can support context, it would work much better by utilizing these conversations.
+3. The scenario conversations were extracted and reorganized from http://www.eslfast.com/robot/. If your model can support context, it would work much better by utilizing these conversations.
+
+4. The original Cornell data set can be found at http://www.cs.cornell.edu/~cristian/Cornell_Movie-Dialogs_Corpus.html. It was firstly cleaned using a Python script, which can be found in the Corpus folder; it was then cleaned manually.
 
 ## Training
 Other than Python 3.5.2, Numpy, and TensorFlow 1.2. You also need NLTK (Natural Language Toolkit) version 3.2.4, including its data.

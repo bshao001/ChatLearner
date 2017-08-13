@@ -40,9 +40,9 @@ class TokenizedData:
 
         # Use a number of buckets and pad the data samples to the smallest one that can accommodate.
         # For decoders, 2 slots are reserved for bos_token and eos_token. Therefore the really slots
-        # available for words/punctuations are 2 less, i.e., 12, 20, 40 based on the following numbers
-        # self.buckets = [(10, 14), (18, 22), (36, 42)]
-        self.buckets = [(12, 18), (36, 42)]
+        # available for words/punctuations are 2 less, i.e., 16, 24, 40 based on the following numbers
+        self.buckets = [(14, 18), (22, 26), (36, 42)]
+        # self.buckets = [(12, 18), (36, 42)]
 
         # Number of samples for sampled softmax. Define it here so that both the trainer and predictor
         # can easily access it.
@@ -399,13 +399,13 @@ class TokenizedData:
         raw_text = RawText()
         raw_text.load_corpus(corpus_dir)
 
-        for cid in range(3):
+        for cid in range(2, -1, -1):
             if cid == 0:
                 conversations = raw_text.conversations_aug0
             elif cid == 1:
-                conversations = raw_text.conversations_aug1
+                conversations = raw_text.conversations_aug1  # Will be augmented 3 times
             else:
-                conversations = raw_text.conversations_aug2
+                conversations = raw_text.conversations_aug2  # Will be augmented 6 times
 
             for conversation in conversations:
                 step = 2
@@ -424,20 +424,24 @@ class TokenizedData:
                                 aug_len = src_size - len(src_word_ids)
                                 aug_src_ids = [self.pad_token] * aug_len + src_word_ids[:]
                                 self.training_samples[bucket_id].append([aug_src_ids, tgt_word_ids])
+
+                                if bucket_id < len(self.buckets) - 1:
+                                    aug_bucket_id = bucket_id + 1
+                                else:
+                                    aug_bucket_id = bucket_id
+
+                                for j in range(cid):
+                                    self.training_samples[bucket_id].append([src_word_ids, tgt_word_ids])
+                                    self.training_samples[aug_bucket_id].append([src_word_ids, tgt_word_ids])
+                                if cid == 2:
+                                    aug_len2 = self.buckets[aug_bucket_id][0] - len(src_word_ids)
+                                    aug_src_ids2 = [self.pad_token] * aug_len2 + src_word_ids[:]
+                                    self.training_samples[aug_bucket_id].append([aug_src_ids2, tgt_word_ids])
                             break
                     else:
                         print("Input ({}) or target ({}) line is too long to fit into any bucket."
                               .format(input_line, target_line))
 
-                    if cid == 2 and augment:
-                        aug_src_ids = [self.pad_token] * 2 + src_word_ids[:]
-                        for bucket_id, (src_size, tgt_size) in enumerate(self.buckets):
-                            if len(aug_src_ids) <= src_size and len(tgt_word_ids) <= tgt_size - 2:
-                                self.training_samples[bucket_id].append([aug_src_ids, tgt_word_ids])
-                                break
-                        else:
-                            print("Augmented Input ({}) is too long to fit into any bucket."
-                                  .format(input_line))
 
         for bucket_id, _ in enumerate(self.buckets):
             self.sample_size[bucket_id] = len(self.training_samples[bucket_id])
@@ -466,11 +470,11 @@ if __name__ == "__main__":
                        augment=False)
     print('Loaded raw data: {} words, {} samples'.format(td.vocabulary_size, td.sample_size))
 
-    for key, value in td.id_word_dict.items():
-        print("key = {}, value = {}".format(key, value))
-
-    for bucket_id, _ in enumerate(td.buckets):
-        print("Bucket {}".format(bucket_id))
-        for sample in td.training_samples[bucket_id]:
-            print("[{}], [{}]".format(td.word_ids_to_str(sample[0], debug=True),
-                                      td.word_ids_to_str(sample[1])))
+    # for key, value in td.id_word_dict.items():
+    #     print("key = {}, value = {}".format(key, value))
+    #
+    # for bucket_id, _ in enumerate(td.buckets):
+    #     print("Bucket {}".format(bucket_id))
+    #     for sample in td.training_samples[bucket_id]:
+    #         print("[{}], [{}]".format(td.word_ids_to_str(sample[0], debug=True),
+    #                                   td.word_ids_to_str(sample[1])))

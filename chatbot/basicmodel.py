@@ -124,7 +124,7 @@ class BasicModel:
             save_file = os.path.join(train_dir, result_file)
 
             loss_list = []
-            last_perp = 1000.0
+            last_perp = 2000.0
             write_meta_graph = True
             last_record_perp = 2
             for epoch in range(num_epochs):
@@ -154,25 +154,24 @@ class BasicModel:
                     loss_list.append(loss_val)
 
                 # Output training status
-                if epoch % 3 == 0 or epoch == num_epochs - 1:
-                    mean_loss = sum(loss_list) / len(loss_list)
-                    perplexity = np.exp(float(mean_loss)) if mean_loss < 300 else math.inf
-                    print("At epoch {}: learning_rate = {:.6f}, mean loss = {:.4f}, perplexity = {:.4f}".
-                          format(epoch, lr_feed, mean_loss, perplexity))
-                    if epoch == num_epochs - 1:
-                        saver.save(sess, save_file)  # Write meta graph at the last save
-                    elif perplexity < 1.12 and perplexity < last_record_perp:
-                        if perplexity < 1.08:  # Write meta graph before break
-                            write_meta_graph = True
-                        saver.save(sess, save_file, global_step=epoch, write_meta_graph=write_meta_graph)
-                        last_record_perp = perplexity
-                        write_meta_graph = False
+                mean_loss = sum(loss_list) / len(loss_list)
+                perplexity = np.exp(float(mean_loss)) if mean_loss < 300 else math.inf
+                print("At epoch {}: learning_rate = {:.6f}, mean loss = {:.4f}, perplexity = {:.4f}".
+                      format(epoch, lr_feed, mean_loss, perplexity))
+                if epoch == num_epochs - 1:
+                    saver.save(sess, save_file)  # Write meta graph at the last save
+                elif perplexity < 1.16 and perplexity < last_record_perp:
+                    if perplexity < 1.08:  # Write meta graph before break
+                        write_meta_graph = True
+                    saver.save(sess, save_file, global_step=epoch, write_meta_graph=write_meta_graph)
+                    last_record_perp = perplexity
+                    write_meta_graph = False
 
-                    if perplexity < 1.08:
-                        break
+                if perplexity < 1.08:
+                    break
 
-                    loss_list = []
-                    last_perp = perplexity
+                loss_list = []
+                last_perp = perplexity
 
     def _define_out_projection(self):
         # If we use sampled softmax, we need an output projection.
@@ -265,7 +264,7 @@ class BasicModel:
             with tf.variable_scope(tf.get_variable_scope(), reuse=True if j > 0 else None):
                 loss = tf.contrib.legacy_seq2seq.sequence_loss(
                     logits=outputs[j], targets=targets[:bucket[1]], weights=weights[:bucket[1]],
-                    average_across_batch=False, softmax_loss_function=softmax_loss_function)
+                    average_across_batch=True, softmax_loss_function=softmax_loss_function)
                 losses.append(loss)
 
                 train_op = tf.train.AdamOptimizer(learning_rate=learning_rate).minimize(loss)
@@ -283,14 +282,18 @@ class BasicModel:
             return 1e-4
         elif perplexity <= 1.6:
             return 1.2e-4
-        elif perplexity <= 2.4:
+        elif perplexity <= 2.0:
             return 1.6e-4
-        elif perplexity <= 4.0:
+        elif perplexity <= 3.2:
             return 2e-4
-        elif perplexity <= 8.0:
+        elif perplexity <= 6.4:
             return 2.4e-4
-        elif perplexity <= 24.0:
+        elif perplexity <= 10.0:
+            return 3.2e-4
+        elif perplexity <= 16.0:
             return 4e-4
+        elif perplexity <= 24.0:
+            return 6e-4
         else:
             return 8e-4
 
@@ -306,8 +309,8 @@ if __name__ == "__main__":
     td = TokenizedData(dict_file=dict_file, knbase_dir=knbs_dir, corpus_dir=corpus_dir)
     print('Loaded raw data: {} words, {} samples'.format(td.vocabulary_size, td.sample_size))
 
-    model = BasicModel(tokenized_data=td, num_layers=2, num_units=880, input_keep_prob=0.9,
-                       output_keep_prob=0.9, embedding_size=400, batch_size=16)
+    model = BasicModel(tokenized_data=td, num_layers=2, num_units=1200, input_keep_prob=0.9,
+                       output_keep_prob=0.9, embedding_size=1000, batch_size=64)
 
     res_dir = os.path.join(PROJECT_ROOT, 'Data', 'Result')
     model.train(num_epochs=45, train_dir=res_dir, result_file='basic')
