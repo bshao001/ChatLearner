@@ -5,7 +5,7 @@
 A chatbot implemented in TensorFlow based on the sequence to sequence model, with certain rules integrated.
 
 ## Notes and Highlights:
-1. This implementation was created and tested under TensorFlow 1.2 GPU version. As there were significant changes among different versions of TensorFlow, especially in RNN-related areas, you may find it not work in earlier versions.
+1. This implementation was based on the legacy seq2seq model (static RNN) in TensorFlow version 1.2. As there were significant changes among different versions of TensorFlow, especially in RNN-related areas, you may find it not work in earlier versions.
 
 2. Because the copy.deepcopy method does not support placeholders, the TensorFlow seq2seq.py file was copied and slightly modified, so that encoder_cell and decoder_cell can be passed into embedding_attention_seq2seq method separately. Therefore, placeholders for dropout can be used.
 
@@ -29,7 +29,7 @@ A chatbot implemented in TensorFlow based on the sequence to sequence model, wit
 
 3. The scenario conversations were extracted and reorganized from http://www.eslfast.com/robot/. If your model can support context, it would work much better by utilizing these conversations.
 
-4. The original Cornell data set can be found at http://www.cs.cornell.edu/~cristian/Cornell_Movie-Dialogs_Corpus.html. We cleaned it using a Python script (the script can also be found in the Corpus folder); we then cleaned it manually by quickly searching certain patterns. The final data is available here: https://github.com/bshao001/ChatLearner/blob/master/Data/Corpus/Augment0/cornell_cleaned.txt
+4. The original Cornell data set can be found at http://www.cs.cornell.edu/~cristian/Cornell_Movie-Dialogs_Corpus.html. We cleaned it using a Python script (the script can also be found in the Corpus folder); we then cleaned it manually by quickly searching certain patterns. The final data is available here: https://github.com/bshao001/ChatLearner/blob/Legacy_Chatbot/Data/Corpus/Augment0/cornell_cleaned.txt
 
 ## Training
 Other than Python 3.5.2, Numpy, and TensorFlow 1.2. You also need NLTK (Natural Language Toolkit) version 3.2.4, including its data.
@@ -58,10 +58,10 @@ python botui.py
 
 Wait until you get the command prompt "> ".
 
-A demo test result is provided as well. Please check it to see how this chatbot behaves now: https://github.com/bshao001/ChatLearner/blob/master/Data/Test/responses.txt
+A demo test result is provided as well. Please check it to see how this chatbot behaves now: https://github.com/bshao001/ChatLearner/blob/Legacy_Chatbot/Data/Test/responses.txt
 
 ## Web Interface
-A SOAP-based web service architecture is implemented, with a Python server and a Java client. A nice GUI is also included for your reference. For details, please check: https://github.com/bshao001/ChatLearner/tree/master/webui
+A SOAP-based web service architecture is implemented, with a Python server and a Java client. A nice GUI is also included for your reference. For details, please check: https://github.com/bshao001/ChatLearner/tree/Legacy_Chatbot/webui
 
 ## References and Credits:
 1. Deep QA: https://github.com/Conchylicultor/DeepQA
