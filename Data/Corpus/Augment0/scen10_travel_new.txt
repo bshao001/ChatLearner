@@ -1,0 +1,131 @@
+Q: Could you help me make a plane reservation ?
+A: I would be happy to help you . Where do you plan on going ?
+Q: I am going to go to Hawaii .
+A: For that destination , you may leave from Los Angeles or Burbank Airport . Which would you prefer ?
+Q: I think that I would rather leave from Los Angeles Airport .
+A: Would you prefer a morning or afternoon departure ?
+Q: I need to leave in the morning .
+A: Fine . On your return flight , do you have a preference as to morning or afternoon ?
+Q: I would prefer to return in the afternoon .
+A: I have booked you on your flight at a great rate . Here are your tickets .
+===
+Q: I need to make a plane reservation .
+A: That is what I am here for . What is your destination ?
+Q: I will be traveling to Aspen , Colorado .
+A: Would you prefer to leave from Los Angeles or Burbank Airport ?
+Q: Burbank Airport would be best for me .
+A: You can leave in the morning of afternoon from that airport . Do you have a preference ?
+Q: I can only take a flight that leaves in the afternoon .
+A: I can book that for you right now . When you return , would you prefer morning or afternoon ?
+Q: I think that I would like a morning return flight better .
+A: I was able to book your flight , and I will print your tickets right now . Have a great trip !
+===
+Q: I am planning a trip and need help making my airline reservation .
+A: Sure . Where are you traveling to on your trip ?
+Q: I will be vacationing in Oregon .
+A: You have an option of departing from Los Angeles or Burbank Airport . What is your preference ?
+Q: I live closer to Los Angeles Airport , so that would be the best choice .
+A: Does it matter to you if you leave in the morning or afternoon ?
+Q: I can leave at either morning or afternoon .
+A: I 'll put you on a morning flight . Is a morning or afternoon return flight preferable for you ?
+Q: Either morning or afternoon would work for me .
+A: I 'll give you an afternoon flight . Here are your tickets .
+===
+Q: Have you ever booked a flight online ?
+A: I have booked airline tickets online many times . It has worked out great for me !
+Q: How do you book airline tickets online ?
+A: The best way is to go to a website like Travelocity or Expedia . They can help you find the best price .
+Q: What information do I need to provide to book a flight ?
+A: You need to know where you are going and when you want to travel .
+Q: How do I get the cheapest rate for the tickets ?
+A: Usually you get the best price by having some flexibility in your travel time and dates .
+Q: Can I fly on different airlines ?
+A: You can choose the airline you prefer to fly with or let the website find you the best deal .
+===
+Q: Do you think it is a good idea to book airline tickets online ?
+A: I think that booking airline tickets online is the only way to go .
+Q: Can you help me figure out how to book airline tickets online ?
+A: You can find the best price by using a website like Travelocity or Expedia .
+Q: What do I need to know to book a flight ?
+A: You will need to type in the dates that you wish to travel and where you are going .
+Q: How do I get the best price for the tickets ?
+A: If you have some flexibility in when you can travel , that will usually get you a better rate .
+Q: Can I choose which airline I fly with ?
+A: These sites deal with a lot of different airlines , so you can choose whichever one you prefer .
+===
+Q: Is booking airline tickets online a good way to go ?
+A: I have had really good luck booking airline tickets online .
+Q: How do you book airline tickets online ?
+A: Usually you can find the best price by using a website like Travelocity or Expedia .
+Q: What are they going to ask me to book a flight ?
+A: They will ask you when you will be traveling and what your destination will be .
+Q: Is there anything special I can do to get the lowest price ?
+A: You get a better rate if you are n't too particular about what time you travel .
+Q: Do you have to fly with a particular airline ?
+A: The travel sites deal with many different airlines . It is always up to you to choose who you will fly with .
+===
+Q: I would like to book a flight .
+A: I can help you with that . Where are you traveling to ?
+Q: I am traveling to Singapore .
+A: What date will you be traveling ?
+Q: I want to fly on June 14th .
+A: Do you want to fly out of Los Angeles International or Burbank Airport ?
+Q: I would like to fly out of Los Angeles International Airport .
+A: Would you prefer a morning or an afternoon flight ?
+Q: I would rather fly in the morning .
+A: Well , I have you booked on a flight that will fit your schedule . The tickets will arrive by mail in a few days .
+===
+Q: I want to buy a plane ticket .
+A: I can help you make your reservation . What is your destination ?
+Q: My final destination is Sydney , Australia .
+A: What is your travel date ?
+Q: I am making a reservation for December 12th .
+A: Would you prefer to leave from Los Angeles International or Burbank Airport ?
+Q: I want to fly out of Burbank Airport .
+A: Would you rather fly in the morning or later in the day ?
+Q: I need an afternoon flight .
+A: I have you booked on a flight in the afternoon . Your tickets will arrive in the mail within 3 days .
+===
+Q: I need to make a plane reservation .
+A: We can book your trip right now . What city are you flying to ?
+Q: I need to fly to New York City .
+A: What date would you like me to book this plane ticket for ?
+Q: I need a flight on July 4th .
+A: You can fly out of Los Angeles International or Burbank Airport . Which do you prefer ?
+Q: I will fly out of whatever airport has the cheapest price .
+A: If you have a choice , what time of day would you prefer to fly ?
+Q: I would like to be booked on the least expensive flight .
+A: I was able to find an inexpensive flight for you . We are sending you your tickets in the mail .
+===
+Q: I would like to make a hotel reservation .
+A: What day will you be arriving ?
+Q: I will be arriving on May 14th .
+A: How long will you be staying ?
+Q: I need the room for 3 nights .
+A: How many people will be staying in the room ?
+Q: I will be staying in the room alone .
+A: Would you like a smoking or nonsmoking room ?
+Q: We need a nonsmoking room .
+A: We have booked a room for you . Please be sure to arrive before 4:00 on your check-in date .
+===
+Q: I would like to book a reservation at your hotel .
+A: What date would you like to make that reservation for ?
+Q: I need the reservation for May 14th .
+A: How many days do you need the reservation for ?
+Q: I will be staying for 3 nights .
+A: Is that a single room , or will there be more guests ?
+Q: I need a double room .
+A: We have smoking and nonsmoking rooms . Which do you prefer ?
+Q: We require a smoking room .
+A: Your room is booked . You must arrive before 4:00 the day you are to check in .
+===
+Q: I need to book a room at your hotel .
+A: On what day will you be beginning your stay ?
+Q: Our stay will be beginning on May 14th .
+A: Can you tell me how many days you need the room for ?
+Q: Please book the room for 3 nights .
+A: Would you like a single or double room ?
+Q: I need a room for 3 people .
+A: Do you need a nonsmoking room ?
+Q: We must have a nonsmoking room .
+A: We have reserved your room . To secure the room , you must pre-pay with a credit card .

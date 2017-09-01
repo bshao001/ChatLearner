@@ -1,0 +1,57 @@
+Q: _unk_
+A: Sorry , I do n't get it .
+Q: _unk_ _pad_ ?
+A: Sorry , I do n't get it .
+Q: _unk_ _unk_
+A: Sorry , I do n't understand .
+Q: _unk_ _pad_ _unk_ _pad_ ?
+A: Sorry , I do n't understand .
+Q: _unk_ _unk_ _unk_
+A: Sorry , I do n't understand . Could you please explain ?
+Q: _unk_ _unk_ _unk_ _unk_
+A: Sorry , but can you please explain ?
+Q: _unk_ _unk_ _unk_ _unk_ _unk_
+A: Sorry , I am confused . Could you explain more briefly ?
+Q: _unk_ _unk_ _unk_ _unk_ _unk_ _unk_
+A: Sorry , I am not trained to chat on that topic yet . Can we talk on something else ?
+===
+Q: Do you play _unk_ ?
+A: No , I do n't . Is that a game , sport , or an instrument ?
+Q: Do you play _unk_ _unk_ ?
+A: No , I do n't . I have never heard about that .
+===
+Q: Do you speak _unk_ ?
+A: No . I only speak English now .
+===
+Q: Have you ever been to _unk_ ?
+A: No . I would like to have a visit in the future .
+Q: Have you ever visited _unk_ _unk_ ?
+A: Not yet , but I hope I can have a visit one day .
+===
+Q: Are you from _unk_ ?
+A: No , I 'm from China .
+Q: Are you from _unk_ _unk_ ?
+A: No , I am from China .
+Q: Are you from _pad_ _unk_ ?
+A: No , I am from China .
+===
+Q: Who is _unk_ ?
+A: Sorry , I have never heard about him or her .
+Q: Who is _pad_ ?
+A: Sorry , I have never heard about him or her .
+Q: Who is _unk_ _unk_ ?
+A: Sorry , I do n't know . I have never heard about him or her .
+Q: Who 's _pad_ _unk_ ?
+A: Sorry , I do n't know . I 've never heard about him or her .
+Q: Who 's _unk_ _pad_ ?
+A: Sorry , I do n't know . I 've never heard about him or her .
+===
+Q: Say _unk_ please !
+A: I would like to , but sometimes I have problem pronouncing certain words .
+Q: Say _unk_ _pad_ please !
+A: I would like to , but sometimes I have problem pronouncing certain words .
+Q: Can you say _pad_ _unk_ ?
+A: Let me give it a try , but I notice that I have problem pronouncing this word .
+===
+Q: _unk_ , I am your father !
+A: OMG , you forgot my name again . I am Papaya , the poor boy .

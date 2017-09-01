@@ -1,0 +1,181 @@
+Q: Hi , can I speak with the apartment manager , please ?
+A: Yes , this is the apartment manager speaking .
+Q: I 'm calling about the apartment for rent on Main Street .
+A: Would you be interested in seeing the apartment ?
+Q: I would love to see it .
+A: Are you free today at around 6 pm ?
+Q: Yes , I will be able to make it then .
+A: Well , I 'll see you at 6 pm . Do you know how to get there ?
+Q: I used to live in that area .
+A: I 'll give you an application form when I see you .
+Q: That sounds good . Do I need to bring anything ?
+A: No . Just bring yourself .
+===
+Q: Hello , I was wondering if I could talk with the apartment manager .
+A: I am the apartment manager . How can I help you ?
+Q: I was wondering if the apartment on Main Street is still available .
+A: Yes , it 's still vacant . Are you interested in seeing it ?
+Q: Yes , I would love to see the apartment .
+A: I will be at the apartment today at 6:00 . Can you make it ?
+Q: Yes , I can be there at 6 .
+A: Great . I 'll see you at 6 . Do you know where it is ?
+Q: Yes , I have a friend who lives in that neighborhood .
+A: I 'll be bringing an application form .
+Q: OK , should I bring anything with me ?
+A: No . I might need to see your ID card , but that 's about it .
+===
+Q: Could I speak to the apartment manager ?
+A: I am the apartment manager . How can I help you ?
+Q: I wanted to know if that apartment on Main Street is still for rent .
+A: I have n't rented it out yet . Would you like to see it ?
+Q: Yes , I want to see it .
+A: How about today at 6 pm ?
+Q: That time is okay with me .
+A: Very good . We 'll meet at 6 . Do you need directions ?
+Q: No , thank you . I go by there on my way to work .
+A: If you 're interested , you can fill out an application form .
+Q: That 's a good idea . Do I need to bring anything myself ?
+A: No . The only thing I need to see is your driver 's license .
+===
+Q: I 'd like to speak with the apartment manager , please .
+A: This is he . What can I do for you ?
+Q: I 'm interested in the apartment on Main Street .
+A: It 's still available . Do you want to see it ?
+Q: Yes , I would very much like to see it .
+A: Does today at 6 pm . sound okay to you ?
+Q: I have no problem with 6 pm .
+A: Okay , I 'll see you at 6 o'clock . Do you need any directions ?
+Q: No , thanks . I already drove by to see what the neighborhood looks like .
+A: I 'll have an application form with me . You can fill it out if you 're interested .
+Q: Should I bring anything with me ?
+A: No . I only need to check your driver 's license .
+===
+Q: May I speak to the apartment building manager , please ?
+A: I 'm the manager . How can I help you ?
+Q: I was hoping that the apartment on Main Street was still available .
+A: Yes , it is . Would you like to get a look inside the apartment ?
+Q: Yes , it would be nice to see the apartment .
+A: How about today at 6 o'clock ?
+Q: Yes , I can be there at 6 .
+A: Sounds good . I 'll see you at 6 . Do you want directions ?
+Q: I 'm okay , thank you . I already checked out the address on Google .
+A: If you like the place , you can fill out an application form . I 'll bring one with me .
+Q: Is there anything that I need to bring with me ?
+A: No . I wo n't need to see anything except your driver 's license .
+===
+Q: Can you give me a little more information about your apartment ?
+A: Sure , what can I help you with ?
+Q: What kind of public transportation is near your apartment ?
+A: I 'm not sure , but I believe there is a bus stop about three blocks away .
+Q: Do you know what direction that bus travels ?
+A: I 'm sorry . If you check online , you can get that kind of information .
+Q: Okay , I 'll just go online .
+A: Okay . Good luck with your search .
+===
+Q: Hello , I was hoping you could give me more info about your apartment .
+A: I can try to help you . What would you like to know ?
+Q: Is there access to public transportation near the apartment ?
+A: I 'm pretty sure there 's a bus stop within walking distance .
+Q: Do you know anything about the buses that stop there ?
+A: I do n't know , but I 'm pretty sure you can find out that stuff online .
+Q: I think the local library has bus info .
+A: Good luck . The bus info should n't be too hard to find .
+===
+Q: Can you give me a little more information about your apartment ?
+A: All right , what do you need to know ?
+Q: What is the public transportation like near your apartment ?
+A: I do n't use buses , but I think there 's a bus stop a few blocks away .
+Q: Which route does the bus travel ?
+A: I wish I could help you , but I know nothing about the bus system .
+Q: I 'll just check my phone book . It has lots of good information .
+A: I 'm sorry I could n't help you on that .
+===
+Q: I was hoping you could give me more information about the apartment for rent .
+A: I can certainly try .
+Q: Do buses or trains run by the apartment ?
+A: I ca n't swear to it , but I think a bus stop is a couple of blocks away .
+Q: Where does the bus take you ?
+A: I do n't want to lead you astray . You should check online .
+Q: My neighbor takes the bus . I 'll ask him if he knows .
+A: Bus line information should be pretty easy to find .
+===
+Q: Could you give me a little more information about the apartment ?
+A: Sure , if I can . What do you want to know ?
+Q: Is there a bus or train system near the apartment ?
+A: I 'm pretty sure there 's a bus stop only a few blocks away .
+Q: Do you know which buses stop there ?
+A: I 'm sure there 's an 800 number or a website that could help you .
+Q: I do n't have a computer . I 'll just look in my phone book .
+A: Bus line information should be pretty easy to find .
+===
+Q: How did you find your apartment ?
+A: You can check on the bulletin boards at school for local housing .
+Q: What if I need a roommate ?
+A: There are websites that can hook you up with a roommate .
+Q: How much do apartments cost around here ?
+A: It depends on what you want . Do you want a one or two-bedroom apartment ?
+Q: I just need a one-bedroom apartment .
+A: That will probably cost you around twelve hundred dollars a month .
+Q: Would you come with me to look at apartments ?
+A: I would be happy to look at apartments with you .
+===
+Q: When you need an apartment , where do you look for one ?
+A: Our school has a link on its website for apartments .
+Q: Can I share an apartment with someone ?
+A: Some of the ads in the paper are from people looking for roommates .
+Q: Are apartments expensive in this city ?
+A: Do you need a single apartment , or is this for two people ?
+Q: I want a two-bedroom apartment .
+A: You can get that type of apartment for around fifteen hundred dollars a month .
+Q: Would you have time to go look at apartments with me ?
+A: I love apartment hunting . I 'll be happy to go with you .
+===
+Q: Can you tell me the best way to look for an apartment ?
+A: The local newspaper has ads for housing .
+Q: Is there any way to find a roommate to share an apartment with ?
+A: Sometimes you can post an advertisement saying that you need a roommate .
+Q: What do landlords charge for rent ?
+A: Would you like an apartment for just yourself , or do you need it for two people ?
+Q: There are two of us , but we only need a one-bedroom apartment .
+A: You should be able to easily find that for twelve hundred dollars a month .
+Q: I really would appreciate it if you could come look at apartments with me .
+A: Sure , I 'll go look at apartments with you anytime you want .
+===
+Q: How are you doing today ?
+A: Great . Thanks for asking .
+Q: Would you like our assistance with a move ?
+A: Yes , actually I would .
+Q: What would you like us to move for you ?
+A: I need you to move my furniture .
+Q: Could you tell me what kind of residence that we will be picking the furniture up from ?
+A: The furniture is in my apartment .
+Q: Where will we be moving it to ?
+A: You 'll be taking it to the house I just bought .
+Q: All right . I just need both addresses , and we will take care of the moving for you .
+A: Excellent . Thank you very much .
+===
+Q: How are you today ?
+A: I am doing well .
+Q: Did you need us to move something for you ?
+A: That 's exactly what I 'm calling about .
+Q: What exactly do you need moved ?
+A: All my furniture needs to be moved .
+Q: Where will we be moving your furniture from ?
+A: I need it moved from my apartment .
+Q: Where would you like us to move the furniture to ?
+A: I need the furniture moved to my new house .
+Q: All I need is a little more information , and we 'll take care of the rest .
+A: Sounds great . I 'm glad you could help me .
+===
+Q: How are you doing , Papaya ?
+A: I 'm fine , thank you .
+Q: Did you need our help with a move ?
+A: Yes , I do need your help with a move .
+Q: What can we move for you ?
+A: I need all my furniture moved .
+Q: Will we be picking the furniture up from an apartment or a house ?
+A: You 'll be taking it from my old apartment .
+Q: Are we moving the furniture to a house or an apartment ?
+A: To my new house .
+Q: We can do the move for you , but first I 'm going to need some more information .
+A: Thanks a lot . I 'll give you all the information you need .

@@ -1,0 +1,101 @@
+Q: I 'd like to reserve a hotel room .
+A: That should be no problem . May I have your full name , please ?
+Q: My name is John Sandals .
+A: Hello , Mr. Sandals . My name is Papaya . What days do you need that reservation , sir ?
+Q: I 'm planning to visit New York from Friday , April 14 until Monday , April 17 .
+A: Our room rates recently went up . Is that okay with you , sir ?
+Q: How much per night are we talking about ?
+A: Each night will be $ 308 .
+Q: That price is perfectly acceptable .
+A: Wonderful ! Do you prefer a smoking or nonsmoking room ?
+Q: Nonsmoking , please .
+A: Next question : Is a queen-size bed okay ?
+Q: Queen-size sounds fine to me .
+A: Okay , sir . Your reservation is in our computer . All we need now is a phone number .
+Q: Certainly . My phone number is 305-555-1788 .
+A: Thank you , sir . We look forward to seeing you here !
+===
+Q: Hi there , I want to reserve a hotel room .
+A: No problem at all . Could I have your full name , please ?
+Q: Sure , My name is John Sandals .
+A: Hi , Mr. Sandals . I 'm Papaya , at your service . When do you need the room ?
+Q: My plans are to be there April 14th to the 17th .
+A: We have new room rates , sir . Will that be acceptable to you ?
+Q: It depends on the price , of course . What is it ?
+A: It 's $ 308 a night .
+Q: I have no problem with that .
+A: Great ! Would you prefer smoking or nonsmoking ?
+Q: Definitely nonsmoking . I ca n't handle that smell .
+A: Nonsmoking . Now , is a queen-size bed okay ?
+Q: No problem . Queen-size sounds good to me .
+A: Great , sir . Your reservation is confirmed . Now all I need is your phone number .
+Q: Of course ! The phone number is 305-555-1788 .
+A: Thank you so much , sir . We look forward to seeing you !
+===
+Q: I need to reserve a room .
+A: Not a problem . May I have your name , please ?
+Q: Of course . I 'm John Sandals .
+A: Hi , sir . My name is Papaya . Could you tell me when you need the room ?
+Q: Right now . I plan to be there in April from the 14th to the 17th .
+A: Perhaps you did n't know that we have new room rates . Do you find that acceptable , sir ?
+Q: Maybe . How much is a room ?
+A: The price per night is $ 308 .
+Q: That sounds fine to me .
+A: Fantastic ! Would you like a smoking or nonsmoking room ?
+Q: I hate cigarettes ! Nonsmoking .
+A: That 'll be nonsmoking . Now , do you approve of a single queen-size bed ?
+Q: That 'll be no problem .
+A: I 'm happy to hear that , sir . Your reservation is all set except for your phone number .
+Q: Sure ! My number is 305-555-1788 .
+A: Thank you for doing business with us , and we look forward to seeing you !
+===
+Q: I need a hotel room .
+A: That 's no problem at all . May I have your name , please ?
+Q: Certainly . My name is John Sandals .
+A: It 's a pleasure , Mr. Sandals . My name is Papaya . What days will you need a room ?
+Q: Friday afternoon , April 14 through Monday morning , April 17 .
+A: One minor problem , sir . Our prices are now slightly higher . Is that acceptable , sir ?
+Q: Please tell me the price , so I can make a decision .
+A: It 'll be $ 308 nightly .
+Q: That 's a reasonable price .
+A: Good ! Now , sir , do you have a preference for smoking or nonsmoking ?
+Q: I quit smoking , so nonsmoking .
+A: I hear you , sir . Nonsmoking . Now , about the bed , is a queen-size okay ?
+Q: A queen sounds great .
+A: Okay , sir , let me reserve those dates , there . Now , if you 'll just tell me your phone number .
+Q: That would be 305-555-1788 .
+A: Ok , I got it . Thank you so much for choosing our hotel , sir !
+===
+Q: I need a room for a few days .
+A: That wo n't be a problem . Could you please tell me your name ?
+Q: My name is John Sandals .
+A: Sir , I 'm Papaya , and I run the front desk . Please tell me the days you 'll be here .
+Q: I 'll be there in April : Friday through Monday , the 14th through the 17th .
+A: We recently changed many things here , sir , including our prices . Do you mind , sir ?
+Q: Possibly . What 's the actual price ?
+A: The price will be $ 308 a night .
+Q: That price is not bad for me .
+A: Very good . Now sir , about the room , do you prefer smoking or nonsmoking ?
+Q: Nonsmoking , definitely !
+A: Most of our clients prefer nonsmoking . Now , does a queen sound okay ?
+Q: Yes , that 'll be just fine .
+A: One more second , sir . Your reservation is now verified , so all I need is your phone number .
+Q: It 's 305-555-1788 .
+A: Okay , sir , we look forward to seeing you in April !
+===
+Q: Can I reserve a hotel room ?
+A: I assure you , that 's not a problem . What is your full name , please ?
+Q: My name 's John Sandals .
+A: It 's a pleasure to assist you . Please tell me when you 'll be needing the room , sir .
+Q: If my plans do n't change , I 'll need a room April 14 till April 17 .
+A: Sir , our room prices are slightly higher than you may have thought . Will that be okay ?
+Q: Tell me how much it will be , and I can tell you if it 's okay .
+A: Only $ 308 per night , before taxes , of course .
+Q: $ 308 a night ? That 's a fair price .
+A: Now , as for the room , sir , do you prefer smoking or nonsmoking ?
+Q: Nonsmoking , please .
+A: Nonsmoking . Now , sir , does a single queen-size bed meet your approval ?
+Q: I have absolutely no problem with that .
+A: Queen , nonsmoking . Okay , sir , your room is reserved . Now if you 'll just give me your phone number .
+Q: Not a problem . The number is 305-555-1788 .
+A: Thank you for making a reservation with us . We look forward to seeing you !

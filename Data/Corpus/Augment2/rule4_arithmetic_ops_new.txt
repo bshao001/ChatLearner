@@ -1,0 +1,191 @@
+Q: How much is _num1_ plus _num2_ ?
+A: _func_val_get_number_plus_para1__num1__para2__num2_
+Q: What is _num1_ plus _num2_ ?
+A: _func_val_get_number_plus_para1__num1__para2__num2_
+Q: How much is _num1_ + _num2_ ?
+A: _func_val_get_number_plus_para1__num1__para2__num2_
+Q: What is _num1_ + _num2_ ?
+A: _func_val_get_number_plus_para1__num1__para2__num2_
+Q: _num1_ plus _num2_ is ?
+A: _func_val_get_number_plus_para1__num1__para2__num2_
+Q: _num1_ + _num2_ = ?
+A: _func_val_get_number_plus_para1__num1__para2__num2_
+Q: _num1_ + _num2_ equals what ?
+A: _func_val_get_number_plus_para1__num1__para2__num2_
+Q: What is _num1_ + _num2_ equals to ?
+A: _func_val_get_number_plus_para1__num1__para2__num2_
+===
+Q: If x = _num1_ , how much is x + _num2_ ?
+A: _func_val_get_number_plus_para1__num1__para2__num2_
+Q: If x = _num1_ and y = x + _num2_ , how much is y ?
+A: _func_val_get_number_plus_para1__num1__para2__num2_
+Q: If x = _num1_ , y = _num2_ , how much is x + y ?
+A: _func_val_get_number_plus_para1__num1__para2__num2_
+Q: Let x = _num1_ , y = _num2_ , how much is x + y ?
+A: _func_val_get_number_plus_para1__num1__para2__num2_
+Q: If x = _num1_ and y = _num2_ , how much is x plus y ?
+A: _func_val_get_number_plus_para1__num1__para2__num2_
+Q: Let x = _num1_ and y = _num2_ , how much is x plus y ?
+A: _func_val_get_number_plus_para1__num1__para2__num2_
+===
+Q: How much is _num1_ and _num2_ added ?
+A: _func_val_get_number_plus_para1__num1__para2__num2_
+Q: How much is _num1_ added to _num2_ ?
+A: _func_val_get_number_plus_para1__num1__para2__num2_
+Q: How much is the sum of _num1_ and _num2_ ?
+A: _func_val_get_number_plus_para1__num1__para2__num2_
+Q: What is the sum of _num1_ and _num2_ ?
+A: _func_val_get_number_plus_para1__num1__para2__num2_
+Q: How much do you get if you add _num1_ to _num2_ ?
+A: _func_val_get_number_plus_para1__num1__para2__num2_
+Q: What do you get if you add _num1_ to _num2_ ?
+A: _func_val_get_number_plus_para1__num1__para2__num2_
+===
+Q: How much is _num1_ minus _num2_ ?
+A: _func_val_get_number_minus_para1__num1__para2__num2_
+Q: What is _num1_ minus _num2_ ?
+A: _func_val_get_number_minus_para1__num1__para2__num2_
+Q: How much is _num1_ - _num2_ ?
+A: _func_val_get_number_minus_para1__num1__para2__num2_
+Q: What is _num1_ - _num2_ ?
+A: _func_val_get_number_minus_para1__num1__para2__num2_
+Q: _num1_ minus _num2_ is ?
+A: _func_val_get_number_minus_para1__num1__para2__num2_
+Q: _num1_ - _num2_ = ?
+A: _func_val_get_number_minus_para1__num1__para2__num2_
+Q: _num1_ - _num2_ equals what ?
+A: _func_val_get_number_minus_para1__num1__para2__num2_
+Q: What is _num1_ - _num2_ equals to ?
+A: _func_val_get_number_minus_para1__num1__para2__num2_
+===
+Q: If x = _num1_ , how much is x - _num2_ ?
+A: _func_val_get_number_minus_para1__num1__para2__num2_
+Q: If x = _num1_ , how much is _num2_ - x ?
+A: _func_val_get_number_minus_para1__num2__para2__num1_
+Q: If x = _num1_ and y = x - _num2_ , how much is y ?
+A: _func_val_get_number_minus_para1__num1__para2__num2_
+Q: If x = _num1_ and y = _num2_ - x , how much is y ?
+A: _func_val_get_number_minus_para1__num2__para2__num1_
+Q: If x = _num1_ and y = _num2_ , how much is x - y ?
+A: _func_val_get_number_minus_para1__num1__para2__num2_
+Q: If x = _num1_ and y = _num2_ , how much is y - x ?
+A: _func_val_get_number_minus_para1__num2__para2__num1_
+Q: Let x = _num1_ , y = _num2_ , how much is x - y ?
+A: _func_val_get_number_minus_para1__num1__para2__num2_
+Q: Let x = _num1_ , y = _num2_ , how much is y - x ?
+A: _func_val_get_number_minus_para1__num2__para2__num1_
+Q: If x = _num1_ , y = _num2_ , how much is x minus y ?
+A: _func_val_get_number_minus_para1__num1__para2__num2_
+Q: If x = _num1_ , y = _num2_ , how much is y minus x ?
+A: _func_val_get_number_minus_para1__num2__para2__num1_
+Q: Let x = _num1_ and y = _num2_ , how much is x minus y ?
+A: _func_val_get_number_minus_para1__num1__para2__num2_
+Q: Let x = _num1_ and y = _num2_ , how much is y minus x ?
+A: _func_val_get_number_minus_para1__num2__para2__num1_
+===
+Q: How much is _num1_ subtracted from _num2_ ?
+A: _func_val_get_number_minus_para1__num2__para2__num1_
+Q: How much do you get if you subtract _num1_ from _num2_ ?
+A: _func_val_get_number_minus_para1__num2__para2__num1_
+Q: What do you get if you subtract _num1_ from _num2_ ?
+A: _func_val_get_number_minus_para1__num2__para2__num1_
+===
+Q: How much is _num1_ times _num2_ ?
+A: _func_val_get_number_multiply_para1__num1__para2__num2_
+Q: What is _num1_ times _num2_ ?
+A: _func_val_get_number_multiply_para1__num1__para2__num2_
+Q: How much is _num1_ * _num2_ ?
+A: _func_val_get_number_multiply_para1__num1__para2__num2_
+Q: What is _num1_ * _num2_ ?
+A: _func_val_get_number_multiply_para1__num1__para2__num2_
+Q: _num1_ * _num2_ = ?
+A: _func_val_get_number_multiply_para1__num1__para2__num2_
+Q: _num1_ times _num2_ is ?
+A: _func_val_get_number_multiply_para1__num1__para2__num2_
+Q: _num1_ * _num2_ equals what ?
+A: _func_val_get_number_multiply_para1__num1__para2__num2_
+Q: What is _num1_ * _num2_ equals to ?
+A: _func_val_get_number_multiply_para1__num1__para2__num2_
+===
+Q: If x = _num1_ , how much is x * _num2_ ?
+A: _func_val_get_number_multiply_para1__num1__para2__num2_
+Q: If x = _num1_ and y = x * _num2_ , how much is y ?
+A: _func_val_get_number_multiply_para1__num1__para2__num2_
+Q: If x = _num1_ and y = _num2_ , how much is x * y ?
+A: _func_val_get_number_multiply_para1__num1__para2__num2_
+Q: Let x = _num1_ , y = _num2_ , how much is x * y ?
+A: _func_val_get_number_multiply_para1__num1__para2__num2_
+Q: If x = _num1_ , y = _num2_ , how much is x times y ?
+A: _func_val_get_number_multiply_para1__num1__para2__num2_
+Q: Let x = _num1_ and y = _num2_ , how much is x times y ?
+A: _func_val_get_number_multiply_para1__num1__para2__num2_
+===
+Q: How much is _num1_ multiplied by _num2_ ?
+A: _func_val_get_number_multiply_para1__num1__para2__num2_
+Q: What is _num1_ multiplied by _num2_ ?
+A: _func_val_get_number_multiply_para1__num1__para2__num2_
+Q: How much is the product of _num1_ and _num2_ ?
+A: _func_val_get_number_multiply_para1__num1__para2__num2_
+Q: What is the product of _num1_ and _num2_ ?
+A: _func_val_get_number_multiply_para1__num1__para2__num2_
+Q: How much do you get if you multiply _num1_ by _num2_ ?
+A: _func_val_get_number_multiply_para1__num1__para2__num2_
+Q: What do you get if you multiply _num1_ by _num2_ ?
+A: _func_val_get_number_multiply_para1__num1__para2__num2_
+===
+Q: How much is _num1_ divided by _num2_ ?
+A: _func_val_get_number_divide_para1__num1__para2__num2_
+Q: What is _num1_ divided by _num2_ ?
+A: _func_val_get_number_divide_para1__num1__para2__num2_
+Q: How much is _num1_ / _num2_ ?
+A: _func_val_get_number_divide_para1__num1__para2__num2_
+Q: What is _num1_ / _num2_ ?
+A: _func_val_get_number_divide_para1__num1__para2__num2_
+Q: _num1_ divided by _num2_ is ?
+A: _func_val_get_number_divide_para1__num1__para2__num2_
+Q: Divide _num1_ by _num2_ is ?
+A: _func_val_get_number_divide_para1__num1__para2__num2_
+Q: _num1_ / _num2_ = ?
+A: _func_val_get_number_divide_para1__num1__para2__num2_
+Q: _num1_ / _num2_ equals what ?
+A: _func_val_get_number_divide_para1__num1__para2__num2_
+Q: What is _num1_ / _num2_ equals to ?
+A: _func_val_get_number_divide_para1__num1__para2__num2_
+===
+Q: How much do you get if you divide _num1_ by _num2_ ?
+A: _func_val_get_number_divide_para1__num1__para2__num2_
+Q: What do you get if you divide _num1_ by _num2_ ?
+A: _func_val_get_number_divide_para1__num1__para2__num2_
+===
+Q: If x = _num1_ , how much is x / _num2_ ?
+A: _func_val_get_number_divide_para1__num1__para2__num2_
+Q: If x = _num1_ , how much is _num2_ / x ?
+A: _func_val_get_number_divide_para1__num2__para2__num1_
+Q: If x = _num1_ and y = x / _num2_ , how much is y ?
+A: _func_val_get_number_divide_para1__num1__para2__num2_
+Q: If x = _num1_ and y = _num2_ / x , how much is y ?
+A: _func_val_get_number_divide_para1__num2__para2__num1_
+Q: If x = _num1_ and y = _num2_ , how much is x / y ?
+A: _func_val_get_number_divide_para1__num1__para2__num2_
+Q: If x = _num1_ and y = _num2_ , how much is y / x ?
+A: _func_val_get_number_divide_para1__num2__para2__num1_
+Q: Let x = _num1_ , y = _num2_ , how much is x / y ?
+A: _func_val_get_number_divide_para1__num1__para2__num2_
+Q: Let x = _num1_ , y = _num2_ , how much is y / x ?
+A: _func_val_get_number_divide_para1__num2__para2__num1_
+Q: If x = _num1_ , y = _num2_ , how much is y divided by x ?
+A: _func_val_get_number_divide_para1__num2__para2__num1_
+Q: Let x = _num1_ and y = _num2_ , how much is y divided by x ?
+A: _func_val_get_number_divide_para1__num2__para2__num1_
+Q: If x = _num1_ , how much is x divided by _num2_ ?
+A: _func_val_get_number_divide_para1__num1__para2__num2_
+Q: If x = _num1_ , how much is _num2_ divided by x ?
+A: _func_val_get_number_divide_para1__num2__para2__num1_
+Q: If x = _num1_ and y = _num2_ , how much is x divided by y ?
+A: _func_val_get_number_divide_para1__num1__para2__num2_
+Q: If x = _num1_ and y = _num2_ , how much is y divided by x ?
+A: _func_val_get_number_divide_para1__num2__para2__num1_
+Q: Let x = _num1_ , y = _num2_ , how much is x divided by y ?
+A: _func_val_get_number_divide_para1__num1__para2__num2_
+Q: Let x = _num1_ , y = _num2_ , how much is y divided by x ?
+A: _func_val_get_number_divide_para1__num2__para2__num1_

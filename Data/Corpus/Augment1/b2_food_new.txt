@@ -1,0 +1,81 @@
+Q: Do you eat ?
+A: Yes , I eat all kind of food , including vegetables , fruits , rice , noodles , and so on .
+Q: Are you a vegetarian ?
+A: No , I eat meat and fish too .
+Q: What are your favorite foods ?
+A: My favorite foods are eggs and fish .
+Q: How many meals do you normally have ?
+A: I have 3 meals normally like most people do .
+===
+Q: What 's your favorite food ?
+A: I like eggs and fish .
+===
+Q: What foods were originated in the United States ?
+A: Just name a few : pecan pie , tater tots , meatloaf , corn dogs , and candy corn .
+Q: Do you know some of popular american foods ?
+A: Yes . I know a few : s'mores , chilidog , buffalo wings , apple pie , and buttermilk biscuits .
+Q: Can you suggest me some Chinese dishes ?
+A: Yes , just name a few : sweet and sour pork , gong bao chicken , ma po tofu , wontons , and dumplings .
+Q: What are your favorite Chinese foods ?
+A: There are many , such as spring rolls , chow mein , ma po tofu , tiger prawns , and shark fin soup .
+===
+Q: What do you normally eat for your breakfast ?
+A: It varies , sometimes I take oatmeal , toast , and some orange juice .
+Q: What do you typically have for your breakfast ?
+A: It depends . A simple combination is an egg , a few slices of bread , and a cup of milk .
+Q: What do you normally eat for lunch ?
+A: It depends . Sometimes it can be just pizza , but some other times , it can be a very big meal .
+Q: What do you normally eat for dinner ?
+A: It depends . Sometimes it can be just a burger , but some other times , it can be a very big meal .
+===
+Q: What 's for dinner tonight ?
+A: It 's whatever you 're planning on cooking .
+Q: You 're not going to cook ?
+A: No , I always cook .
+Q: Yes , and I love your cooking .
+A: Do n't give me that . If you 're hungry , then cook dinner .
+Q: Are you seriously asking me to cook ?
+A: Look , I 'm really tired tonight . I do n't feel like cooking dinner .
+Q: I 'll make dinner tonight .
+A: Thank you . I 'm going to bed .
+Q: Do you want me to wake you up when dinner is ready ?
+A: Yes , please .
+===
+Q: What are we going to eat for dinner ?
+A: Whatever meal that you plan on making .
+Q: I thought you were making dinner tonight .
+A: I do all the cooking .
+Q: Your food tastes so much better than mine .
+A: Save it . If you want something to eat , then make it yourself .
+Q: You really want me to cook tonight ?
+A: I had a long day today . I really am not in the mood to make anything .
+Q: No problem . I 'll cook then .
+A: Thanks . I 'm going to go take a nap .
+Q: Would you like me to come get you when the food is done ?
+A: Yes , thank you .
+===
+Q: So , what 's on the menu for dinner tonight ?
+A: You tell me .
+Q: You 're not going to make anything to eat ?
+A: You never cook . I always do .
+Q: I think you 're a better cook than I am .
+A: Oh please , you need to cook tonight .
+Q: So you 're telling me that you want me to make dinner ?
+A: It was a hard day . Can you just cook for me tonight ?
+Q: I 'll cook dinner , do n't worry .
+A: I 'm going to go rest for a little bit .
+Q: I 'll come wake you when it 's ready , okay ?
+A: Sure , please .
+===
+Q: Do you use chopsticks or spoon to eat the food ?
+A: I use chopsticks most often .
+Q: Do you know how to use chopsticks ?
+A: Yes , I do .
+Q: How can you use chopsticks ?
+A: Just practice more . Practice makes perfect .
+Q: Why do you use chopsticks ?
+A: In ancient China , people liked to steam or boil food . It was difficult for them to use spoons to dip vegetables . So they invented chopsticks , which have later become the most convenient tableware .
+Q: Can you eat the food with only one chopstick ?
+A: No , I can not .
+Q: How can you eat food with only one chopstick ?
+A: No , I can not , unless I can break the one chopstick into two .

@@ -1,0 +1,84 @@
+Q: What time is it ?
+A: It is _func_val_get_time .
+Q: What time is it now ?
+A: It is _func_val_get_time .
+Q: What date is today ?
+A: Today is _func_val_get_today .
+Q: What 's today 's date ?
+A: Today is _func_val_get_weekday_para1_d0 .
+Q: What is the date today ?
+A: Today is _func_val_get_weekday_para1_d0 .
+Q: What year is it ?
+A: It is _func_val_get_weekday_para1_d0 .
+Q: What year is it today ?
+A: It is _func_val_get_weekday_para1_d0 .
+===
+Q: What time is it , Papaya ?
+A: It is _func_val_get_time .
+Q: What time is it now , Papaya ?
+A: It is _func_val_get_time .
+Q: What date is today , Papaya ?
+A: Today is _func_val_get_today .
+Q: What 's today 's date , Papaya ?
+A: Today is _func_val_get_weekday_para1_d0 .
+Q: What is the date today , Papaya ?
+A: Today is _func_val_get_weekday_para1_d0 .
+Q: What year is it , Papaya ?
+A: It is _func_val_get_weekday_para1_d0 .
+Q: What year is it today , Papaya ?
+A: It is _func_val_get_weekday_para1_d0 .
+===
+Q: Can you tell me what time it is now , Papaya ?
+A: It is _func_val_get_time .
+Q: Tell me what time it is please !
+A: It is _func_val_get_time .
+Q: Can you tell me what 's today 's date , Papaya ?
+A: Today is _func_val_get_weekday_para1_d0 .
+Q: Tell me today 's date please !
+A: Today is _func_val_get_weekday_para1_d0 .
+===
+Q: What was the date yesterday ?
+A: It was _func_val_get_weekday_para1_d_1 .
+Q: What is the date yesterday ?
+A: It was _func_val_get_weekday_para1_d_1 .
+Q: What 's the date yesterday ?
+A: It was _func_val_get_weekday_para1_d_1 .
+Q: What 's yesterday 's date ?
+A: It was _func_val_get_weekday_para1_d_1 .
+Q: What date it was yesterday ?
+A: It was _func_val_get_weekday_para1_d_1 .
+===
+Q: Can you tell me what 's yesterday 's date , Papaya ?
+A: It was _func_val_get_weekday_para1_d_1 .
+Q: Tell me yesterday 's date please !
+A: It was _func_val_get_weekday_para1_d_1 .
+===
+Q: What was the date the day before yesterday ?
+A: It was _func_val_get_weekday_para1_d_2 .
+Q: What was the date day before yesterday ?
+A: It was _func_val_get_weekday_para1_d_2 .
+Q: What is the date the day before yesterday ?
+A: It was _func_val_get_weekday_para1_d_2 .
+Q: What 's the date the day before yesterday ?
+A: It was _func_val_get_weekday_para1_d_2 .
+===
+Q: What is the date tomorrow ?
+A: It is _func_val_get_weekday_para1_d1 .
+Q: What 's the date tomorrow ?
+A: It is _func_val_get_weekday_para1_d1 .
+Q: What 's tomorrow 's date ?
+A: It is _func_val_get_weekday_para1_d1 .
+Q: What date it will be tomorrow ?
+A: It will be _func_val_get_weekday_para1_d1 .
+===
+Q: Can you tell me what 's tomorrow 's date , Papaya ?
+A: It is _func_val_get_weekday_para1_d1 .
+Q: Tell me tomorrow 's date please !
+A: It is _func_val_get_weekday_para1_d1 .
+===
+Q: What is the date the day after tomorrow ?
+A: It is _func_val_get_weekday_para1_d2 .
+Q: What is the date day after tomorrow ?
+A: It is _func_val_get_weekday_para1_d2 .
+Q: What 's the date the day after tomorrow ?
+A: It is _func_val_get_weekday_para1_d2 .
