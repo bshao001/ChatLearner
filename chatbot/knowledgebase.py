@@ -12,11 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
-import re
 import os
 
 UPPER_FILE = "upper_words.txt"
-MULTI_FILE = "multi_words.txt"
 STORIES_FILE = "stories.txt"
 JOKES_FILE = "jokes.txt"
 
@@ -24,8 +22,6 @@ JOKES_FILE = "jokes.txt"
 class KnowledgeBase:
     def __init__(self):
         self.upper_words = {}
-        self.multi_words = {}
-        self.multi_max_cnt = 0
         self.stories = {}
         self.jokes = []
 
@@ -35,7 +31,6 @@ class KnowledgeBase:
              knbase_dir: Name of the KnowledgeBase folder. The file names inside are fixed.
         """
         upper_file_name = os.path.join(knbase_dir, UPPER_FILE)
-        multi_file_name = os.path.join(knbase_dir, MULTI_FILE)
         stories_file_name = os.path.join(knbase_dir, STORIES_FILE)
         jokes_file_name = os.path.join(knbase_dir, JOKES_FILE)
 
@@ -48,20 +43,6 @@ class KnowledgeBase:
                 for cpw in cap_words:
                     tmp = cpw.strip()
                     self.upper_words[tmp.lower()] = tmp
-
-        with open(multi_file_name, 'r') as multi_f:
-            for line in multi_f:
-                ln = line.strip()
-                if not ln or ln.startswith('#'):
-                    continue
-                mul_words = ln.split(',')
-                for mlw in mul_words:
-                    tmp = re.sub('\s+', ' ', mlw).strip() # Replace multiple spaces with 1
-                    self.multi_words[tmp.lower()] = tmp
-
-                    word_cnt = len(mlw.split())
-                    if word_cnt > self.multi_max_cnt:
-                        self.multi_max_cnt = word_cnt
 
         with open(stories_file_name, 'r') as stories_f:
             s_name, s_content = '', ''
