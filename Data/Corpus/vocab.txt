@@ -1,7 +1,6 @@
-_pad_
+_unk_
 _bos_
 _eos_
-_unk_
 .
 !
 ?

@@ -18,6 +18,9 @@ import tensorflow as tf
 from collections import namedtuple
 from tensorflow.python.ops import lookup_ops
 
+from chatbot.hparams import Hparams
+from chatbot.knowledgebase import KnowledgeBase
+
 COMMENT_LINE_STT = "#=="
 CONVERSATION_SEP = "==="
 
@@ -28,47 +31,71 @@ AUG2_FOLDER = "Augment2"
 MAX_LEN = 1000  # Assume no line in the training data is having more than this number of characters
 VOCAB_FILE = "vocab.txt"
 
-PAD_ID = 0
-BOS_ID = 1
-EOS_ID = 2
-UNK_ID = 3
 
-
-class CorpusData:
-    def __init__(self, corpus_dir, augment_factor=3, src_max_len=50, tgt_max_len=50,
-                 source_reverse=True, buffer_size=8192):
+class TokenizedData:
+    def __init__(self, corpus_dir, hparams=None, knbase_dir=None, training=True, augment_factor=3,
+                 buffer_size=8192):
         """
         Args:
             corpus_dir: Name of the folder storing corpus files for training.
+            hparams: The object containing the loaded hyper parameters. If None, it will be 
+                    initialized here.
+            knbase_dir: Name of the folder storing data files for the knowledge base. Used for 
+                    inference only.
+            training: Whether to use this object for training.
             augment_factor: Times the training data appears. If 1 or less, no augmentation.
-            src_max_len: The max length of the encoder input.
-            tgt_max_len: The max length of the decoder input.
-            source_reverse: Whether to reverse the order of the input sequence.
             buffer_size: The buffer size used for mapping process during data processing.
         """
-        self.src_max_len = src_max_len
-        self.tgt_max_len = tgt_max_len
+        if hparams is None:
+            self.hparams = Hparams(corpus_dir).hparams
+        else:
+            self.hparams = hparams
 
-        self.text_set = None  # For debugging purpose
+        self.src_max_len = self.hparams.src_max_len
+        self.tgt_max_len = self.hparams.tgt_max_len
+
+        self.training = training
+        self.text_set = None
         self.id_set = None
 
-        self.case_table = prepare_case_table()
-
         vocab_file = os.path.join(corpus_dir, VOCAB_FILE)
-        self.vocab_table = lookup_ops.index_table_from_file(vocab_file, default_value=UNK_ID)
+        self.vocab_table = lookup_ops.index_table_from_file(vocab_file,
+                                                            default_value=self.hparams.unk_id)
 
-        self._load_corpus(corpus_dir, augment_factor)
-        self._convert_to_tokens(source_reverse, buffer_size)
+        if training:
+            self.case_table = prepare_case_table()
+            self.reverse_vocab_table = None
+            self._load_corpus(corpus_dir, augment_factor)
+            self._convert_to_tokens(buffer_size)
 
-    def get_training_iterator(self, batch_size=8, num_buckets=5, num_threads=2):
-        buffer_size = batch_size * 1000
+            self.upper_words = {}
+            self.stories = {}
+            self.jokes = []
+        else:
+            self.case_table = None
+            self.reverse_vocab_table = \
+                lookup_ops.index_to_string_table_from_file(vocab_file,
+                                                           default_value=self.hparams.unk_token)
 
+            knbs = KnowledgeBase()
+            knbs.load_knbase(knbase_dir)
+            self.upper_words = knbs.upper_words
+            self.stories = knbs.stories
+            self.jokes = knbs.jokes
+
+    def get_training_batch(self, num_threads=2):
+        assert self.training
+
+        buffer_size = self.hparams.batch_size * 1000
+
+        # Comment this line for debugging.
         self.id_set = self.id_set.shuffle(buffer_size=buffer_size)
 
         # Create a target input prefixed with BOS and a target output suffixed with EOS.
         # After this mapping, each element in the id_set contains 3 columns/items.
         self.id_set = self.id_set.map(lambda src, tgt:
-                                      (src, tf.concat(([BOS_ID], tgt), 0), tf.concat((tgt, [EOS_ID]), 0)),
+                                      (src, tf.concat(([self.hparams.bos_id], tgt), 0),
+                                       tf.concat((tgt, [self.hparams.eos_id]), 0)),
                                       num_threads=num_threads,
                                       output_buffer_size=buffer_size)
 
@@ -80,7 +107,7 @@ class CorpusData:
 
         def batching_func(x):
             return x.padded_batch(
-                batch_size,
+                self.hparams.batch_size,
                 # The first three entries are the source and target line rows, these have unknown-length
                 # vectors. The last two entries are the source and target row sizes, which are scalars.
                 padded_shapes=(tf.TensorShape([None]),  # src
@@ -90,14 +117,14 @@ class CorpusData:
                                tf.TensorShape([])),     # tgt_len
                 # Pad the source and target sequences with eos tokens. Though we don't generally need to
                 # do this since later on we will be masking out calculations past the true sequence.
-                padding_values=(EOS_ID,  # src
-                                EOS_ID,  # tgt_input
-                                EOS_ID,  # tgt_output
+                padding_values=(self.hparams.eos_id,  # src
+                                self.hparams.eos_id,  # tgt_input
+                                self.hparams.eos_id,  # tgt_output
                                 0,       # src_len -- unused
                                 0))      # tgt_len -- unused
 
-        if num_buckets > 1:
-            bucket_width = (self.src_max_len + num_buckets - 1) // num_buckets
+        if self.hparams.num_buckets > 1:
+            bucket_width = (self.src_max_len + self.hparams.num_buckets - 1) // self.hparams.num_buckets
 
             # Parameters match the columns in each element of the dataset.
             def key_func(unused_1, unused_2, unused_3, src_len, tgt_len):
@@ -106,29 +133,65 @@ class CorpusData:
                 # length over ((num_bucket-1) * bucket_width) words all go into the last bucket.
                 # Bucket sentence pairs by the length of their source sentence and target sentence.
                 bucket_id = tf.maximum(src_len // bucket_width, tgt_len // bucket_width)
-                return tf.to_int64(tf.minimum(num_buckets, bucket_id))
+                return tf.to_int64(tf.minimum(self.hparams.num_buckets, bucket_id))
 
-            # No key to filter the dataset. Therefore it is unused.
+            # No key to filter the dataset. Therefore the key is unused.
             def reduce_func(unused_key, windowed_data):
                 return batching_func(windowed_data)
 
             batched_dataset = self.id_set.group_by_window(key_func=key_func,
                                                           reduce_func=reduce_func,
-                                                          window_size=batch_size)
+                                                          window_size=self.hparams.batch_size)
         else:
             batched_dataset = batching_func(self.id_set)
 
         batched_iter = batched_dataset.make_initializable_iterator()
-        return batched_iter
+        (src_ids, tgt_input_ids, tgt_output_ids, src_seq_len, tgt_seq_len) = (batched_iter.get_next())
 
-        # (src_ids, tgt_input_ids, tgt_output_ids, src_seq_len, tgt_seq_len) = (batched_iter.get_next())
-        #
-        # return BatchedInput(initializer=batched_iter.initializer,
-        #                     source=src_ids,
-        #                     target_input=tgt_input_ids,
-        #                     target_output=tgt_output_ids,
-        #                     source_sequence_length=src_seq_len,
-        #                     target_sequence_length=tgt_seq_len)
+        return BatchedInput(initializer=batched_iter.initializer,
+                            source=src_ids,
+                            target_input=tgt_input_ids,
+                            target_output=tgt_output_ids,
+                            source_sequence_length=src_seq_len,
+                            target_sequence_length=tgt_seq_len)
+
+    def get_inference_batch(self, src_dataset):
+        text_dataset = src_dataset.map(lambda src: tf.string_split([src]).values)
+
+        if self.hparams.src_max_len_infer:
+            text_dataset = text_dataset.map(lambda src: src[:self.hparams.src_max_len_infer])
+        # Convert the word strings to ids
+        id_dataset = text_dataset.map(lambda src: tf.cast(self.vocab_table.lookup(src),
+                                                          tf.int32))
+        if self.hparams.source_reverse:
+            id_dataset = id_dataset.map(lambda src: tf.reverse(src, axis=[0]))
+        # Add in the word counts.
+        id_dataset = id_dataset.map(lambda src: (src, tf.size(src)))
+
+        if self.hparams.batch_size_infer > 1:
+            def batching_func(x):
+                return x.padded_batch(
+                    self.hparams.batch_size_infer,
+                    # The entry is the source line rows; this has unknown-length vectors.
+                    # The last entry is the source row size; this is a scalar.
+                    padded_shapes=(tf.TensorShape([None]),  # src
+                                   tf.TensorShape([])),     # src_len
+                    # Pad the source sequences with eos tokens. Though notice we don't generally need to
+                    # do this since later on we will be masking out calculations past the true sequence.
+                    padding_values=(self.hparams.eos_id,  # src
+                                    0))                   # src_len -- unused
+
+            id_dataset = batching_func(id_dataset)
+
+        infer_iter = id_dataset.make_initializable_iterator()
+        (src_ids, src_seq_len) = infer_iter.get_next()
+
+        return BatchedInput(initializer=infer_iter.initializer,
+                            source=src_ids,
+                            target_input=None,
+                            target_output=None,
+                            source_sequence_length=src_seq_len,
+                            target_sequence_length=None)
 
     def _load_corpus(self, corpus_dir, augment_factor):
         for fd in range(2, -1, -1):
@@ -170,7 +233,7 @@ class CorpusData:
             else:
                 self.text_set = self.text_set.concatenate(src_tgt_dataset)
 
-    def _convert_to_tokens(self, source_reverse, buffer_size):
+    def _convert_to_tokens(self, buffer_size):
         # The following 3 steps act as a python String lower() function
         # Split to characters
         self.text_set = self.text_set.map(lambda src, tgt:
@@ -196,7 +259,7 @@ class CorpusData:
                                           output_buffer_size=buffer_size)
 
         # Reverse the source sentence if applicable
-        if source_reverse:
+        if self.hparams.source_reverse:
             self.text_set = self.text_set.map(lambda src, tgt:
                                               (tf.reverse(src, axis=[0]), tgt),
                                               output_buffer_size=buffer_size)
@@ -230,24 +293,55 @@ class BatchedInput(namedtuple("BatchedInput",
                                "target_sequence_length"])):
     pass
 
-if __name__ == "__main__":
-    from settings import PROJECT_ROOT
-
-    corp_dir = os.path.join(PROJECT_ROOT, 'Data', 'Corpus')
-    cdata = CorpusData(corp_dir)
-
-    iterator = cdata.get_training_iterator()
-    next_batch = iterator.get_next()
-
-    with tf.Session() as sess:
-        sess.run(tf.tables_initializer())
-        sess.run(iterator.initializer)
-        print("Initialized ... ...")
-
-        for i in range(2):
-            try:
-                element = sess.run(next_batch)
-                print(i, element)
-            except tf.errors.OutOfRangeError:
-                print("end of data @ {}".format(i))
-                break
+# The code below is kept for debugging purpose only. Uncomment and run it to understand
+# the pipe line used in the new NMT model.
+# if __name__ == "__main__":
+#     import nltk
+#     from settings import PROJECT_ROOT
+#
+#     corp_dir = os.path.join(PROJECT_ROOT, 'Data', 'Corpus')
+#     training = False
+#     if training:
+#         td = TokenizedData(corp_dir)
+#         train_batch = td.get_training_batch()
+#
+#         with tf.Session() as sess:
+#             sess.run(tf.tables_initializer())
+#             sess.run(train_batch.initializer)
+#             print("Initialized ... ...")
+#
+#             for i in range(5):
+#                 try:
+#                     # Note that running training_batch directly won't trigger get_next() call.
+#                     # Run any of the 5 components will do the trick.
+#                     element = sess.run([train_batch.source, train_batch.target_input,
+#                                         train_batch.source_sequence_length, train_batch.target_sequence_length])
+#                     print(i, element)
+#                 except tf.errors.OutOfRangeError:
+#                     print("end of data @ {}".format(i))
+#                     break
+#     else:
+#         questions = ["How are you?", "What's your name?", "What time is it now?",
+#                      "When was the last time I met you? Do you remember?"]
+#         new_q_list = []
+#         for q in questions:
+#             tokens = nltk.word_tokenize(q.lower())
+#             new_q = ' '.join(tokens[:]).strip()
+#             new_q_list.append(new_q)
+#
+#         td = TokenizedData(corp_dir, training=False)
+#         src_dataset = tf.contrib.data.Dataset.from_tensor_slices(tf.constant(new_q_list))
+#         infer_batch = td.get_inference_batch(src_dataset)
+#
+#         with tf.Session() as sess:
+#             sess.run(tf.tables_initializer())
+#             sess.run(infer_batch.initializer)
+#             print("Initialized ... ...")
+#
+#             for i in range(10):
+#                 try:
+#                     element = sess.run([infer_batch.source, infer_batch.source_sequence_length])
+#                     print(i, element)
+#                 except tf.errors.OutOfRangeError:
+#                     print("end of data @ {}".format(i))
+#                     break

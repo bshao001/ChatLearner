@@ -283,8 +283,9 @@ if __name__ == "__main__":
     from settings import PROJECT_ROOT
     from chatbot.tokenizeddata import TokenizedData
 
-    dict_file = os.path.join(PROJECT_ROOT, 'Data', 'Result', 'dicts.pickle')
-    td = TokenizedData(dict_file=dict_file)
+    corp_dir = os.path.join(PROJECT_ROOT, 'Data', 'Corpus')
+    knbs_dir = os.path.join(PROJECT_ROOT, 'Data', 'KnowledgeBase')
+    td = TokenizedData(corpus_dir=corp_dir, knbase_dir=knbs_dir, training=False)
 
     print(call_function('get_story_any', td, html_format=True))
     print(call_function('get_story_any', td, html_format=False))

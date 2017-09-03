@@ -28,8 +28,8 @@ def generate_vocab_file(corpus_dir):
     """
     vocab_list = []
 
-    # Special tokens.
-    for t in ['_pad_', '_bos_', '_eos_', '_unk_']:
+    # Special tokens, with IDs: 0, 1, 2
+    for t in ['_unk_', '_bos_', '_eos_']:
         vocab_list.append(t)
 
     # The word following this punctuation should be capitalized in the prediction output.

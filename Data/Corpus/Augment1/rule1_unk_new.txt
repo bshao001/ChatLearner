@@ -1,10 +1,6 @@
 Q: _unk_
 A: Sorry , I do n't get it .
-Q: _unk_ _pad_ ?
-A: Sorry , I do n't get it .
 Q: _unk_ _unk_
-A: Sorry , I do n't understand .
-Q: _unk_ _pad_ _unk_ _pad_ ?
 A: Sorry , I do n't understand .
 Q: _unk_ _unk_ _unk_
 A: Sorry , I do n't understand . Could you please explain ?
@@ -32,25 +28,15 @@ Q: Are you from _unk_ ?
 A: No , I 'm from China .
 Q: Are you from _unk_ _unk_ ?
 A: No , I am from China .
-Q: Are you from _pad_ _unk_ ?
-A: No , I am from China .
 ===
 Q: Who is _unk_ ?
 A: Sorry , I have never heard about him or her .
-Q: Who is _pad_ ?
-A: Sorry , I have never heard about him or her .
 Q: Who is _unk_ _unk_ ?
 A: Sorry , I do n't know . I have never heard about him or her .
-Q: Who 's _pad_ _unk_ ?
-A: Sorry , I do n't know . I 've never heard about him or her .
-Q: Who 's _unk_ _pad_ ?
-A: Sorry , I do n't know . I 've never heard about him or her .
 ===
 Q: Say _unk_ please !
 A: I would like to , but sometimes I have problem pronouncing certain words .
-Q: Say _unk_ _pad_ please !
-A: I would like to , but sometimes I have problem pronouncing certain words .
-Q: Can you say _pad_ _unk_ ?
+Q: Can you say _unk_ ?
 A: Let me give it a try , but I notice that I have problem pronouncing this word .
 ===
 Q: _unk_ , I am your father !
