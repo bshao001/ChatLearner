@@ -1,6 +1,6 @@
 # ChatLearner
 
-![](https://img.shields.io/badge/python-3.5.2-brightgreen.svg) ![](https://img.shields.io/badge/tensorflow-1.3.0-yellowgreen.svg)
+![](https://img.shields.io/badge/python-3.5.2-brightgreen.svg)  ![](https://img.shields.io/badge/tensorflow-1.3.0-yellowgreen.svg)
 
 A chatbot implemented in TensorFlow based on the new sequence to sequence model, with certain rules integrated.
 
@@ -8,7 +8,7 @@ A chatbot implemented in TensorFlow based on the new sequence to sequence model,
 1. This implementation was based on the new seq2seq model (dynamic RNN based) in TensorFlow version 1.3 (require 1.2.1 and later). The code was largely referenced on the tutorial of the new NMT model (https://github.com/tensorflow/nmt).
 2. The repository also contains a chatbot implementation based on the legacy seq2seq model. In case you are interested in that, please check the Legacy_Chatbot branch at https://github.com/bshao001/ChatLearner/tree/Legacy_Chatbot.
 3. As the new model is based on the dynamic RNN, a GPU (or CPU) can afford to train it with a larger batch size. With the legacy one, I had to train the model with batch size 64, while this one in batch size 128, therefore cutting the training time from about 10 hours to 5 hours based on the Papaya dataset (described below).
-4. Although the implementation support multiple GPU training (kind of model parallel), my test with 2 GPU (NVIDIA GeForce GTX 1080 Ti) for one epoch took about 415 seconds, while a single GPU took about 384 seconds. Therefore, single GPU setting is preferred. In case you don't have a good GPU, CPU training for one epoch takes roughly one hour or 70 minutes.
+4. Although the implementation supports multiple GPU training (kind of model parallel), my experience with 2 GPU (NVIDIA GeForce GTX 1080 Ti) for one epoch took about 415 seconds, while a single GPU took about 384 seconds. Therefore, single GPU setting is preferred. In case you don't have a good GPU, CPU training for one epoch takes roughly one hour or 70 minutes.
 5. Attention mechanism and beam search are both supported in this implementation.
 6. Some rules are integrated to demo how to combine traditional rule-based chatbots with new deep learning models. If you are not interested, you can easily remove those line related to knowledgebase.py and functiondata.py. However, with these rules, the chatbot can answer certain categories of questions that a normal deep learning model cannot do. For example:
    * "What time is it now?" or "What day is it today?" or "What's the date yesterday?"
