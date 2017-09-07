@@ -96,8 +96,8 @@ class BotTrainer(object):
                     summary_writer.add_summary(summary, global_step)
 
                     # Save checkpoint
-                    if train_perp < 1.32 and train_perp < last_record_perp:
-                        self.model.saver.save(sess, os.path.join(result_dir, "result"), global_step=global_step)
+                    if train_perp < 1.25 and train_perp < last_record_perp:
+                        self.model.saver.save(sess, os.path.join(result_dir, "basic"), global_step=global_step)
                         last_record_perp = train_perp
 
                     ckpt_loss, ckpt_predict_count = 0.0, 0.0
@@ -106,7 +106,7 @@ class BotTrainer(object):
                     continue
 
             # Done training
-            self.model.saver.save(sess, os.path.join(result_dir, "result"), global_step=global_step)
+            self.model.saver.save(sess, os.path.join(result_dir, "basic"), global_step=global_step)
             summary_writer.close()
 
     @staticmethod

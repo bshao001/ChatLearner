@@ -12,6 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
+"""This class is only used at inference time."""
 import os
 
 UPPER_FILE = "upper_words.txt"

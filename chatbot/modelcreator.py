@@ -48,7 +48,11 @@ class ModelCreator(object):
         tf.get_variable_scope().set_initializer(initializer)
 
         # Embeddings
-        self.init_embeddings(hparams, scope)
+        self.embedding = (model_helper.create_embbeding(vocab_size=self.vocab_size,
+                                                        embed_size=hparams.num_units,
+                                                        scope=scope))
+        # This batch_size might vary among each batch instance due to the bucketing and/or reach
+        # the end of the training set. Treat it as size_of_the_batch.
         self.batch_size = tf.size(self.batch_input.source_sequence_length)
 
         # Projection
@@ -106,12 +110,6 @@ class ModelCreator(object):
             print("# Trainable variables:")
             for param in params:
                 print("  {}, {}, {}".format(param.name, str(param.get_shape()), param.op.device))
-
-    def init_embeddings(self, hparams, scope):
-        """Init embeddings."""
-        self.embedding = (model_helper.create_embbeding(vocab_size=self.vocab_size,
-                                                        embed_size=hparams.num_units,
-                                                        scope=scope))
 
     def train_step(self, sess, learning_rate):
         """Run one step of training."""
@@ -332,6 +330,7 @@ class ModelCreator(object):
             name="attention")
 
         if self.training:
+            # A bug in TensorFlow prevents this to work at inference time. Therefore skipped.
             cell = tf.contrib.rnn.DeviceWrapper(cell,
                                                 model_helper.get_device_str(num_layers - 1, num_gpus))
 

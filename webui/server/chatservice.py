@@ -25,7 +25,6 @@ from webui.server.tornadows import xmltypes
 from webui.server.tornadows.soaphandler import webservice
 
 from settings import PROJECT_ROOT
-from chatbot.tokenizeddata import TokenizedData
 from chatbot.botpredictor import BotPredictor
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
@@ -58,17 +57,13 @@ class ChatService(soaphandler.SoapHandler):
         return outputSentence
 
 if __name__ == "__main__":
-    print("Loading saved dictionaries for words and IDs ... ")
-    dict_file = os.path.join(PROJECT_ROOT, 'Data', 'Result', 'dicts.pickle')
-    td = TokenizedData(dict_file=dict_file)
-
-    print("Creating TF session ...")
+    corp_dir = os.path.join(PROJECT_ROOT, 'Data', 'Corpus')
+    knbs_dir = os.path.join(PROJECT_ROOT, 'Data', 'KnowledgeBase')
     res_dir = os.path.join(PROJECT_ROOT, 'Data', 'Result')
 
     with tf.Session() as sess:
-        predictor = BotPredictor(sess, td, res_dir, 'basic')
-        # Predict one and discard the output, as the very first one is slower.
-        predictor.predict("Hello")
+        predictor = BotPredictor(sess, corpus_dir=corp_dir, knbase_dir=knbs_dir,
+                                 result_dir=res_dir, result_file='basic')
 
         service = [('ChatService', ChatService, {'predictor': predictor})]
         app = webservices.WebService(service)

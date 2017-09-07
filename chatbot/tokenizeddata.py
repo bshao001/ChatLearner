@@ -19,7 +19,7 @@ import tensorflow as tf
 from collections import namedtuple
 from tensorflow.python.ops import lookup_ops
 
-from chatbot.hparams import Hparams
+from chatbot.hparams import HParams
 from chatbot.knowledgebase import KnowledgeBase
 
 COMMENT_LINE_STT = "#=="
@@ -48,7 +48,7 @@ class TokenizedData:
             buffer_size: The buffer size used for mapping process during data processing.
         """
         if hparams is None:
-            self.hparams = Hparams(corpus_dir).hparams
+            self.hparams = HParams(corpus_dir).hparams
         else:
             self.hparams = hparams
 

@@ -12,11 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
-import collections
 import nltk
 import os
 import string
-import sys
 import tensorflow as tf
 
 from chatbot.tokenizeddata import TokenizedData
@@ -111,31 +109,3 @@ class BotPredictor(object):
             last_word = word
 
         return ''.join(word_list).strip(), if_func_val
-
-
-if __name__ == "__main__":
-    from settings import PROJECT_ROOT
-
-    corp_dir = os.path.join(PROJECT_ROOT, 'Data', 'Corpus')
-    knbs_dir = os.path.join(PROJECT_ROOT, 'Data', 'KnowledgeBase')
-    res_dir = os.path.join(PROJECT_ROOT, 'Data', 'Result')
-
-    with tf.Session() as sess:
-        predictor = BotPredictor(sess, corpus_dir=corp_dir, knbase_dir=knbs_dir,
-                                 result_dir=res_dir, result_file='result')
-
-        print("Welcome to Chat with ChatLearner!")
-        print("Type exit and press enter to end the conversation.")
-        # Waiting from standard input.
-        sys.stdout.write("> ")
-        sys.stdout.flush()
-        sentence = sys.stdin.readline()
-        while sentence:
-            if sentence.strip() == 'exit':
-                print("Thank you for using ChatLearner. Goodbye.")
-                break
-
-            print(predictor.predict(sentence))
-            print("> ", end="")
-            sys.stdout.flush()
-            sentence = sys.stdin.readline()

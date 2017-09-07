@@ -12,7 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
-import math
 import tensorflow as tf
 
 
@@ -83,22 +82,3 @@ def gradient_clip(gradients, max_gradient_norm):
         tf.summary.scalar("clipped_gradient", tf.global_norm(clipped_gradients)))
 
     return clipped_gradients, gradient_norm_summary
-
-
-def compute_perplexity(model, sess):
-    """Compute perplexity of the output of the model."""
-    total_loss = 0
-    total_predict_count = 0
-
-    while True:
-        try:
-            loss, predict_count, batch_size = model.eval(sess)
-            total_loss += loss * batch_size
-            total_predict_count += predict_count
-        except tf.errors.OutOfRangeError:
-            break
-
-    mean_loss = total_loss / total_predict_count
-    perplexity = math.exp(float(mean_loss)) if mean_loss < 300 else math.inf
-
-    return perplexity

@@ -18,7 +18,7 @@ import os
 import tensorflow as tf
 
 
-class Hparams:
+class HParams:
     def __init__(self, model_dir):
         """
         Args:
