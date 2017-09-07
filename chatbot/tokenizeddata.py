@@ -12,6 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 # ==============================================================================
+import codecs
 import os
 import tensorflow as tf
 
@@ -59,8 +60,10 @@ class TokenizedData:
         self.id_set = None
 
         vocab_file = os.path.join(corpus_dir, VOCAB_FILE)
+        self.vocab_size, _ = check_vocab(vocab_file)
         self.vocab_table = lookup_ops.index_table_from_file(vocab_file,
                                                             default_value=self.hparams.unk_id)
+        # print("vocab_size = {}".format(self.vocab_size))
 
         if training:
             self.case_table = prepare_case_table()
@@ -76,7 +79,7 @@ class TokenizedData:
             self.reverse_vocab_table = \
                 lookup_ops.index_to_string_table_from_file(vocab_file,
                                                            default_value=self.hparams.unk_token)
-
+            assert knbase_dir is not None
             knbs = KnowledgeBase()
             knbs.load_knbase(knbase_dir)
             self.upper_words = knbs.upper_words
@@ -86,24 +89,24 @@ class TokenizedData:
     def get_training_batch(self, num_threads=2):
         assert self.training
 
-        buffer_size = self.hparams.batch_size * 1000
+        buffer_size = self.hparams.batch_size * 500
 
         # Comment this line for debugging.
-        self.id_set = self.id_set.shuffle(buffer_size=buffer_size)
+        train_set = self.id_set.shuffle(buffer_size=buffer_size)
 
         # Create a target input prefixed with BOS and a target output suffixed with EOS.
-        # After this mapping, each element in the id_set contains 3 columns/items.
-        self.id_set = self.id_set.map(lambda src, tgt:
-                                      (src, tf.concat(([self.hparams.bos_id], tgt), 0),
-                                       tf.concat((tgt, [self.hparams.eos_id]), 0)),
-                                      num_threads=num_threads,
-                                      output_buffer_size=buffer_size)
+        # After this mapping, each element in the train_set contains 3 columns/items.
+        train_set = train_set.map(lambda src, tgt:
+                                  (src, tf.concat(([self.hparams.bos_id], tgt), 0),
+                                   tf.concat((tgt, [self.hparams.eos_id]), 0)),
+                                  num_threads=num_threads,
+                                  output_buffer_size=buffer_size)
 
         # Add in sequence lengths.
-        self.id_set = self.id_set.map(lambda src, tgt_in, tgt_out:
-                                      (src, tgt_in, tgt_out, tf.size(src), tf.size(tgt_in)),
-                                      num_threads=num_threads,
-                                      output_buffer_size=buffer_size)
+        train_set = train_set.map(lambda src, tgt_in, tgt_out:
+                                  (src, tgt_in, tgt_out, tf.size(src), tf.size(tgt_in)),
+                                  num_threads=num_threads,
+                                  output_buffer_size=buffer_size)
 
         def batching_func(x):
             return x.padded_batch(
@@ -139,11 +142,11 @@ class TokenizedData:
             def reduce_func(unused_key, windowed_data):
                 return batching_func(windowed_data)
 
-            batched_dataset = self.id_set.group_by_window(key_func=key_func,
+            batched_dataset = train_set.group_by_window(key_func=key_func,
                                                           reduce_func=reduce_func,
                                                           window_size=self.hparams.batch_size)
         else:
-            batched_dataset = batching_func(self.id_set)
+            batched_dataset = batching_func(train_set)
 
         batched_iter = batched_dataset.make_initializable_iterator()
         (src_ids, tgt_input_ids, tgt_output_ids, src_seq_len, tgt_seq_len) = (batched_iter.get_next())
@@ -168,20 +171,19 @@ class TokenizedData:
         # Add in the word counts.
         id_dataset = id_dataset.map(lambda src: (src, tf.size(src)))
 
-        if self.hparams.batch_size_infer > 1:
-            def batching_func(x):
-                return x.padded_batch(
-                    self.hparams.batch_size_infer,
-                    # The entry is the source line rows; this has unknown-length vectors.
-                    # The last entry is the source row size; this is a scalar.
-                    padded_shapes=(tf.TensorShape([None]),  # src
-                                   tf.TensorShape([])),     # src_len
-                    # Pad the source sequences with eos tokens. Though notice we don't generally need to
-                    # do this since later on we will be masking out calculations past the true sequence.
-                    padding_values=(self.hparams.eos_id,  # src
-                                    0))                   # src_len -- unused
+        def batching_func(x):
+            return x.padded_batch(
+                self.hparams.batch_size_infer,
+                # The entry is the source line rows; this has unknown-length vectors.
+                # The last entry is the source row size; this is a scalar.
+                padded_shapes=(tf.TensorShape([None]),  # src
+                               tf.TensorShape([])),     # src_len
+                # Pad the source sequences with eos tokens. Though notice we don't generally need to
+                # do this since later on we will be masking out calculations past the true sequence.
+                padding_values=(self.hparams.eos_id,  # src
+                                0))                   # src_len -- unused
 
-            id_dataset = batching_func(id_dataset)
+        id_dataset = batching_func(id_dataset)
 
         infer_iter = id_dataset.make_initializable_iterator()
         (src_ids, src_seq_len) = infer_iter.get_next()
@@ -272,6 +274,19 @@ class TokenizedData:
                                         output_buffer_size=buffer_size)
 
 
+def check_vocab(vocab_file):
+    """Check to make sure vocab_file exists"""
+    if tf.gfile.Exists(vocab_file):
+        vocab_list = []
+        with codecs.getreader("utf-8")(tf.gfile.GFile(vocab_file, "rb")) as f:
+            for word in f:
+                vocab_list.append(word.strip())
+    else:
+        raise ValueError("The vocab_file does not exist. Please run the script to create it.")
+
+    return len(vocab_list), vocab_list
+
+
 def prepare_case_table():
     keys = tf.constant([chr(i) for i in range(32, 127)])
 
@@ -300,7 +315,7 @@ class BatchedInput(namedtuple("BatchedInput",
 #     from settings import PROJECT_ROOT
 #
 #     corp_dir = os.path.join(PROJECT_ROOT, 'Data', 'Corpus')
-#     training = False
+#     training = True
 #     if training:
 #         td = TokenizedData(corp_dir)
 #         train_batch = td.get_training_batch()
@@ -329,7 +344,8 @@ class BatchedInput(namedtuple("BatchedInput",
 #             new_q = ' '.join(tokens[:]).strip()
 #             new_q_list.append(new_q)
 #
-#         td = TokenizedData(corp_dir, training=False)
+#         knbs_dir = os.path.join(PROJECT_ROOT, 'Data', 'KnowledgeBase')
+#         td = TokenizedData(corpus_dir=corp_dir, knbase_dir=knbs_dir, training=False)
 #         src_dataset = tf.contrib.data.Dataset.from_tensor_slices(tf.constant(new_q_list))
 #         infer_batch = td.get_inference_batch(src_dataset)
 #
