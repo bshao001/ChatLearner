@@ -1,6 +1,6 @@
 # ChatLearner
 
-![](https://img.shields.io/badge/python-3.5.2-brightgreen.svg)  ![](https://img.shields.io/badge/tensorflow-1.3.0-yellowgreen.svg)
+![](https://img.shields.io/badge/python-3.5.2-brightgreen.svg)  ![](https://img.shields.io/badge/tensorflow-1.3.0-yellowgreen.svg?sanitize=true)
 
 A chatbot implemented in TensorFlow based on the new sequence to sequence model, with certain rules integrated.
 
