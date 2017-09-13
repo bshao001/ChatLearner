@@ -62,7 +62,7 @@ class BotTrainer(object):
 
             print("# Training loop started @ {}".format(time.strftime("%Y-%m-%d %H:%M:%S")))
             epoch_start_time = time.time()
-            while train_epoch <= num_epochs:
+            while train_epoch < num_epochs:
                 # Each run of this while loop is a training step, multiple time/steps will trigger
                 # the train_epoch to be increased.
                 learning_rate = self._get_learning_rate(train_perp)

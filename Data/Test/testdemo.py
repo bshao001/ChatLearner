@@ -24,21 +24,21 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
 
 def test_demo():
-    print("Loading saved dictionaries for words and IDs ... ")
-    dict_file = os.path.join(PROJECT_ROOT, 'Data', 'Result', 'dicts.pickle')
-    td = TokenizedData(dict_file=dict_file)
+    print("# Creating TF session ...")
 
-    print("Creating TF session ...")
-
+    corp_dir = os.path.join(PROJECT_ROOT, 'Data', 'Corpus')
+    knbs_dir = os.path.join(PROJECT_ROOT, 'Data', 'KnowledgeBase')
     res_dir = os.path.join(PROJECT_ROOT, 'Data', 'Result')
+
     test_dir = os.path.join(PROJECT_ROOT, 'Data', 'Test')
     in_file = os.path.join(test_dir, 'samples.txt')
     out_file = os.path.join(test_dir, 'responses.txt')
 
     with tf.Session() as sess:
-        predictor = BotPredictor(sess, td, res_dir, 'basic')
+        predictor = BotPredictor(sess, corpus_dir=corp_dir, knbase_dir=knbs_dir,
+                                 result_dir=res_dir, result_file='basic')
 
-        print("Prediction started ...")
+        print("# Prediction started ...")
         t0 = time.time()
         with open(in_file, 'r') as f_in:
             with open(out_file, 'a') as f_out:
@@ -51,7 +51,7 @@ def test_demo():
                     f_out.write("{}\n\n".format(predictor.predict(sentence)))
 
         t1 = time.time()
-        print("Prediction completed. Time spent on prediction: {:4.2f} seconds".format(t1-t0))
+        print("# Prediction completed. Time spent on prediction: {:4.2f} seconds".format(t1-t0))
 
 
 def get_header():

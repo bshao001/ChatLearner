@@ -24,7 +24,7 @@
   "src_max_len": 50,
   "src_max_len_infer": null,
   "tgt_max_len": 50,
-  "tgt_max_len_infer": null,
+  "tgt_max_len_infer": 50,
   "time_major": true,
   "unk_token": "_unk_",
   "unk_id": 0

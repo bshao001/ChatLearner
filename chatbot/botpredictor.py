@@ -89,6 +89,10 @@ class BotPredictor(object):
         last_word = None
         word_list = []
         for word in sentence.split(' '):
+            word = word.strip()
+            if not word:
+                continue
+
             if word.startswith('_func_val_'):
                 if_func_val = True
                 word = call_function(word[10:], tokenized_data=self.tokenized_data,
