@@ -84,6 +84,8 @@ class BotPredictor(object):
 
     def _get_final_output(self, sentence, para_list=None, html_format=False):
         sentence = b' '.join(sentence).decode('utf-8')
+        if sentence == '':
+            return "I don't know what to say.", False
 
         if_func_val = False
         last_word = None
