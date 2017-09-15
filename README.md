@@ -4,17 +4,29 @@
 
 A chatbot implemented in TensorFlow based on the new sequence to sequence model, with certain rules integrated.
 
-## Notes and Highlights:
-1. This implementation was based on the new seq2seq model (dynamic RNN based) in TensorFlow version 1.3 (require 1.2.1 and later). The code was largely referenced on the tutorial of the new NMT model (https://github.com/tensorflow/nmt).
-2. The repository also contains a chatbot implementation based on the legacy seq2seq model. In case you are interested in that, please check the Legacy_Chatbot branch at https://github.com/bshao001/ChatLearner/tree/Legacy_Chatbot.
-3. As the new model is based on the dynamic RNN, a GPU (or CPU) can afford to train it with a larger batch size. With the legacy one, I had to train the model with batch size 64, while this one in batch size 128, therefore cutting the training time from about 10 hours to 5 hours based on the Papaya dataset (described below).
-4. Although the implementation supports multiple GPU training (kind of model parallel), my experience with 2 GPU (NVIDIA GeForce GTX 1080 Ti) for one epoch took about 415 seconds, while a single GPU took about 384 seconds. Therefore, single GPU setting is preferred. In case you don't have a good GPU, CPU training for one epoch takes roughly one hour or 70 minutes.
-5. Attention mechanism and beam search are both supported in this implementation. Beam search clearly improves the inference results, and it can also vary the responses (within the same trained model), which makes the chatbot more interesting as well.
-6. Some rules are integrated to demo how to combine traditional rule-based chatbots with new deep learning models. If you are not interested, you can easily remove those line related to knowledgebase.py and functiondata.py. However, with these rules, the chatbot can answer certain categories of questions that a normal deep learning model cannot do. For example:
-   * "What time is it now?" or "What day is it today?" or "What's the date yesterday?"
-   * "Read me a story please." or "Tell me a joke." It can then present stories and jokes randomly and not being limited by the sequence length.
-   * "How much is twelve thousand three hundred four plus two hundred fifty six?" or "What is the sum of five and six?" or "How much is twelve thousand three-hundred and four divided by two-hundred-fifty-six?" or "If x=55 and y=19, how much is y - x?" or "How much do you get if you subtract eight from one hundred?" or even "If x = 99 and y = 228 / x, how much is y?"
+This chatbot was built on the new seq2seq model (dynamic RNN based) in TensorFlow version 1.3 (require 1.2.1 and later). The code was largely referenced on the tutorial of the new NMT model (https://github.com/tensorflow/nmt).
 
+## Highlights and Specialties:
+
+Why do you want to spend time checking this repository? Here are some possible reasons:
+1. The Papaya Data Set for training the chatbot. You can easily find tons of training data online, but you cannot find any with such a high quality. See the detailed description below about the data set.
+2. The concise code style and clear implementation of the new seq2seq model based on dynamic RNN (a.k.a. the new NMT model). It is customized for chatbots and much easier to understand compared with the official tutorial.
+3. Some rules are integrated to demo how to combine traditional rule-based chatbots with new deep learning models. No matter how powerful a deep learning model can be, it cannot even answer questions requiring simple arithmetic calculations, and many others. The approach demonstrated here can be easily adapted to retrieve news or other online information. With the rules implemented, it can then properly answer many interesting questions. For example:
+   
+   * "What time is it now?" or "What day is it today?" or "What's the date yesterday?"
+   * "Read me a story please." or "Tell me a joke." It can then present stories and jokes randomly and not being limited by the sequence length of the decoder.
+   * "How much is twelve thousand three hundred four plus two hundred fifty six?" or "What is the sum of five and six?" or "How much is twelve thousand three-hundred and four divided by two-hundred-fifty-six?" or "If x=55 and y=19, how much is y - x?" or "How much do you get if you subtract eight from one hundred?" or even "If x = 99 and y = 228 / x, how much is y?"
+   
+   If you are not interested in rules, you can easily remove those lines related to knowledgebase.py and functiondata.py.
+4. A SOAP-based web service allows you to present the GUI in Java, while the model is trained and running in Python and TensorFlow.
+5. A simple solution (in-graph) to convert a string tensor to lower case in TensorFlow. It is required if you utilize the new DataSet API (tf.contrib.data.TextLineDataSet) in TensorFlow to load training data from text files.
+6. The repository also contains a chatbot implementation based on the legacy seq2seq model. In case you are interested in that, please check the Legacy_Chatbot branch at https://github.com/bshao001/ChatLearner/tree/Legacy_Chatbot.
+
+## Comparison of the new and legacy seq2seq model in TensorFlow:
+
+1. The main advantage of the new model is speed. Training and inference using the new model are both faster. As the new model is based on the dynamic RNN, a GPU (or CPU) can afford to train it with a larger batch size. With the legacy one, I had to train the model with batch size 64, while this one in batch size 128, therefore cutting the training time from about 10 hours to 5 hours based on the Papaya data set.
+2. I haven't found any disadvantages of the new model. If we have to name one, the TensorFlow group did not provide an integrated interface as for the legacy one, the seq2seq.py. Hence, it is a little harder to put the encoder and the decoder together by yourself. However, you may find that implementing beam search becomes easier. It is supported in this implementation. Beam search clearly improves the inference results, and it can also vary the responses (within the same trained model), which makes the chatbot more interesting as well.
+   
 ## Training Data (Papaya Data Set)
 1. The training data are composed of two sets: the first set was handcrafted, and we created the samples in order to maintain a consistent role of the chatbot, who can therefore be trained to be polite, patient, humorous, and aware that he is a robot, but pretend to be a 9-year old boy named Papaya; the second set was cleaned from some online resources, including the scenario conversations designed for training robots, and the Cornell movie dialogs.
 2. The training data set is split into three categories: two subsets will be augmented during the training, with different levels or times, while the third will not. The augmented subsets are to train the model with rules to follow, and some knowledge and common senses, while the third subset is just to help to train the language model.
@@ -38,7 +50,7 @@ A good GPU is highly recommended for the training as it can be very time-consumi
 2. basic.index
 
 ## Testing / Inference
-For testing and prediction, we provide a simple command interface and a web-based interface. In order to quickly check how the trained model performs, use the following command interface:
+For testing and prediction, we provide a simple command interface and a web-based interface. Note that vocab.txt file (and files in KnowledgeBase, for this chatbot) is also required for inference. In order to quickly check how the trained model performs, use the following command interface:
 
 ```bash
 cd chatbot
