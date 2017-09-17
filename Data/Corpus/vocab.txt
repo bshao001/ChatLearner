@@ -15,9 +15,10 @@ is
 it
 _func_val_get_time
 now
-date
+day
 today
 _func_val_get_today
+date
 's
 _func_val_get_weekday_para1_d0
 the
@@ -32,7 +33,6 @@ please
 was
 yesterday
 _func_val_get_weekday_para1_d_1
-day
 before
 _func_val_get_weekday_para1_d_2
 tomorrow
@@ -4087,8 +4087,7 @@ homer
 'cyclopes
 sons
 forged
-thunder-
-bolts
+thunder-bolts
 'cyclops
 throws
 thunderbolt
@@ -4375,7 +4374,7 @@ schedule
 loyalists
 forty
 switchboard
-vice-
+vice-president
 traced
 wife
 lady
@@ -8884,7 +8883,6 @@ niagara
 barrel
 'at's-a
 rapids
-vice-president
 examination
 post-office
 post-
@@ -10481,6 +10479,7 @@ dreamin
 m'man
 alongside
 lag
+bolts
 preferably
 sixteenth
 aluminium
@@ -33128,6 +33127,7 @@ conferences
 revenues
 absentee
 fundraisers
+legalize
 ppo
 out-of-pocket
 purchasing

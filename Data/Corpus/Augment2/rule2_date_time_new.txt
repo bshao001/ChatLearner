@@ -2,6 +2,8 @@ Q: What time is it ?
 A: It is _func_val_get_time .
 Q: What time is it now ?
 A: It is _func_val_get_time .
+Q: What day is it today ?
+A: Today is _func_val_get_today .
 Q: What date is today ?
 A: Today is _func_val_get_today .
 Q: What 's today 's date ?
@@ -17,6 +19,8 @@ Q: What time is it , Papaya ?
 A: It is _func_val_get_time .
 Q: What time is it now , Papaya ?
 A: It is _func_val_get_time .
+Q: What day is it today , Papaya ?
+A: Today is _func_val_get_today .
 Q: What date is today , Papaya ?
 A: Today is _func_val_get_today .
 Q: What 's today 's date , Papaya ?
@@ -37,6 +41,8 @@ A: Today is _func_val_get_weekday_para1_d0 .
 Q: Tell me today 's date please !
 A: Today is _func_val_get_weekday_para1_d0 .
 ===
+Q: What day was it yesterday ?
+A: It was _func_val_get_weekday_para1_d_1 .
 Q: What was the date yesterday ?
 A: It was _func_val_get_weekday_para1_d_1 .
 Q: What is the date yesterday ?
@@ -62,6 +68,8 @@ A: It was _func_val_get_weekday_para1_d_2 .
 Q: What 's the date the day before yesterday ?
 A: It was _func_val_get_weekday_para1_d_2 .
 ===
+Q: What day is it tomorrow ?
+A: It is _func_val_get_weekday_para1_d1 .
 Q: What is the date tomorrow ?
 A: It is _func_val_get_weekday_para1_d1 .
 Q: What 's the date tomorrow ?

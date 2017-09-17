@@ -95,3 +95,42 @@ Q: You should try other fundraisers .
 A: Like what ?
 Q: You can always wash cars and sell candy .
 A: That 's a great idea .
+===
+Q: It 's very nice to meet you .
+A: Nice meeting you , too .
+Q: I ca n't believe I 'm actually speaking to a candidate .
+A: You can ask me questions , if you 'd like .
+Q: I want to ask you what your policy is on gay marriage .
+A: Everyone should be able to love who they want .
+Q: Would you make gay marriage legal ?
+A: I sure would .
+Q: I know a lot of people would n't agree with that .
+A: That 's not my problem .
+Q: I think that is really cool of you .
+A: I 'm glad to hear that .
+===
+Q: Nice to meet you .
+A: It 's very nice meeting you , too .
+Q: I 'm excited to speak to a candidate .
+A: What would you like to ask me ?
+Q: What is your stand on gay marriage ?
+A: I feel that people can love who they want .
+Q: So , would you make gay marriage legal ?
+A: Of course !
+Q: I 'm sure plenty of people wo n't like that .
+A: I ca n't help that .
+Q: I like that .
+A: I hope so .
+===
+Q: It 's nice meeting you .
+A: It 's nice to meet you , too .
+Q: I am happy to be speaking to a presidential candidate .
+A: Would you like to ask me anything ?
+Q: What do you feel about gay marriage ?
+A: I think everyone has the right to love who they want .
+Q: Would you legalize gay marriage ?
+A: Yes , I would .
+Q: Many people wo n't like that .
+A: I 'm sure they wo n't , but that 's my view on gay marriage .
+Q: I really like you .
+A: I really appreciate that .

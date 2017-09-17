@@ -44,6 +44,7 @@ Tell me a joke!
 Can you please tell me a joke?
 Could you please tell me a joke please?
 Tell me another joke please!
+That's really a funny joke.
 Great job!
 Great!
 Take care.
@@ -215,8 +216,6 @@ Do you have a boyfriend?
 1992.
 1992!
 1992?
-2008.
-2008!
 Listen to music.
 Watch a movie.
 What happens?
@@ -225,8 +224,6 @@ What happened in 2001?
 When was it?
 Where are you going?
 Do you have any plan for tomorrow?
-Two plus two
-2+2?
 What year.
 What year!
 What year?
@@ -253,10 +250,16 @@ What's your favorite color?
 What's your favorite food?
 What's your favorite sports?
 What's your favorite movie?
+What was your nicest dream that you can remember?
+Have you ever had nightmares?
+Do you drink and drive?
+Do you think police TV dramas are realistic?
 Who is Bill Gates?
 Who is Bill Clinton?
 Who was Albert Einstein?
 What do you think of Trump?
+Do bad mannered people upset you?
+Do you get angry when politicians make promises they can't keep?
 What do you think about global warming?
 Is the moon landing a hoax?
 Is the sky blue or black?
@@ -292,7 +295,6 @@ What do you need to play soccer?
 What do you need to play handball?
 One, two, three
 One two three
-1 2
 1 2 3
 1 2 3 ...
 1 2 3?
@@ -305,14 +307,11 @@ Continue...
 Stop!
 And ... action!
 Action!
-Let the movie begin
 Let the movie begin!
 You are fired!
 Fire
 Fire!
-Fire at will
 Fire at will!
-Incoming.
 Incoming!
 Incoming!!
 How many legs does a human have?
@@ -358,12 +357,11 @@ Okay, I need to know how I should behave morally...
 Is morality and ethics the same?
 What are the things that i do to be immoral?
 Give me some examples of moral actions...
-Alright, morality?
+What does money mean to you?
 What is integrity?
 Is free will an illusion?
 What is free will?
-be moral!
-i really like our discussion on morality and ethics ...
+I really like our discussion on morality and ethics ...
 What do you like to talk about?
 What would you like to talk about?
 What do you think about tesla?
@@ -391,10 +389,12 @@ The end
 Yes it is.
 Yes it was.
 Indeed.
+Lol
 More
 More.
 More!
 What is the capital of France?
-Paris...
 Where do you want to go?
 You surprised me.
+I am curious.
+I am feeling curious.

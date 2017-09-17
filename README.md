@@ -42,7 +42,12 @@ branch at https://github.com/bshao001/ChatLearner/tree/Legacy_Chatbot.
 GPU (or CPU) can afford to train it with a larger batch size. With the legacy one, I had to train the model with batch size 64, while this one in batch size 
 128, therefore cutting the training time from about 10 hours to 5 hours based on the Papaya data set.
 
-2. I haven't found any disadvantages of the new model. If we have to name one, the TensorFlow group did not provide an integrated interface as for the legacy 
+2. Bucketing can be used to speed up the training for both models. However, it causes extra mess to the old seq2seq model due to different lengths of padding, 
+if you want your model to remember certain question and answer pairs. You have no way to tell your model which bucket was used to train a pair at the inference 
+time as you only have the length of the questions (see an expedient solution in my implementation of the legacy model). The great thing about the new model is 
+that it does not have this problem as its padding does not create extra noises.
+
+3. I haven't found any disadvantages of the new model. If we have to name one, the TensorFlow group did not provide an integrated interface as for the legacy 
 one, the seq2seq.py. Hence, it is a little harder to put the encoder and the decoder together by yourself. However, you may find that implementing beam search 
 becomes easier. It is supported in this implementation. Beam search clearly improves the inference results, and it can also vary the responses (within the same 
 trained model), which makes the chatbot more interesting as well.
