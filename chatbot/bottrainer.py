@@ -96,7 +96,7 @@ class BotTrainer(object):
                     summary_writer.add_summary(summary, global_step)
 
                     # Save checkpoint
-                    if train_perp < 1.25 and train_perp < last_record_perp:
+                    if train_perp < 1.56 and train_perp < last_record_perp:
                         self.model.saver.save(sess, os.path.join(result_dir, "basic"), global_step=global_step)
                         last_record_perp = train_perp
 
@@ -111,15 +111,13 @@ class BotTrainer(object):
 
     @staticmethod
     def _get_learning_rate(perplexity):
-        if perplexity <= 1.12:
-            return 9.2e-5
-        elif perplexity <= 1.20:
+        if perplexity <= 1.44:
             return 9.6e-5
-        elif perplexity <= 1.32:
-            return 1e-4
         elif perplexity <= 1.6:
-            return 1.2e-4
+            return 1e-4
         elif perplexity <= 2.0:
+            return 1.2e-4
+        elif perplexity <= 2.4:
             return 1.6e-4
         elif perplexity <= 3.2:
             return 2e-4

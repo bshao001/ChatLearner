@@ -19,6 +19,9 @@ AUG1_FOLDER = "Augment1"
 AUG2_FOLDER = "Augment2"
 
 VOCAB_FILE = "vocab.txt"
+CORNELL_DATA_FILE = "cornell_cleaned_new.txt"
+REDDIT_DATA_FILE = "reddit_cleaned_part.txt"
+EXCLUDED_FILE = "excluded.txt"
 
 
 def generate_vocab_file(corpus_dir):
@@ -51,6 +54,8 @@ def generate_vocab_file(corpus_dir):
         for data_file in sorted(os.listdir(file_dir)):
             full_path_name = os.path.join(file_dir, data_file)
             if os.path.isfile(full_path_name) and data_file.lower().endswith('.txt'):
+                if fd == 0 and (data_file == CORNELL_DATA_FILE or data_file == REDDIT_DATA_FILE):
+                    continue  # Will be processed below
                 with open(full_path_name, 'r') as f:
                     for line in f:
                         l = line.strip()
@@ -64,10 +69,73 @@ def generate_vocab_file(corpus_dir):
                                     if t not in vocab_list:
                                         vocab_list.append(t)
 
-    vocab_file = os.path.join(corp_dir, VOCAB_FILE)
-    with open(vocab_file, 'a') as f_voc:
+    print("Vocab size after all base data files scanned: {}".format(len(vocab_list)))
+
+    temp_dict = {}  # A temp dict
+    cornell_file = os.path.join(corpus_dir, AUG0_FOLDER, CORNELL_DATA_FILE)
+    with open(cornell_file, 'r') as f1:
+        for line in f1:
+            ln = line.strip()
+            if not ln:
+                continue
+            if ln.startswith("Q:") or ln.startswith("A:"):
+                tokens = ln[2:].strip().split(' ')
+                for token in tokens:
+                    if len(token) and token != ' ':
+                        t = token.lower()
+                        if t not in vocab_list:
+                            if ln.startswith("A:"):  # Keep all for responses
+                                vocab_list.append(t)
+                            else:
+                                if t not in temp_dict:
+                                    temp_dict[t] = 1
+                                else:
+                                    temp_dict[t] += 1
+                                    if temp_dict[t] >= 2:
+                                        vocab_list.append(t)
+
+    print("Vocab size after cornell data file scanned: {}".format(len(vocab_list)))
+
+    reddit_file = os.path.join(corpus_dir, AUG0_FOLDER, REDDIT_DATA_FILE)
+    with open(reddit_file, 'r') as f2:
+        line_cnt = 0
+        for line in f2:
+            line_cnt += 1
+            if line_cnt % 200000 == 0:
+                print("{:,} lines of reddit data file scanned.".format(line_cnt))
+            ln = line.strip()
+            if not ln:
+                continue
+            if ln.startswith("Q:") or ln.startswith("A:"):
+                tokens = ln[2:].strip().split(' ')
+                for token in tokens:
+                    if len(token) and token != ' ':
+                        t = token.lower()
+                        if t not in vocab_list:
+                            if ln.startswith("A:"):  # Keep all for responses
+                                vocab_list.append(t)
+                            else:
+                                if t not in temp_dict:
+                                    temp_dict[t] = 1
+                                else:
+                                    temp_dict[t] += 1
+                                    if temp_dict[t] >= 2:
+                                        if t.startswith('.') or t.startswith('-') \
+                                                or t.endswith('..') or t.endswith('-'):
+                                            continue
+
+                                        vocab_list.append(t)
+
+    with open(VOCAB_FILE, 'a') as f_voc:
         for v in vocab_list:
             f_voc.write("{}\n".format(v))
+
+    print("The final vocab file generated. Vocab size: {}".format(len(vocab_list)))
+
+    with open(EXCLUDED_FILE, 'a') as f_excluded:
+        for k, _ in temp_dict.items():
+            if k not in vocab_list:
+                f_excluded.write("{}\n".format(k))
 
 if __name__ == "__main__":
     from settings import PROJECT_ROOT

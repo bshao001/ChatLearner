@@ -34,8 +34,7 @@ VOCAB_FILE = "vocab.txt"
 
 
 class TokenizedData:
-    def __init__(self, corpus_dir, hparams=None, knbase_dir=None, training=True, augment_factor=3,
-                 buffer_size=8192):
+    def __init__(self, corpus_dir, hparams=None, knbase_dir=None, training=True, buffer_size=8192):
         """
         Args:
             corpus_dir: Name of the folder storing corpus files for training.
@@ -44,7 +43,6 @@ class TokenizedData:
             knbase_dir: Name of the folder storing data files for the knowledge base. Used for 
                     inference only.
             training: Whether to use this object for training.
-            augment_factor: Times the training data appears. If 1 or less, no augmentation.
             buffer_size: The buffer size used for mapping process during data processing.
         """
         if hparams is None:
@@ -68,7 +66,7 @@ class TokenizedData:
         if training:
             self.case_table = prepare_case_table()
             self.reverse_vocab_table = None
-            self._load_corpus(corpus_dir, augment_factor)
+            self._load_corpus(corpus_dir)
             self._convert_to_tokens(buffer_size)
 
             self.upper_words = {}
@@ -89,7 +87,7 @@ class TokenizedData:
     def get_training_batch(self, num_threads=2):
         assert self.training
 
-        buffer_size = self.hparams.batch_size * 500
+        buffer_size = self.hparams.batch_size * 400
 
         # Comment this line for debugging.
         train_set = self.id_set.shuffle(buffer_size=buffer_size)
@@ -195,7 +193,7 @@ class TokenizedData:
                             source_sequence_length=src_seq_len,
                             target_sequence_length=None)
 
-    def _load_corpus(self, corpus_dir, augment_factor):
+    def _load_corpus(self, corpus_dir):
         for fd in range(2, -1, -1):
             file_list = []
             if fd == 0:
@@ -227,8 +225,10 @@ class TokenizedData:
                                           output_buffer_size=4096)
 
             src_tgt_dataset = tf.contrib.data.Dataset.zip((src_dataset, tgt_dataset))
-            if augment_factor > 1 and fd >= 1:
-                src_tgt_dataset = src_tgt_dataset.repeat(augment_factor * fd)
+            if fd == 1:
+                src_tgt_dataset = src_tgt_dataset.repeat(self.hparams.aug1_repeat_times)
+            elif fd == 2:
+                src_tgt_dataset = src_tgt_dataset.repeat(self.hparams.aug2_repeat_times)
 
             if self.text_set is None:
                 self.text_set = src_tgt_dataset

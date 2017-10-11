@@ -1,0 +1,34 @@
+{
+    "input_file": "reddit_data.bz2",
+    "output_dir": "standard",
+    "output_file": "output.bz2",
+    "report_file": "RC_report.txt",
+    "comment_cache_size": 1e7,
+    "output_file_size": 2e8,
+    "print_every": 200,
+    "subreddit_whitelist": [], 
+    "subreddit_blacklist": [
+        "announcements", 
+        "blog",
+        "CasualPokemonTrades", 
+        "pokemontrades",
+        "YamakuHighSchool",
+        "XMenRP"
+    ], 
+    "substring_blacklist": [
+        "[", 
+        "http://", 
+        "https://", 
+        " r/",
+        " u/",
+        "/r/", 
+        "/u/", 
+        "reddit", 
+        "Reddit", 
+        "upvote", 
+        "downvote", 
+        "upvoting", 
+        "downvoting", 
+        "OOC:"
+    ]
+}

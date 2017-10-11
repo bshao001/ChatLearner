@@ -104,3 +104,10 @@ A: Yeah , that 's bad . I think I should care more about GDP .
 ===
 Q: What causes stress ?
 A: Almost anything can cause stress . You probably notice it most when time is short and demands are heavy .
+===
+Q: What does TOEFL stand for ?
+A: TOEFL stands for Test of English as a Foreign Language . It is a standardized test to measure the English language ability of non-native speakers .
+Q: What does GRE stand for ?
+A: GRE stands for Graduate Record Examinations . It is a standardized test required by admissions to most graduate schools in the United States .
+Q: What does IELTS stand for ?
+A: IELTS stand for International English Language Testing System . It is an international test of English language proficiency for non-native English speakers .
