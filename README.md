@@ -39,15 +39,18 @@ branch at https://github.com/bshao001/ChatLearner/tree/Legacy_Chatbot.
 ## Comparison of the new and legacy seq2seq model in TensorFlow:
 
 1. The main advantage of the new model is speed. Training and inference using the new model are both faster. As the new model is based on the dynamic RNN, a 
-GPU (or CPU) can afford to train it with a larger batch size. With the legacy one, I had to train the model with batch size 64, while this one in batch size 
-128, therefore cutting the training time from about 10 hours to 5 hours based on the Papaya data set.
+GPU (or CPU) can afford to train it with a larger batch size. With the legacy one, if you could train the model with batch size 64 or 128, then you can train 
+the new model in batch size doubled: 128 or 256, therefore cutting the training time to almost half.
 
 2. Bucketing can be used to speed up the training for both models. However, it causes extra mess to the old seq2seq model due to different lengths of padding, 
 if you want your model to remember certain question and answer pairs. You have no way to tell your model which bucket was used to train a pair at the inference 
 time as you only have the length of the questions (see an expedient solution in my implementation of the legacy model). The great thing about the new model is 
 that it does not have this problem as its padding does not create extra noises.
 
-3. I haven't found any disadvantages of the new model. If we have to name one, the TensorFlow group did not provide an integrated interface as for the legacy 
+3. Based on my limited observations, I feel that the new NMT model also has slightly larger capacity, which can accommodate larger vocabulary with a same sized 
+model (concerning number layers and number of units).
+
+4. I haven't found any disadvantages of the new model. If we have to name one, the TensorFlow group did not provide an integrated interface as for the legacy 
 one, the seq2seq.py. Hence, it is a little harder to put the encoder and the decoder together by yourself. However, you may find that implementing beam search 
 becomes easier. It is supported in this implementation. Beam search clearly improves the inference results, and it can also vary the responses (within the same 
 trained model), which makes the chatbot more interesting as well.
@@ -68,7 +71,12 @@ utilizing these conversations.
 script can also be found in the Corpus folder); we then cleaned it manually by quickly searching certain patterns. The final data is available here: 
 https://github.com/bshao001/ChatLearner/blob/master/Data/Corpus/Augment0/cornell_cleaned_new.txt
 
-5. The data files were already preprocessed with NLTK tokenizer so that they are ready to feed into the model using new dataset API in TensorFlow.
+5. For the Reddit data, a cleaned subset (about 110K pairs) is included in this repository. The vocab file and model parameters are created and adjusted based on all
+the included data files. In case you need a larger set, you can also find scripts to parse and clean the Reddit comments in the Corpus/RedditData folder. In order to 
+use those scripts, you need to download a torrent of Reddit comments from a torrent link [here](https://www.reddit.com/r/datasets/comments/3bxlg7/i_have_every_publicly_available_reddit_comment/). 
+Normally a single month of comments is big enough (can generated 3M pairs of training samples roughly). You can tune the parameters in the scripts based on your needs. 
+
+6. The data files in this data set were already preprocessed with NLTK tokenizer so that they are ready to feed into the model using new dataset API in TensorFlow.
 
 ## Training
 Other than Python 3.5.2, Numpy, and TensorFlow 1.3. You also need NLTK (Natural Language Toolkit) version 3.2.4, including its data.
@@ -109,3 +117,4 @@ check: https://github.com/bshao001/ChatLearner/tree/master/webui
 ## References and Credits:
 1. The new NMT model: https://github.com/tensorflow/nmt
 2. Tornado Web Service: https://github.com/rancavil/tornado-webservices
+3. Reddit data parser: https://github.com/pender/chatbot-rnn
