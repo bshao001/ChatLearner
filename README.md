@@ -7,6 +7,8 @@ A chatbot implemented in TensorFlow based on the new sequence to sequence model,
 This chatbot was built on the new seq2seq model (dynamic RNN based) in TensorFlow version 1.3 (require 1.2.1 and later). The code was largely referenced 
 on the tutorial of the new NMT model (https://github.com/tensorflow/nmt).
 
+Due to the changes made on tf.contrib.data API in TensorFlow 1.4, the existing implementation in the main branch won't work in TensorFlow 1.4. Will upgrade soon ...
+
 ## Highlights and Specialties:
 
 Why do you want to spend time checking this repository? Here are some possible reasons:
