@@ -28,12 +28,12 @@ def get_initializer(init_op, seed=None, init_weight=None):
         raise ValueError("Unknown init_op %s" % init_op)
 
 
-def get_device_str(device_id, num_gpus):
-    """Return a device string for multi-GPU setup."""
-    if num_gpus == 0:
-        return "/cpu:0"
-    device_str_output = "/gpu:%d" % (device_id % num_gpus)
-    return device_str_output
+# def get_device_str(device_id, num_gpus):
+#     """Return a device string for multi-GPU setup."""
+#     if num_gpus == 0:
+#         return "/cpu:0"
+#     device_str_output = "/gpu:%d" % (device_id % num_gpus)
+#     return device_str_output
 
 
 def create_embbeding(vocab_size, embed_size, dtype=tf.float32, scope=None):
@@ -58,13 +58,11 @@ def _single_cell(num_units, keep_prob, device_str=None):
     return single_cell
 
 
-def create_rnn_cell(num_units, num_layers, keep_prob, num_gpus, base_gpu=0):
+def create_rnn_cell(num_units, num_layers, keep_prob):
     """Create multi-layer RNN cell."""
     cell_list = []
     for i in range(num_layers):
-        single_cell = _single_cell(num_units=num_units,
-                                   keep_prob=keep_prob,
-                                   device_str=get_device_str(i + base_gpu, num_gpus))
+        single_cell = _single_cell(num_units=num_units, keep_prob=keep_prob)
         cell_list.append(single_cell)
 
     if len(cell_list) == 1:  # Single layer.
@@ -75,8 +73,7 @@ def create_rnn_cell(num_units, num_layers, keep_prob, num_gpus, base_gpu=0):
 
 def gradient_clip(gradients, max_gradient_norm):
     """Clipping gradients of a model."""
-    clipped_gradients, gradient_norm = tf.clip_by_global_norm(
-        gradients, max_gradient_norm)
+    clipped_gradients, gradient_norm = tf.clip_by_global_norm(gradients, max_gradient_norm)
     gradient_norm_summary = [tf.summary.scalar("grad_norm", gradient_norm)]
     gradient_norm_summary.append(
         tf.summary.scalar("clipped_gradient", tf.global_norm(clipped_gradients)))

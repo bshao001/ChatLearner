@@ -39,7 +39,6 @@ class ModelCreator(object):
         self.hparams = hparams
 
         self.num_layers = hparams.num_layers
-        self.num_gpus = hparams.num_gpus
         self.time_major = hparams.time_major
 
         # Initializer
@@ -84,8 +83,7 @@ class ModelCreator(object):
             self.learning_rate = tf.placeholder(tf.float32, shape=[], name='learning_rate')
             opt = tf.train.AdamOptimizer(self.learning_rate)
 
-            gradients = tf.gradients(
-                self.train_loss, params, colocate_gradients_with_ops=hparams.colocate_gradients_with_ops)
+            gradients = tf.gradients(self.train_loss, params)
 
             clipped_gradients, gradient_norm_summary = model_helper.gradient_clip(
                 gradients, max_gradient_norm=hparams.max_gradient_norm)
@@ -98,8 +96,7 @@ class ModelCreator(object):
                 tf.summary.scalar("learning_rate", self.learning_rate),
                 tf.summary.scalar("train_loss", self.train_loss),
             ] + gradient_norm_summary)
-
-        if not training:
+        else:
             self.infer_summary = tf.no_op()
 
         # Saver
@@ -127,8 +124,6 @@ class ModelCreator(object):
     def build_graph(self, hparams, scope=None):
         """Creates a sequence-to-sequence model with dynamic RNN decoder API."""
         dtype = tf.float32
-        num_layers = hparams.num_layers
-        num_gpus = hparams.num_gpus
 
         with tf.variable_scope(scope or "dynamic_seq2seq", dtype=dtype):
             # Encoder
@@ -140,8 +135,7 @@ class ModelCreator(object):
 
             # Loss
             if self.training:
-                with tf.device(model_helper.get_device_str(num_layers - 1, num_gpus)):
-                    loss = self._compute_loss(logits)
+                loss = self._compute_loss(logits)
             else:
                 loss = None
 
@@ -170,22 +164,17 @@ class ModelCreator(object):
 
         return encoder_outputs, encoder_state
 
-    def _build_encoder_cell(self, hparams, base_gpu=0):
+    def _build_encoder_cell(self, hparams):
         """Build a multi-layer RNN cell that can be used by encoder."""
         return model_helper.create_rnn_cell(
             num_units=hparams.num_units,
             num_layers=hparams.num_layers,
-            keep_prob=hparams.keep_prob,
-            num_gpus=hparams.num_gpus,
-            base_gpu=base_gpu)
+            keep_prob=hparams.keep_prob)
 
     def _build_decoder(self, encoder_outputs, encoder_state, hparams):
         """Build and run a RNN decoder with a final projection layer."""
         bos_id = tf.cast(self.vocab_table.lookup(tf.constant(hparams.bos_token)), tf.int32)
         eos_id = tf.cast(self.vocab_table.lookup(tf.constant(hparams.eos_token)), tf.int32)
-
-        num_layers = hparams.num_layers
-        num_gpus = hparams.num_gpus
 
         # maximum_iteration: The maximum decoding steps.
         if hparams.tgt_max_len_infer:
@@ -229,16 +218,7 @@ class ModelCreator(object):
                     scope=decoder_scope)
 
                 sample_id = outputs.sample_id
-
-                # Note: there's a subtle difference here between train and inference.
-                # We could have set output_layer when create my_decoder
-                #   and shared more code between train and inference.
-                # We chose to apply the output_layer to all timesteps for speed:
-                #   10% improvements for small models & 20% for larger ones.
-                # If memory is a concern, we should apply output_layer per timestep.
-                device_id = num_layers if num_layers < num_gpus else (num_layers - 1)
-                with tf.device(model_helper.get_device_str(device_id, num_gpus)):
-                    logits = self.output_layer(outputs.rnn_output)
+                logits = self.output_layer(outputs.rnn_output)
             # Inference
             else:
                 beam_width = hparams.beam_width
@@ -291,7 +271,6 @@ class ModelCreator(object):
         """Build a RNN cell with attention mechanism that can be used by decoder."""
         num_units = hparams.num_units
         num_layers = hparams.num_layers
-        num_gpus = hparams.num_gpus
         beam_width = hparams.beam_width
 
         dtype = tf.float32
@@ -317,8 +296,7 @@ class ModelCreator(object):
         cell = model_helper.create_rnn_cell(
             num_units=num_units,
             num_layers=num_layers,
-            keep_prob=hparams.keep_prob,
-            num_gpus=num_gpus)
+            keep_prob=hparams.keep_prob)
 
         # Only generate alignment in greedy INFER mode.
         alignment_history = (not self.training and beam_width == 0)
@@ -328,11 +306,6 @@ class ModelCreator(object):
             attention_layer_size=num_units,
             alignment_history=alignment_history,
             name="attention")
-
-        if self.training:
-            # A bug in TensorFlow prevents this to work at inference time. Therefore skipped.
-            cell = tf.contrib.rnn.DeviceWrapper(cell,
-                                                model_helper.get_device_str(num_layers - 1, num_gpus))
 
         if hparams.pass_hidden_state:
             decoder_initial_state = cell.zero_state(batch_size, dtype).clone(cell_state=encoder_state)
