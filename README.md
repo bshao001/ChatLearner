@@ -80,10 +80,36 @@ Normally a single month of comments is big enough (can generated 3M pairs of tra
 
 6. The data files in this data set were already preprocessed with NLTK tokenizer so that they are ready to feed into the model using new dataset API in TensorFlow.
 
+## Before You Proceed
+1. Please make sure you have the correct TensorFlow version. It works only with TensorFlow 1.3, neither 1.2 or lower, nor 1.4. As the tf.contrib.data API used here was 
+newly introduced, and it will be changed in version 1.4. I will upgrade the software when TensorFlow 1.4 is officially released. Please stay tuned.
+
+2. Please make sure you have environment variable PYTHONPATH setup. It needs to point to the project root directory, in which you have chatbot, Data, and webui folder.
+If you are running in an IDE, such as PyCharm, it will create that for you. But if you run any python scripts in a command line, you have to have that environment variable,
+otherwise, you get module import errors.
+
+3. Please make sure you are using the same vocab.txt file for both training and inference/prediction. Keep in mind that your model will never see any words as we do. It's 
+all integers in, integers out, while the words and their orders in vocab.txt help to map between the words and integers.
+
+4. Spend a little bit time thinking of how big your model should be, what should be the maximum length of the encoder/decoder, the size of the vocabulary set, and how many 
+pairs of the training data you want to use. Be advised that a model has a capacity limit: how much data it can learn or remember. When you have a fixed number of layers, number 
+of units, type of RNN cell (such as GRU), and you decided the encoder/decoder length, it is mainly the vocabulary size that impacts your model's ability to learn, not the number 
+of training samples. If you can manage not to let the vocabulary size to grow when you make use of more training data, it probably will work, but the reality is when you have 
+more training samples, the vocabulary size also increases very quickly, and you may then notice your model cannot accommodate that size of data at all. Feel free to open an issue 
+to discuss if you want.
+
 ## Training
 Other than Python 3.5.2, Numpy, and TensorFlow 1.3. You also need NLTK (Natural Language Toolkit) version 3.2.4, including its data.
 
-Training is straightforward. Remember to create a folder named Result under the Data folder first. Then just run the following commands:
+Before starting the long training process, you may want to try my trained model. You can download it [here](https://drive.google.com/file/d/0B1FHD9tf6GwaX19jOFNlVFFVMWs/view?usp=sharing).
+Unzip the .rar file, and copy the Result folder into the Data folder under your project root. A vocab.txt file is also included in case I update it without updating the trained model
+in the future.
+
+During the training, I really suggest you to try playing with a parameter (colocate_gradients_with_ops) in function tf.gradients. You can find a line like this in modelcreator.py:
+gradients = tf.gradients(self.train_loss, params). Set colocate_gradients_with_ops=True (adding it) and run the training for at least one epoch, note down the time, and then set
+it to False (or just remove it) and run the training for at least one epoch and see if the times required for one epoch are significantly different. It is shocking to me at least.
+
+Other than those, training is straightforward. Remember to create a folder named Result under the Data folder first. Then just run the following commands:
 
 ```bash
 cd chatbot
