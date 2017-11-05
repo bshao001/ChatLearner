@@ -84,7 +84,7 @@ class TokenizedData:
             self.stories = knbs.stories
             self.jokes = knbs.jokes
 
-    def get_training_batch(self, num_threads=2):
+    def get_training_batch(self, num_threads=4):
         assert self.training
 
         buffer_size = self.hparams.batch_size * 400
@@ -97,14 +97,12 @@ class TokenizedData:
         train_set = train_set.map(lambda src, tgt:
                                   (src, tf.concat(([self.hparams.bos_id], tgt), 0),
                                    tf.concat((tgt, [self.hparams.eos_id]), 0)),
-                                  num_threads=num_threads,
-                                  output_buffer_size=buffer_size)
+                                  num_parallel_calls=num_threads).prefetch(buffer_size)
 
         # Add in sequence lengths.
         train_set = train_set.map(lambda src, tgt_in, tgt_out:
                                   (src, tgt_in, tgt_out, tf.size(src), tf.size(tgt_in)),
-                                  num_threads=num_threads,
-                                  output_buffer_size=buffer_size)
+                                  num_parallel_calls=num_threads).prefetch(buffer_size)
 
         def batching_func(x):
             return x.padded_batch(
@@ -140,9 +138,10 @@ class TokenizedData:
             def reduce_func(unused_key, windowed_data):
                 return batching_func(windowed_data)
 
-            batched_dataset = train_set.group_by_window(key_func=key_func,
-                                                          reduce_func=reduce_func,
-                                                          window_size=self.hparams.batch_size)
+            batched_dataset = train_set.apply(
+                tf.contrib.data.group_by_window(key_func=key_func,
+                                                reduce_func=reduce_func,
+                                                window_size=self.hparams.batch_size))
         else:
             batched_dataset = batching_func(train_set)
 
@@ -209,22 +208,20 @@ class TokenizedData:
                     file_list.append(full_path_name)
 
             assert len(file_list) > 0
-            dataset = tf.contrib.data.TextLineDataset(file_list)
+            dataset = tf.data.TextLineDataset(file_list)
 
             src_dataset = dataset.filter(lambda line:
                                          tf.logical_and(tf.size(line) > 0,
                                                         tf.equal(tf.substr(line, 0, 2), tf.constant('Q:'))))
             src_dataset = src_dataset.map(lambda line:
-                                          tf.substr(line, 2, MAX_LEN),
-                                          output_buffer_size=4096)
+                                          tf.substr(line, 2, MAX_LEN)).prefetch(4096)
             tgt_dataset = dataset.filter(lambda line:
                                          tf.logical_and(tf.size(line) > 0,
                                                         tf.equal(tf.substr(line, 0, 2), tf.constant('A:'))))
             tgt_dataset = tgt_dataset.map(lambda line:
-                                          tf.substr(line, 2, MAX_LEN),
-                                          output_buffer_size=4096)
+                                          tf.substr(line, 2, MAX_LEN)).prefetch(4096)
 
-            src_tgt_dataset = tf.contrib.data.Dataset.zip((src_dataset, tgt_dataset))
+            src_tgt_dataset = tf.data.Dataset.zip((src_dataset, tgt_dataset))
             if fd == 1:
                 src_tgt_dataset = src_tgt_dataset.repeat(self.hparams.aug1_repeat_times)
             elif fd == 2:
@@ -240,38 +237,38 @@ class TokenizedData:
         # Split to characters
         self.text_set = self.text_set.map(lambda src, tgt:
                                           (tf.string_split([src], delimiter='').values,
-                                           tf.string_split([tgt], delimiter='').values),
-                                          output_buffer_size=buffer_size)
+                                           tf.string_split([tgt], delimiter='').values)
+                                          ).prefetch(buffer_size)
         # Convert all upper case characters to lower case characters
         self.text_set = self.text_set.map(lambda src, tgt:
-                                        (self.case_table.lookup(src), self.case_table.lookup(tgt)),
-                                        output_buffer_size=buffer_size)
+                                          (self.case_table.lookup(src), self.case_table.lookup(tgt))
+                                          ).prefetch(buffer_size)
         # Join characters back to strings
         self.text_set = self.text_set.map(lambda src, tgt:
-                                        (tf.reduce_join([src]), tf.reduce_join([tgt])),
-                                        output_buffer_size=buffer_size)
+                                          (tf.reduce_join([src]), tf.reduce_join([tgt]))
+                                          ).prefetch(buffer_size)
 
         # Split to word tokens
         self.text_set = self.text_set.map(lambda src, tgt:
-                                          (tf.string_split([src]).values, tf.string_split([tgt]).values),
-                                          output_buffer_size=buffer_size)
+                                          (tf.string_split([src]).values, tf.string_split([tgt]).values)
+                                          ).prefetch(buffer_size)
         # Remove sentences longer than the model allows
         self.text_set = self.text_set.map(lambda src, tgt:
-                                          (src[:self.src_max_len], tgt[:self.tgt_max_len]),
-                                          output_buffer_size=buffer_size)
+                                          (src[:self.src_max_len], tgt[:self.tgt_max_len])
+                                          ).prefetch(buffer_size)
 
         # Reverse the source sentence if applicable
         if self.hparams.source_reverse:
             self.text_set = self.text_set.map(lambda src, tgt:
-                                              (tf.reverse(src, axis=[0]), tgt),
-                                              output_buffer_size=buffer_size)
+                                              (tf.reverse(src, axis=[0]), tgt)
+                                              ).prefetch(buffer_size)
 
         # Convert the word strings to ids.  Word strings that are not in the vocab get
         # the lookup table's default_value integer.
         self.id_set = self.text_set.map(lambda src, tgt:
                                         (tf.cast(self.vocab_table.lookup(src), tf.int32),
-                                         tf.cast(self.vocab_table.lookup(tgt), tf.int32)),
-                                        output_buffer_size=buffer_size)
+                                         tf.cast(self.vocab_table.lookup(tgt), tf.int32))
+                                        ).prefetch(buffer_size)
 
 
 def check_vocab(vocab_file):
@@ -346,7 +343,7 @@ class BatchedInput(namedtuple("BatchedInput",
 #
 #         knbs_dir = os.path.join(PROJECT_ROOT, 'Data', 'KnowledgeBase')
 #         td = TokenizedData(corpus_dir=corp_dir, knbase_dir=knbs_dir, training=False)
-#         src_dataset = tf.contrib.data.Dataset.from_tensor_slices(tf.constant(new_q_list))
+#         src_dataset = tf.data.Dataset.from_tensor_slices(tf.constant(new_q_list))
 #         infer_batch = td.get_inference_batch(src_dataset)
 #
 #         with tf.Session() as sess:

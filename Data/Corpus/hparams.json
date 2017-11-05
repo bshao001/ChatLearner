@@ -1,6 +1,6 @@
 {
-  "aug1_repeat_times": 4,
-  "aug2_repeat_times": 6,
+  "aug1_repeat_times": 3,
+  "aug2_repeat_times": 5,
   "batch_size": 256,
   "batch_size_infer": 1,
   "beam_width": 5,

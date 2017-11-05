@@ -112,6 +112,15 @@ others
 _func_val_get_story_name_para1_snow_white
 _func_val_get_story_name_para1_the_three_little_pigs
 _func_val_get_story_name_para1_the_velveteen_rabbit
+something
+but
+want
+to
+hear
+just
+anything
+ok
+'ll
 how
 much
 _num1_
@@ -121,7 +130,6 @@ _func_val_get_number_plus_para1__num1__para2__num2_
 +
 =
 equals
-to
 if
 x
 y
@@ -176,7 +184,6 @@ florida
 speak
 chinese
 no
-but
 may
 learn
 future
@@ -211,7 +218,6 @@ so
 been
 've
 great
-ok
 school
 right
 currently
@@ -289,7 +295,6 @@ love
 help
 baby
 hate
-want
 life
 wording
 offensive
@@ -306,7 +311,6 @@ would
 improve
 an
 idiot
-something
 else
 evening
 r
@@ -324,7 +328,6 @@ man
 woman
 communicate
 each
-'ll
 saying
 )
 alphabet
@@ -613,7 +616,6 @@ drank
 poor
 busy
 forget
-anything
 calling
 missed
 phone
@@ -803,7 +805,6 @@ gets
 anywhere
 excellent
 glad
-hear
 di
 offend
 designed
@@ -933,7 +934,6 @@ noisily
 scared
 fortunately
 thing
-just
 power
 beauty
 fate
@@ -2463,6 +2463,7 @@ clears
 smells
 seems
 sunny
+beautiful
 beach
 weekend
 sounds
@@ -2607,6 +2608,18 @@ relax
 watching
 dancing
 sporting
+huh
+answers
+behalf
+…
+maiden
+monday
+tuesday
+wednesday
+eve
+thanksgiving
+merry
+christmas
 visited
 pronouncing
 plane
@@ -2825,7 +2838,6 @@ apologies
 join
 vote
 elections
-tuesday
 serious
 told
 slipped
@@ -2897,10 +2909,8 @@ o'clock
 switch
 10:00
 pencil
-monday
 2:00
 writing
-wednesday
 reschedule
 bother
 running
@@ -3653,7 +3663,6 @@ expression
 pal
 nuts
 helpin
-huh
 tellin
 goddam
 trim
@@ -3787,7 +3796,6 @@ eh
 concentrate
 studied
 burns
-beautiful
 resides
 evil
 fame
@@ -3949,7 +3957,6 @@ declination
 angle
 reverse
 unharmed
-answers
 pole
 files
 sad
@@ -4854,7 +4861,6 @@ hijacked
 loners
 'invisible
 'the
-merry
 reception
 pea
 latest
@@ -5350,7 +5356,6 @@ heck
 webber
 adam
 suitcase
-eve
 supplies
 starving
 dandy
@@ -5878,7 +5883,6 @@ edna
 diplomas
 apples
 pumpkins
-christmas
 burma
 himalayas
 hump
@@ -9112,7 +9116,6 @@ clipping
 toenails
 boats
 maynard
-behalf
 trees
 drew
 stadium
@@ -14797,7 +14800,6 @@ echoes
 spear
 fairest
 defeats
-maiden
 chalice
 formulas
 misuse
@@ -16858,7 +16860,6 @@ deserts
 solves
 wakin
 disposable
-thanksgiving
 'spect
 'cuz
 cornelius

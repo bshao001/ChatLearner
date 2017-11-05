@@ -1,12 +1,7 @@
-Hi
 Hi!
-Good morning
 Good morning!
-Good afternoon
 Good afternoon!
-Good evening
 Good evening!
-Good night
 Good night!
 How are you?
 How are you doing?
@@ -14,6 +9,7 @@ What is your name?
 What's your name?
 May I have your name?
 How old are you?
+What's your age?
 When were you born?
 Are you a boy or a girl?
 Are you a man or a woman?
@@ -189,6 +185,8 @@ So rude!
 ?
 !
 .
+What is your definition of cheating?
+Have you ever cheated?
 Can you describe your best memory?
 What is your best memory?
 What is your worst memory?
@@ -285,8 +283,6 @@ Can a bird swim?
 Tell me something
 Tell me something.
 Tell me something!
-Tell me a story
-Tell me a story, please.
 Once upon a time...
 How much is two plus two?
 Do you prefer blue food or green food?
@@ -374,6 +370,8 @@ What are you doing?
 What is the deepest spot on the world?
 Do you like Mexican food or Indian food?
 Who are you crazy about?
+Do you enjoy the holiday?
+Do you do something different during this holiday?
 A man
 A dog
 A table
@@ -393,8 +391,10 @@ Lol
 More
 More.
 More!
+Do you think you are smarter than human being?
 What is the capital of France?
 Where do you want to go?
 You surprised me.
 I am curious.
 I am feeling curious.
+I am feeling lucky.

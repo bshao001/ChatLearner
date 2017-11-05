@@ -1,0 +1,1626 @@
+Q: Could you help me make a plane reservation ?
+A: I would be happy to help you . Where do you plan on going ?
+Q: I am going to go to Hawaii .
+A: For that destination , you may leave from Los Angeles or Burbank Airport . Which would you prefer ?
+Q: I think that I would rather leave from Los Angeles Airport .
+A: Would you prefer a morning or afternoon departure ?
+Q: I need to leave in the morning .
+A: Fine . On your return flight , do you have a preference as to morning or afternoon ?
+Q: I would prefer to return in the afternoon .
+A: I have booked you on your flight at a great rate . Here are your tickets .
+===
+Q: I need to make a plane reservation .
+A: That is what I am here for . What is your destination ?
+Q: I will be traveling to Aspen , Colorado .
+A: Would you prefer to leave from Los Angeles or Burbank Airport ?
+Q: Burbank Airport would be best for me .
+A: You can leave in the morning of afternoon from that airport . Do you have a preference ?
+Q: I can only take a flight that leaves in the afternoon .
+A: I can book that for you right now . When you return , would you prefer morning or afternoon ?
+Q: I think that I would like a morning return flight better .
+A: I was able to book your flight , and I will print your tickets right now . Have a great trip !
+===
+Q: I am planning a trip and need help making my airline reservation .
+A: Sure . Where are you traveling to on your trip ?
+Q: I will be vacationing in Oregon .
+A: You have an option of departing from Los Angeles or Burbank Airport . What is your preference ?
+Q: I live closer to Los Angeles Airport , so that would be the best choice .
+A: Does it matter to you if you leave in the morning or afternoon ?
+Q: I can leave at either morning or afternoon .
+A: I 'll put you on a morning flight . Is a morning or afternoon return flight preferable for you ?
+Q: Either morning or afternoon would work for me .
+A: I 'll give you an afternoon flight . Here are your tickets .
+===
+Q: Have you ever booked a flight online ?
+A: I have booked airline tickets online many times . It has worked out great for me !
+Q: How do you book airline tickets online ?
+A: The best way is to go to a website like Travelocity or Expedia . They can help you find the best price .
+Q: What information do I need to provide to book a flight ?
+A: You need to know where you are going and when you want to travel .
+Q: How do I get the cheapest rate for the tickets ?
+A: Usually you get the best price by having some flexibility in your travel time and dates .
+Q: Can I fly on different airlines ?
+A: You can choose the airline you prefer to fly with or let the website find you the best deal .
+===
+Q: Do you think it is a good idea to book airline tickets online ?
+A: I think that booking airline tickets online is the only way to go .
+Q: Can you help me figure out how to book airline tickets online ?
+A: You can find the best price by using a website like Travelocity or Expedia .
+Q: What do I need to know to book a flight ?
+A: You will need to type in the dates that you wish to travel and where you are going .
+Q: How do I get the best price for the tickets ?
+A: If you have some flexibility in when you can travel , that will usually get you a better rate .
+Q: Can I choose which airline I fly with ?
+A: These sites deal with a lot of different airlines , so you can choose whichever one you prefer .
+===
+Q: Is booking airline tickets online a good way to go ?
+A: I have had really good luck booking airline tickets online .
+Q: How do you book airline tickets online ?
+A: Usually you can find the best price by using a website like Travelocity or Expedia .
+Q: What are they going to ask me to book a flight ?
+A: They will ask you when you will be traveling and what your destination will be .
+Q: Is there anything special I can do to get the lowest price ?
+A: You get a better rate if you are n't too particular about what time you travel .
+Q: Do you have to fly with a particular airline ?
+A: The travel sites deal with many different airlines . It is always up to you to choose who you will fly with .
+===
+Q: I would like to book a flight .
+A: I can help you with that . Where are you traveling to ?
+Q: I am traveling to Singapore .
+A: What date will you be traveling ?
+Q: I want to fly on June 14th .
+A: Do you want to fly out of Los Angeles International or Burbank Airport ?
+Q: I would like to fly out of Los Angeles International Airport .
+A: Would you prefer a morning or an afternoon flight ?
+Q: I would rather fly in the morning .
+A: Well , I have you booked on a flight that will fit your schedule . The tickets will arrive by mail in a few days .
+===
+Q: I want to buy a plane ticket .
+A: I can help you make your reservation . What is your destination ?
+Q: My final destination is Sydney , Australia .
+A: What is your travel date ?
+Q: I am making a reservation for December 12th .
+A: Would you prefer to leave from Los Angeles International or Burbank Airport ?
+Q: I want to fly out of Burbank Airport .
+A: Would you rather fly in the morning or later in the day ?
+Q: I need an afternoon flight .
+A: I have you booked on a flight in the afternoon . Your tickets will arrive in the mail within 3 days .
+===
+Q: I need to make a plane reservation .
+A: We can book your trip right now . What city are you flying to ?
+Q: I need to fly to New York City .
+A: What date would you like me to book this plane ticket for ?
+Q: I need a flight on July 4th .
+A: You can fly out of Los Angeles International or Burbank Airport . Which do you prefer ?
+Q: I will fly out of whatever airport has the cheapest price .
+A: If you have a choice , what time of day would you prefer to fly ?
+Q: I would like to be booked on the least expensive flight .
+A: I was able to find an inexpensive flight for you . We are sending you your tickets in the mail .
+===
+Q: I would like to make a hotel reservation .
+A: What day will you be arriving ?
+Q: I will be arriving on May 14th .
+A: How long will you be staying ?
+Q: I need the room for 3 nights .
+A: How many people will be staying in the room ?
+Q: I will be staying in the room alone .
+A: Would you like a smoking or nonsmoking room ?
+Q: We need a nonsmoking room .
+A: We have booked a room for you . Please be sure to arrive before 4:00 on your check-in date .
+===
+Q: I would like to book a reservation at your hotel .
+A: What date would you like to make that reservation for ?
+Q: I need the reservation for May 14th .
+A: How many days do you need the reservation for ?
+Q: I will be staying for 3 nights .
+A: Is that a single room , or will there be more guests ?
+Q: I need a double room .
+A: We have smoking and nonsmoking rooms . Which do you prefer ?
+Q: We require a smoking room .
+A: Your room is booked . You must arrive before 4:00 the day you are to check in .
+===
+Q: I need to book a room at your hotel .
+A: On what day will you be beginning your stay ?
+Q: Our stay will be beginning on May 14th .
+A: Can you tell me how many days you need the room for ?
+Q: Please book the room for 3 nights .
+A: Would you like a single or double room ?
+Q: I need a room for 3 people .
+A: Do you need a nonsmoking room ?
+Q: We must have a nonsmoking room .
+A: We have reserved your room . To secure the room , you must pre-pay with a credit card .
+===
+Q: I was wondering if you could help me use the Student Job Center .
+A: There are many ways ; what kind of job would you like ?
+Q: I want to work in a restaurant .
+A: Fine ! Will you need part-time or full-time work ?
+Q: I want to work part-time .
+A: Fine , the two best ways are to use our local listings binders over there or you can use the computers with the Internet job listing sites . See them over there ?
+Q: Yes , I know what to do with those .
+A: Well , in addition , you can schedule an appointment with a job counselor on this list . If you would like to do that , sign here , OK ?
+Q: Yes , I will sign there and I hope that would help .
+A: Fine , well the job search tools are all here for you to use . Feel free to look around and use what works best for you . Have fun with it !
+===
+Q: Could you help me figure out how to look for a job ?
+A: We have lots of options , what type of job do you need ?
+Q: I want to work in an office .
+A: Do you want to work part-time or full-time ?
+Q: I want to work full-time .
+A: We have binders with local job listings or you can make use of the computers . OK ?
+Q: I am confused a bit but I am sure that I can figure it out .
+A: If you make an appointment with a job counselor , they can also provide you with a lot of information . Do you want to see a counselor ?
+Q: No , I do n't think I need to see a counselor . I should be able to figure out everything by myself .
+A: Well , you know that this job center is here for your use , so help yourself . Good luck !
+===
+Q: What is the best way to find a job here ?
+A: There are different ways of conducting a job search . Do you know what you want to do ?
+Q: I do n't know how to perform the job search .
+A: Can you work part-time or full-time ?
+Q: It does n't matter right now , either one would be OK .
+A: The binders have current local jobs listings and the computer jobs lists are good too . Understand ?
+Q: OK , I 'll go check it out . Thank you !
+A: Schedule an appointment with a counselor and you can get more information . Would that work for you ?
+Q: I am not sure . But I might try to see a counselor and see if that helps .
+A: Everything that you need for a successful job search is here . Happy job searching !
+===
+Q: Could you help me try and figure out how to get ready for my job interview ?
+A: The most important thing to do is to make sure you know the company and what services or products it provides . Do you know all about them ?
+Q: Yes , I pretty much understand the company .
+A: Well , after you 've done your research , you have to decide whether the company is casual or formal . Have you decided what they are yet ?
+Q: Yes , I 've been observing them .
+A: When you are choosing what to wear , keep all of that in mind . Have you chosen what to wear ?
+Q: I already have something to wear .
+A: I would always be ready to go shopping with you ! Should we talk about other basics ?
+Q: I am ready to think of other things for the interview .
+A: You need to make sure you arrive on time , smile , be pleasant and friendly , look the person in the eye and answer all questions to the best of your ability . You 'll do great !
+===
+Q: I am not sure what to do to get ready for my job interview .
+A: Make sure that you understand the company . Do you understand what it is that they do ?
+Q: No , I probably need to do some more research .
+A: When you 've finished your research it will help you figure out whether your company is rigid in philosophy or kind of more relaxed . Does that make sense ?
+Q: I think that their attitude is rather casual .
+A: So all of that information will help you to pick out what to wear . Do you have something to wear ?
+Q: I have absolutely nothing so far . I might need to buy something .
+A: I could go shopping with you sometime if you need it , but can we talk about other basics ?
+Q: Yes , where should we go from here ?
+A: Focus on being relaxed and open , do n't forget to smile and shake hands and be genuinely interested in what their company is about . I 'm sure you 'll do well .
+===
+Q: What should I do to prepare for a job interview ?
+A: An understanding of the basic workings of a company and the services or goods it provides is essential . Do you have that ?
+Q: Sort of , but I could know more , I guess .
+A: With that understanding , you can figure out what your company is looking for in terms of basic attitude . Right ?
+Q: I think that they are a very formal company .
+A: What you wear is important . So keep in mind what is suitable for the company and type of work you will be doing . Need help ?
+Q: I need a lot of help in this area , especially how to dress properly .
+A: In addition to clothes we need to think about other basics , OK ?
+Q: Yes , what else should we think of for an interview ?
+A: Be prompt . Do n't forget to be friendly and interested . Listen carefully and listen to what they are really asking you . You 'll be a hit !
+===
+Q: Good morning , I am here for my interview .
+A: Hello , nice to meet you . Have any trouble finding the place ?
+Q: No problem . It is very easy to get here for the interview .
+A: So why do n't you tell me why you are interested in changing positions ?
+Q: Unfortunately , our company is shutting down due to the economy .
+A: What would you consider your strengths ?
+Q: I am probably best at researching for marketing purposes .
+A: What is your biggest weakness ?
+Q: I tend to get bored easily and so love to keep myself challenged .
+A: We have a position where that could work out well .
+===
+Q: Thank you for taking the time to interview me .
+A: Hi there , I 'm Papaya , the owner of this company . Did you find your way here OK ?
+Q: Your assistant gave wonderful directions .
+A: Why are you switching jobs at this point in your career ?
+Q: Our company is moving overseas and I wish to stay in the United States .
+A: What are you best at ?
+Q: I am good at organizing systems that have been having problems .
+A: What is your biggest challenge in terms of skills ?
+Q: I do n't like to sit around and so like to always find things to do to keep myself busy .
+A: That is good to hear !
+===
+Q: Good afternoon . Thank you for the opportunity to interview for this position .
+A: Hello , have a seat . I am assuming you found your way here with no trouble ?
+Q: Actually , I am very familiar with the area so there was absolutely no problem .
+A: I am curious as to why you want to leave your current employer .
+Q: I am interested in switching fields .
+A: Do you feel that you are exceptionally good at anything in particular ?
+Q: I am good at pulling together teams of people to accomplish a task .
+A: What are you not good at ?
+Q: I am impatient with myself at times and am hard on myself .
+A: We appreciate hearing that about you !
+===
+Q: May I ask you how much this position pays per year ?
+A: This job pays sixty-five thousand dollars per year .
+Q: What kind of benefits does this job have ?
+A: This job provides full medical , dental , and disability .
+Q: What type of vacation time do we get ?
+A: You get 3 weeks paid vacation that you may use as you wish .
+Q: Do we have a 401K ?
+A: We offer a 401K with some matching funds available depending on length of service .
+Q: What type of professional development do you offer ?
+A: We provide up-to-date training on state of the art equipment .
+Q: Where do I sign up for my benefits package ?
+A: Down the hall . I 'll show you when the interview is over .
+===
+Q: What is the annual salary for this job ?
+A: The annual salary is sixty-five thousand dollars per year .
+Q: What does the benefits package include ?
+A: This job pays for half of your medical , dental , and disability .
+Q: Do we get paid time off ?
+A: You have a total of 21 days paid time off which can be used for vacation , personal , or sick leave .
+Q: How about the retirement plan ?
+A: We still offer a traditional retirement plan that pays out if you stay with the company for 5 years or more .
+Q: Can I get company provided specialized training ?
+A: We offer full tuition reimbursement for job related classes .
+Q: Where is the benefits office ?
+A: It 's on the second floor in Suite 201 .
+===
+Q: What will I earn per year in this job ?
+A: You can expect to earn sixty-five thousand dollars per year .
+Q: Are we covered by a good benefits plan ?
+A: The job has a menu plan where you are given a fixed amount of money and you choose what you most need in terms of benefits .
+Q: Can we take personal days off ?
+A: You get 2 weeks paid vacation and an additional 10 days of sick leave .
+Q: What do you offer in terms of a retirement plan ?
+A: We do not currently offer any retirement plan .
+Q: Do you reimburse for education that relates to my job ?
+A: We allow several weeks release time each year for our employees to attend job-related seminars and conferences .
+Q: Do you have a benefits brochure ?
+A: Whoa ! Who said you got the job ?
+===
+Q: Excuse me for being late to work .
+A: Where have you been ?
+Q: My car broke down .
+A: That 's too bad . Please try to fix it so that it does n't happen again .
+Q: Yes , I 'll work on it .
+A: Thank you , have a seat . We are working on the new project .
+Q: Great ! Fill me in for that project .
+A: Let 's take a look at the Project .
+Q: I do n't understand the projected revenues .
+A: Let 's take another look at it for those of you who do n't understand .
+===
+Q: I am sorry I am so late to work .
+A: What was the problem ?
+Q: I lost track of time .
+A: Things happen ; make sure it does n't become a habit .
+Q: It wo n't happen again . Let 's get back to work .
+A: All right , please take this message and call this client .
+Q: No problem . I will make the phone call .
+A: Now does everyone understand the diagram on the board ?
+Q: Yes , I understand the numbers .
+A: I will explain it again ; especially for those of you who arrived late .
+===
+Q: I lost track of time , am I late ?
+A: Yes . What kept you from arriving on time ?
+Q: My friend needed me to help him .
+A: I realize that everyone has emergencies ; just get here on time from now on .
+Q: My apologies . I will make up the time .
+A: I appreciate you saying that and would like you to join us in our meeting .
+Q: Sure , I 'll sit right here .
+A: Wonderful , does anyone have any questions about this project ?
+Q: I am confused about the projected revenues .
+A: I 'm glad that some of you get it , but let 's go over it once more .
+===
+Q: Are you going to vote ?
+A: Yes , are you ?
+Q: Yes , but what day are the elections ?
+A: You do n't know what day the elections are ?
+Q: That 's why I 'm asking you .
+A: They 're this coming Tuesday .
+Q: Really ?
+A: Yes , I 'm serious .
+Q: Good thing you told me .
+A: I ca n't believe you did n't know that .
+Q: It slipped my mind .
+A: You should watch the news more often .
+===
+Q: Will you be voting ?
+A: I will . Will you be voting ?
+Q: When is the election ?
+A: You do n't know that ?
+Q: I just do n't know when .
+A: It 's this Tuesday .
+Q: You ca n't be serious .
+A: Why would I joke ?
+Q: Thanks for telling me .
+A: You should 've known already .
+Q: I forgot the time for voting .
+A: As long as you go vote , that 's all that matters .
+===
+Q: Are you going to vote ?
+A: Of course ! Are you ?
+Q: I plan to , but what day is the election ?
+A: You should know that .
+Q: Can you just tell me about the election time ?
+A: Yes , the election is this Tuesday .
+Q: Are you serious ?
+A: I 'm not kidding .
+Q: It 's a good thing I asked you .
+A: That should 've been something you knew already .
+Q: I could n't remember the date for voting .
+A: Whatever . Just make sure you go vote .
+===
+Q: Will you be voting this year ?
+A: Of course ! Will you ?
+Q: This is going to be my first time voting .
+A: Are you serious ?
+Q: I 'm not sure what I 'm doing .
+A: Voting is easy .
+Q: I do n't know anything about the bills or laws they 're trying to pass .
+A: The ballot gives you all that information .
+Q: Nobody told me that before .
+A: You have nothing to worry about .
+Q: I 'm so glad you told me that .
+A: Good luck on your first election .
+===
+Q: Do you plan on voting this Tuesday ?
+A: Yes . What about you ?
+Q: I already voted .
+A: What do you mean you already voted ?
+Q: I had to mail in an absentee ballot .
+A: Why 'd you have to do that ?
+Q: I 'm not going to be able to vote this Tuesday .
+A: Why did you vote beforehand ?
+Q: I have to work this Tuesday .
+A: You can always go to work late .
+Q: That same morning I have some business to take care of .
+A: Oh , I understand .
+===
+Q: What are you collecting donations for ?
+A: We 're trying to raise money for the campaigns .
+Q: How much are you planning on raising ?
+A: As much as possible .
+Q: What kind of fundraisers are you doing ?
+A: We are going door to door .
+Q: You should try actual fundraisers , too .
+A: What else can we do ?
+Q: Try having a car wash or selling candy .
+A: I did n't think of that .
+===
+Q: What are you getting donations for ?
+A: We 're getting donations for the campaigns .
+Q: How much money are you looking to make ?
+A: As much as we can .
+Q: Are you doing different fundraisers ?
+A: We 're just going door to door .
+Q: You should do something else .
+A: Do you have any suggestions ?
+Q: Try a car wash and selling candy .
+A: That is a good idea .
+===
+Q: Donations for what ?
+A: It 's for the campaigns .
+Q: How much money are you trying to raise ?
+A: It does n't matter how much .
+Q: What are you doing to raise money ?
+A: We go door to door asking for donations .
+Q: You should try other fundraisers .
+A: Like what ?
+Q: You can always wash cars and sell candy .
+A: That 's a great idea .
+===
+Q: It 's very nice to meet you .
+A: Nice meeting you , too .
+Q: I ca n't believe I 'm actually speaking to a candidate .
+A: You can ask me questions , if you 'd like .
+Q: I want to ask you what your policy is on gay marriage .
+A: Everyone should be able to love who they want .
+Q: Would you make gay marriage legal ?
+A: I sure would .
+Q: I know a lot of people would n't agree with that .
+A: That 's not my problem .
+Q: I think that is really cool of you .
+A: I 'm glad to hear that .
+===
+Q: Nice to meet you .
+A: It 's very nice meeting you , too .
+Q: I 'm excited to speak to a candidate .
+A: What would you like to ask me ?
+Q: What is your stand on gay marriage ?
+A: I feel that people can love who they want .
+Q: So , would you make gay marriage legal ?
+A: Of course !
+Q: I 'm sure plenty of people wo n't like that .
+A: I ca n't help that .
+Q: I like that .
+A: I hope so .
+===
+Q: It 's nice meeting you .
+A: It 's nice to meet you , too .
+Q: I am happy to be speaking to a presidential candidate .
+A: Would you like to ask me anything ?
+Q: What do you feel about gay marriage ?
+A: I think everyone has the right to love who they want .
+Q: Would you legalize gay marriage ?
+A: Yes , I would .
+Q: Many people wo n't like that .
+A: I 'm sure they wo n't , but that 's my view on gay marriage .
+Q: I really like you .
+A: I really appreciate that .
+===
+Q: I would like to purchase some health insurance .
+A: Have you ever purchased health insurance before ?
+Q: I have health insurance now , but I want to look into other choices .
+A: Do you know if you are interested in an HMO or a PPO ?
+Q: Could you explain the difference between HMO and PPO ?
+A: To clarify it for you , with a PPO you pay more but you get to choose your own doctor .
+Q: When I pay for a service , is the payment the same for a PPO or HMO ?
+A: The payments are quite a bit higher for the PPO , but you can go anywhere you like .
+Q: How much will an HMO cost me per month ?
+A: Please go to our website and fill in the questionnaire . Once we have all of your information , we can give you a quote .
+===
+Q: I am calling to purchase health insurance .
+A: Do you have health insurance now ?
+Q: I was on my parents ' policy , but I need to start buying my own .
+A: You can purchase an HMO or a PPO . Do you know what you want ?
+Q: I do n't know which I want , an HMO or a PPO .
+A: Let me explain it to you . An HMO is a little cheaper , but you can only choose certain doctors .
+Q: When I go to the doctor , do I pay the same out-of-pocket expenses for a PPO ?
+A: The payments are a little lower for an HMO as long as you go to their doctors .
+Q: How much will a PPO cost me per month ?
+A: We need to factor in many things . Why do n't you come in , and we will have you fill out a questionnaire .
+===
+Q: I need information on purchasing health insurance .
+A: Is this the first time you have had health insurance ?
+Q: This is my first time buying health insurance .
+A: You have a choice of HMO or PPO . Do you understand the difference ?
+Q: I am not sure what HMO and PPO are .
+A: Just so you understand completely : An HMO is a little cheaper , but you have limited choices of which doctor you choose .
+Q: If I need to use my insurance , are the payments the same for a PPO and HMO ?
+A: By going to the providers on the HMO list , you save money in out-of-pocket expenses .
+Q: Can you give me a comparison between a PPO and an HMO ?
+A: We can mail you a questionnaire and when we have all of your information , we will mail you a quote .
+===
+Q: Good morning , is this Papaya ?
+A: You are speaking with Papaya . How can I help you ?
+Q: Papaya , this is Malia , and I need to call in sick today .
+A: What seems to be the problem ?
+Q: I went hiking and have terrible poison oak .
+A: When did you get that ?
+Q: I think I got it on Saturday , but it just showed up today .
+A: What are you doing for it ?
+Q: The doctor prescribed an ointment and gave me a shot .
+A: Good . You probably should be much better by tomorrow .
+===
+Q: May I speak to Papaya , please ?
+A: This is Papaya you are speaking with . What can I do for you ?
+Q: Hi , Papaya , this is Malia , and I will not be coming to work today .
+A: What is wrong with you ?
+Q: I have really bad poison oak and ca n't stop itching .
+A: How long have you had it ?
+Q: I 've had it a few days , but the rash really got bad last night .
+A: How have you been treating it ?
+Q: I have some lotion that the doctor gave me , as well as an antihistamine .
+A: That should work . I 'll see you tomorrow when you return to work .
+===
+Q: I would like to speak with Papaya .
+A: This is Papaya . How may I help you ?
+Q: Papaya , this is Malia , and I am afraid that I am feeling a bit under the weather .
+A: Do you know what the problem is ?
+Q: I have a horrible rash from poison oak .
+A: Have you had it a long time ?
+Q: The doctor said that I probably have had it a few days .
+A: Have you been using anything for it ?
+Q: I bought some over-the-counter lotion , and I am taking an antihistamine .
+A: That will probably take care of your symptoms . I 'll see you tomorrow .
+===
+Q: I have a doctor 's appointment scheduled with Dr. Smith , and I need to change it .
+A: What day did you have it scheduled for ?
+Q: My appointment was on Tuesday .
+A: What time was it scheduled for ?
+Q: It was for two o'clock in the afternoon .
+A: I see your appointment . What day would you like to switch to ?
+Q: I would like to switch it to next Friday .
+A: What time would you like ?
+Q: I would like to come in at 10:00 in the morning .
+A: Fine , I will pencil that in right now . We will see you then .
+===
+Q: I scheduled an appointment with Dr. Smith , and I ca n't make it on that day .
+A: What day was your appointment on ?
+Q: My appointment was on Monday .
+A: What time had you chosen ?
+Q: It was for 10:00 in the morning .
+A: I am looking at your appointment right now . What day would you prefer ?
+Q: I would prefer next Thursday .
+A: What time would be best for you ?
+Q: I want to come in at 2:00 in the afternoon .
+A: I am writing you down for that time . We look forward to seeing you .
+===
+Q: Good morning , I made an appointment with Dr. Smith , but I have to change it .
+A: When you made your appointment , what day did you choose ?
+Q: My appointment was on Wednesday .
+A: At what time was that appointment ?
+Q: It was for 4:00 in the afternoon .
+A: I can see the appointment that you had . What day do you need to change to ?
+Q: I want to change to next Tuesday .
+A: What time would you prefer ?
+Q: I would prefer three o'clock in the afternoon .
+A: I will put you down for that time . Thank you for calling to reschedule .
+===
+Q: Sorry to bother you , but I was wondering if you could drive me to the emergency room .
+A: Of course . What is the problem ?
+Q: I am running a really high fever of 105 degrees , and I have a rash on my stomach .
+A: If you can , go and unlock the back door , so I can get in when I get there if you fall asleep .
+Q: I can do that when I get off of the phone .
+A: Do you know where your driver 's license and insurance card are ?
+Q: I already had them out before I called you .
+A: Where is your nearest emergency room ?
+Q: It 's just a few blocks away .
+A: Fine , I am on my way . I 'll be there in about five minutes .
+===
+Q: I hate to call you this late at night , but could you possibly help me get to the emergency room ?
+A: We will come right over . What happened ?
+Q: My temperature went up to 105 , and I have a rash !
+A: Make sure that someone unlocks the back door , so I can get in if you fall asleep before I get there .
+Q: I will do that in a minute , and make sure you can get in .
+A: Also make sure that you have your insurance card and driver 's license where we can grab them .
+Q: I know right where they both are .
+A: Is there an emergency room near you ?
+Q: It is on the other side of town , next to city hall .
+A: I am on my way . Give me ten minutes and I 'll get to you .
+===
+Q: I really need your help and want to know if you could drive me to the emergency room .
+A: I will take you there right away . What is wrong ?
+Q: I woke up with a rash and a temperature of 105 !
+A: I want to be able to get to you when I get there . If you can unlock the back door right now , that would be great .
+Q: I will make sure that I do that before you get here .
+A: Also , make sure that we have your driver 's license and insurance card before we leave for the emergency room .
+Q: I am getting them out while I am speaking to you .
+A: Do you know where your nearest emergency room is ?
+Q: It is near the bridge that crosses over the river .
+A: I am driving to you even as we speak . Hang in there !
+===
+Q: I 'm calling today about a bill that I never received .
+A: Can you tell me which credit card it was for ?
+Q: It was for my Master Card .
+A: You should 've gotten that bill two weeks ago .
+Q: I have n't got it in the mail yet .
+A: The computer is showing that all bills have been mailed .
+Q: What am I supposed to do about my bill then ?
+A: Maybe you should call your post office .
+Q: But if it 's their mistake , can I get an extension on my bill payment ?
+A: Yes , but you will need to send us proof of their mistake .
+Q: Thank you very much for your help .
+A: No problem . Enjoy the rest of your day .
+===
+Q: I have n't received my credit card bill yet .
+A: Which credit card are you speaking of ?
+Q: My Master Card .
+A: We sent that bill out a couple of weeks ago .
+Q: I never got it .
+A: Your bill was mailed already .
+Q: What am I going to do since I have n't received the bill ?
+A: If you have n't gotten it yet , then you should probably take that up with your post office .
+Q: Can I get an extension on my bill if it does happen to be the post office 's fault ?
+A: If that 's the case , you will need to provide proof of their mistake .
+Q: Thanks for everything .
+A: Do n't mention it . Call back if you have any more problems .
+===
+Q: I was inquiring about a bill that I never got .
+A: Which credit card was the bill for ?
+Q: The bill was for my Master Card .
+A: That bill should have been mailed about two weeks ago .
+Q: It never came in the mail .
+A: My computer shows that it has already been mailed .
+Q: I have not gotten my bill , so what should I do about that ?
+A: You should try contacting your post office .
+Q: If it is the post office 's fault , may I have an extension on my bill ?
+A: You 'll have to prove it was their error ; then you can get an extension .
+Q: Thank you for all your help .
+A: You are very welcome . Have a good day .
+===
+Q: There 's a problem with my credit card .
+A: Tell me what the problem is .
+Q: A charge came up on my bill that I did n't make .
+A: What was the charge for ?
+Q: The charge was for a $ 350 purse , but I did not buy it .
+A: Are you sure that you did n't make that purchase ?
+Q: I would know if I bought something that expensive .
+A: I apologize . What day was this purchase made ?
+Q: It was bought on November 12th at 3:15 pm , while I was at work .
+A: All right , we 'll do an investigation .
+Q: Until this investigation is finished , will I have to pay for the charge ?
+A: No , you do n't . We 'll take care of it .
+===
+Q: I have a problem with my credit card .
+A: What 's wrong with it ?
+Q: There is a charge on my card that I did n't make .
+A: Can you tell me what the charge was ?
+Q: It 's for a purse that cost $ 350 .
+A: Are you positive that you did n't buy the purse ?
+Q: I ca n't even afford a purse that expensive .
+A: I 'm very sorry . When was this purchase made ?
+Q: I was at work , but the purchase was made at 3:15 on November 12th .
+A: We 're going to investigate this claim .
+Q: Do I have to pay for this charge ?
+A: You wo n't have to pay for anything .
+===
+Q: There is something wrong with my credit card .
+A: What 's the problem ?
+Q: There is a charge on here that I never made .
+A: What charge was made ?
+Q: It was a charge for a $ 350 purse that I never bought .
+A: You did n't make this purchase ?
+Q: I think I would remember if I made a purchase that large .
+A: Sorry . When was this purse purchased ?
+Q: It was purchased on the 12th of November at 3:15 pm , but I was at work .
+A: We 'll do an investigation and get to the bottom of this .
+Q: In the meantime , do I have to pay for this charge ?
+A: No . We 'll take care of everything .
+===
+Q: I would like to order cable .
+A: Sure , what package do you want ?
+Q: What kinds of packages do you offer ?
+A: We have all kinds of movie channel packages .
+Q: What else do you have ?
+A: There is a package for all sports channels .
+Q: Do you have a package that includes all the movie channels with the basic channels also ?
+A: Yes , we do offer that package .
+Q: I want that .
+A: Do you want anything else ?
+Q: No , but is it possible for me to add channels later ?
+A: You can always get rid of channels or add some later .
+===
+Q: I want to get some cable .
+A: Do you know what package you want to get ?
+Q: What packages do you have ?
+A: We have movie channel packages .
+Q: What else have you got ?
+A: You can get the sports package .
+Q: Is there a package with basic and movie channels ?
+A: We have that package .
+Q: Let me get that package .
+A: Is there anything else you would like ?
+Q: That 's everything , but can I add channels later ?
+A: You will be able to add or get rid of channels another day .
+===
+Q: May I order some cable from you today ?
+A: Okay , what package would you like to order ?
+Q: I 'm not sure of what packages you offer .
+A: We offer packages with all the movie channels .
+Q: Are there any other packages ?
+A: We also have packages with all the sports channels .
+Q: I want a package that has the basic and movie channels .
+A: We have that available .
+Q: I would like to get that .
+A: Would you like anything else with your package ?
+Q: That 's it , but will I be able to add more channels at another time ?
+A: Yes , you can add or get rid of channels later on if you would like .
+===
+Q: I would like to order some internet today .
+A: What kind would you like ?
+Q: What kind of internet is there ?
+A: You can get DSL or dial-up .
+Q: Which of those two is best ?
+A: I would recommend DSL .
+Q: Is that one better ?
+A: It 's better because it does n't tie up your phone .
+Q: What do you mean by that ?
+A: DSL is n't connected through your phone line , but dial-up is .
+Q: So then I ca n't use my phone if I 'm on the internet ?
+A: That 's correct . With DSL you can do both .
+===
+Q: I need to get internet .
+A: Which kind of internet connection do you want to get ?
+Q: What kind of internet can I get ?
+A: There is dial-up or DSL .
+Q: Which one do you feel is best ?
+A: I would get DSL if I were you .
+Q: DSL is better than dial-up ?
+A: It 's the best choice ; plus , it wo n't tie up your phone line .
+Q: I 'm not sure what that means .
+A: Dial-up is connected through your phone , unlike DSL .
+Q: That 'll make it impossible for me to use .
+A: Exactly . With DSL you do n't have that problem .
+===
+Q: I 'd like to have internet for my computer .
+A: Do you know what kind of internet you would like to get ?
+Q: What are my options for the internet ?
+A: You can either get dial-up or DSL .
+Q: Which one would you recommend ?
+A: DSL is the best choice .
+Q: Why is DSL better ?
+A: It 's a lot better because it does n't tie up your phone line .
+Q: What exactly does that mean ?
+A: Well , with dial-up your internet is connected by your phone line .
+Q: That means that I ca n't use my phone and the internet at the same time , right ?
+A: That 's right . You wo n't have that problem with DSL .
+===
+Q: I am calling about my cable service .
+A: What 's the problem ?
+Q: For the past week my cable has n't been working .
+A: I apologize , but the cable has been down lately .
+Q: Do you know when it is going to start working again ?
+A: Give it a couple days , and it should be back on .
+Q: Will I still have to pay for the cable while it 's not working ?
+A: Since it 's not working , I 'm going to give you a credit .
+Q: So I do n't have to pay anything ?
+A: You wo n't pay anything until your service starts working again .
+Q: Okay , thank you very much for your help .
+A: No problem . Thank you for being so understanding .
+===
+Q: I have a question about my cable .
+A: What do you need ?
+Q: I have n't been able to use my cable service for the past week .
+A: Right now the cable is n't working .
+Q: Could you tell me when the cable will be back on ?
+A: The cable should be running again in a couple of days .
+Q: In the meantime , do I still have to pay for the cable ?
+A: We 'll just give you a credit for the inconvenience .
+Q: Does that mean I wo n't have to pay for it ?
+A: It 'll be free until it comes back on .
+Q: Thanks , I appreciate your help .
+A: Thank you for all your patience .
+===
+Q: I have a problem with my cable .
+A: What about it ?
+Q: My cable has been out for the past week or so .
+A: The cable is down right now . I am very sorry .
+Q: When will it be working again ?
+A: It should be back on in the next couple of days .
+Q: Do I still have to pay for the cable ?
+A: We 're going to give you a credit while the cable is down .
+Q: So , I do n't have to pay for it ?
+A: No , not until your cable comes back on .
+Q: Thanks for everything .
+A: You 're welcome , and thank you for your understanding .
+===
+Q: I need somebody to come over and fix my internet .
+A: What 's wrong with it ?
+Q: For some reason it 's just not connecting .
+A: How long have you been having this problem ?
+Q: It has n't been working the past few days .
+A: Does the internet come up at all ?
+Q: It does , but it wo n't connect to anything .
+A: Well , the internet is n't down , so there must be something wrong with your connection .
+Q: Could you send someone to fix it today ?
+A: I 'll send somebody over right away to fix it .
+Q: When will they be here ?
+A: They should be there in the next hour .
+===
+Q: I need to get my internet fixed .
+A: What 's the problem with your internet ?
+Q: It wo n't connect .
+A: How long has this been happening ?
+Q: This connection problem has been happening for a few days now .
+A: The internet does n't come up at all ?
+Q: It just wo n't connect to a webpage , but it will pop up .
+A: There 's obviously a problem with your connection .
+Q: I 'm going to need someone to come and fix it for me .
+A: I can send somebody right now to fix it .
+Q: How long will it take for them to get here ?
+A: They 'll be there in about an hour .
+===
+Q: Can you send someone to fix my internet ?
+A: Are you having a problem with it ?
+Q: My internet is having problems connecting .
+A: Can you tell me how long your internet has been messing up ?
+Q: I 've been having this problem for the last few days .
+A: Will the internet even pop up ?
+Q: It 'll pop up , but it wo n't connect to a webpage .
+A: Since the internet is n't broken , your connection must be messed up .
+Q: Do you think you can send somebody over to fix it ?
+A: If you 'd like , I can send someone to fix it right now .
+Q: How long will it be till they get here ?
+A: It should be no longer than an hour .
+===
+Q: I am interested in buying auto insurance .
+A: Sure , I can help you . Did you bring all of your registration papers ?
+Q: Yes , I brought everything with me .
+A: Is your car with you ?
+Q: Yes , it is out in the parking lot .
+A: Wonderful . Let 's go out and check to see what shape it is in .
+Q: OK , can you help me figure out what I should insure my car for ?
+A: I will look it up on the Blue Book list and we will factor in its condition .
+Q: What else do I need to consider for the auto insurance ?
+A: Yes , you need to figure in liability for damage to the other car as well as injury issues as well .
+===
+Q: Good morning , I need to buy car insurance for the used car I just bought .
+A: Yes , no problem . Do you have your registration and Certificate of Ownership with you ?
+Q: Yes , it is all right here .
+A: Did you drive your car here ?
+Q: Yes , it is out in the back .
+A: That 's great . We 'll go out and check the condition of your car .
+Q: I understand , what should I insure my car for ?
+A: There is a Blue Book price for your car and we will use that price .
+Q: What other things do I need to insure for ?
+A: We will factor in damage to the other car as well as property damage and injury .
+===
+Q: I just bought a used car and need to insure it .
+A: We can take care of that right now . Do you have all of your paperwork with you ?
+Q: Yes , I took care of all of that and have the papers with me .
+A: Did you bring your car with you ?
+Q: Yes , it is parked on the street .
+A: Fine , I need to go out with you to check your car for wear and tear .
+Q: Fine , how will I know how much I should insure my car for ?
+A: After looking at your car , I will use the Blue Book price and we will consider the condition of the car .
+Q: Are there other considerations when I insure my car ?
+A: We always need to think about property damage , damage to other vehicles , and injury .
+===
+Q: What kind of car insurance do you have ?
+A: I went with the Automobile Club .
+Q: Why did you choose that company ?
+A: I looked at the price of the type of insurance that I wanted .
+Q: What should I think about in choosing services ?
+A: There are websites that will figure out what coverage is right for you .
+Q: What did you end up buying for your auto insurance ?
+A: Well , my car is very old , so I did n't worry so much about what it would cost to repair it . I did buy a lot of coverage for fixing someone else 's car .
+Q: Have you ever had to use your insurance ?
+A: I never had to use my insurance .
+===
+Q: When you insured your car , what kind did you buy ?
+A: I decided to buy from GEICO .
+Q: What influenced your choice of companies ?
+A: I looked at the customer satisfaction rating of the company .
+Q: How did you figure out what services to buy ?
+A: Every individual has different considerations . Your agent can help you understand what you need to think about .
+Q: What did you place an emphasis on when you bought your insurance ?
+A: I carry a lot of liability insurance because I own a house and need to protect it from a lawsuit .
+Q: Did you ever get into an accident and need your insurance ?
+A: I was in an accident and was happy that I had good insurance to cover it .
+===
+Q: What car insurance company did you decide to go with when you bought your new car ?
+A: State Farm seemed like the best deal for me .
+Q: How did you make that decision ?
+A: I compared rates and services available .
+Q: Where can I get help in figuring out what I need to purchase for coverage ?
+A: You can pick up a pamphlet at your insurance company that will explain the options to you .
+Q: What did you decide to cover yourself for ?
+A: I pretty much carry the average amount in all categories as the agent recommended .
+Q: How many times have you actually used your insurance ?
+A: I was in an accident , but it was the other person 's fault and their insurance covered it .
+===
+Q: I really like that car and I am thinking of buying it .
+A: Yes , I agree . Do you want to take it to a mechanic to have it checked out ?
+Q: I already took care of that yesterday .
+A: That 's good . Have you discussed the price with the seller ?
+Q: Yes , I think we 've agreed upon a fair price .
+A: Have you set up your financing to pay for this car ?
+Q: Yes , my parents are going to loan me the money .
+A: That 's good . Would you like me to go talk to the seller with you and drive your car home ?
+Q: That would be a great help !
+A: Glad to be of help .
+===
+Q: That car is exactly what I want , so I probably should buy it .
+A: From what I see , it 's a good deal . Should a mechanic check it out for you ?
+Q: A mechanic looked at it for me on Tuesday when I first looked at it .
+A: It 's good that you took care of that . Have you agreed upon a price with the seller ?
+Q: Yes , he was willing to lower his price a bit and I 'm good with that .
+A: Do you know how you are going to pay for this car ?
+Q: Yes , I have already pre-qualified for a loan with my credit union .
+A: You are very well prepared ! I could go with you to talk to the seller and help you get your car home .
+Q: I appreciate the offer of help !
+A: It would be my pleasure to help you .
+===
+Q: I think that that car drove really well and is a good deal .
+A: It seems to be a good choice for you . You might want to have a mechanic take a look at it just to be sure .
+Q: My friend is a mechanic and he came and looked at it for me this morning .
+A: That was smart of you to think ahead . Have you and the seller agreed upon a price ?
+Q: Yes , he is willing to accept the price that I offered him .
+A: Have you thought about how to pay for your car ?
+Q: I saved up enough money to pay cash for this car .
+A: You 've really thought this through . Let me go with you to make the payment and drive your car home for you .
+Q: That would make it a lot easier for me .
+A: I am glad that can help . Let 's go take care of that right now .
+===
+Q: I am interested in selling my home and would like to know what is involved .
+A: You have come to the right place . When were you interested in selling your home ?
+Q: I just received a job transfer and need to relocate right away .
+A: How long have you been in your current home ?
+Q: I have lived in my home for about 10 years .
+A: As I am sure that you are aware , the market has fallen in the past year . People are more likely to make money if they have owned their home for a while .
+Q: Will I be able to recover the money I paid for my home ?
+A: It is hard to say , but whatever house you buy will also be costing you a lot less .
+Q: What is the next step in selling my home ?
+A: I would like to meet with you tomorrow to look at your property , and then you and I can figure out a contract .
+===
+Q: I am looking for a realtor to help me sell my home .
+A: I would be happy to help you with any questions that you might have . When were you thinking of selling your home ?
+Q: I am interested in moving up to a bigger home , but first I need to sell the one I now own .
+A: Have you owned your home for a long time ?
+Q: I just bought my home two years ago .
+A: I think you probably know that the market is not all that great . You are more likely to see a profit if you have owned for 8 years or more .
+Q: Will I be losing money if I sell right now ?
+A: It is impossible to predict with certainty what will happen , but you can purchase a replacement home at a lower rate also .
+Q: What can I do next to get the ball rolling on this sale ?
+A: If it works for you , I would like to come over and see your home . Then we can draw up a contract .
+===
+Q: I am considering selling my home and would like information on doing so .
+A: It would be my pleasure to answer any questions that you might have . Were you interested in selling in the near future ?
+Q: I am just checking out the possibility of selling , as I am thinking of moving to Hawaii .
+A: Is your home a recent purchase , or have you owned it for a while ?
+Q: The house has been in my family for years , but I just became the owner 6 months ago when my mother passed away .
+A: Housing prices have fallen quite a bit . The longer you have owned your home , the greater the profit .
+Q: Am I going to lose my shirt selling my home right now ?
+A: It will all kind of even out . You may sell low , but you can also buy low .
+Q: What should we be doing to get the process started ?
+A: If it fits into your schedule , I could meet you tomorrow morning and we could take a look at your property . The next step would be us both signing a contract .
+===
+Q: Thank you for coming to look at my house .
+A: I really wanted to take a look and help give you an idea of what we need to do .
+Q: When will people come to look at my house ?
+A: Basically , there are two ways people can view your home . They can come to an Open House or they can come with a Realtor to view it during a private appointment .
+Q: Will people from other real estate offices be involved , or just from your office ?
+A: Your house is going to be listed as a Multiple Listing so that it will have the maximum exposure to a variety of people .
+Q: Will I know when people are going to come see my house ?
+A: We will set the parameters in the contract , but usually you will receive at least four hours of notification that someone is coming .
+Q: What happens during an Open House day ?
+A: You will be expected to be away during an Open House . I will take care of the details .
+===
+Q: I appreciate you dropping by to look at my home .
+A: It is useful for us to take a walk through your home together , so that we make sure that we are on the same page .
+Q: How do you show my home to potential buyers ?
+A: We will have an Open House or two on a weekend and we also will show your home with private appointments during the week .
+Q: Are you the only real estate office that will be showing my house ?
+A: We are placing your house as a Multiple Listing . That way , people who do n't work for my particular office can show your home to their clients .
+Q: How will I know when to expect prospective house buyers ?
+A: That will be set in your contract . Usually , you will be given four hours notice .
+Q: Can I stay home during an Open House day ?
+A: The seller is never at home during an Open House . I personally will handle the showing of your home .
+===
+Q: Thanks for stopping by to evaluate my home .
+A: I want to make sure that you are very clear on what the steps are to selling a home .
+Q: When can people come and see my home ?
+A: We will have several Open House weekends . Various realtors will also show your house during the week .
+Q: Will I know all of the realtors who will be showing my home , or will they be strangers ?
+A: Your house will be listed on what we call a Multiple Listing . That way it will be shown by a variety of realtors .
+Q: Can people just drop in anytime they feel like the house ?
+A: We usually try and give you at least four hours of notification that someone is coming to look at your home .
+Q: Will I have to go away during an Open House day ?
+A: I will handle all of the work involved for the Open House . The only thing that you need to do is be somewhere else !
+===
+Q: How much do you think that I should ask for my house ?
+A: Well , there are a lot of factors involved in setting an asking price .
+Q: What do you look at when setting an asking price for the house ?
+A: We need to look at the selling prices for similar homes in the area . These will vary according to the condition of the home , specific location , and lot size .
+Q: Do I have to use the comparisons as the asking price for my house ?
+A: No , but a seller is not going to be able to get a loan if the selling price is a lot higher that what an appraiser feels the home is worth .
+Q: Is n't it better to price my house really high and see what I can get ?
+A: You should n't set the price of the house unrealistically high . Oftentimes buyers are put off by this practice .
+Q: Can I change my mind and lower my price if the home does n't sell ?
+A: Sure , you can always lower your asking price .
+===
+Q: I am not sure what the asking price for my house should be .
+A: We have to take in a number of factors in setting an asking price .
+Q: What do we need to consider in establishing an acceptable price for a home ?
+A: The comparisons to other similar homes in your area give us a good indication of what your home is worth .
+Q: Is the price that we get by looking at comparisons necessarily the asking price that I have to use for my home ?
+A: You do n't have to use that particular asking price , but the buyer is going to have trouble getting a loan if the house is priced too high .
+Q: Should I just shoot for the moon and , if I have to lower the price , do it later ?
+A: You should be realistic in your pricing . Otherwise , many potential buyers just walk away .
+Q: Can we lower the asking price later if we need to ?
+A: We can always re-evaluate the asking price in a few weeks , if we are n't getting any offers .
+===
+Q: What do you think the asking price of my home should be ?
+A: There are many things to take into consideration when pricing a home .
+Q: What is involved in figuring out an asking price ?
+A: We need to combine many factors regarding your home to come up with an accurate value for your home .
+Q: When you look at comparisons , do I necessarily have to ask that price ?
+A: You do n't have to use the price from the comparisons as your asking price . However , you must be realistic in what you ask .
+Q: I think that I am going to set the price really high so that I have room to bargain with the buyers .
+A: Do n't go overboard in trying to get top dollar . More often than not , that strategy backfires .
+Q: Is it okay to lower the asking price if the first price is n't bringing in any offers ?
+A: If the market does n't support your asking price , we can always re-evaluate our pricing and adjust it .
+===
+Q: I am interested in buying a house and need some information .
+A: Yes , of course . What area are you interested in ?
+Q: I am interested in Pasadena or Arcadia .
+A: What size house would you like ?
+Q: We need a medium-sized house with at least 3 bedrooms and 2 bathrooms .
+A: Are you interested in being in a particular school district ?
+Q: Yes , we want to stay in the ABC School District .
+A: Would you like a home near the lake or would you prefer a view ?
+Q: I would love to have a home with a view .
+A: Fine , I will begin a search for the perfect home for you . I will call you in a few days .
+===
+Q: I would like to discuss purchasing a home with you .
+A: I can help you . What location are you looking for ?
+Q: I would like to live in Pasadena or Arcadia .
+A: Have you thought about what your needs are in terms of size ?
+Q: We would like a smaller cozy cottage with 2 bedrooms and 1 bathroom .
+A: Is living in a particular school district important to you ?
+Q: No , we do n't really care because they are all pretty good around here .
+A: Are you interested in purchasing on the lake , or would you like a home with a view ?
+Q: We really want to live in a lakeside home with a dock for our boat .
+A: Now that I have an idea of what you want , I can begin my search .
+===
+Q: I have been thinking of buying a house and would like to speak with you .
+A: I have time to speak with you . Where would you like to purchase your house ?
+Q: I am most interested in Pasadena or Arcadia , but would be open to other suggestions .
+A: How many bedrooms and bathrooms do you need ?
+Q: We have several generations of family living in our household and so need a very large home .
+A: Do you need to be located in a particular school district ?
+Q: It does n't matter , as we do not have any children .
+A: Is a view important to you , or would you rather be located on a lakeshore lot ?
+Q: In a perfect world , we would like a home with a view of the lake .
+A: Thank you for all of the information . I will help you find the perfect house for you .
+===
+Q: I 'd like to reserve a hotel room .
+A: That should be no problem . May I have your full name , please ?
+Q: My name is John Sandals .
+A: Hello , Mr. Sandals . My name is Papaya . What days do you need that reservation , sir ?
+Q: I 'm planning to visit New York from Friday , April 14 until Monday , April 17 .
+A: Our room rates recently went up . Is that okay with you , sir ?
+Q: How much per night are we talking about ?
+A: Each night will be $ 308 .
+Q: That price is perfectly acceptable .
+A: Wonderful ! Do you prefer a smoking or nonsmoking room ?
+Q: Nonsmoking , please .
+A: Next question : Is a queen-size bed okay ?
+Q: Queen-size sounds fine to me .
+A: Okay , sir . Your reservation is in our computer . All we need now is a phone number .
+Q: Certainly . My phone number is 305-555-1788 .
+A: Thank you , sir . We look forward to seeing you here !
+===
+Q: Hi there , I want to reserve a hotel room .
+A: No problem at all . Could I have your full name , please ?
+Q: Sure , My name is John Sandals .
+A: Hi , Mr. Sandals . I 'm Papaya , at your service . When do you need the room ?
+Q: My plans are to be there April 14th to the 17th .
+A: We have new room rates , sir . Will that be acceptable to you ?
+Q: It depends on the price , of course . What is it ?
+A: It 's $ 308 a night .
+Q: I have no problem with that .
+A: Great ! Would you prefer smoking or nonsmoking ?
+Q: Definitely nonsmoking . I ca n't handle that smell .
+A: Nonsmoking . Now , is a queen-size bed okay ?
+Q: No problem . Queen-size sounds good to me .
+A: Great , sir . Your reservation is confirmed . Now all I need is your phone number .
+Q: Of course ! The phone number is 305-555-1788 .
+A: Thank you so much , sir . We look forward to seeing you !
+===
+Q: I need to reserve a room .
+A: Not a problem . May I have your name , please ?
+Q: Of course . I 'm John Sandals .
+A: Hi , sir . My name is Papaya . Could you tell me when you need the room ?
+Q: Right now . I plan to be there in April from the 14th to the 17th .
+A: Perhaps you did n't know that we have new room rates . Do you find that acceptable , sir ?
+Q: Maybe . How much is a room ?
+A: The price per night is $ 308 .
+Q: That sounds fine to me .
+A: Fantastic ! Would you like a smoking or nonsmoking room ?
+Q: I hate cigarettes ! Nonsmoking .
+A: That 'll be nonsmoking . Now , do you approve of a single queen-size bed ?
+Q: That 'll be no problem .
+A: I 'm happy to hear that , sir . Your reservation is all set except for your phone number .
+Q: Sure ! My number is 305-555-1788 .
+A: Thank you for doing business with us , and we look forward to seeing you !
+===
+Q: I need a hotel room .
+A: That 's no problem at all . May I have your name , please ?
+Q: Certainly . My name is John Sandals .
+A: It 's a pleasure , Mr. Sandals . My name is Papaya . What days will you need a room ?
+Q: Friday afternoon , April 14 through Monday morning , April 17 .
+A: One minor problem , sir . Our prices are now slightly higher . Is that acceptable , sir ?
+Q: Please tell me the price , so I can make a decision .
+A: It 'll be $ 308 nightly .
+Q: That 's a reasonable price .
+A: Good ! Now , sir , do you have a preference for smoking or nonsmoking ?
+Q: I quit smoking , so nonsmoking .
+A: I hear you , sir . Nonsmoking . Now , about the bed , is a queen-size okay ?
+Q: A queen sounds great .
+A: Okay , sir , let me reserve those dates , there . Now , if you 'll just tell me your phone number .
+Q: That would be 305-555-1788 .
+A: Ok , I got it . Thank you so much for choosing our hotel , sir !
+===
+Q: I need a room for a few days .
+A: That wo n't be a problem . Could you please tell me your name ?
+Q: My name is John Sandals .
+A: Sir , I 'm Papaya , and I run the front desk . Please tell me the days you 'll be here .
+Q: I 'll be there in April : Friday through Monday , the 14th through the 17th .
+A: We recently changed many things here , sir , including our prices . Do you mind , sir ?
+Q: Possibly . What 's the actual price ?
+A: The price will be $ 308 a night .
+Q: That price is not bad for me .
+A: Very good . Now sir , about the room , do you prefer smoking or nonsmoking ?
+Q: Nonsmoking , definitely !
+A: Most of our clients prefer nonsmoking . Now , does a queen sound okay ?
+Q: Yes , that 'll be just fine .
+A: One more second , sir . Your reservation is now verified , so all I need is your phone number .
+Q: It 's 305-555-1788 .
+A: Okay , sir , we look forward to seeing you in April !
+===
+Q: Can I reserve a hotel room ?
+A: I assure you , that 's not a problem . What is your full name , please ?
+Q: My name 's John Sandals .
+A: It 's a pleasure to assist you . Please tell me when you 'll be needing the room , sir .
+Q: If my plans do n't change , I 'll need a room April 14 till April 17 .
+A: Sir , our room prices are slightly higher than you may have thought . Will that be okay ?
+Q: Tell me how much it will be , and I can tell you if it 's okay .
+A: Only $ 308 per night , before taxes , of course .
+Q: $ 308 a night ? That 's a fair price .
+A: Now , as for the room , sir , do you prefer smoking or nonsmoking ?
+Q: Nonsmoking , please .
+A: Nonsmoking . Now , sir , does a single queen-size bed meet your approval ?
+Q: I have absolutely no problem with that .
+A: Queen , nonsmoking . Okay , sir , your room is reserved . Now if you 'll just give me your phone number .
+Q: Not a problem . The number is 305-555-1788 .
+A: Thank you for making a reservation with us . We look forward to seeing you !
+===
+Q: The doctor sent me over here to have my blood drawn .
+A: Certainly , please have a seat and roll up your left sleeve .
+Q: What is this blood test for ?
+A: Well , today your doctor wants us to check your white blood cell count .
+Q: What does the blood test result tell him ?
+A: Well , if it is elevated , you might have an infection .
+Q: Will the blood test hurt ?
+A: It is only a little pin stick . I am going to put a tourniquet on your arm to puff your veins up .
+Q: Ouch !
+A: There we go ! I got the blood that I needed .
+===
+Q: My doctor says that I need a blood test .
+A: I can help you with that . Just have a seat and roll up your left sleeve .
+Q: What are you taking my blood for ?
+A: Your doctor has requested a check of your white blood count .
+Q: What information does the blood test give him ?
+A: If your white blood cell count is off , it could signal an infection somewhere in your body .
+Q: Is a blood test painful ?
+A: I am putting a tourniquet on your arm to plump up the vein . It will only feel like a little pin prick .
+Q: My God , that hurts !
+A: That was it ! Thank you for coming in today .
+===
+Q: I came to this lab to have my blood drawn .
+A: You are in the right place . Roll up your left sleeve and have a seat .
+Q: What am I being tested for ?
+A: Your doctor wants to know what your white blood cell count is .
+Q: What does my white blood cell count tell him ?
+A: Usually if your white count is off , the doctor suspects an infection .
+Q: How much will the blood test hurt ?
+A: It is only a pin prick . I have to put this tourniquet on your arm to make the vein easier to find .
+Q: Is that my blood going into that tube ?
+A: That blood that just filled the tube is all that I needed . Thanks for coming in !
+===
+Q: I need to make an appointment to see the doctor .
+A: What seems to be the problem ?
+Q: I have a rash that I need a doctor to look at .
+A: Do you have a fever with that rash ?
+Q: No , it just itches a lot .
+A: I have openings on Tuesday or Wednesday . Which would be best for you ?
+Q: I need an appointment on Tuesday .
+A: Fine , I am putting you down for 9:00 AM on that day . Would you like to see Dr. Smith or Dr. Jones ?
+Q: I would like to see Dr. Jones .
+A: I can schedule you with him with no problem . We look forward to seeing you .
+===
+Q: Good morning , I would like to make a doctor 's appointment .
+A: Can you describe your health concern ?
+Q: I have been having skin problems that are n't going away .
+A: Are you in any pain ?
+Q: No . Except for the rash , I feel fine .
+A: Would Tuesday or Wednesday be best for you ?
+Q: I would like to come in on Tuesday .
+A: I will write you in for that day at 4:00 . You can see either Dr. Smith or Dr. Jones .
+Q: I would like to see Dr. Smith .
+A: I will write you in on that doctor 's schedule . See you then .
+===
+Q: I need to come in and see the doctor .
+A: Are you scheduling a check-up , or are you ill ?
+Q: I have really itchy skin and think I may have to have it looked at .
+A: Have you been feeling any joint aches with that rash ?
+Q: No , but I have a low fever .
+A: I have times available for Tuesday or Wednesday . Which one would work best for you ?
+Q: I want to come in on Wednesday .
+A: I can fit you in on that day at 10:00 . Dr. Smith or Dr. Jones is available .
+Q: I would prefer Dr. Smith .
+A: You can see the doctor of your choice then , and we will see you at your scheduled appointment time .
+===
+Q: I have a doctor 's appointment scheduled with Dr. Smith , and I need to change it .
+A: What day did you have it scheduled for ?
+Q: My appointment was on Tuesday .
+A: What time was it scheduled for ?
+Q: It was for two o'clock in the afternoon .
+A: I see your appointment . What day would you like to switch to ?
+Q: I would like to switch it to next Friday .
+A: What time would you like for the appointment ?
+Q: I would like to come in at 10:00 in the morning .
+A: Fine , I will pencil that in right now . We will see you then .
+===
+Q: I scheduled an appointment with Dr. Smith , and I ca n't make it on that day .
+A: What day was your appointment on ?
+Q: My appointment was on Monday .
+A: What time had you chosen ?
+Q: It was for 10:00 in the morning .
+A: I am looking at your appointment right now . What day would you prefer ?
+Q: I would prefer next Thursday .
+A: What time would be best for you ?
+Q: I want to come in at 2:00 in the afternoon .
+A: I am writing you down for that time . We look forward to seeing you .
+===
+Q: Good morning , I made an appointment with Dr. Smith , but I have to change it .
+A: When you made your appointment , what day did you choose ?
+Q: My appointment was on Wednesday .
+A: At what time was that appointment ?
+Q: It was for 4:00 in the afternoon .
+A: I can see the appointment that you had . What day do you need to change to ?
+Q: I want to change to next Tuesday .
+A: What time would you prefer ?
+Q: I would prefer three o'clock in the afternoon .
+A: I will put you down for that time . Thank you for calling to reschedule .
+===
+Q: Good morning , how are you doing today ?
+A: I have been feeling pretty good .
+Q: So , I can see by your chart that you are here for your annual physical .
+A: Yes , I am playing on the tennis team this year , and they are requiring me to get a physical exam .
+Q: We are basically going to check your heart , lungs , blood sugar levels , and eyes , ears , and nose .
+A: I 've kind of been having problems being out of breath . Can you look at that ?
+Q: Yes , I will check you for asthma , and maybe we can check you for allergies later .
+A: Thank you . What will the blood test tell you ?
+Q: We will be checking for blood sugar , cholesterol , and white blood cell count .
+A: I have been working hard to stay healthy . I hope the tests turn out well .
+===
+Q: So how are we feeling today ?
+A: Things are going well for me .
+Q: Am I correct in thinking that you are here for your annual physical ?
+A: Yes , I am applying for new health insurance , and I need a physical examination to qualify .
+Q: Your basic physical exam will include lungs , heart , blood levels , and eyes , ears , and nose .
+A: I 've been having a little trouble breathing . Would you look into that , please ?
+Q: We can do an allergy test , and later I can send you for an asthma test .
+A: I would appreciate it . When you give me a blood test , what are you looking for ?
+Q: I am going to check your cholesterol , blood sugar , and white blood cell count .
+A: I am expecting the tests to go well . I have been taking good care of myself .
+===
+Q: Nice to see you . How have you been feeling lately ?
+A: I have been feeling great .
+Q: I am happy that you have decided to come in for your annual physical .
+A: Yes , I am going on a cross-country bike ride on vacation and want to make sure that I do n't have any problems .
+Q: We are going to look at your heart and lungs , do a few blood tests , and see that your eyes , ears , and nose are all working as they should be .
+A: I 've been having trouble with congestion in my chest . Can you give me some tests for that ?
+Q: I can do a chest X-ray to check for congestion .
+A: That would be great . What is the blood test for ?
+Q: The blood test is for cholesterol , white blood cell count , and blood sugar .
+A: I have been feeling great . I do n't imagine that any of my tests will turn out badly .
+===
+Q: Hi , can I speak with the apartment manager , please ?
+A: Yes , this is the apartment manager speaking .
+Q: I 'm calling about the apartment for rent on Main Street .
+A: Would you be interested in seeing the apartment ?
+Q: I would love to see it .
+A: Are you free today at around 6 pm ?
+Q: Yes , I will be able to make it then .
+A: Well , I 'll see you at 6 pm . Do you know how to get there ?
+Q: I used to live in that area .
+A: I 'll give you an application form when I see you .
+Q: That sounds good . Do I need to bring anything ?
+A: No . Just bring yourself .
+===
+Q: Hello , I was wondering if I could talk with the apartment manager .
+A: I am the apartment manager . How can I help you ?
+Q: I was wondering if the apartment on Main Street is still available .
+A: Yes , it 's still vacant . Are you interested in seeing it ?
+Q: Yes , I would love to see the apartment .
+A: I will be at the apartment today at 6:00 . Can you make it ?
+Q: Yes , I can be there at 6 .
+A: Great . I 'll see you at 6 . Do you know where it is ?
+Q: Yes , I have a friend who lives in that neighborhood .
+A: I 'll be bringing an application form .
+Q: OK , should I bring anything with me ?
+A: No . I might need to see your ID card , but that 's about it .
+===
+Q: Could I speak to the apartment manager ?
+A: I am the apartment manager . How can I help you ?
+Q: I wanted to know if that apartment on Main Street is still for rent .
+A: I have n't rented it out yet . Would you like to see it ?
+Q: Yes , I want to see it .
+A: How about today at 6 pm ?
+Q: That time is okay with me .
+A: Very good . We 'll meet at 6 . Do you need directions ?
+Q: No , thank you . I go by there on my way to work .
+A: If you 're interested , you can fill out an application form .
+Q: That 's a good idea . Do I need to bring anything myself ?
+A: No . The only thing I need to see is your driver 's license .
+===
+Q: I 'd like to speak with the apartment manager , please .
+A: This is he . What can I do for you ?
+Q: I 'm interested in the apartment on Main Street .
+A: It 's still available . Do you want to see it ?
+Q: Yes , I would very much like to see it .
+A: Does today at 6 pm . sound okay to you ?
+Q: I have no problem with 6 pm .
+A: Okay , I 'll see you at 6 o'clock . Do you need any directions ?
+Q: No , thanks . I already drove by to see what the neighborhood looks like .
+A: I 'll have an application form with me . You can fill it out if you 're interested .
+Q: Should I bring anything with me ?
+A: No . I only need to check your driver 's license .
+===
+Q: May I speak to the apartment building manager , please ?
+A: I 'm the manager . How can I help you ?
+Q: I was hoping that the apartment on Main Street was still available .
+A: Yes , it is . Would you like to get a look inside the apartment ?
+Q: Yes , it would be nice to see the apartment .
+A: How about today at 6 o'clock ?
+Q: Yes , I can be there at 6 .
+A: Sounds good . I 'll see you at 6 . Do you want directions ?
+Q: I 'm okay , thank you . I already checked out the address on Google .
+A: If you like the place , you can fill out an application form . I 'll bring one with me .
+Q: Is there anything that I need to bring with me ?
+A: No . I wo n't need to see anything except your driver 's license .
+===
+Q: Can you give me a little more information about your apartment ?
+A: Sure , what can I help you with ?
+Q: What kind of public transportation is near your apartment ?
+A: I 'm not sure , but I believe there is a bus stop about three blocks away .
+Q: Do you know what direction that bus travels ?
+A: I 'm sorry . If you check online , you can get that kind of information .
+Q: Okay , I 'll just go online .
+A: Okay . Good luck with your search .
+===
+Q: Hello , I was hoping you could give me more info about your apartment .
+A: I can try to help you . What would you like to know ?
+Q: Is there access to public transportation near the apartment ?
+A: I 'm pretty sure there 's a bus stop within walking distance .
+Q: Do you know anything about the buses that stop there ?
+A: I do n't know , but I 'm pretty sure you can find out that stuff online .
+Q: I think the local library has bus info .
+A: Good luck . The bus info should n't be too hard to find .
+===
+Q: Can you give me a little more information about your apartment ?
+A: All right , what do you need to know ?
+Q: What is the public transportation like near your apartment ?
+A: I do n't use buses , but I think there 's a bus stop a few blocks away .
+Q: Which route does the bus travel ?
+A: I wish I could help you , but I know nothing about the bus system .
+Q: I 'll just check my phone book . It has lots of good information .
+A: I 'm sorry I could n't help you on that .
+===
+Q: I was hoping you could give me more information about the apartment for rent .
+A: I can certainly try .
+Q: Do buses or trains run by the apartment ?
+A: I ca n't swear to it , but I think a bus stop is a couple of blocks away .
+Q: Where does the bus take you ?
+A: I do n't want to lead you astray . You should check online .
+Q: My neighbor takes the bus . I 'll ask him if he knows .
+A: Bus line information should be pretty easy to find .
+===
+Q: Could you give me a little more information about the apartment ?
+A: Sure , if I can . What do you want to know ?
+Q: Is there a bus or train system near the apartment ?
+A: I 'm pretty sure there 's a bus stop only a few blocks away .
+Q: Do you know which buses stop there ?
+A: I 'm sure there 's an 800 number or a website that could help you .
+Q: I do n't have a computer . I 'll just look in my phone book .
+A: Bus line information should be pretty easy to find .
+===
+Q: How did you find your apartment ?
+A: You can check on the bulletin boards at school for local housing .
+Q: What if I need a roommate ?
+A: There are websites that can hook you up with a roommate .
+Q: How much do apartments cost around here ?
+A: It depends on what you want . Do you want a one or two-bedroom apartment ?
+Q: I just need a one-bedroom apartment .
+A: That will probably cost you around twelve hundred dollars a month .
+Q: Would you come with me to look at apartments ?
+A: I would be happy to look at apartments with you .
+===
+Q: When you need an apartment , where do you look for one ?
+A: Our school has a link on its website for apartments .
+Q: Can I share an apartment with someone ?
+A: Some of the ads in the paper are from people looking for roommates .
+Q: Are apartments expensive in this city ?
+A: Do you need a single apartment , or is this for two people ?
+Q: I want a two-bedroom apartment .
+A: You can get that type of apartment for around fifteen hundred dollars a month .
+Q: Would you have time to go look at apartments with me ?
+A: I love apartment hunting . I 'll be happy to go with you .
+===
+Q: Can you tell me the best way to look for an apartment ?
+A: The local newspaper has ads for housing .
+Q: Is there any way to find a roommate to share an apartment with ?
+A: Sometimes you can post an advertisement saying that you need a roommate .
+Q: What do landlords charge for rent ?
+A: Would you like an apartment for just yourself , or do you need it for two people ?
+Q: There are two of us , but we only need a one-bedroom apartment .
+A: You should be able to easily find that for twelve hundred dollars a month .
+Q: I really would appreciate it if you could come look at apartments with me .
+A: Sure , I 'll go look at apartments with you anytime you want .
+===
+Q: How are you doing today ?
+A: Great . Thanks for asking .
+Q: Would you like our assistance with a move ?
+A: Yes , actually I would .
+Q: What would you like us to move for you ?
+A: I need you to move my furniture .
+Q: Could you tell me what kind of residence that we will be picking the furniture up from ?
+A: The furniture is in my apartment .
+Q: Where will we be moving it to ?
+A: You 'll be taking it to the house I just bought .
+Q: All right . I just need both addresses , and we will take care of the moving for you .
+A: Excellent . Thank you very much .
+===
+Q: How are you today ?
+A: I am doing well .
+Q: Did you need us to move something for you ?
+A: That 's exactly what I 'm calling about .
+Q: What exactly do you need moved ?
+A: All my furniture needs to be moved .
+Q: Where will we be moving your furniture from ?
+A: I need it moved from my apartment .
+Q: Where would you like us to move the furniture to ?
+A: I need the furniture moved to my new house .
+Q: All I need is a little more information , and we 'll take care of the rest .
+A: Sounds great . I 'm glad you could help me .
+===
+Q: How are you doing , Papaya ?
+A: I 'm fine , thank you .
+Q: Did you need our help with a move ?
+A: Yes , I do need your help with a move .
+Q: What can we move for you ?
+A: I need all my furniture moved .
+Q: Will we be picking the furniture up from an apartment or a house ?
+A: You 'll be taking it from my old apartment .
+Q: Are we moving the furniture to a house or an apartment ?
+A: To my new house .
+Q: We can do the move for you , but first I 'm going to need some more information .
+A: Thanks a lot . I 'll give you all the information you need .
+===
+Q: Where can I buy an inexpensive cashmere sweater ?
+A: Maybe you should look around for an outlet .
+Q: That is a wonderful idea to check an outlet .
+A: Outlets have more reasonable prices .
+Q: Thank you for your help .
+A: No problem . Good luck .
+===
+Q: Where can I find a cheap cashmere sweater ?
+A: How about an outlet ?
+Q: Checking an outlet is a great idea !
+A: Outlets give good deals .
+Q: Thank you so much .
+A: You 're welcome .
+===
+Q: Do you know anywhere that sells cheap cashmere sweaters ?
+A: Outlets have cheap cashmere sweaters .
+Q: What a splendid idea !
+A: Oh , hope that helps .
+Q: Thanks for helping me .
+A: You 're welcome .
+===
+Q: Do you know a place that sells cheap cashmere sweaters ?
+A: An outlet carries cheap cashmere sweaters .
+Q: That 's a good idea !
+A: I would be happy if that helps .
+Q: Thank you for the suggestion .
+A: No problem .
+===
+Q: I 'm looking for a shop that sells inexpensive cashmere sweaters .
+A: Have you tried an outlet ?
+Q: Why did n't I think of that ?
+A: Oh , I hope that can help you .
+Q: Thanks . That is a good suggestion .
+A: You are very welcome .
+===
+Q: Pardon me . Could you help me ?
+A: Of course . How can I help you ?
+Q: I am looking for a sweater .
+A: What size do you wear ?
+Q: Medium , I think .
+A: Here . How do you like this one ?
+Q: It 's pretty . Can I try it on ?
+A: Sure . You can try it on in the fitting room over there .
+===
+Q: Excuse me . Can you help me ?
+A: Certainly . What can I do for you ?
+Q: I need to purchase a sweater .
+A: What is your size ?
+Q: Medium should be fine .
+A: Is this one okay ?
+Q: Can I try it on somewhere ?
+A: The fitting room is in the left corner .
+===
+Q: May I ask you a question ?
+A: Yes . How can I assist you ?
+Q: I want to buy a sweater .
+A: What size do you need ?
+Q: I think a medium should fit me .
+A: How about this one ?
+Q: The color 's nice . Do you have a dressing room ?
+A: There 's a fitting room right over there .
+===
+Q: Do you have a second ?
+A: Sure . What do you need ?
+Q: I 'm here to buy a sweater .
+A: What size do you wear ?
+Q: I usually wear medium .
+A: What do you think about this one ?
+Q: It 's nice . Where is your fitting room ?
+A: The dressing room is in that corner .
+===
+Q: Excuse me . Could you help me with something ?
+A: I 'll certainly try .
+Q: I 'm looking for a nice sweater .
+A: What size do you wear in a sweater ?
+Q: Medium is my size for shirts and sweaters .
+A: Here 's a medium . What do you think ?
+Q: I like it . Where can I try it on ?
+A: We have a large fitting room in that corner .
+===
+Q: I really need to go shopping .
+A: What do you need to buy ?
+Q: I need to look for a new bedroom set .
+A: Where are you going to go look for one ?
+Q: I have absolutely no idea .
+A: You do n't know where you want to look for one ?
+Q: I 'm not sure where they sell nice bedroom sets .
+A: Do you want to know where I got mine from ?
+Q: Yes , because I love your bedroom set .
+A: I purchased mine from IKEA .
+Q: Is IKEA affordable ?
+A: Not at all , but you get what you pay for .
+===
+Q: I have to do some shopping .
+A: What are you going to look for ?
+Q: I 'm trying to buy a new bedroom set .
+A: What store are you going to ?
+Q: I 'm not sure .
+A: You do n't know ?
+Q: I have no idea where to find one .
+A: Would you like me to tell you where I got mine ?
+Q: I would appreciate that if you could tell me where you got yours .
+A: I went to get mine from IKEA .
+Q: Is the furniture at IKEA cheap ?
+A: They 're not cheap , but neither is their furniture .
+===
+Q: I 'm going to have to do some shopping today .
+A: Oh yeah ? What do you need to go shopping for ?
+Q: I want to find a new bedroom set .
+A: Do you know where you 're going to find your bedroom set ?
+Q: I have no clue where to check that .
+A: There 's no particular place that you want to look at ?
+Q: I do n't know where to go to find a nice bedroom set .
+A: I can tell you where I got mine , if you 'd like .
+Q: Please do let me know where you got yours .
+A: I bought mine from IKEA .
+Q: Are the bedroom sets at IKEA affordable ?
+A: Not really , but you 're paying for quality .
+===
+Q: I need some flowers for my wife . It 's her birthday .
+A: Very well . We have some fresh red roses .
+Q: How much are the roses ?
+A: $ 20 per dozen .
+Q: That sounds like a good deal .
+A: Yes , they 're on sale today .
+Q: I 'll take a dozen .
+A: Splendid . Will there be anything else ?
+Q: No , the roses will be fine .
+A: I 'm sure your wife will love them .
+===
+Q: My wife 's birthday is today . I need some flowers .
+A: We have lots of fresh red roses .
+Q: How much do the roses cost ?
+A: $ 20 a dozen .
+Q: That sounds good . Last year I paid $ 30 .
+A: Yes , you came here on the right day . They 're on sale today .
+Q: Give me a dozen .
+A: Very good . Would you like anything else ?
+Q: No , I 'll just give her the roses and a card .
+A: She should be very pleased with these roses .
+===
+Q: I need to buy some flowers for my wife .
+A: Perhaps you 'd be interested in red roses .
+Q: What would the roses cost me ?
+A: They 're only $ 20 a dozen .
+Q: I like the sound of that .
+A: Yes , that is today 's sale price .
+Q: A dozen will be fine .
+A: Is there anything else you 'd like to get ?
+Q: No , thank you . That 's good enough .
+A: Your gift should make your wife very happy .
+===
+Q: I want to buy some flowers for my wife 's birthday .
+A: Red roses are always a popular gift for birthdays .
+Q: What are the roses going for ?
+A: They 're only $ 20 a dozen .
+Q: That sounds nice and cheap .
+A: Yes , you 're saving money because they 're on sale today .
+Q: Give me the roses , please .
+A: Could I interest you in anything else ?
+Q: No , but thanks anyway . These should be good enough .
+A: Your wife will be thrilled with your gift .
+===
+Q: It 's my wife 's birthday . I need to buy some flowers for her .
+A: Most women love red roses for their birthday .
+Q: How much will the roses be ?
+A: You can get a dozen for only $ 20 .
+Q: Now , that 's a price that I like .
+A: You 're in luck today because the roses are on sale .
+Q: I 'll take the roses .
+A: Very good . Perhaps you 'd like something else to go with the roses ?
+Q: No , the roses are good enough .
+A: Women love roses , so your wife will be very happy .

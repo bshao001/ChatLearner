@@ -36,7 +36,7 @@ class BotPredictor(object):
 
         self.hparams = self.tokenized_data.hparams
         self.src_placeholder = tf.placeholder(shape=[None], dtype=tf.string)
-        src_dataset = tf.contrib.data.Dataset.from_tensor_slices(self.src_placeholder)
+        src_dataset = tf.data.Dataset.from_tensor_slices(self.src_placeholder)
         self.infer_batch = self.tokenized_data.get_inference_batch(src_dataset)
 
         # Create model
@@ -50,6 +50,9 @@ class BotPredictor(object):
         self.session.run(tf.tables_initializer())
 
     def predict(self, sentence, html_format=False):
+        if sentence.strip() == '':
+            return "Don't you want to say something to me?"
+
         pat_matched, new_sentence, num_list = \
             FunctionData.check_arithmetic_pattern_and_replace(sentence)
 

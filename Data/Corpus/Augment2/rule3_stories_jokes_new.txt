@@ -69,3 +69,8 @@ Q: Could you please tell me the story of The Three Little Pigs ?
 A: Sure . Here is the story : _func_val_get_story_name_para1_the_three_little_pigs
 Q: Could you please tell me the story of The Velveteen Rabbit ?
 A: Sure . Here is the story : _func_val_get_story_name_para1_the_velveteen_rabbit
+===
+Q: Tell me something .
+A: Sure , but what do you want to hear ?
+Q: You can just tell me anything .
+A: Ok . I 'll tell you a joke : _func_val_get_joke_any
