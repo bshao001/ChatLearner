@@ -6,7 +6,7 @@ A chatbot implemented in TensorFlow based on the new sequence to sequence (NMT) 
 
 ChatLearner (Papaya) was built on the new seq2seq model (dynamic RNN based) in TensorFlow 1.4. The code was largely referenced on the tutorial of the NMT model (https://github.com/tensorflow/nmt). Due to the changes made on tf.data API in TensorFlow 1.4, the implementation does not support any earlier TensorFlow releases.
 
-Before starting everything else, you may want to try my trained model. You can download it [here](https://drive.google.com/file/d/0B1FHD9tf6GwaX19jOFNlVFFVMWs/view?usp=sharing). Unzip the .rar file, and copy the Result folder into the Data folder under your project root. A vocab.txt file is also included in case I update it without updating the trained model
+Before starting everything else, you may want to try my trained model. You can download it [here](https://drive.google.com/file/d/1BUK9r_WV8z4FWZvN2lpvvluRmHjtoSLt/view?usp=sharing). Unzip the .rar file, and copy the Result folder into the Data folder under your project root. A vocab.txt file is also included in case I update it without updating the trained model
 in the future.
 
 ## Highlights and Specialties:
