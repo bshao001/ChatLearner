@@ -6,8 +6,7 @@ A chatbot implemented in TensorFlow based on the new sequence to sequence (NMT) 
 
 ChatLearner (Papaya) was built on the new seq2seq model (dynamic RNN based) in TensorFlow 1.4. The code was largely referenced on the tutorial of the NMT model (https://github.com/tensorflow/nmt). Due to the changes made on tf.data API in TensorFlow 1.4, the implementation does not support any earlier TensorFlow releases.
 
-Before starting everything else, you may want to try my trained model. You can download it [here](https://drive.google.com/file/d/1BUK9r_WV8z4FWZvN2lpvvluRmHjtoSLt/view?usp=sharing). Unzip the .rar file, and copy the Result folder into the Data folder under your project root. A vocab.txt file is also included in case I update it without updating the trained model
-in the future.
+Before starting everything else, you may want to have a feeling of how ChatLearner behaves. Take a look at the sample conversation [here](https://github.com/bshao001/ChatLearner/blob/master/Data/Test/responses.txt), or if you prefer to try my trained model, then download it [here](https://drive.google.com/file/d/1BUK9r_WV8z4FWZvN2lpvvluRmHjtoSLt/view?usp=sharing). Unzip the downloaded .rar file, and copy the Result folder into the Data folder under your project root. A vocab.txt file is also included in case I update it without updating the trained model in the future.
 
 ## Highlights and Specialties:
 Why do you want to spend time checking this repository? Here are some possible reasons:
@@ -48,7 +47,7 @@ Papaya Data Set is the best (cleanest and well-organized) free English conversat
 
 3. The scenario conversations were extracted and reorganized from http://www.eslfast.com/robot/. If your model can support context, it would work much better by utilizing these conversations.
 
-4. The original Cornell data set can be found at http://www.cs.cornell.edu/~cristian/Cornell_Movie-Dialogs_Corpus.html. We cleaned it using a Python script (the script can also be found in the Corpus folder); we then cleaned it manually by quickly searching certain patterns. 
+4. The original Cornell data set can be found at [here](http://www.cs.cornell.edu/~cristian/Cornell_Movie-Dialogs_Corpus.html). We cleaned it using a Python script (the script can also be found in the Corpus folder); we then cleaned it manually by quickly searching certain patterns. 
 
 5. For the Reddit data, a cleaned subset (about 110K pairs) is included in this repository. The vocab file and model parameters are created and adjusted based on all the included data files. In case you need a larger set, you can also find scripts to parse and clean the Reddit comments in the Corpus/RedditData folder. In order to use those scripts, you need to download a torrent of Reddit comments from a torrent link [here](https://www.reddit.com/r/datasets/comments/3bxlg7/i_have_every_publicly_available_reddit_comment/). 
 Normally a single month of comments is big enough (can generated 3M pairs of training samples roughly). You can tune the parameters in the scripts based on your needs. 
