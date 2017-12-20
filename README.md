@@ -23,7 +23,7 @@ Why do you want to spend time checking this repository? Here are some possible r
    
    If you are not interested in rules, you can easily remove those lines related to knowledgebase.py and functiondata.py.
    
-4. A SOAP-based web service allows you to present the GUI in Java, while the model is trained and running in Python and TensorFlow.
+4. A SOAP-based web service (and a REST-API-based alternative, if you don't like to use SOAP) allows you to present the GUI in Java, while the model is trained and running in Python and TensorFlow.
 
 5. A simple solution (in-graph) to convert a string tensor to lower case in TensorFlow. It is required if you utilize the new DataSet API (tf.data.TextLineDataSet) in TensorFlow to load training data from text files.
 
@@ -102,6 +102,8 @@ A demo test result is provided as well. Please check it to see how this chatbot 
 ## Web Interface
 A SOAP-based web service architecture is implemented, with a Python server and a Java client. A nice GUI is also included for your reference. For details, please 
 check: https://github.com/bshao001/ChatLearner/tree/master/webui
+
+A REST-API-based alternative is also given if SOAP is not your choice. For details, please check: https://github.com/bshao001/ChatLearner/tree/master/webui_alternative
 
 ## References and Credits:
 1. The new NMT model: https://github.com/tensorflow/nmt
