@@ -1,0 +1,146 @@
+body  {
+  background:url("/images/bjb.jpg");
+  font-family:"Times New Roman", Georgia, Serif;
+  font-size:12px;
+  text-align:left;
+}
+#chatbox {
+  width:484px;
+  text-align:left;
+  margin-left:20px;
+  margin-top:20px; 
+  overflow:auto; 
+  clear:both;
+}
+#boxHeader {
+  width:424px;
+  position:relative;
+  background:rgba(0, 0, 0, 0.6);
+  color:#fff;
+  text-align:left;
+  padding:10px 10px 10px 50px;
+  border-top-left-radius:10px;
+  border-top-right-radius:10px;
+}
+#boxHeader h1, #boxHeader p {
+  font-weight:normal;
+  font-size:13px;
+  margin:0;
+  padding:0;
+}
+#boxHeader p {
+  color:rgba(255, 255, 255, 0.5);
+  font-size:11px;
+  margin-top:3px;
+  letter-spacing:1px;
+}
+#boxHeader .avatar {
+  position:absolute;
+  top:8px;
+  left:9px;
+  border-radius:30px;
+  width:30px;
+  height:30px;
+  overflow:hidden;
+  margin:0;
+  padding:0;
+  border:2px solid rgba(255, 255, 255, 0.24);
+}
+#boxHeader .avatar img {
+  width:100%;
+  height:auto;
+}
+#boxCenter {
+  width:480px;
+  height:560px;
+  background:white;
+  overflow-x:hidden;
+  overflow-y:scroll;
+  border-width:2px;
+  border-style:inset;
+}
+#boxCenter div.question, #boxCenter div.answer {
+  width:100%;
+  clear:both;
+  overflow:auto;
+  padding:0;
+  margin:0;
+}
+#boxCenter div div.content {
+  padding:4px 3px 4px 3px;
+  margin:1px 2px 1px 2px;
+  border-radius:5px;
+  max-width:384px;
+  text-align:justify;
+  line-height:160%;
+}
+#boxCenter div.question div.user {
+  padding:4px 2px 4px 2px;
+  margin:1px 2px 1px 2px;
+  border-radius:5px;
+  width:28px;
+  text-align:center;
+  line-height:160%;
+}
+#boxCenter div.question div {
+  float:right;
+  background:#90EE90;
+}
+#boxCenter div.answer div.user {
+  padding:0;
+  margin:1px 2px 1px 2px;
+  border-radius:5px;
+  width:28px;
+  text-align:center;
+  overflow:auto;
+}
+#boxCenter div.answer div {
+  float:left;
+  background:#87CEEB;
+}
+#boxCenter  .avatar {
+  border-radius:24px;
+  width:24px;
+  height:24px;
+  overflow:hidden;
+  margin:0;
+  padding:0;
+  border:2px solid rgba(255, 255, 255, 0.24);
+}
+#boxCenter .avatar img {
+  width: 100%;
+  height: auto;
+}
+#boxFooter {
+  width:464px;
+  background:rgba(0, 0, 0, 0.4);
+  padding:10px;
+  position:relative;
+  border-bottom-left-radius:10px;
+  border-bottom-right-radius:10px;
+}
+#inputArea {
+  resize:none;
+  font-size:12px;
+  height:28px;
+  width:400px;
+  margin:0;
+  overflow:hidden;
+}
+#sendButton {
+  position:absolute;
+  top:16px;
+  right:10px;
+  color:#fff;
+  border:none;
+  background:#248A52;
+  font-size:10px;
+  text-transform:uppercase;
+  line-height:1;
+  padding:6px 10px;
+  border-radius:10px;
+  transition:background .2s ease;
+}
+#sendButton:hover  {
+  cursor:pointer;
+}
