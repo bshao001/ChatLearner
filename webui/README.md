@@ -32,7 +32,7 @@ The Java client is tested with Java 1.7 and Tomcat 7.0. You can try later versio
 2. Install Tomcat 7.0. Choose port 80 (at least not port 8080 if you are running the python web service on the same machine, which is on port 8080).
 3. Copy the whole folder chatClient to C drive as C:\chatClient. 
 4. Make changes to the server.xml of the Tomcat installation to add the chatClient web application (copy the Host portion for chatClient into server.xml). You need to change the name of the host if you are using a different domain.
-6. Change the service address in C:\chatClient\ROOT\ajax\getChatReply.jsp in case you are using a different domain.
-7. Restart Tomcat.
+5. Change the service address in C:\chatClient\ROOT\ajax\getChatReply.jsp in case you are using a different domain.
+6. Restart Tomcat.
 
 And now you are ready to try it: http://papayachat.net, if you are using this domain.
