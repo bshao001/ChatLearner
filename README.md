@@ -4,9 +4,9 @@
 
 A chatbot implemented in TensorFlow based on the new sequence to sequence (NMT) model, with certain rules integrated.
 
-ChatLearner (Papaya) was built on the new seq2seq model (dynamic RNN based) in TensorFlow 1.4. The code was largely referenced on the tutorial of the NMT model (https://github.com/tensorflow/nmt). Due to the changes made on tf.data API in TensorFlow 1.4, the implementation does not support any earlier TensorFlow releases.
+ChatLearner (Papaya) was built on the new seq2seq model (dynamic RNN based) in TensorFlow 1.4. The NN model implementation was largely referenced on the NMT model (https://github.com/tensorflow/nmt). Due to the changes made on tf.data API in TensorFlow 1.4, this ChatLearner version does not support any earlier TensorFlow releases.
 
-Before starting everything else, you may want to have a feeling of how ChatLearner behaves. Take a look at the sample conversation [here](https://github.com/bshao001/ChatLearner/blob/master/Data/Test/responses.txt), or if you prefer to try my trained model, then download it [here](https://drive.google.com/file/d/1BUK9r_WV8z4FWZvN2lpvvluRmHjtoSLt/view?usp=sharing). Unzip the downloaded .rar file, and copy the Result folder into the Data folder under your project root. A vocab.txt file is also included in case I update it without updating the trained model in the future.
+Before starting everything else, you may want to have a feeling of how ChatLearner behaves. Take a look at the sample conversation [here](https://github.com/bshao001/ChatLearner/blob/master/Data/Test/responses.txt), or if you prefer to try my trained model, then download it [here](https://drive.google.com/file/d/1fxeuXma-Yq1cnNHl8451Fjp03YYh2Xcw/view?usp=sharing). Unzip the downloaded .rar file, and copy the Result folder into the Data folder under your project root. A vocab.txt file is also included in case I update it without updating the trained model in the future.
 
 ## Highlights and Specialties:
 Why do you want to spend time checking this repository? Here are some possible reasons:
@@ -15,7 +15,9 @@ Why do you want to spend time checking this repository? Here are some possible r
 
 2. The concise code style and clear implementation of the new seq2seq model based on dynamic RNN (a.k.a. the new NMT model). It is customized for chatbots and much easier to understand compared with the official tutorial.
 
-3. Some rules are integrated to demo how to combine traditional rule-based chatbots with new deep learning models. No matter how powerful a deep learning model can be, it cannot even answer questions requiring simple arithmetic calculations, and many others. The approach demonstrated here can be easily adapted to retrieve news or other online information. With the rules implemented, it can then properly answer many interesting questions. For example:
+3. The idea of using seamlessly integrated ChatSession to handle basic conversational context.
+
+4. Some rules are integrated to demo how to combine traditional rule-based chatbots with new deep learning models. No matter how powerful a deep learning model can be, it cannot even answer questions requiring simple arithmetic calculations, and many others. The approach demonstrated here can be easily adapted to retrieve news or other online information. With the rules implemented, it can then properly answer many interesting questions. For example:
    
    * "What time is it now?" or "What day is it today?" or "What's the date yesterday?"
    * "Read me a story please." or "Tell me a joke." It can then present stories and jokes randomly and not being limited by the sequence length of the decoder.
@@ -23,11 +25,11 @@ Why do you want to spend time checking this repository? Here are some possible r
    
    If you are not interested in rules, you can easily remove those lines related to knowledgebase.py and functiondata.py.
    
-4. A SOAP-based web service (and a REST-API-based alternative, if you don't like to use SOAP) allows you to present the GUI in Java, while the model is trained and running in Python and TensorFlow.
+5. A SOAP-based web service (and a REST-API-based alternative, if you don't like to use SOAP) allows you to present the GUI in Java, while the model is trained and running in Python and TensorFlow.
 
-5. A simple solution (in-graph) to convert a string tensor to lower case in TensorFlow. It is required if you utilize the new DataSet API (tf.data.TextLineDataSet) in TensorFlow to load training data from text files.
+6. A simple solution (in-graph) to convert a string tensor to lower case in TensorFlow. It is required if you utilize the new DataSet API (tf.data.TextLineDataSet) in TensorFlow to load training data from text files.
 
-6. The repository also contains a chatbot implementation based on the legacy seq2seq model. In case you are interested in that, please check the Legacy_Chatbot branch at https://github.com/bshao001/ChatLearner/tree/Legacy_Chatbot.
+7. The repository also contains a chatbot implementation based on the legacy seq2seq model. In case you are interested in that, please check the Legacy_Chatbot branch at https://github.com/bshao001/ChatLearner/tree/Legacy_Chatbot.
 
 ## Why NMT model instead of the legacy seq2seq model in TensorFlow:
 1. The main advantage of the new model is speed. Training and inference using the new model are both faster. As the new model is based on the dynamic RNN, a GPU (or CPU) can afford to train it with a larger batch size. With the legacy one, if you could train the model with batch size 64 or 128, then you can train the new model in batch size doubled: 128 or 256, therefore cutting the training time to almost half.
