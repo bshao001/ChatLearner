@@ -20,7 +20,6 @@ from collections import namedtuple
 from tensorflow.python.ops import lookup_ops
 
 from chatbot.hparams import HParams
-from chatbot.knowledgebase import KnowledgeBase
 
 COMMENT_LINE_STT = "#=="
 CONVERSATION_SEP = "==="
@@ -34,14 +33,12 @@ VOCAB_FILE = "vocab.txt"
 
 
 class TokenizedData:
-    def __init__(self, corpus_dir, hparams=None, knbase_dir=None, training=True, buffer_size=8192):
+    def __init__(self, corpus_dir, hparams=None, training=True, buffer_size=8192):
         """
         Args:
             corpus_dir: Name of the folder storing corpus files for training.
             hparams: The object containing the loaded hyper parameters. If None, it will be 
                     initialized here.
-            knbase_dir: Name of the folder storing data files for the knowledge base. Used for 
-                    inference only.
             training: Whether to use this object for training.
             buffer_size: The buffer size used for mapping process during data processing.
         """
@@ -68,21 +65,11 @@ class TokenizedData:
             self.reverse_vocab_table = None
             self._load_corpus(corpus_dir)
             self._convert_to_tokens(buffer_size)
-
-            self.upper_words = {}
-            self.stories = {}
-            self.jokes = []
         else:
             self.case_table = None
             self.reverse_vocab_table = \
                 lookup_ops.index_to_string_table_from_file(vocab_file,
                                                            default_value=self.hparams.unk_token)
-            assert knbase_dir is not None
-            knbs = KnowledgeBase()
-            knbs.load_knbase(knbase_dir)
-            self.upper_words = knbs.upper_words
-            self.stories = knbs.stories
-            self.jokes = knbs.jokes
 
     def get_training_batch(self, num_threads=4):
         assert self.training
@@ -341,8 +328,7 @@ class BatchedInput(namedtuple("BatchedInput",
 #             new_q = ' '.join(tokens[:]).strip()
 #             new_q_list.append(new_q)
 #
-#         knbs_dir = os.path.join(PROJECT_ROOT, 'Data', 'KnowledgeBase')
-#         td = TokenizedData(corpus_dir=corp_dir, knbase_dir=knbs_dir, training=False)
+#         td = TokenizedData(corpus_dir=corp_dir, training=False)
 #         src_dataset = tf.data.Dataset.from_tensor_slices(tf.constant(new_q_list))
 #         infer_batch = td.get_inference_batch(src_dataset)
 #

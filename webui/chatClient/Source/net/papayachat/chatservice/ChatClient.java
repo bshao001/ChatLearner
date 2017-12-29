@@ -23,6 +23,7 @@ import com.sun.xml.ws.client.BindingProviderProperties;
 
 public class ChatClient {
 	private final ChatServicePortType cPort;
+	private int sessionId;
 	
 	/**
 	 * serviceAddress example: http://papayachat.net:8080/ChatService
@@ -30,6 +31,7 @@ public class ChatClient {
 	public ChatClient(String serviceAddress, int timeout) {
 		ChatService cServ = new ChatService();
 		this.cPort = cServ.getChatServicePort();
+		this.sessionId = 0;
 		
 		Map<String, Object> ctxt = ((BindingProvider)cPort).getRequestContext();
 		ctxt.put(BindingProvider.ENDPOINT_ADDRESS_PROPERTY, serviceAddress);
@@ -40,10 +42,17 @@ public class ChatClient {
 	public String getReply(String question) throws Exception {
 		ObjectFactory of = new ObjectFactory();
 		ParamsTypes params = of.createParamsTypes();
-		params.setSessionId(BigInteger.valueOf(1l));
+		params.setSessionId(BigInteger.valueOf(this.sessionId));
 		params.setQuestion(question);
 		
 		SessionSentence resp = cPort.reply(params);
+		int newId = resp.getSessionId().intValue();
+		if (this.sessionId != newId) setSessionId(newId);
+		
 		return resp.getSentence();
+	}
+	
+	private void setSessionId(int sessionId) {
+		this.sessionId = sessionId;
 	}
 }

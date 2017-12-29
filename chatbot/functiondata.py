@@ -43,37 +43,26 @@ class FunctionData:
         "It took me a little while, and finally I got the result: ",
         "I had to use my cell phone for this calculation. Here is the outcome: "
     ]
+    ask_name_list = [
+        "May I also have your name, please?",
+        "And, how should I call you, please?",
+        "And, What do you want me to call you, dear sir or madam?"
+    ]
 
-    def __init__(self, tokenized_data, html_format):
+    def __init__(self, knowledge_base, chat_session, html_format):
         """
         Args:
-            tokenized_data: The parameter data needed for prediction.
+            knowledge_base: The knowledge base data needed for prediction.
+            chat_session: The chat session object that can be read and written.
             html_format: Whether out_sentence is in HTML format.
         """
-        self.tokenized_data = tokenized_data
+        self.knowledge_base = knowledge_base
+        self.chat_session = chat_session
         self.html_format = html_format
 
-    def get_story_any(self):
-        stories = self.tokenized_data.stories
-        _, content = random.choice(list(stories.items()))
-        if not self.html_format:
-            content = re.sub(r'_np_', '', content)
-        return content
-
-    def get_story_name(self, story_name):
-        stories = self.tokenized_data.stories
-        content = stories[story_name]
-        if not self.html_format:
-            content = re.sub(r'_np_', '', content)
-        return content
-
-    def get_joke_any(self):
-        jokes = self.tokenized_data.jokes
-        content = random.choice(jokes)
-        if not self.html_format:
-            content = re.sub(r'_np_', '', content)
-        return content
-
+    """
+    # Rule 2: Date and Time
+    """
     @staticmethod
     def get_date_time():
         return time.strftime("%Y-%m-%d %H:%M")
@@ -103,6 +92,52 @@ class FunctionData:
         weekday = cal.day_name[day_time.weekday()]
         return "{}, {:%B %d, %Y}".format(weekday, day_time)
 
+    """
+    # Rule 3: Stories and Jokes, and last topic
+    """
+    def get_story_any(self):
+        self.chat_session.last_topic = "STORY"
+        self.chat_session.keep_topic = True
+
+        stories = self.knowledge_base.stories
+        _, content = random.choice(list(stories.items()))
+        if not self.html_format:
+            content = re.sub(r'_np_', '', content)
+        return content
+
+    def get_story_name(self, story_name):
+        self.chat_session.last_topic = "STORY"
+        self.chat_session.keep_topic = True
+
+        stories = self.knowledge_base.stories
+        content = stories[story_name]
+        if not self.html_format:
+            content = re.sub(r'_np_', '', content)
+        return content
+
+    def get_joke_any(self):
+        self.chat_session.last_topic = "JOKE"
+        self.chat_session.keep_topic = True
+
+        jokes = self.knowledge_base.jokes
+        content = random.choice(jokes)
+        if not self.html_format:
+            content = re.sub(r'_np_', '', content)
+        return content
+
+    def continue_last_topic(self):
+        if self.chat_session.last_topic == "STORY":
+            self.chat_session.keep_topic = True
+            return self.get_story_any()
+        elif self.chat_session.last_topic == "JOKE":
+            self.chat_session.keep_topic = True
+            return self.get_joke_any()
+        else:
+            return "Sorry, but what topic do you prefer?"
+
+    """
+    # Rule 4: Arithmetic ops
+    """
     @staticmethod
     def get_number_plus(num1, num2):
         res = num1 + num2
@@ -234,24 +269,223 @@ class FunctionData:
 
         return result + current
 
+    """
+    # Rule 5: User name, call me information, and last question and answer
+    """
+    @staticmethod
+    def check_username_callme_pattern_and_replace(sentence):
+        import nltk
 
-def call_function(func_info, tokenized_data=None, para_list=None, html_format=False):
-    func_data = FunctionData(tokenized_data, html_format=html_format)
+        tokens = nltk.word_tokenize(sentence)
+        tmp_sentence = ' '.join(tokens[:]).strip()
+
+        pat_name = re.compile(r'(\s|^)my\s+name\s+is\s+(.+?)(\s\.|\s,|\s!|$)', re.IGNORECASE)
+        pat_call = re.compile(r'(\s|^)call\s+me\s+(.+?)(\s(please|pls))?(\s\.|\s,|\s!|$)', re.IGNORECASE)
+
+        mat_name = re.search(pat_name, tmp_sentence)
+        mat_call = re.search(pat_call, tmp_sentence)
+
+        para_list = []
+        found = 0
+        if mat_name:
+            user_name = mat_name.group(2).strip()
+            para_list.append(user_name)
+            new_sentence = sentence.replace(user_name, ' _name_ ', 1)
+            # print("User name is: {}.".format(user_name))
+            found += 1
+        else:
+            para_list.append('')  # reserve the slot
+            new_sentence = sentence
+            # print("User name not found.")
+
+        if mat_call:
+            call_me = mat_call.group(2).strip()
+            para_list.append(call_me)
+            new_sentence = new_sentence.replace(call_me, ' _callme_ ')
+            # print("Call me {}.".format(call_me))
+            found += 1
+        else:
+            para_list.append('')
+            # print("call me not found.")
+
+        if found >= 1:
+            return True, new_sentence, para_list
+        else:
+            return False, sentence, para_list
+
+    def ask_name_if_not_yet(self):
+        user_name = self.chat_session.user_name
+        call_me = self.chat_session.call_me
+        if user_name or call_me:
+            return ""
+        else:
+            return random.choice(FunctionData.ask_name_list)
+
+    def get_user_name_and_reply(self):
+        user_name = self.chat_session.user_name
+        if user_name and user_name.strip() != '':
+            return user_name
+        else:
+            return "Did you tell me your name? Sorry, I missed that."
+
+    def get_callme(self, punc_type):
+        call_me = self.chat_session.call_me
+        if call_me and call_me.strip() != '':
+            if punc_type == 'comma0':
+                return ", {}".format(call_me)
+            else:
+                return call_me
+        else:
+            return ""
+
+    def get_last_question(self):
+        # Do not record this pair as the last question and answer
+        self.chat_session.update_pair = False
+
+        last_question = self.chat_session.last_question
+        if last_question is None or last_question.strip() == '':
+            return "You did not say anything."
+        else:
+            return "You have just said: {}".format(last_question)
+
+    def get_last_answer(self):
+        # Do not record this pair as the last question and answer
+        self.chat_session.update_pair = False
+
+        last_answer = self.chat_session.last_answer
+        if last_answer is None or last_answer.strip() == '':
+            return "I did not say anything."
+        else:
+            return "I have just said: {}".format(last_answer)
+
+    def update_user_name(self, new_name):
+        return self.update_user_name_and_call_me(new_name=new_name)
+
+    def update_call_me(self, new_call):
+        return self.update_user_name_and_call_me(new_call=new_call)
+
+    def update_user_name_and_call_me(self, new_name=None, new_call=None):
+        user_name = self.chat_session.user_name
+        call_me = self.chat_session.call_me
+        # print("{}; {}; {}; {}".format(user_name, call_me, new_name, new_call))
+
+        if user_name and new_name and new_name.strip() != '':
+            if new_name.lower() != user_name.lower():
+                self.chat_session.update_pending_action('update_user_name_confirmed', None, new_name)
+                return "I am confused. I have your name as {}. Did I get it correctly?".format(user_name)
+            else:
+                return "You told me your name already. Thank you, {}, for assuring me.".format(user_name)
+
+        if call_me and new_call and new_call.strip() != '':
+            if new_call.lower() != call_me.lower():
+                self.chat_session.update_pending_action('update_call_me_confirmed', new_call, None)
+                return "You wanted me to call you {}. Would you like me to call you {} now?"\
+                    .format(call_me, new_call)
+            else:
+                return "Thank you for letting me again, {}.".format(call_me)
+
+        if new_call and new_call.strip() != '':
+            if new_name and new_name.strip() != '':
+                self.chat_session.user_name = new_name
+
+            self.chat_session.call_me = new_call
+            return "Thank you, {}.".format(new_call)
+        elif new_name and new_name.strip() != '':
+            self.chat_session.user_name = new_name
+            return "Thank you, {}.".format(new_name)
+
+        return "Sorry, I am confused. I could not figure out what you meant."
+
+    def update_user_name_enforced(self, new_name):
+        if new_name and new_name.strip() != '':
+            self.chat_session.user_name = new_name
+            return "OK, thank you, {}.".format(new_name)
+        else:
+            self.chat_session.user_name = None  # Clear the existing user_name, if any.
+            return "Sorry, I am lost."
+
+    def update_call_me_enforced(self, new_call):
+        if new_call and new_call.strip() != '':
+            self.chat_session.call_me = new_call
+            return "OK, got it. Thank you, {}.".format(new_call)
+        else:
+            self.chat_session.call_me = None  # Clear the existing call_me, if any.
+            return "Sorry, I am totally lost."
+
+    def update_user_name_and_reply_papaya(self, new_name):
+        user_name = self.chat_session.user_name
+
+        if new_name and new_name.strip() != '':
+            if user_name:
+                if new_name.lower() != user_name.lower():
+                    self.chat_session.update_pending_action('update_user_name_confirmed', None, new_name)
+                    return "I am confused. I have your name as {}. Did I get it correctly?".format(user_name)
+                else:
+                    return "Thank you, {}, for assuring me your name. My name is Papaya.".format(user_name)
+            else:
+                self.chat_session.user_name = new_name
+                return "Thank you, {}. BTW, my name is Papaya.".format(new_name)
+        else:
+            return "My name is Papaya. Thanks."
+
+    def execute_pending_action_and_reply(self, answer):
+        func = self.chat_session.pending_action['func']
+        if func == 'update_user_name_confirmed':
+            if answer.lower() == 'yes':
+                reply = "Thank you, {}, for confirming this.".format(self.chat_session.user_name)
+            else:
+                new_name = self.chat_session.pending_action['No']
+                self.chat_session.user_name = new_name
+                reply = "Thank you, {}, for correcting me.".format(new_name)
+        elif func == 'update_call_me_confirmed':
+            if answer.lower() == 'yes':
+                new_call = self.chat_session.pending_action['Yes']
+                self.chat_session.call_me = new_call
+                reply = "Thank you, {}, for correcting me.".format(new_call)
+            else:
+                reply = "Thank you. I will continue to call you {}.".format(self.chat_session.call_me)
+        else:
+            reply = "OK, thanks."  # Just presents a reply that is good for most situations
+
+        # Clear the pending action anyway
+        self.chat_session.clear_pending_action()
+        return reply
+
+
+def call_function(func_info, knowledge_base=None, chat_session=None, para_list=None,
+                  html_format=False):
+    func_data = FunctionData(knowledge_base, chat_session, html_format=html_format)
 
     func_dict = {
-        'get_story_any': func_data.get_story_any,
-        'get_story_name': func_data.get_story_name,
-        'get_joke_any': func_data.get_joke_any,
-
         'get_date_time': FunctionData.get_date_time,
         'get_time': FunctionData.get_time,
         'get_today': FunctionData.get_today,
         'get_weekday': FunctionData.get_weekday,
 
+        'get_story_any': func_data.get_story_any,
+        'get_story_name': func_data.get_story_name,
+        'get_joke_any': func_data.get_joke_any,
+        'continue_last_topic': func_data.continue_last_topic,
+
         'get_number_plus': FunctionData.get_number_plus,
         'get_number_minus': FunctionData.get_number_minus,
         'get_number_multiply': FunctionData.get_number_multiply,
-        'get_number_divide': FunctionData.get_number_divide
+        'get_number_divide': FunctionData.get_number_divide,
+
+        'ask_name_if_not_yet': func_data.ask_name_if_not_yet,
+        'get_user_name_and_reply': func_data.get_user_name_and_reply,
+        'get_callme': func_data.get_callme,
+        'get_last_question': func_data.get_last_question,
+        'get_last_answer': func_data.get_last_answer,
+
+        'update_user_name': func_data.update_user_name,
+        'update_call_me': func_data.update_call_me,
+        'update_user_name_and_call_me': func_data.update_user_name_and_call_me,
+        'update_user_name_enforced': func_data.update_user_name_enforced,
+        'update_call_me_enforced': func_data.update_call_me_enforced,
+        'update_user_name_and_reply_papaya': func_data.update_user_name_and_reply_papaya,
+
+        'execute_pending_action_and_reply': func_data.execute_pending_action_and_reply
     }
 
     para1_index = func_info.find('_para1_')
@@ -264,36 +498,67 @@ def call_function(func_info, tokenized_data=None, para_list=None, html_format=Fa
         func_name = func_info[:para1_index]
         if para2_index == -1:  # Only one parameter
             func_para = func_info[para1_index+7:]
-            return func_dict[func_name](func_para)
+            if func_para == '_name_' and para_list is not None and len(para_list) >= 1:
+                return func_dict[func_name](para_list[0])
+            elif func_para == '_callme_' and para_list is not None and len(para_list) >= 2:
+                return func_dict[func_name](para_list[1])
+            else:  # The parameter value was embedded in the text (part of the string) of the training example.
+                return func_dict[func_name](func_para)
         else:
             func_para1 = func_info[para1_index+7:para2_index]
             func_para2 = func_info[para2_index+7:]
-            if para_list is not None:
-                num1_val = para_list[0]
-                num2_val = para_list[1]
+            if para_list is not None and len(para_list) >= 2:
+                para1_val = para_list[0]
+                para2_val = para_list[1]
 
                 if func_para1 == '_num1_' and func_para2 == '_num2_':
-                    return func_dict[func_name](num1_val, num2_val)
+                    return func_dict[func_name](para1_val, para2_val)
                 elif func_para1 == '_num2_' and func_para2 == '_num1_':
-                    return func_dict[func_name](num2_val, num1_val)
+                    return func_dict[func_name](para2_val, para1_val)
+                elif func_para1 == '_name_' and func_para2 == '_callme_':
+                    return func_dict[func_name](para1_val, para2_val)
 
     return "You beat me to it, and I cannot tell which is which for this question."
 
 # if __name__ == "__main__":
 #     import os
 #     from settings import PROJECT_ROOT
-#     from chatbot.tokenizeddata import TokenizedData
+#     from chatbot.knowledgebase import KnowledgeBase
 #
-#     corp_dir = os.path.join(PROJECT_ROOT, 'Data', 'Corpus')
-#     knbs_dir = os.path.join(PROJECT_ROOT, 'Data', 'KnowledgeBase')
-#     td = TokenizedData(corpus_dir=corp_dir, knbase_dir=knbs_dir, training=False)
+#     knbs = KnowledgeBase()
+#     knbs.load_knbase(os.path.join(PROJECT_ROOT, 'Data', 'KnowledgeBase'))
 #
-#     print(call_function('get_story_any', td, html_format=True))
-#     print(call_function('get_story_any', td, html_format=False))
-#     print(call_function('get_joke_any', td, html_format=True))
-#     print(call_function('get_joke_any', td, html_format=False))
+#     print(call_function('get_story_any', knbs, html_format=True))
+#     print(call_function('get_story_any', knbs, html_format=False))
+#     print(call_function('get_joke_any', knbs, html_format=True))
+#     print(call_function('get_joke_any', knbs, html_format=False))
 #     print(call_function('get_weekday_para1_d_2'))
 #     print(call_function('get_weekday_para1_d_1'))
 #     print(call_function('get_weekday_para1_d0'))
 #     print(call_function('get_weekday_para1_d1'))
 #     print(call_function('get_weekday_para1_d2'))
+#
+#     sentence = "My name is jack brown. Please call me Mr. Brown."
+#     print("# {}".format(sentence))
+#     _, ns, _ = FunctionData.check_username_callme_pattern_and_replace(sentence)
+#     print(ns)
+#
+#     sentence = "My name is Bo Shao."
+#     print("# {}".format(sentence))
+#     _, ns, _ = FunctionData.check_username_callme_pattern_and_replace(sentence)
+#     print(ns)
+#
+#     sentence = "You can call me Dr. Shao."
+#     print("# {}".format(sentence))
+#     _, ns, _ = FunctionData.check_username_callme_pattern_and_replace(sentence)
+#     print(ns)
+#
+#     sentence = "Call me Ms. Tailor please."
+#     print("# {}".format(sentence))
+#     _, ns, _ = FunctionData.check_username_callme_pattern_and_replace(sentence)
+#     print(ns)
+#
+#     sentence = "My name is Mark. Please call me Mark D."
+#     print("# {}".format(sentence))
+#     _, ns, _ = FunctionData.check_username_callme_pattern_and_replace(sentence)
+#     print(ns)

@@ -25,11 +25,14 @@ app = Flask(__name__)
 
 @app.route('/reply', methods=['POST', 'GET'])
 def reply():
-    sessionId = request.args.get('sessionId')
+    session_id = int(request.args.get('sessionId'))
     question = request.args.get('question')
 
-    answer = predictor.predict(question, html_format=True)
-    return jsonify({'sessionId': sessionId, 'sentence': answer})
+    if session_id not in predictor.session_data.session_dict:  # Including the case of 0
+        session_id = predictor.session_data.add_session()
+
+    answer = predictor.predict(session_id, question, html_format=True)
+    return jsonify({'sessionId': session_id, 'sentence': answer})
 
 
 if __name__ == "__main__":

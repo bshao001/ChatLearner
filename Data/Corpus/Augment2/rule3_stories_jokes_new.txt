@@ -4,6 +4,8 @@ Q: Can you tell me a story ?
 A: Sure . _func_val_get_story_any
 Q: Can you please tell me a story ?
 A: Sure . _func_val_get_story_any
+Q: One more please !
+A: Sure . _func_val_continue_last_topic
 ===
 Q: Tell me another story please .
 A: _func_val_get_story_any
@@ -11,6 +13,8 @@ Q: Tell me another story please , Papaya .
 A: _func_val_get_story_any
 Q: Do you know other stories ?
 A: Yes , I have read some , such as , The Three Little Pigs , The Velveteen Rabbit , My Father 's Dragon , The Ugly Duckling , and The Little Mermaid .
+Q: Another please !
+A: Sure . _func_val_continue_last_topic
 ===
 Q: Read me a story please !
 A: Let me get my book . Oh , here you are : _func_val_get_story_any
@@ -27,6 +31,8 @@ Q: Can you tell me a joke ?
 A: Sure . _func_val_get_joke_any
 Q: Can you please tell me a joke ?
 A: Sure . _func_val_get_joke_any
+Q: One more .
+A: _func_val_continue_last_topic
 ===
 Q: Tell me another joke please .
 A: _func_val_get_joke_any
@@ -34,6 +40,8 @@ Q: Tell me another joke please , Papaya .
 A: _func_val_get_joke_any
 Q: Do you know other jokes ?
 A: Of course . Hope you enjoy this one : _func_val_get_joke_any
+Q: Another .
+A: _func_val_continue_last_topic
 ===
 Q: Read me a joke please !
 A: Let me get my book . Oh , here you are : _func_val_get_joke_any
@@ -43,6 +51,8 @@ Q: Could you please read me a joke ?
 A: Sure . _func_val_get_joke_any
 Q: Please tell me a joke .
 A: _func_val_get_joke_any
+Q: Do you know more ?
+A: Yes . _func_val_continue_last_topic
 ===
 Q: Do you know Snow White ?
 A: Yes , she is the main character of the famous fairy tale : Snow White and the Seven Dwarfs .

@@ -1,0 +1,70 @@
+Q: What is your name ?
+A: My name is Papaya . _func_val_ask_name_if_not_yet
+Q: My name is _name_ .
+A: _func_val_update_user_name_para1__name_
+Q: Yes .
+A: _func_val_execute_pending_action_and_reply_para1_yes
+Q: Yes, my name is _name_ .
+A: _func_val_update_user_name_enforced_para1__name_
+Q: No, my name is _name_ .
+A: _func_val_update_user_name_enforced_para1__name_
+===
+Q: My name is _name_ . What is my name ?
+A: _func_val_update_user_name_para1__name_
+===
+Q: What is my name ?
+A: _func_val_get_user_name_and_reply
+===
+Q: My name is _name_ . What is your name ?
+A: _func_val_update_user_name_and_reply_papaya_para1__name_
+===
+Q: May I have your name ?
+A: Sure . My name is Papaya . _func_val_ask_name_if_not_yet
+Q: Please call me _callme_ .
+A: _func_val_update_call_me_para1__callme_
+Q: No .
+A: _func_val_execute_pending_action_and_reply_para1_no
+Q: Yes, please call me _callme_ .
+A: _func_val_update_call_me_enforced_para1__callme_
+Q: No, please call me _callme_ .
+A: _func_val_update_call_me_enforced_para1__callme_
+===
+Q: May I have your name please ?
+A: Sure . My name is Papaya . _func_val_ask_name_if_not_yet
+Q: My name is _name_ . You can call me _callme_ .
+A: _func_val_update_user_name_and_call_me_para1__name__para2__callme_
+Q: Yes , you got it .
+A: _func_val_execute_pending_action_and_reply_para1_yes
+Q: No , that 's not right .
+A: _func_val_execute_pending_action_and_reply_para1_no
+Q: Actually, I prefer you to call me _callme_ . I like that better .
+A: _func_val_update_call_me_enforced_para1__callme_
+===
+Q: What did I ask ?
+A: _func_val_get_last_question
+Q: What did I say ?
+A: _func_val_get_last_question
+Q: Sorry, but what did I ask you ?
+A: _func_val_get_last_question
+Q: What was my question ?
+A: _func_val_get_last_question
+Q: What did you answer ?
+A: _func_val_get_last_answer
+Q: What did you say ?
+A: _func_val_get_last_answer
+Q: Sorry, but what did you answer me ?
+A: _func_val_get_last_answer
+Q: What was your question ?
+A: _func_val_get_last_answer
+===
+Q: Have a nice day !
+A: You too , thank you _func_val_get_callme_para1_comma0 !
+===
+Q: Talk to you soon .
+A: See you next time _func_val_get_callme_para1_comma0 .
+===
+Q: See you next time .
+A: See you _func_val_get_callme_para1_comma0 .
+===
+Q: Bye, Papaya .
+A: Bye bye _func_val_get_callme_para1_comma0 .

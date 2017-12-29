@@ -19,6 +19,8 @@ import tensorflow as tf
 
 from chatbot.tokenizeddata import TokenizedData
 from chatbot.modelcreator import ModelCreator
+from chatbot.knowledgebase import KnowledgeBase
+from chatbot.sessiondata import SessionData
 from chatbot.functiondata import FunctionData
 from chatbot.functiondata import call_function
 
@@ -27,21 +29,33 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 
 class BotPredictor(object):
     def __init__(self, session, corpus_dir, knbase_dir, result_dir, result_file):
+        """
+        Args:
+            session: The TensorFlow session.
+            corpus_dir: Name of the folder storing corpus files and vocab information.
+            knbase_dir: Name of the folder storing data files for the knowledge base.
+            result_dir: The folder containing the trained result files.
+            result_file: The file name of the trained model.
+        """
         self.session = session
 
         # Prepare data and hyper parameters
         print("# Prepare dataset placeholder and hyper parameters ...")
-        self.tokenized_data = TokenizedData(corpus_dir=corpus_dir, knbase_dir=knbase_dir,
-                                            training=False)
+        tokenized_data = TokenizedData(corpus_dir=corpus_dir, training=False)
 
-        self.hparams = self.tokenized_data.hparams
+        self.knowledge_base = KnowledgeBase()
+        self.knowledge_base.load_knbase(knbase_dir)
+
+        self.session_data = SessionData()
+
+        self.hparams = tokenized_data.hparams
         self.src_placeholder = tf.placeholder(shape=[None], dtype=tf.string)
         src_dataset = tf.data.Dataset.from_tensor_slices(self.src_placeholder)
-        self.infer_batch = self.tokenized_data.get_inference_batch(src_dataset)
+        self.infer_batch = tokenized_data.get_inference_batch(src_dataset)
 
         # Create model
         print("# Creating inference model ...")
-        self.model = ModelCreator(training=False, tokenized_data=self.tokenized_data,
+        self.model = ModelCreator(training=False, tokenized_data=tokenized_data,
                                   batch_input=self.infer_batch)
         # Restore model weights
         print("# Restoring model weights ...")
@@ -49,12 +63,19 @@ class BotPredictor(object):
 
         self.session.run(tf.tables_initializer())
 
-    def predict(self, sentence, html_format=False):
-        if sentence.strip() == '':
-            return "Don't you want to say something to me?"
+    def predict(self, session_id, question, html_format=False):
+        chat_session = self.session_data.get_session(session_id)
+        chat_session.before_prediction()  # Reset before each prediction
 
-        pat_matched, new_sentence, num_list = \
-            FunctionData.check_arithmetic_pattern_and_replace(sentence)
+        if question.strip() == '':
+            answer = "Don't you want to say something to me?"
+            chat_session.after_prediction(question, answer)
+            return answer
+
+        pat1_matched, new_sentence, num_list = \
+            FunctionData.check_arithmetic_pattern_and_replace(question)
+        pat2_matched, new_sentence, para_list = \
+            FunctionData.check_username_callme_pattern_and_replace(new_sentence)
 
         for pre_time in range(2):
             tokens = nltk.word_tokenize(new_sentence.lower())
@@ -74,18 +95,27 @@ class BotPredictor(object):
             if eos_token in outputs:
                 outputs = outputs[:outputs.index(eos_token)]
 
-            if pat_matched and pre_time == 0:
-                out_sentence, if_func_val = self._get_final_output(outputs, para_list=num_list,
-                                                                   html_format=html_format)
+            if (pat1_matched or pat2_matched) and pre_time == 0:
+                if pat1_matched:
+                    out_sentence, if_func_val = self._get_final_output(outputs, chat_session,
+                                                                       para_list=num_list,
+                                                                       html_format=html_format)
+                else:
+                    out_sentence, if_func_val = self._get_final_output(outputs, chat_session,
+                                                                       para_list=para_list,
+                                                                       html_format=html_format)
                 if if_func_val:
+                    chat_session.after_prediction(question, out_sentence)
                     return out_sentence
                 else:
-                    new_sentence = sentence
+                    new_sentence = question
             else:
-                out_sentence, _ = self._get_final_output(outputs, html_format=html_format)
+                out_sentence, _ = self._get_final_output(outputs, chat_session,
+                                                         html_format=html_format)
+                chat_session.after_prediction(question, out_sentence)
                 return out_sentence
 
-    def _get_final_output(self, sentence, para_list=None, html_format=False):
+    def _get_final_output(self, sentence, chat_session, para_list=None, html_format=False):
         sentence = b' '.join(sentence).decode('utf-8')
         if sentence == '':
             return "I don't know what to say.", False
@@ -100,17 +130,20 @@ class BotPredictor(object):
 
             if word.startswith('_func_val_'):
                 if_func_val = True
-                word = call_function(word[10:], tokenized_data=self.tokenized_data,
-                                     para_list=para_list, html_format=html_format)
+                word = call_function(word[10:], knowledge_base=self.knowledge_base,
+                                     chat_session=chat_session, para_list=para_list,
+                                     html_format=html_format)
+                if word is None or word == '':
+                    continue
             else:
-                if word in self.tokenized_data.upper_words:
-                    word = self.tokenized_data.upper_words[word]
+                if word in self.knowledge_base.upper_words:
+                    word = self.knowledge_base.upper_words[word]
 
                 if (last_word is None or last_word in ['.', '!', '?']) and not word[0].isupper():
                     word = word.capitalize()
 
             if not word.startswith('\'') and word != 'n\'t' \
-                and (word not in string.punctuation or word in ['(', '[', '{', '``', '$']) \
+                and (word[0] not in string.punctuation or word in ['(', '[', '{', '``', '$']) \
                 and last_word not in ['(', '[', '{', '``', '$']:
                 word = ' ' + word
 

@@ -73,58 +73,60 @@ def generate_vocab_file(corpus_dir):
 
     temp_dict = {}  # A temp dict
     cornell_file = os.path.join(corpus_dir, AUG0_FOLDER, CORNELL_DATA_FILE)
-    with open(cornell_file, 'r') as f1:
-        for line in f1:
-            ln = line.strip()
-            if not ln:
-                continue
-            if ln.startswith("Q:") or ln.startswith("A:"):
-                tokens = ln[2:].strip().split(' ')
-                for token in tokens:
-                    if len(token) and token != ' ':
-                        t = token.lower()
-                        if t not in vocab_list:
-                            if ln.startswith("A:"):  # Keep all for responses
-                                vocab_list.append(t)
-                            else:
-                                if t not in temp_dict:
-                                    temp_dict[t] = 1
+    if os.path.exists(cornell_file):
+        with open(cornell_file, 'r') as f1:
+            for line in f1:
+                ln = line.strip()
+                if not ln:
+                    continue
+                if ln.startswith("Q:") or ln.startswith("A:"):
+                    tokens = ln[2:].strip().split(' ')
+                    for token in tokens:
+                        if len(token) and token != ' ':
+                            t = token.lower()
+                            if t not in vocab_list:
+                                if ln.startswith("A:"):  # Keep all for responses
+                                    vocab_list.append(t)
                                 else:
-                                    temp_dict[t] += 1
-                                    if temp_dict[t] >= 2:
-                                        vocab_list.append(t)
+                                    if t not in temp_dict:
+                                        temp_dict[t] = 1
+                                    else:
+                                        temp_dict[t] += 1
+                                        if temp_dict[t] >= 2:
+                                            vocab_list.append(t)
 
     print("Vocab size after cornell data file scanned: {}".format(len(vocab_list)))
 
     reddit_file = os.path.join(corpus_dir, AUG0_FOLDER, REDDIT_DATA_FILE)
-    with open(reddit_file, 'r') as f2:
-        line_cnt = 0
-        for line in f2:
-            line_cnt += 1
-            if line_cnt % 200000 == 0:
-                print("{:,} lines of reddit data file scanned.".format(line_cnt))
-            ln = line.strip()
-            if not ln:
-                continue
-            if ln.startswith("Q:") or ln.startswith("A:"):
-                tokens = ln[2:].strip().split(' ')
-                for token in tokens:
-                    if len(token) and token != ' ':
-                        t = token.lower()
-                        if t not in vocab_list:
-                            if ln.startswith("A:"):  # Keep all for responses
-                                vocab_list.append(t)
-                            else:
-                                if t not in temp_dict:
-                                    temp_dict[t] = 1
+    if os.path.exists(reddit_file):
+        with open(reddit_file, 'r') as f2:
+            line_cnt = 0
+            for line in f2:
+                line_cnt += 1
+                if line_cnt % 200000 == 0:
+                    print("{:,} lines of reddit data file scanned.".format(line_cnt))
+                ln = line.strip()
+                if not ln:
+                    continue
+                if ln.startswith("Q:") or ln.startswith("A:"):
+                    tokens = ln[2:].strip().split(' ')
+                    for token in tokens:
+                        if len(token) and token != ' ':
+                            t = token.lower()
+                            if t not in vocab_list:
+                                if ln.startswith("A:"):  # Keep all for responses
+                                    vocab_list.append(t)
                                 else:
-                                    temp_dict[t] += 1
-                                    if temp_dict[t] >= 2:
-                                        if t.startswith('.') or t.startswith('-') \
-                                                or t.endswith('..') or t.endswith('-'):
-                                            continue
+                                    if t not in temp_dict:
+                                        temp_dict[t] = 1
+                                    else:
+                                        temp_dict[t] += 1
+                                        if temp_dict[t] >= 2:
+                                            if t.startswith('.') or t.startswith('-') \
+                                                    or t.endswith('..') or t.endswith('-'):
+                                                continue
 
-                                        vocab_list.append(t)
+                                            vocab_list.append(t)
 
     with open(VOCAB_FILE, 'a') as f_voc:
         for v in vocab_list:

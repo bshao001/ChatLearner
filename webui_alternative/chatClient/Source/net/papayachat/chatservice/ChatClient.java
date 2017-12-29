@@ -19,8 +19,9 @@ import java.net.*;
 import java.io.*;
 
 public class ChatClient {
-	private String serviceAddress;
-	private int timeout;
+	private final String serviceAddress;
+	private final int timeout;
+	private int sessionId;
 	
 	/**
 	 * serviceAddress example: http://papayachat.net:5000/reply
@@ -28,13 +29,14 @@ public class ChatClient {
 	public ChatClient(String serviceAddress, int timeout) {
 		this.serviceAddress = serviceAddress;
 		this.timeout = timeout;
+		this.sessionId = 0;
 	}
 	
 	public String getReply(String question) throws Exception {
 		BufferedReader bReader = null;
 	
 		try {
-			String serviceUrl = serviceAddress + "?sessionId=1&question=" + 
+			String serviceUrl = serviceAddress + "?sessionId="+sessionId+"&question=" + 
 					URLEncoder.encode(question, "UTF-8");
 			URL url = new URL(serviceUrl);
 			URLConnection uc = url.openConnection();
@@ -54,6 +56,9 @@ public class ChatClient {
 			javax.json.JsonReader jr = javax.json.Json.createReader(new StringReader(resp.toString()));
 			javax.json.JsonObject jo = jr.readObject();
 
+			int newId = jo.getInt("sessionId");
+			if (sessionId != newId) setSessionId(newId);
+			
 			String answer = jo.getString("sentence");
 			
 			return answer;
@@ -64,5 +69,13 @@ public class ChatClient {
         } finally {
 			if (bReader != null) bReader.close(); 
 		}
+	}
+	
+	public int getSessionId() {
+		return sessionId;
+	}
+	
+	private void setSessionId(int sessionId) {
+		this.sessionId = sessionId;
 	}
 }

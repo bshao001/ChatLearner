@@ -43,13 +43,16 @@ class ChatService(soaphandler.SoapHandler):
     def reply(self, sessionId, question):
         """
         Args:
-            sessionId: Reserved for future use. 
+            sessionId: ID of the chat session. 
             question: The sentence given by the end user who chats with the ChatLearner. 
         Returns:
             outputSentence: The sessionId is the same as in the input for validation purpose. 
             The answer is the response from the ChatLearner.
         """
-        answer = self.predictor.predict(question, html_format=True)
+        if sessionId not in predictor.session_data.session_dict:  # Including the case of 0
+            sessionId = self.predictor.session_data.add_session()
+
+        answer = self.predictor.predict(sessionId, question, html_format=True)
 
         outputSentence = SessionSentence()
         outputSentence.sessionId = sessionId

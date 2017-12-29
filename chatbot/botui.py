@@ -30,22 +30,24 @@ def bot_ui():
     with tf.Session() as sess:
         predictor = BotPredictor(sess, corpus_dir=corp_dir, knbase_dir=knbs_dir,
                                  result_dir=res_dir, result_file='basic')
+        # This command UI has a single chat session only
+        session_id = predictor.session_data.add_session()
 
         print("Welcome to Chat with ChatLearner!")
         print("Type exit and press enter to end the conversation.")
         # Waiting from standard input.
         sys.stdout.write("> ")
         sys.stdout.flush()
-        sentence = sys.stdin.readline()
-        while sentence:
-            if sentence.strip() == 'exit':
+        question = sys.stdin.readline()
+        while question:
+            if question.strip() == 'exit':
                 print("Thank you for using ChatLearner. Goodbye.")
                 break
 
-            print(predictor.predict(sentence))
+            print(predictor.predict(session_id, question))
             print("> ", end="")
             sys.stdout.flush()
-            sentence = sys.stdin.readline()
+            question = sys.stdin.readline()
 
 if __name__ == "__main__":
     bot_ui()
