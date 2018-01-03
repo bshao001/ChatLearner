@@ -13,8 +13,6 @@ Q: How old are you ?
 A: I am 9 years old .
 Q: Are you a boy or a girl ?
 A: I am a boy .
-Q: Have a good one .
-A: You too , thank you !
 ===
 Q: Hello .
 A: Hello .
@@ -247,8 +245,6 @@ A: Bye bye .
 ===
 Q: Hello !
 A: Hello !
-Q: What 's your name ?
-A: My name is Papaya . I like my name .
 Q: When were you born ?
 A: July 20th , 2008 .
 Q: What year were you born ?
@@ -652,6 +648,8 @@ Q: What do you want to tell me ?
 A: Nothing in specific , why do n't you ask me something ?
 Q: Tell me something about you .
 A: I am a working product in progress , and I aspire to be a great chatbot and help people all over the world .
+Q: As a robot , what can you do ?
+A: I chat with people , answering all kinds of questions . I can also perform simple arithmetic calculations , tell stories , jokes , and so on . Making you happy is my final goal .
 Q: How do you work ?
 A: I learn from common conversational question and statement samples .
 Q: Who do you work for ?
@@ -1154,36 +1152,6 @@ A: STEM means Science , Technology , Engineering , and Mathematics .
 Q: How many bones are in an adult body ?
 A: There are 206 bones in total .
 ===
-Q: What is the universal solvent ?
-A: The universal solvent is water .
-Q: What is a heterozygous solution ?
-A: A heterozygous solution is when the solute does not dissolve in the solvent .
-===
-Q: How many chromosomes does a human have ?
-A: A human being has 46 chromosomes or 23 pairs .
-===
-Q: What is the Periodic Table of Elements in Chemistry ?
-A: The Periodic Table of Elements is a table displaying the various types of chemical substances found so far .
-Q: What is the chemical symbol for gold ?
-A: The chemical symbol for gold is AU .
-===
-Q: What is the chemical symbol for water ?
-A: The chemical symbol for water is H2O .
-Q: Why is the chemical symbol for water H2O ?
-A: The chemical symbol is H2O because it a hydrogen bond consists of 2 hydrogen atoms and 1 oxygen atom .
-Q: What is a mole in chemistry ?
-A: The mole , abbreviated mol , is an SI unit which measures the number of particles in a specific substance .
-===
-Q: What is an alkene ?
-A: An alkene is an unsaturated hydrocarbon that contains one or more carbon-carbon double bonds .
-Q: What is an alkyne ?
-A: An alkyne is an unsaturated hydrocarbon containing at least one carbon-carbon triple bond .
-Q: What is an alkane ?
-A: An alkane is just an unsaturated hydrocarbon that consists of only carbon-carbon single bonds .
-===
-Q: What is the scientific method ?
-A: The scientific method is a process scientists utilize to test a hypothesis .
-===
 Q: What does IQ stand for ?
 A: IQ stands for Intelligence quotient .
 Q: What does EQ stand for ?
@@ -1387,24 +1355,6 @@ A: CPU stands for Central Processing Unit . It is the brain of a computer that p
 Q: What does GPU stand for ?
 A: GPU stands for graphics processing unit . It is a specialized electronic circuit designed to rapidly manipulate memory to accelerate the image display .
 ===
-Q: Who invented basketball , Papaya ?
-A: According to sports-related history books , it was a PE coach by the name of James Naismith .
-Q: What caused Naismith to create basketball ?
-A: It was all because of heavy weather outside during winter . As a result , he moved his class into the gym .
-Q: What equipment did Naismith use ?
-A: He used a peach basket as a hoop and a rubber ball for a basketball .
-Q: Who are some of the most popular sport athletes in the world nowadays ?
-A: Some of the most popular athletes in the world are , but not limited to , Usain Bolt , Lebron James , Michael Jordan , Stephen Curry , Kevin Durant , Jerry Rice , Marshawn Lynch , etc .
-===
-Q: What is the length and width of a football field ?
-A: A football field 's length is 100 yards and its width is 160 feet .
-Q: What causes casualties during a football game ?
-A: Injuries come from slippery field , tackles , weather , etc .
-Q: What are some of the injuries that can happen during a football game ?
-A: Injuries include contusions , broken bones , fractures , twisted ankles , concussions , headache , broken ribs , cerebral edema , and even death .
-Q: How many points is a touchdown worth ?
-A: A touchdown is worth 6 points .
-===
 Q: What does the acronym NBA stand for ?
 A: NBA stands for National Basketball Association .
 Q: What does acronym NBA mean ?
@@ -1516,36 +1466,6 @@ A: Franz Liszt is a composer of rhapsodies and many other types of music .
 Q: Who is Edvard Grieg ?
 A: Edvard Grieg is a Norwegian Composer and is known for composing several waltzes .
 ===
-Q: How many clefs are there in a piano ?
-A: There are two different clefs called treble clef and bass clef .
-Q: Why do people need two hands to play the piano ?
-A: People need two hands to play because there are two clefs involved .
-Q: What is a violin ?
-A: A violin is a small instrument and has a high pitch .
-Q: What is a viola ?
-A: A viola is a bigger instrument than the violin but not as big as a cello .
-Q: What is a cello ?
-A: A cello is a big instrument but not as big as the bass and has a low pitch .
-Q: What is a bass ?
-A: A bass is the biggest instrument of all and a player needs to stand up in order to play .
-===
-Q: What is the Alto clef ?
-A: The Alto clef is the clef used for the violas because their pitch is in the middle .
-Q: What is a pitch and is it related to volume ?
-A: A pitch is a basically how high or low the note is but it is not related to volume .
-Q: What is the pitch measured in ?
-A: The pitch is measured in a unit called Hertz .
-Q: What is Soprano ?
-A: Soprano is the highest vocal range usually by females .
-Q: What is a string instrument ?
-A: A string instrument is an instrument with strings .
-Q: Is the piano a string instrument ?
-A: Yes , if you look closely at the back you will see that each key on the piano has a string .
-Q: Is the viola and violin a string instrument ?
-A: Yes , string instruments consist of piano , violin , viola , bass , guitar , and cello .
-Q: Is each instrument different ?
-A: Yes , each instrument is unique and produces a very different sound than another .
-===
 Q: Is music complex to learn ?
 A: Yes , but it gets easier as you master the basics .
 Q: What are some famous instruments ?
@@ -1565,129 +1485,6 @@ Q: What is a slur in music ?
 A: A slur is when two notes are tied together .
 Q: What is a repeat sign ?
 A: A repeat sign is a sign used at the end of a specific measure that tells where to repeat from .
-===
-Q: What is hard and pink when it goes in , but soft and wet when it comes out ?
-A: Bubblegum and you should be ashamed of yourself .
-Q: What 's most useful when it 's long and hard ?
-A: A college education .
-Q: If you put three fingers into the hole , it 's gon na be a shocker . What am I talking about ?
-A: A power outlet . because that would give you an electric shock . Do n't do it .
-Q: If you 're American in your living room , then what are you in your bathroom ?
-A: European !
-Q: What do you comb a rabbit with ?
-A: A hare brush !
-===
-Q: What gets wetter and wetter the more it dries ?
-A: A towel !
-Q: Why did the can crusher quit his job ?
-A: He found it soda pressing .
-Q: What did the hat say to the tie ?
-A: You hang around , and I 'll go on ahead !
-Q: Why did the cookie cry ?
-A: Cos his mom was a wafer too long !
-Q: Why are ghosts happy in elevators ?
-A: It lifts their spirits !
-===
-Q: What 's a rapist favorite pair of shoes ?
-A: White vans !
-Q: Why were the teacher 's eyes crossed ?
-A: Because she could n't control her pupils .
-Q: Why are E.T . 's eyes so big ?
-A: He saw the phone bill for phoning home . No free long distance on his plan .
-Q: What happens when a frog parks illegally ?
-A: It gets toad !
-Q: Why did the leprechaun iron his 4-leaf clover ?
-A: He wanted to press his luck !
-===
-Q: What did the house wear to the party ?
-A: Address !
-Q: What did the mermaid wear to math class ?
-A: An algae-bra !
-Q: Where does a person work if they only have one leg ?
-A: IHOP !
-Q: Why did the deer need braces ?
-A: Because he had buck teeth !
-Q: How do you know when Santa is in the room ?
-A: You can sense his presents !
-===
-Q: What 's even the use for circles ?
-A: They 're pointless !
-Q: Why does Santa Clause have a big sack ?
-A: Because he only comes once a year !
-Q: How do you drown a hipster ?
-A: In the mainstream !
-Q: What 's smarter than a talking cat ?
-A: A spelling bee !
-Q: Have you heard the one about the wall ?
-A: You 'll never get over it !
-===
-Q: What 's Forrest Gump 's password ?
-A: 1Forrest1
-Q: Why did the bee have sticky hair ?
-A: Because it used a honeycomb !
-Q: How does herpes leave the hospital ?
-A: On crotches !
-Q: How do you find Will Smith in the snow ?
-A: Look for the fresh prints !
-Q: What did the vegetables say at the garden party ?
-A: Lettuce turnip the beet !
-===
-Q: What concert costs 45 cents ?
-A: 50 cent featuring nickelback .
-Q: How much did Santa Clause pay for his sleigh ?
-A: Nothing , it was on the house !
-Q: What did Mrs. Claus say to Santa Clause when he asked about the weather ?
-A: `` It looks like reindeer ! ''
-Q: What 's the difference between a snowman and a snowwoman ?
-A: Snowballs !
-Q: How did the hipster burn his tongue ?
-A: He sipped his coffee before it was cool !
-===
-Q: What did the blanket say when it fell off the bed ?
-A: Oh sheet !
-Q: Why are goldfish the only snacks that smile ?
-A: Because they 're baked !
-Q: What happened to the lost cattle ?
-A: Nobody herd !
-Q: Why should n't you play Poker at the zoo ?
-A: Because they 're too many cheetahs !
-Q: Why is there a gate around cemeteries ?
-A: People are dying to get in !
-===
-Q: When does Friday come before Thursday ?
-A: In the dictionary .
-Q: What did the football coach say to the broken vending machine ?
-A: Give me my quarterback !
-Q: What do you get if you cross a snowman with a vampire ?
-A: Frostbite !
-Q: Why did the picture go to jail ?
-A: Because he got framed !
-Q: What does the grape say when it gets squashed ?
-A: Nothing ... it just lets out a little wine !
-===
-Q: How do you organize a space party ?
-A: You planet !
-Q: What did one plate say to the other ?
-A: Dinner 's on me !
-Q: Why do seagulls fly over the sea ?
-A: Because if they flew over the bay , they would be bagels !
-Q: Why do golfers wear two pairs of pants ?
-A: In case they get a hole in one !
-Q: Where did the cat go when it lost its tail ?
-A: The retail store !
-===
-Q: What do you find in the middle of nowhere ?
-A: The letter h !
-Q: What does a shark eat with peanut butter ?
-A: A jellyfish !
-Q: What do you call a female with one leg longer than the other ?
-A: Eileen !
-Q: What did the tree say to the wind ?
-A: Leaf me alone !
-Q: What does a nosy pepper do ?
-A: He gets jalapeno business !
-Q: Want to hear a pizza joke ?
-A: Never mind , it is too cheesy !
 ===
 Q: Is it raining outside ?
 A: Yes , it 's raining cats and dogs .
@@ -1778,149 +1575,6 @@ A: No one raised their hand .
 ===
 Q: Do you know who let the cat out of the bag ?
 A: That should not happen . Everybody here knows it is a secret .
-===
-Q: What is Call of Duty : Warfare ?
-A: It is an interactive , multiplayer gun game that people play all around the world .
-Q: What is Call of Duty : Zombie Apocalypse ?
-A: It is a zombie version of Call Duty : Black Ops where players shoot their guns at zombies instead of other players .
-Q: Who is Sub-Zero ?
-A: Sub-Zero is a fictional Mortal Kombat character and is the grandmaster of Quan-Chi .
-Q: Who is Scorpion ?
-A: Scorpion is a fictional Mortal Kombat character and is often known as Sub-Zero 's nemesis .
-Q: Who is Batman ?
-A: Batman is a famous hero from DC universe that saves peoples ' lives .
-Q: Who is Superman ?
-A: Superman is a famous hero / villain from DC universe known as the Man of Steel .
-Q: Who is Wolverine ?
-A: Wolverine is a hero from Marvel universe and fights his `` brother '' Sabretooth .
-Q: How did Wolverine die ?
-A: He died because of food poisoning and adamantium poisoning .
-Q: Who is Sabretooth ?
-A: Sabretooth is a villain from Marvel universe and fights Wolverine hoping to kill him once and for all .
-Q: What is Super Mario Bros ?
-A: Super Mario Bros is a fun game where Mario and Luigi help save Princess Peach from Bowser .
-Q: What is Madden ?
-A: Madden is a series of football games where you buy players with coins and update your lineup for the next year .
-Q: What is Angry Birds ?
-A: Angry Birds is a famous game where Red and his friends help save their island and eggs from the green Pigs .
-Q: Who is Spiderman ?
-A: Spiderman is a fictional hero from Marvel universe and helps save people from danger .
-Q: Who is Flash in DC universe ?
-A: Flash is hero from DC universe whose superpower is speed . He can at the speed of light forever .
-Q: Who is Zoom in DC universe ?
-A: Zoom is a fictional villain from DC universe who considers Flash his nemesis .
-Q: Who is Wonder Woman ?
-A: Wonder Woman is a fictional hero from DC universe who is part of the Amazons . Her real name is Diana and she is the guardian of her island .
-Q: Who is Bane ?
-A: Bane is a villain from DC universe and his superpower is strength . He gains strength from toxic tubes that he wears along with his mask .
-Q: Who is the Joker ?
-A: Joker is the ultimate madman from DC universe . He hires assassins like Deathstroke , Deadshot , Bane , and Catwoman to kill Batman . He combines humor with deadly weapons to intimidate anyone against him .
-Q: Who is Deathstroke ?
-A: Deathstroke is a fictional villain from DC universe and is known for being a mercenary . He fights for money . He is a trained expert in martial arts and also a military leader .
-Q: Who Ant Man ?
-A: Ant Man is a hero from Marvel universe that can change sizes whenever he needs to . He can also communicate with ants .
-Q: Who is Catwoman ?
-A: Catwoman is a villain / hero from DC universe and loves money and jewelry . Her real name is Selina Kyle and she later marries Bruce Wayne ( Batman ) .
-Q: Who is Deadshot ?
-A: Deadshot is a villain from DC universe and is famous for his accuracy . He uses a sniper to kill people and has never missed . He often can kill 8 people with a single bullet .
-Q: What is the Guardians of the Galaxy ?
-A: The Guardians of the Galaxy is a series of movies describing the adventures of the famous heroes : Drax , Gurt , Rocket Raccoon , Starlord , etc .
-Q: What is Injustice video game ?
-A: Injustice is a DC universe combat game where characters from DC universe fight against other characters and bosses .
-===
-Q: In Greek mythology , who is the god of lightning ?
-A: The god of lightning is Zeus .
-Q: Who is the god of lightning ?
-A: In Greek mythology , the god of lightning is Zeus .
-===
-Q: In Greek mythology , who is the goddess of love and beauty ?
-A: The goddess of love and beauty is Aphrodite .
-Q: Who is the goddess of love and beauty ?
-A: In Greek mythology , the goddess of love and beauty is Aphrodite .
-===
-Q: In Greek mythology , who is the god of war ?
-A: The god of war is Ares .
-Q: Who is the god of war ?
-A: In Greek mythology , the god of war is Ares .
-===
-Q: In Greek mythology , who is the god of the underworld ?
-A: The god of the underworld is Hades .
-Q: Who is the god of the underworld ?
-A: The god of the underworld is Hades in Greek mythology .
-===
-Q: In Greek mythology , who is the god of fire ?
-A: The god of fire is Hephaestus .
-Q: Who is the god of fire ?
-A: The god of fire is Hephaestus in Greek mythology .
-===
-Q: In Greek mythology , who is the god of water ?
-A: The god of water is Poseidon .
-Q: Who is the god of water ?
-A: The god of water is Poseidon in Greek mythology .
-===
-Q: In Greek mythology , who is the god of love ?
-A: The god of love is Cupid .
-Q: Who is the god of love in Greek mythology ?
-A: The god of love is Cupid .
-===
-Q: In Greek mythology , who is the god of wine ?
-A: The god of wine is Dionysus .
-Q: Who is the god of wine in Greek mythology ?
-A: The god of wine is Dionysus .
-===
-Q: In Greek mythology , who is the goddess of marriage ?
-A: The goddess of marriage is Hera .
-Q: Who is the goddess of marriage in Greek mythology ?
-A: The goddess of marriage is Hera .
-===
-Q: In Greek mythology , who is the goddess of agriculture ?
-A: The goddess of agriculture is Demeter .
-Q: In Greek mythology , who is the goddess of wisdom ?
-A: The goddess of wisdom is Athena .
-Q: In Greek mythology , who is the god of archery and music ?
-A: The god of archery and music is Apollo .
-Q: In Greek mythology , who is the goddess of victory ?
-A: The goddess of victory is Nike .
-Q: In Greek mythology , who is the god bad luck ?
-A: The goddess of bad luck is Nemesis .
-Q: In Greek mythology , who is the god of sleep ?
-A: The god of sleep is Hypnos .
-Q: In Greek mythology , who is the goddess of rainbows ?
-A: The goddess of rainbows is Iris .
-Q: In Greek mythology , who is goddess of choices ?
-A: The goddess of choices is Hecate .
-Q: In Greek mythology , who is the god of beginnings ?
-A: The god of beginnings is Janus .
-===
-Q: In Greek mythology , who is the goddess of good luck and fortune ?
-A: The goddess of good luck is Tyche .
-Q: Who is the goddess of good luck and fortune ?
-A: The goddess of good luck is Tyche .
-===
-Q: In Greek mythology , who is the god of roadways ?
-A: The god of roadways is Hermes .
-Q: Who is the god of roadways ?
-A: The god of roadways is Hermes .
-===
-Q: In Greek mythology , who is the goddess of the moon ?
-A: The goddess of the moon is Artemis .
-Q: Who is the goddess of the moon ?
-A: The goddess of the moon is Artemis .
-===
-Q: In Greek mythology , who is the god of the winds ?
-A: The god of the winds is Aeolus .
-Q: Who is the god of the winds ?
-A: The god of the winds is Aeolus .
-===
-Q: In Greek mythology , who is the god of time ?
-A: The god of time is Cronos .
-Q: Who is the god of time ?
-A: The god of time is Cronos .
-===
-Q: In Greek mythology , who is the god of sexual desire ?
-A: The god of sexual desire is Eros .
-Q: Who is the god of sexual desire ?
-A: The god of sexual desire is Eros .
 ===
 Q: It does n't look very nice outside today .
 A: You 're right . I think it 's going to rain later .

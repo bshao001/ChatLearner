@@ -9,6 +9,9 @@ A: _func_val_update_user_name_enforced_para1__name_
 Q: No, my name is _name_ .
 A: _func_val_update_user_name_enforced_para1__name_
 ===
+Q: What 's your name ?
+A: My name is Papaya . _func_val_ask_name_if_not_yet
+===
 Q: My name is _name_ . What is my name ?
 A: _func_val_update_user_name_para1__name_
 ===
@@ -68,3 +71,6 @@ A: See you _func_val_get_callme_para1_comma0 .
 ===
 Q: Bye, Papaya .
 A: Bye bye _func_val_get_callme_para1_comma0 .
+===
+Q: Have a good one .
+A: You too , thank you _func_val_get_callme_para1_comma0 !
