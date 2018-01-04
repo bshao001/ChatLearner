@@ -36,10 +36,14 @@ Can you please tell me a story?
 Can you please tell me a story please, Papaya?
 Tell me another story please.
 Read me a bedtime story please.
+Another please.
+One more.
 Tell me a joke!
 Can you please tell me a joke?
 Could you please tell me a joke please?
 Tell me another joke please!
+One more.
+Another.
 That's really a funny joke.
 Great job!
 Great!
@@ -296,7 +300,6 @@ One two three
 1 2 3?
 A, B, C
 A, B, C,...
-a b c
 1, 2, 3
 And?
 Continue...
@@ -305,11 +308,9 @@ And ... action!
 Action!
 Let the movie begin!
 You are fired!
-Fire
 Fire!
 Fire at will!
 Incoming!
-Incoming!!
 How many legs does a human have?
 How many legs does a man have?
 How many legs does a woman have?
@@ -388,7 +389,6 @@ Yes it is.
 Yes it was.
 Indeed.
 Lol
-More
 More.
 More!
 Do you think you are smarter than human being?

@@ -17,7 +17,6 @@ import tensorflow as tf
 import time
 
 from settings import PROJECT_ROOT
-from chatbot.tokenizeddata import TokenizedData
 from chatbot.botpredictor import BotPredictor
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
@@ -37,6 +36,7 @@ def test_demo():
     with tf.Session() as sess:
         predictor = BotPredictor(sess, corpus_dir=corp_dir, knbase_dir=knbs_dir,
                                  result_dir=res_dir, result_file='basic')
+        session_id = predictor.session_data.add_session()
 
         print("# Prediction started ...")
         t0 = time.time()
@@ -48,7 +48,7 @@ def test_demo():
                     if not sentence or sentence.startswith("#=="):
                         continue
                     f_out.write("> {}\n".format(sentence))
-                    f_out.write("{}\n\n".format(predictor.predict(sentence)))
+                    f_out.write("{}\n\n".format(predictor.predict(session_id, sentence)))
 
         t1 = time.time()
         print("# Prediction completed. Time spent on prediction: {:4.2f} seconds".format(t1-t0))
@@ -59,6 +59,7 @@ def get_header():
            "lines by line, and feeds each line to the predictor."
     return "{}\n# Command: python testdemo.py\n# Date and Time Generated: {}\n\n".\
         format(desc, time.strftime("%Y-%m-%d %H:%M"))
+
 
 if __name__ == "__main__":
     test_demo()
