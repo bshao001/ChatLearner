@@ -6,7 +6,9 @@ A chatbot implemented in TensorFlow based on the new sequence to sequence (NMT) 
 
 ChatLearner (Papaya) was built on the new seq2seq model (dynamic RNN based) in TensorFlow 1.4. The NN model implementation was largely referenced on the NMT model (https://github.com/tensorflow/nmt). Due to the changes made on tf.data API in TensorFlow 1.4, this ChatLearner version does not support any earlier TensorFlow releases.
 
-Before starting everything else, you may want to have a feeling of how ChatLearner behaves. Take a look at the sample conversation [here](https://github.com/bshao001/ChatLearner/blob/master/Data/Test/responses.txt), or if you prefer to try my trained model, then download it [here](https://drive.google.com/file/d/1feb4c3xKyQsJRhysjnfP0xzHD7-YUKbX/view?usp=sharing). Unzip the downloaded .rar file, and copy the Result folder into the Data folder under your project root. A vocab.txt file is also included in case I update it without updating the trained model in the future.
+Before starting everything else, you may want to have a feeling of how ChatLearner behaves. Take a look at the sample conversation below or [here](https://github.com/bshao001/ChatLearner/blob/master/Data/Test/responses.txt), or if you prefer to try my trained model, then download it [here](https://drive.google.com/file/d/1feb4c3xKyQsJRhysjnfP0xzHD7-YUKbX/view?usp=sharing). Unzip the downloaded .rar file, and copy the Result folder into the Data folder under your project root. A vocab.txt file is also included in case I update it without updating the trained model in the future.
+
+![](/Data/Test/chat1_01042018.png)
 
 ## Highlights and Specialties:
 Why do you want to spend time checking this repository? Here are some possible reasons:
