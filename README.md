@@ -81,18 +81,13 @@ cd chatbot
 python bottrainer.py
 ```
 
-A good GPU is highly recommended for the training as it can be very time-consuming. To train the model using the existing parameters and the Papaya data set with a 
-single GPU (NVIDIA GeForce GTX 1080 Ti), it will take about 5 hours to get the desired perplexity. You can modify the model parameters based on your available 
-computing resources. If you are using a CPU version of TensorFlow, make sure you change num_gpus to 0 in hparams.json file. You will be able to see the training 
-results under Data/Result/ folder. Make sure the following 2 files exist as all these will be required for testing and prediction (the .meta file is optional as the 
-inference model will be created independently): 
+Good GPUs are highly recommended for the training as it can be very time-consuming. If you have multiple GPUs, the memory from all GPUs will be utilized by TensorFlow, and you can adjust the batch_size parameter in hparams.json file accordingly to make full use of the memory. You will be able to see the training results under Data/Result/ folder. Make sure the following 2 files exist as all these will be required for testing and prediction (the .meta file is optional as the inference model will be created independently): 
 
 1. basic.data-00000-of-00001
 2. basic.index
 
 ## Testing / Inference
-For testing and prediction, we provide a simple command interface and a web-based interface. Note that vocab.txt file (and files in KnowledgeBase, for this chatbot) 
-is also required for inference. In order to quickly check how the trained model performs, use the following command interface:
+For testing and prediction, we provide a simple command interface and a web-based interface. Note that vocab.txt file (and files in KnowledgeBase, for this chatbot) is also required for inference. In order to quickly check how the trained model performs, use the following command interface:
 
 ```bash
 cd chatbot
@@ -104,8 +99,7 @@ Wait until you get the command prompt "> ".
 A demo test result is provided as well. Please check it to see how this chatbot behaves now: https://github.com/bshao001/ChatLearner/blob/master/Data/Test/responses.txt
 
 ## Web Interface
-A SOAP-based web service architecture is implemented, with a Python server and a Java client. A nice GUI is also included for your reference. For details, please 
-check: https://github.com/bshao001/ChatLearner/tree/master/webui
+A SOAP-based web service architecture is implemented, with a Python server and a Java client. A nice GUI is also included for your reference. For details, please check: https://github.com/bshao001/ChatLearner/tree/master/webui
 
 A REST-API-based alternative is also given if SOAP is not your choice. For details, please check: https://github.com/bshao001/ChatLearner/tree/master/webui_alternative
 
