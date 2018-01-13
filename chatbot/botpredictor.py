@@ -21,7 +21,7 @@ from chatbot.tokenizeddata import TokenizedData
 from chatbot.modelcreator import ModelCreator
 from chatbot.knowledgebase import KnowledgeBase
 from chatbot.sessiondata import SessionData
-from chatbot.functiondata import FunctionData
+from chatbot.patternutils import check_patterns_and_replace
 from chatbot.functiondata import call_function
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
@@ -72,10 +72,7 @@ class BotPredictor(object):
             chat_session.after_prediction(question, answer)
             return answer
 
-        pat1_matched, new_sentence, num_list = \
-            FunctionData.check_arithmetic_pattern_and_replace(question)
-        pat2_matched, new_sentence, para_list = \
-            FunctionData.check_username_callme_pattern_and_replace(new_sentence)
+        pat_matched, new_sentence, para_list = check_patterns_and_replace(question)
 
         for pre_time in range(2):
             tokens = nltk.word_tokenize(new_sentence.lower())
@@ -95,15 +92,10 @@ class BotPredictor(object):
             if eos_token in outputs:
                 outputs = outputs[:outputs.index(eos_token)]
 
-            if (pat1_matched or pat2_matched) and pre_time == 0:
-                if pat1_matched:
-                    out_sentence, if_func_val = self._get_final_output(outputs, chat_session,
-                                                                       para_list=num_list,
-                                                                       html_format=html_format)
-                else:
-                    out_sentence, if_func_val = self._get_final_output(outputs, chat_session,
-                                                                       para_list=para_list,
-                                                                       html_format=html_format)
+            if pat_matched and pre_time == 0:
+                out_sentence, if_func_val = self._get_final_output(outputs, chat_session,
+                                                                   para_list=para_list,
+                                                                   html_format=html_format)
                 if if_func_val:
                     chat_session.after_prediction(question, out_sentence)
                     return out_sentence
