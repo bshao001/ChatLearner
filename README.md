@@ -101,7 +101,9 @@ A demo test result is provided as well. Please check it to see how this chatbot 
 ## Web Interface
 A SOAP-based web service architecture is implemented, with a Python server and a Java client. A nice GUI is also included for your reference. For details, please check: https://github.com/bshao001/ChatLearner/tree/master/webui
 
-A REST-API-based alternative is also given if SOAP is not your choice. For details, please check: https://github.com/bshao001/ChatLearner/tree/master/webui_alternative
+A REST-API-based alternative is also given if SOAP is not your choice. For details, please check: https://github.com/bshao001/ChatLearner/tree/master/webui_alternative. Some of the latest updates may not be available with this option. Merge the changes from the other option if you need to use this.
+
+![](/Data/Test/webui.png)
 
 ## References and Credits:
 1. The new NMT model: https://github.com/tensorflow/nmt
