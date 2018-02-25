@@ -12,7 +12,7 @@
 
 	try {
 		String question = request.getParameter("question");
-		String reply = cc.getReply(question).replaceAll("_np_", "<br/><br/>");
+		String reply = cc.getReply(question).replaceAll("_np_", "<br/><br/>").trim();
 		
 		// Tomcat will forward them to the log file. This is a dirty implementation. For a 
 		// busy site, please cache them in memory (a synchronized list), and periodically 
@@ -20,7 +20,20 @@
 		System.out.println("Q: " + question);
 		System.out.println("A: " + reply);
 		
-		response.getWriter().write("<rs><reply>" + reply + "</reply></rs>");
+		// Check if the last word is instructing client code. 
+		// Add +1 so that it works even with a single word case.
+		String lastWord = reply.substring(reply.lastIndexOf(" ")+1);
+		String jsCode = "";
+		if (lastWord.startsWith("_cc_start_") && lastWord.endsWith("_cc_end_")) {
+			int idx1 = "_cc_start_".length();
+			int idx2 = lastWord.lastIndexOf("_cc_end_");
+			jsCode = lastWord.substring(idx1, idx2);
+			
+			int idx = reply.lastIndexOf(" _cc_start_");
+			reply = reply.substring(0, idx).trim();
+		}
+		
+		response.getWriter().write("<rs><reply>" + reply + "</reply><jsCode>" + jsCode + "</jsCode></rs>");
 	} catch (Exception e) {
 		e.printStackTrace();
 		

@@ -52,7 +52,7 @@ body  {
 }
 #boxCenter {
   width:480px;
-  height:560px;
+  height:640px;
   background:white;
   overflow-x:hidden;
   overflow-y:scroll;
@@ -74,6 +74,11 @@ body  {
   text-align:justify;
   line-height:160%;
 }
+#boxCenter div div.image {
+  margin:1px 2px 1px 2px;
+  max-width:384px;
+  text-align:justify;
+}
 #boxCenter div.question div.user {
   padding:4px 2px 4px 2px;
   margin:1px 2px 1px 2px;
@@ -93,9 +98,12 @@ body  {
   width:28px;
   text-align:center;
   overflow:auto;
+  background:#87CEEB;
 }
 #boxCenter div.answer div {
   float:left;
+}
+#boxCenter div.answer div.content {
   background:#87CEEB;
 }
 #boxCenter  .avatar {

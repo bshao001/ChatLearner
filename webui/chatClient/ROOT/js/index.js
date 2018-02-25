@@ -49,9 +49,35 @@ function submitQuestion() {
 		success:function(data){
 			if (findNoError(data, 1)) {
 				var reply=getTagContent(data, "reply");
+				var jsCode=getTagContent(data, "jsCode");
 				bc.append("<div class='answer'><div class='user'><figure class='avatar'><img src='/images/papaya.jpg'/></figure></div><div class='content'>"+reply+"</div></div>");
-				bc.scrollTop(bc[0].scrollHeight);
+				bc.scrollTop(bc.prop("scrollHeight"));
+				
+				if (jsCode!="") {
+				 	if (jsCode.indexOf("show_picture_randomly_para1_")==0) {
+						var idx="show_picture_randomly_para1_".length;
+						var pic_name=$.trim(jsCode.substring(idx));
+						show_picture_randomly(bc, pic_name);
+					}
+				}
+				
 			}
 		}
 	});
+}
+
+function show_picture_randomly(bc, picture_name) {
+	var lower_name=picture_name.toLowerCase();
+	if (lower_name=="good_morning" || lower_name=="good_afternoon" || lower_name=="good_evening" || lower_name=="good_night") {
+		var rand=Math.floor(Math.random()*6); // 5 images for each category
+		if (rand>0) { // Do nothing when it is 0
+			var img_src="/images/"+lower_name+"_"+rand+".jpg";
+			var img_line="<div class='answer'>"+
+				         "<div class='user'><figure class='avatar'><img src='/images/papaya.jpg'/></figure></div>"+
+				         "<div class='image'><img src='"+img_src+"' alt='"+picture_name.replace("_", " ")+"'></div>"+
+					     "</div>";
+			bc.append(img_line);
+			bc.stop().animate({scrollTop: bc.prop("scrollHeight")}, 800);
+		}
+	}
 }

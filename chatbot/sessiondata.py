@@ -46,6 +46,8 @@ class ChatSession:
         """
         self.session_id = session_id
 
+        self.howru_asked = False
+
         self.user_name = None
         self.call_me = None
 

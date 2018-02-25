@@ -43,6 +43,11 @@ class FunctionData:
         "It took me a little while, and finally I got the result: ",
         "I had to use my cell phone for this calculation. Here is the outcome: "
     ]
+    ask_howru_list = [
+        "And you?",
+        "How are you?",
+        "How about yourself?"
+    ]
     ask_name_list = [
         "May I also have your name, please?",
         "Would you also like to tell me your name, please?",
@@ -182,6 +187,14 @@ class FunctionData:
     """
     # Rule 5: User name, call me information, and last question and answer
     """
+    def ask_howru_if_not_yet(self):
+        howru_asked = self.chat_session.howru_asked
+        if howru_asked:
+            return ""
+        else:
+            self.chat_session.howru_asked = True
+            return random.choice(FunctionData.ask_howru_list)
+
     def ask_name_if_not_yet(self):
         user_name = self.chat_session.user_name
         call_me = self.chat_session.call_me
@@ -341,6 +354,15 @@ class FunctionData:
         self.chat_session.clear_pending_action()
         return reply
 
+    """
+    # Other Rules: Client Code
+    """
+    def client_code_show_picture_randomly(self, picture_name):
+        if not self.html_format:  # Ignored in the command line interface
+            return ''
+        else:
+            return ' _cc_start_show_picture_randomly_para1_' + picture_name + '_cc_end_'
+
 
 def call_function(func_info, knowledge_base=None, chat_session=None, para_list=None,
                   html_format=False):
@@ -362,6 +384,7 @@ def call_function(func_info, knowledge_base=None, chat_session=None, para_list=N
         'get_number_multiply': FunctionData.get_number_multiply,
         'get_number_divide': FunctionData.get_number_divide,
 
+        'ask_howru_if_not_yet': func_data.ask_howru_if_not_yet,
         'ask_name_if_not_yet': func_data.ask_name_if_not_yet,
         'get_user_name_and_reply': func_data.get_user_name_and_reply,
         'get_callme': func_data.get_callme,
@@ -378,7 +401,9 @@ def call_function(func_info, knowledge_base=None, chat_session=None, para_list=N
         'correct_user_name': func_data.correct_user_name,
         'clear_user_name_and_call_me': func_data.clear_user_name_and_call_me,
 
-        'execute_pending_action_and_reply': func_data.execute_pending_action_and_reply
+        'execute_pending_action_and_reply': func_data.execute_pending_action_and_reply,
+
+        'client_code_show_picture_randomly': func_data.client_code_show_picture_randomly
     }
 
     para1_index = func_info.find('_para1_')
