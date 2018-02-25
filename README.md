@@ -32,15 +32,6 @@ Why do you want to spend time checking this repository? Here are some possible r
 6. A simple solution (in-graph) to convert a string tensor to lower case in TensorFlow. It is required if you utilize the new DataSet API (tf.data.TextLineDataSet) in TensorFlow to load training data from text files.
 
 7. The repository also contains a chatbot implementation based on the legacy seq2seq model. In case you are interested in that, please check the Legacy_Chatbot branch at https://github.com/bshao001/ChatLearner/tree/Legacy_Chatbot.
-
-## Why NMT model instead of the legacy seq2seq model in TensorFlow:
-1. The main advantage of the new model is speed. Training and inference using the new model are both faster. As the new model is based on the dynamic RNN, a GPU (or CPU) can afford to train it with a larger batch size. With the legacy one, if you could train the model with batch size 64 or 128, then you can train the new model in batch size doubled: 128 or 256, therefore cutting the training time to almost half.
-
-2. Bucketing can be used to speed up the training for both models. However, it causes extra mess to the old seq2seq model due to different lengths of padding, if you want your model to remember certain question and answer pairs. You have no way to tell your model which bucket was used to train a pair at the inference time as you only have the length of the questions (see an expedient solution in my implementation of the legacy model). The great thing about the new model is that it does not have this problem as its padding does not create extra noises.
-
-3. Based on my limited observations, I feel that the new NMT model also has slightly larger capacity, which can accommodate larger vocabulary with a same sized model (concerning number layers and number of units).
-
-4. I haven't found any disadvantages of the new model. If we have to name one, the TensorFlow group did not provide an integrated interface as for the legacy one, the seq2seq.py. Hence, it is a little harder to put the encoder and the decoder together by yourself. However, you may find that implementing beam search becomes easier. It is supported in this implementation. Beam search clearly improves the inference results, and it can also vary the responses (within the same trained model), which makes the chatbot more interesting as well.
    
 ## Papaya Conversational Data Set
 Papaya Data Set is the best (cleanest and well-organized) free English conversational data you can find on the web for training a chatbot. Here are some details:
