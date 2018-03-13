@@ -1,3 +1,5 @@
+Q: Do you know any stories ?
+A: Yes , I know many stories . Here is one : _func_val_get_story_any
 Q: Tell me a story .
 A: _func_val_get_story_any
 Q: Can you tell me a story ?
@@ -25,6 +27,8 @@ A: Of course . _func_val_get_story_any
 Q: Please read me a bedtime story .
 A: Hope you enjoy this one and have a nice dream : _func_val_get_story_any
 ===
+Q: Do you know any jokes ?
+A: Yes , I know many jokes . Here is one : _func_val_get_joke_any
 Q: Tell me a joke .
 A: Here is a funny one : _func_val_get_joke_any
 Q: Can you tell me a joke ?
