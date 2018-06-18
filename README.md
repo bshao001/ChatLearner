@@ -10,7 +10,7 @@ Before starting everything else, you may want to get a feeling of how ChatLearne
 
 ![](/Data/Test/chat.png)
 
-For those who are interested in chatbots in Chinese, please check [here](#chinese_chatbots).
+**For those who are interested in chatbots in Chinese, please check [here](#chinese_chatbots).**
 
 ## Highlights and Specialties:
 Why do you want to spend time checking this repository? Here are some possible reasons:
