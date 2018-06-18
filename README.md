@@ -10,6 +10,8 @@ Before starting everything else, you may want to get a feeling of how ChatLearne
 
 ![](/Data/Test/chat.png)
 
+For those who are interested in chatbots in Chinese, please check [here](#chinese_chatbots).
+
 ## Highlights and Specialties:
 Why do you want to spend time checking this repository? Here are some possible reasons:
 
@@ -95,6 +97,14 @@ A SOAP-based web service architecture is implemented, with a Python server and a
 A REST-API-based alternative is also given if SOAP is not your choice. For details, please check: https://github.com/bshao001/ChatLearner/tree/master/webui_alternative. Some of the latest updates may not be available with this option. Merge the changes from the other option if you need to use this.
 
 ![](/Data/Test/webui.png)
+
+<a name="chinese_chatbots"></a>
+## To Those Who are Interested in Chinese Chatbots
+这里展示一些本人开发的中文聊天机器人的对话样品。它基于自创的NLP Markup Language (自然语言处理标记语言)，试图实现对特定领域问题的精准回复，并可以解决很多对话中的复杂的上下文相关问题。本方法尤其适用于商业上的专用聊天机器人的开发，比如售前，售后，或特定领域（如法律，医疗）的技术咨询服务等。有兴趣的朋友欢迎微信联系。本人微信号：bshao001_miami
+
+![](/Data/Test/chinese_chat12.png)
+![](/Data/Test/chinese_chat34.png)
+![](/Data/Test/chinese_chat56.png)
 
 ## References and Credits:
 1. The new NMT model: https://github.com/tensorflow/nmt
