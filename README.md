@@ -100,7 +100,7 @@ A REST-API-based alternative is also given if SOAP is not your choice. For detai
 
 <a name="chinese_chatbots"></a>
 ## To Those Who are Interested in Chinese Chatbots
-这里展示一些本人开发的中文聊天机器人的对话样品。它基于自创的NLP Markup Language (自然语言处理标记语言)，试图实现对特定领域问题的精准回复，并可以解决很多对话中的复杂的上下文相关问题。本方法尤其适用于商业上的专用聊天机器人的开发，比如售前，售后，或特定领域（如法律，医疗）的技术咨询服务等。有兴趣的朋友欢迎微信联系。本人微信号：bshao001_miami
+这里展示一些本人开发的中文聊天机器人的对话样品。它基于自创的NLP Markup Framework (自然语言处理标记框架)，试图实现对特定领域问题的精准回复，并可以解决很多对话中的复杂的上下文相关问题。本方法尤其适用于商业上的专用（面向任务的）聊天机器人的开发，比如售前，售后，或特定领域（如法律，医疗）的技术咨询服务等。有兴趣的朋友欢迎微信联系。本人微信号：bshao001_miami
 
 ![](/Data/Test/chinese_chat12.png)
 ![](/Data/Test/chinese_chat34.png)
