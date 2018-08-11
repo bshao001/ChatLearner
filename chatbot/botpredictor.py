@@ -63,7 +63,7 @@ class BotPredictor(object):
 
         self.session.run(tf.tables_initializer())
 
-    def predict(self, session_id, question, html_format=False):
+    def predict(self, session_id, question):
         chat_session = self.session_data.get_session(session_id)
         chat_session.before_prediction()  # Reset before each prediction
 
@@ -94,20 +94,18 @@ class BotPredictor(object):
 
             if pat_matched and pre_time == 0:
                 out_sentence, if_func_val = self._get_final_output(outputs, chat_session,
-                                                                   para_list=para_list,
-                                                                   html_format=html_format)
+                                                                   para_list=para_list)
                 if if_func_val:
                     chat_session.after_prediction(question, out_sentence)
                     return out_sentence
                 else:
                     new_sentence = question
             else:
-                out_sentence, _ = self._get_final_output(outputs, chat_session,
-                                                         html_format=html_format)
+                out_sentence, _ = self._get_final_output(outputs, chat_session)
                 chat_session.after_prediction(question, out_sentence)
                 return out_sentence
 
-    def _get_final_output(self, sentence, chat_session, para_list=None, html_format=False):
+    def _get_final_output(self, sentence, chat_session, para_list=None):
         sentence = b' '.join(sentence).decode('utf-8')
         if sentence == '':
             return "I don't know what to say.", False
@@ -123,8 +121,7 @@ class BotPredictor(object):
             if word.startswith('_func_val_'):
                 if_func_val = True
                 word = call_function(word[10:], knowledge_base=self.knowledge_base,
-                                     chat_session=chat_session, para_list=para_list,
-                                     html_format=html_format)
+                                     chat_session=chat_session, para_list=para_list)
                 if word is None or word == '':
                     continue
             else:

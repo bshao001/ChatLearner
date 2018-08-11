@@ -55,16 +55,14 @@ class FunctionData:
         "And, what do you want me to call you, dear sir or madam?"
     ]
 
-    def __init__(self, knowledge_base, chat_session, html_format):
+    def __init__(self, knowledge_base, chat_session):
         """
         Args:
             knowledge_base: The knowledge base data needed for prediction.
             chat_session: The chat session object that can be read and written.
-            html_format: Whether out_sentence is in HTML format.
         """
         self.knowledge_base = knowledge_base
         self.chat_session = chat_session
-        self.html_format = html_format
 
     """
     # Rule 2: Date and Time
@@ -107,8 +105,6 @@ class FunctionData:
 
         stories = self.knowledge_base.stories
         _, content = random.choice(list(stories.items()))
-        if not self.html_format:
-            content = re.sub(r'_np_', '', content)
         return content
 
     def get_story_name(self, story_name):
@@ -117,8 +113,6 @@ class FunctionData:
 
         stories = self.knowledge_base.stories
         content = stories[story_name]
-        if not self.html_format:
-            content = re.sub(r'_np_', '', content)
         return content
 
     def get_joke_any(self):
@@ -127,8 +121,6 @@ class FunctionData:
 
         jokes = self.knowledge_base.jokes
         content = random.choice(jokes)
-        if not self.html_format:
-            content = re.sub(r'_np_', '', content)
         return content
 
     def continue_last_topic(self):
@@ -358,15 +350,11 @@ class FunctionData:
     # Other Rules: Client Code
     """
     def client_code_show_picture_randomly(self, picture_name):
-        if not self.html_format:  # Ignored in the command line interface
-            return ''
-        else:
-            return ' _cc_start_show_picture_randomly_para1_' + picture_name + '_cc_end_'
+        return ' _cc_start_show_picture_randomly_para1_' + picture_name + '_cc_end_'
 
 
-def call_function(func_info, knowledge_base=None, chat_session=None, para_list=None,
-                  html_format=False):
-    func_data = FunctionData(knowledge_base, chat_session, html_format=html_format)
+def call_function(func_info, knowledge_base=None, chat_session=None, para_list=None):
+    func_data = FunctionData(knowledge_base, chat_session)
 
     func_dict = {
         'get_date_time': FunctionData.get_date_time,
@@ -450,10 +438,10 @@ def call_function(func_info, knowledge_base=None, chat_session=None, para_list=N
 #
 #     cs = ChatSession(1)
 #
-#     print(call_function('get_story_any', knbs, cs, html_format=True))
-#     print(call_function('get_story_any', knbs, cs, html_format=False))
-#     print(call_function('get_joke_any', knbs, cs, html_format=True))
-#     print(call_function('get_joke_any', knbs, cs, html_format=False))
+#     print(call_function('get_story_any', knbs, cs))
+#     print(call_function('get_story_any', knbs, cs))
+#     print(call_function('get_joke_any', knbs, cs))
+#     print(call_function('get_joke_any', knbs, cs))
 #     print(call_function('get_weekday_para1_d_2'))
 #     print(call_function('get_weekday_para1_d_1'))
 #     print(call_function('get_weekday_para1_d0'))

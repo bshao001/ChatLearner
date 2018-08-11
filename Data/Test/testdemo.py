@@ -13,6 +13,7 @@
 # limitations under the License.
 # ==============================================================================
 import os
+import re
 import tensorflow as tf
 import time
 
@@ -48,7 +49,8 @@ def test_demo():
                     if not sentence or sentence.startswith("#=="):
                         continue
                     f_out.write("> {}\n".format(sentence))
-                    f_out.write("{}\n\n".format(predictor.predict(session_id, sentence)))
+                    output = re.sub(r'_nl_|_np_', '\n', predictor.predict(session_id, sentence)).strip()
+                    f_out.write("{}\n\n".format(output))
 
         t1 = time.time()
         print("# Prediction completed. Time spent on prediction: {:4.2f} seconds".format(t1-t0))

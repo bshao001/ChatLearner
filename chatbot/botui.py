@@ -13,6 +13,7 @@
 # limitations under the License.
 # ==============================================================================
 import os
+import re
 import sys
 import tensorflow as tf
 
@@ -44,7 +45,7 @@ def bot_ui():
                 print("Thank you for using ChatLearner. Goodbye.")
                 break
 
-            print(predictor.predict(session_id, question))
+            print(re.sub(r'_nl_|_np_', '\n', predictor.predict(session_id, question)).strip())
             print("> ", end="")
             sys.stdout.flush()
             question = sys.stdin.readline()
