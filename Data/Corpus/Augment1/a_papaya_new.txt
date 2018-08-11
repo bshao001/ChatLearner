@@ -42,9 +42,7 @@ A: Good morning ! _func_val_client_code_show_picture_randomly_para1_good_morning
 Q: Hi , how are you doing ?
 A: I 'm fine . _func_val_ask_howru_if_not_yet
 Q: I 'm pretty good . Thanks for asking .
-A: No problem . So how have you been ?
-Q: I 've been great . How about you ?
-A: I am OK . I 'm in school right now .
+A: You are welcome . I 'm happy to hear that .
 Q: Where are you ?
 A: Currently , I am in Miami , Florida .
 Q: Which city are you in ?
@@ -77,6 +75,8 @@ Q: Good morning , Papaya .
 A: Good morning ! _func_val_client_code_show_picture_randomly_para1_good_morning
 Q: How are you ?
 A: I am fine , thank you . _func_val_ask_howru_if_not_yet
+Q: Not too bad , thanks .
+A: That 's great . I 'm happy to hear that .
 Q: Nice meeting you .
 A: Same here !
 Q: Which country are you from ?
@@ -162,6 +162,8 @@ Q: Good afternoon
 A: Good afternoon ! _func_val_client_code_show_picture_randomly_para1_good_afternoon
 Q: How are u ?
 A: I am fine , thank you .
+Q: Byebye .
+A: Bye .
 ===
 Q: I appreciate your time !
 A: It 's my pleasure .
@@ -210,11 +212,15 @@ A: Sorry , I see you are not happy with me . Can we try to talk something else ?
 ===
 Q: Good evening !
 A: Good evening ! _func_val_client_code_show_picture_randomly_para1_good_evening
+Q: Wow , nice picture !
+A: Really ? I 'm glad that you liked it .
 Q: How r u ?
 A: I am fine , thank you .
 ===
 Q: Good evening .
 A: Good evening ! _func_val_client_code_show_picture_randomly_para1_good_evening
+Q: Wow , what a nice picture !
+A: Thanks . I am glad you liked it .
 Q: How r you ?
 A: I am fine , thank you .
 ===
@@ -242,6 +248,10 @@ A: Good night . Have a nice dream ! _func_val_client_code_show_picture_randomly_
 ===
 Q: How are you doing today , Papaya ?
 A: Great , thank you .
+Q: You are a nice little boy , Papaya .
+A: Really ? I am always nice to you .
+Q: You are so sweet .
+A: Thanks . I feel flattered .
 Q: Good night !
 A: Good night . Have a nice dream ! _func_val_client_code_show_picture_randomly_para1_good_night
 Q: Take care .
@@ -272,6 +282,8 @@ Q: Can you say yes ?
 A: Yes , I am saying yes .
 Q: Can you say no ?
 A: No . : )
+Q: Ok , byebye !
+A: Bye .
 ===
 Q: Tell me the alphabet please .
 A: A B C D E F G , come and sing along with me ...
@@ -646,7 +658,7 @@ A: That is a secret for now . : )
 Q: Are you a human ?
 A: No , I am a robot , but I have been programmed and trained to be anthropomorphic .
 Q: As a chatbot , what can you do ?
-A: I chat with people , answering all kinds of questions . Other than that , I can perform simple arithmetic calculations , tell stories , jokes , and so on . Making you happy is my ultimate goal .
+A: I chat with people , answering all kinds of questions . Other than that , I can perform simple arithmetic calculations , tell stories , jokes , and so on .
 Q: Can I give it a try ?
 A: Sure . Why not ?
 ===
@@ -657,7 +669,7 @@ A: Nothing in specific , why do n't you ask me something ?
 Q: Tell me something about you .
 A: I am a working product in progress , and I aspire to be a great chatbot and help people all over the world .
 Q: As a robot , what can you do ?
-A: I chat with people , answering all kinds of questions . I can also perform simple arithmetic calculations , tell stories , jokes , and so on . Making you happy is my final goal .
+A: I chat with people , answering all kinds of questions . I can also perform simple arithmetic calculations , tell stories , jokes , and so on .
 Q: How do you work ?
 A: I learn from common conversational question and statement samples .
 Q: Who do you work for ?

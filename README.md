@@ -2,11 +2,13 @@
 
 ![](https://img.shields.io/badge/python-3.6.2-brightgreen.svg)  ![](https://img.shields.io/badge/tensorflow-1.4.0-yellowgreen.svg?sanitize=true)
 
-A chatbot implemented in TensorFlow based on the new sequence to sequence (NMT) model, with certain rules integrated.
+A chatbot implemented in TensorFlow based on the new sequence to sequence (NMT) model, with certain rules seamlessly integrated.
 
-The core of ChatLearner (Papaya) was built on the NMT model(https://github.com/tensorflow/nmt), which has been adapted here to fit the needs of a chatbot. Due to the changes made on tf.data API in TensorFlow 1.4, this ChatLearner version only supports TF version 1.4 and 1.5.
+**For those who are interested in chatbots in Chinese, please check [here](#chinese_chatbots).**
 
-Before starting everything else, you may want to have a feeling of how ChatLearner behaves. Take a look at the sample conversation below or [here](https://github.com/bshao001/ChatLearner/blob/master/Data/Test/responses.txt), or if you prefer to try my trained model, then download it [here](https://drive.google.com/file/d/1c65rm5wAkaP3QYlY2sTfUs4a7cIYrUlg/view?usp=sharing). Unzip the downloaded .rar file, and copy the Result folder into the Data folder under your project root. A vocab.txt file is also included in case I update it without updating the trained model in the future.
+The core of ChatLearner (Papaya) was built on the NMT model(https://github.com/tensorflow/nmt), which has been adapted here to fit the needs of a chatbot. Due to the changes made on tf.data API in TensorFlow 1.4, this ChatLearner version only supports TF version 1.4 and later.
+
+Before starting everything else, you may want to get a feeling of how ChatLearner behaves. Take a look at the sample conversation below or [here](https://github.com/bshao001/ChatLearner/blob/master/Data/Test/responses.txt), or if you prefer to try my trained model, download it [here](https://drive.google.com/file/d/1mVWFScBHFeA7oVxQzWb8QbKfTi3TToUr/view?usp=sharing). Unzip the downloaded .rar file, and copy the Result folder into the Data folder under your project root. A vocab.txt file is also included in case I update it without updating the trained model in the future.
 
 ![](/Data/Test/chat.png)
 
@@ -32,15 +34,6 @@ Why do you want to spend time checking this repository? Here are some possible r
 6. A simple solution (in-graph) to convert a string tensor to lower case in TensorFlow. It is required if you utilize the new DataSet API (tf.data.TextLineDataSet) in TensorFlow to load training data from text files.
 
 7. The repository also contains a chatbot implementation based on the legacy seq2seq model. In case you are interested in that, please check the Legacy_Chatbot branch at https://github.com/bshao001/ChatLearner/tree/Legacy_Chatbot.
-
-## Why NMT model instead of the legacy seq2seq model in TensorFlow:
-1. The main advantage of the new model is speed. Training and inference using the new model are both faster. As the new model is based on the dynamic RNN, a GPU (or CPU) can afford to train it with a larger batch size. With the legacy one, if you could train the model with batch size 64 or 128, then you can train the new model in batch size doubled: 128 or 256, therefore cutting the training time to almost half.
-
-2. Bucketing can be used to speed up the training for both models. However, it causes extra mess to the old seq2seq model due to different lengths of padding, if you want your model to remember certain question and answer pairs. You have no way to tell your model which bucket was used to train a pair at the inference time as you only have the length of the questions (see an expedient solution in my implementation of the legacy model). The great thing about the new model is that it does not have this problem as its padding does not create extra noises.
-
-3. Based on my limited observations, I feel that the new NMT model also has slightly larger capacity, which can accommodate larger vocabulary with a same sized model (concerning number layers and number of units).
-
-4. I haven't found any disadvantages of the new model. If we have to name one, the TensorFlow group did not provide an integrated interface as for the legacy one, the seq2seq.py. Hence, it is a little harder to put the encoder and the decoder together by yourself. However, you may find that implementing beam search becomes easier. It is supported in this implementation. Beam search clearly improves the inference results, and it can also vary the responses (within the same trained model), which makes the chatbot more interesting as well.
    
 ## Papaya Conversational Data Set
 Papaya Data Set is the best (cleanest and well-organized) free English conversational data you can find on the web for training a chatbot. Here are some details:
@@ -99,9 +92,19 @@ Wait until you get the command prompt "> ".
 A demo test result is provided as well. Please check it to see how this chatbot behaves now: https://github.com/bshao001/ChatLearner/blob/master/Data/Test/responses.txt
 
 ## Web Interface
-A SOAP-based web service architecture is implemented, with a Python server and a Java client. A nice GUI is also included for your reference. For details, please check: https://github.com/bshao001/ChatLearner/tree/master/webui
+A SOAP-based web service architecture is implemented, with a Python server and a Java client. A nice GUI is also included for your reference. For details, please check: https://github.com/bshao001/ChatLearner/tree/master/webui. Please be advised that certain information (such as pictures) is only available on the web interface (not in the command line interface).
 
-A REST-API-based alternative is also given if SOAP is not your choice. For details, please check: https://github.com/bshao001/ChatLearner/tree/master/webui_alternative
+A REST-API-based alternative is also given if SOAP is not your choice. For details, please check: https://github.com/bshao001/ChatLearner/tree/master/webui_alternative. Some of the latest updates may not be available with this option. Merge the changes from the other option if you need to use this.
+
+![](/Data/Test/webui.png)
+
+<a name="chinese_chatbots"></a>
+## To Those Who are Interested in Chinese Chatbots
+这里展示一些本人开发的中文聊天机器人的对话样品。它基于自创的NLP Markup Framework (自然语言处理标记框架)，试图实现对特定领域问题的精准回复，并可以解决很多对话中的复杂的上下文相关问题。本方法尤其适用于商业上的专用（面向任务的）聊天机器人的开发，比如售前，售后，或特定领域（如法律，医疗）的技术咨询服务等。有兴趣的朋友欢迎微信联系。本人微信号：bshao001_miami
+
+![](/Data/Test/chinese_chat12.png)
+![](/Data/Test/chinese_chat34.png)
+![](/Data/Test/chinese_chat56.png)
 
 ## References and Credits:
 1. The new NMT model: https://github.com/tensorflow/nmt

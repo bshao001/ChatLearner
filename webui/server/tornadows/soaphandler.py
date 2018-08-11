@@ -19,7 +19,6 @@
 import tornado.httpserver
 import tornado.web
 import xml.dom.minidom
-import string
 import inspect
 from tornado.options import options
 from webui.server.tornadows import soap
