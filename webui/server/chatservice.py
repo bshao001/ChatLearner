@@ -52,7 +52,7 @@ class ChatService(soaphandler.SoapHandler):
         if sessionId not in predictor.session_data.session_dict:  # Including the case of 0
             sessionId = self.predictor.session_data.add_session()
 
-        answer = self.predictor.predict(sessionId, question, html_format=True)
+        answer = self.predictor.predict(sessionId, question)
 
         outputSentence = SessionSentence()
         outputSentence.sessionId = sessionId

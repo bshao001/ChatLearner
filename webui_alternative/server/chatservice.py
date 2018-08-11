@@ -31,7 +31,7 @@ def reply():
     if session_id not in predictor.session_data.session_dict:  # Including the case of 0
         session_id = predictor.session_data.add_session()
 
-    answer = predictor.predict(session_id, question, html_format=True)
+    answer = predictor.predict(session_id, question)
     return jsonify({'sessionId': session_id, 'sentence': answer})
 
 
