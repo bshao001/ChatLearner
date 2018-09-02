@@ -1,15 +1,18 @@
 $(function() {
+	$("#inputArea").focus();
 	$("#inputArea").keyup(function(event) {
 	  	var keyEvent=event||window.event; 
 	  	switch(keyEvent.keyCode) {
 	  	   	case 13: 
 				submitQuestion();
+				$("#inputArea").focus();
 				break; 
 	  	}
 	});
 	
 	$("#sendButton").click(function() {
 		submitQuestion();
+		$("#inputArea").focus();
 	});
 });
 
